@@ -1,6 +1,6 @@
 # Local Testnet
 
-To test and build on top of ArchEthic network, we encourage people to test with a local instance.
+To test and build on top of ARCHEthic network, we encourage people to test with a local instance.
 
 ## Installation
 
@@ -33,7 +33,7 @@ iex -S mix
 
 ## Funding addresses
 
-To be able to fund some addresses you can specify in the configuration which will be the addresses and the amount as genesis pool during the network initialization
+To be able to fund some addresses, you can specify in the configuration which will be the addresses and the amount as genesis pool during the network initialization
 
 - Ensure a fresh start
 ```
@@ -49,4 +49,4 @@ ARCHETHIC_TESTNET_GENESIS_ADDRESS=YOUR_ADDRESS_IN_HEXADECIMAL ARCHETHIC_TESTNET_
 
 Go to http://localhost:4000/explorer/transaction/{TYPE_YOUR_ADDRESS_IN_HEXADECIMAL}
 
-It should displays some unspent outputs (in the "Ledger inputs" section) 
+It should display some unspent outputs (in the "Ledger inputs" section) 

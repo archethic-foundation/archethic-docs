@@ -1,11 +1,11 @@
 # Smart Contract Language
 
-ArchEthic Blockchain defines a new smart contract language which was designed to resolve the issue of smart contracts:
-- Expressivness
+ARCHEthic Blockchain defines a new smart contract language which was designed to resolve the issue of smart contracts:
+- Expressiveness
 - Simplify
 - Security
 
-Along with the new features of ArchEthic Smart Contracts (triggers, conditions, actions), a new custom language is defined
+Along with the new features of ARCHEthic Smart Contracts (triggers, conditions, actions), a new custom language is defined
 
 ## Triggers/Actions
 
@@ -34,7 +34,7 @@ To define a condition, we need to specify a condition block with its subject and
 - `content`
 - `code`
 - `authorized_keys`
-- `secret`
+- `secrets`
 - `uco_transfers`
 - `nft_transfers`
 - `previous_public_key`
@@ -59,11 +59,11 @@ condition inherit: [
 
 ## Global variables
 
-Smart Contract can used global variable in the different blocks:
+Smart Contract can use global variable in the different blocks:
    - `contract`: represent the actual contract
    - `transaction`: incoming transaction
    - (inherit condition only) `next`: next transaction on the chain
-   - (inherit condition only) `previous`: previous transactiono on the chain 
+   - (inherit condition only) `previous`: previous transaction on the chain 
 
 Each of this variables contains the following fields:
 - `address`
@@ -71,7 +71,7 @@ Each of this variables contains the following fields:
 - `content`
 - `code`
 - `authorized_keys`
-- `secret`
+- `secrets`
 - `previous_public_key`
 - `recipients`
 - `uco_transfers`
@@ -79,15 +79,15 @@ Each of this variables contains the following fields:
 
 ## Functions
 
-ArchEthic Smart Contracts relies on function which can be used on condition or action blocks.
+ARCHEthic Smart Contracts relies on function which can be used on condition or action blocks.
 
-There is two category of functions:
+There are two categories of functions:
 - Utilities
 - Statements (for transaction generation)
 
 ### Utilities
 
-?> In the `condition` block, if no parameter is given the transaction's field value will be the first one 
+?> In the `condition` block, if no parameter is given, the transaction's field value will be the first one 
 
 - `hash(data)`: Perform a cryptographic hash
 ```

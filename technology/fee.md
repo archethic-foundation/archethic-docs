@@ -1,6 +1,6 @@
 # Fee
 
-ArchEthic Blockchain is using specific heuristic algorithms to ensure the best transaction's distribution.
+ARCHEthic Blockchain is using specific heuristic algorithms to ensure the best transaction's distribution.
 
 The fees are calculated according to the real costs of the network (size, complexity) and is based on the real value of the UCO (using [Oracle Chain](/network/oracle_chain.md))
 
@@ -11,7 +11,7 @@ Transaction's fee are distributed across all the actors during the transaction v
 - `Cross validation Nodes`: 40%
 - `Storage Nodes`: 50%
 
-The remaining 10% will go the `Network Pool` as a burn mechanism to ensure a programmable destruction of UCO. 
+The remaining 10% will go to the `Network Pool` as a burn mechanism to ensure a programmable destruction of UCO. 
 <br />
 This mechanism will ensure a deflation and therefore a way to increase the value of each UCO
 
@@ -29,7 +29,7 @@ The transaction's fee computation is based on some properties:
 
 > Transaction value fee: minimum_fee * ( transaction_value / (minimum_fee * 1000) ) 
 
-!> In case, there is not value (no uco to spend), a minimum fee is applied corresponding of 0.1$ of UCO
+!> In case, there is no value (no UCO to spend), a minimum fee is applied corresponding to $0.1 of UCO
 
 > Each byte will cost: 10<sup>-9</sup> of the current UCO's price
 

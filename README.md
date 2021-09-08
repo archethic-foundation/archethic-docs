@@ -1,6 +1,6 @@
 # Welcome <!-- {docsify-ignore-all} -->
  
-ArchEthic is a next generation of Blockchain which provide a truly decentralized limitless network, using `TransactionChain` and a new consensus named ARCH (Atomic Rotating Commitment Heuristic), <br/>  to be the most secure and scalable decentralized network.
+ARCHEthic is a next generation of Blockchain which provide a truly decentralized limitless network, using `TransactionChain` and a new consensus named ARCH (Atomic Rotating Commitment Heuristic), <br/>  to be the most secure and scalable decentralized network.
 
 ---
 
@@ -12,7 +12,7 @@ Our network is built to face most of the issues of other blockchain solutions:
 - Low transaction fees 
 
 This document aims to provide information and resources about the technology
-and the usage to build new decentralized applications on top of ArchEthic.
+and the usage to build new decentralized applications on top of ARCHEthic.
 
 
 ---
@@ -24,10 +24,10 @@ Similarly, regardless of the consensus method, it is not possible to ensure univ
 Finally, the functioning of current distributed networks (P2P) is such that it is not possible to guarantee the freshness (consistency) of data on an asynchronous network, <br />
 unless the network is slowed down excessively by the calculation of the nonce of the block (PoW), as is the case with other blockchain networks.
 
-ArchEthic Blockchain solved this issues in the following way:
+ARCHEthic Blockchain solved this issues in the following way:
 - TransactionChains: 
 > Instead of chained blocks of transactions, each block is reduced to its atomic form. <br />
-Therefore each block contains only one transaction and each transaction will be chained in its own chain.
+Therefore, each block contains only one transaction and each transaction will be chained in its own chain.
 
 ## Innovations
 
@@ -35,7 +35,7 @@ Therefore each block contains only one transaction and each transaction will be 
 > ARCHEthic is using `sharding` technology to ensure distribution of transaction processing and storage to provide<br />
 a very high scalability.
 
-- Next generation consensus:
+- Next-generation consensus:
 > ARCHEthic is using an universal consensus called `ARCH` based on Atomic Commitment using Heuristic Rotating election<br />
 of a tiny set of validation nodes providing the highest level of security
 
@@ -44,13 +44,13 @@ of a tiny set of validation nodes providing the highest level of security
   Thus, every node will autonomously know all the nodes for a given transaction and ease the network 
   by only interrogating the closest elected nodes. 
 
-- Distributed network without buttleneck
+- Distributed network without bottleneck
 > ArchEthic rebuild the entire P2P layer to provide an efficient messaging between peers based on the Supervised Multicast <br />
 using self discovery mechanism from incoming connection and network transactions.<br />
-The system is able to maintain a qualified vision of the network while limiting the generation of requests
+The system is able to maintain a qualified vision of the network while limiting the generation of requests.
 
 ---
 
 ![logo](./archethic.svg ':size=300*300')
 
-*Backed by the ArchEthic Foundation*
+*Backed by the ARCHEthic Foundation*

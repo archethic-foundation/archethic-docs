@@ -4,11 +4,11 @@ Others blockchains are using the concept of `Proof of Work` to ensure an unpredi
 <br />
 But this technique requires a lot of energy consumption and can still be subject to exploit by HashRate control.
 
-ArchEthic Blockchain is using a new kind of `Proof of Work` to ensure the authenticity of the transaction origination devices.
+ARCHEthic Blockchain is using a new kind of `Proof of Work` to ensure the authenticity of the transaction origination devices.
 <br />
 This allows the additional security requirements on transaction validation like:
 - prohibit any transaction even in case of key theft
-- allow user to consult their balance ony any smartphone but generate a transaction only on a trusted device
+- allow user to consult their balance on any smartphone, but generate a transaction only on a trusted device
 - enable the organizers of an election to ensure biometric identity of a voter
 
 ## Concepts

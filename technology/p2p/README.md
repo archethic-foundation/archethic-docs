@@ -1,17 +1,17 @@
 # P2P Layer
 
-ArchEthic Blockchain redesigned the entire P2P layer to be more effective and support an unlimited permissionless network.
+ARCHEthic Blockchain redesigned the entire P2P layer to be more effective and support an unlimited permissionless network.
 
 ## Why do you need something new ?
 
 In the current P2P and distributed networks, there are two methods of communication for discovery and data propagation: 
 - the Gossip mode, whose properties are defined by the knowledge of the outgoing neighbors, which means each node of the network will discover the properties of the other nodes by interrogating them one by one, usually randomly, performing some unnecessary network traffic and sending data through nearest nodes for propagation.
 
-- the Broadcast mode whose properties are defined by the knowledge of the incoming neighbors, which uses incoming connections and dispatch the data to all the nodes.
+- the Broadcast mode, whose properties are defined by the knowledge of the incoming neighbors, which uses incoming connections and dispatch the data to all the nodes.
 
 ## Supervised Multicast
 
-ArchEthic is using a hybrid communication that uses Supervised Multicast which is closer to the properties of Broadcast networks and combines the following properties:
+ARCHEthic is using a hybrid communication that uses Supervised Multicast, which is closer to the properties of Broadcast networks and combines the following properties:
 
 > Transaction Replication Process: Capitalizing on incoming and outgoing con- nection information during the replication process
 

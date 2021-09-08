@@ -1,6 +1,6 @@
 # OracleChain
 
-ArchEthic Blockchain supports Off-Chain communication through a dedicated transaction chain called `OracleChain`.
+ARCHEthic Blockchain supports Off-Chain communication through a dedicated transaction chain called `OracleChain`.
 
 It aims to gather external data to be used inside the network or the smart contract layer.
 
@@ -8,7 +8,7 @@ It aims to gather external data to be used inside the network or the smart contr
 
 OracleChain behaves a bit like the BeaconChains except the transaction on the chain are generated every 10min but only when there is a new data updated.
 
-It using long-polling to get data from external sources and submit a transaction through ARCH Consensus.
+It's using a long-polling mechanism to get data from external sources and submit a transaction through ARCH Consensus.
 
 By using ARCH consensus, we ensure the atomic commitment of the data submitted and ensure validity of the information written into the transaction.
 

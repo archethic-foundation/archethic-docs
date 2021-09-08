@@ -1,17 +1,17 @@
 # Beacon Chain
  
-ArchEthic Blockchain is using `Sharding` mechanism to ensure scalability in term of storage and validation.
+ARCHEthic Blockchain is using `Sharding` mechanism to ensure scalability in terms of storage and validation.
 <br />
 But since there is no way in a well sharded and distributed network to know all the transaction in the system,
 a `Beacon Chain` is used to keep a global synchronization and reference.
 
 ## Concepts
 
-`Beacon Chain` is used as tracer/marker of a global state but to face some scalability issue, ArchEthic Blockchain is using `Sharding` also for the `BeaconChain`.
+`Beacon Chain` is used as tracer/marker of a global state but to face some scalability issue, ARCHEthic Blockchain is using `Sharding` also for the `BeaconChain`.
 
-Which means than the `Beacon Chain` is sharded and splitted into `subset` defined by the transaction's address and a given date.
+Which means that the `Beacon Chain` is sharded and divided into `subset` defined by the transaction's address and a given date.
 <br />
-By example: a transaction's address starting by `0F` at a given day, will not be stored on the same subset as a transaction's address starting by `9F` for the same day.
+For example: a transaction's address starting by `0F` for a given day, will not be stored on the same subset as a transaction's address starting by `9F` for the same day.
 
 
 ## Transaction tracking and timestamping
@@ -20,7 +20,7 @@ Each time a transaction is validated, the validation nodes will send the transac
 
 For each Beacon Chain interval, a new slot is generated referencing all the transaction during this interval.
 <br />
-At the end of the day, a transaction chain is formed and a last transaction is computed to generate a summary of the current day for a given subset.
+At the end of the day, a transaction chain is formed, and a last transaction is computed to generate a summary of the current day for a given subset.
 
 Because each transaction has its own storage nodes, `Beacon Chains` are balanced between the storage nodes to ensure a better scalability and distribution.
 
@@ -29,14 +29,14 @@ Because each transaction has its own storage nodes, `Beacon Chains` are balanced
 Beacon Chains also contain network status of the nodes where the public key starts by the Beacon Chain subset.
 
 The storage nodes in each subset is in charge of:
-- check the nodes availability
+- check the node availabilities
 - gather networking information such as latency, bandwidth
 
-At the end of the day, a transaction is formed as well and a last transaction is compute to generate a summary of node availability and network coordinates
+At the end of the day, a transaction is formed as well and a last transaction is computed to generate a summary of node availability and network coordinates
 
 ## Slot
 
-Each `Beacon Chain` is splitted during the day into multiple slots, defined by interval (for instance every 10 min).
+Each `Beacon Chain` is divided during the day into multiple slots, defined by interval (for instance every 10 min).
 <br />Those slot contains the following information:
 - Transaction summaries: timestamping of the validated transactions
   - address: Transaction's address
