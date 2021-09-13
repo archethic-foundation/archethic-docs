@@ -1,10 +1,10 @@
 # Welcome <!-- {docsify-ignore-all} -->
  
-ARCHEthic is a next generation of Blockchain which provide a truly decentralized limitless network, using `TransactionChain` and a new consensus named ARCH (Atomic Rotating Commitment Heuristic), <br/>  to be the most secure and scalable decentralized network.
+ARCHEthic is the next generation of Blockchain which provides a truly decentralized limitless network, using `TransactionChain` and a new consensus named ARCH (Atomic Rotating Commitment Heuristic), <br/>  to be the most secure and scalable decentralized network.
 
 ---
 
-Our network is built to face most of the issues of other blockchain solutions:
+Our network is built to overcome the issues faced by other blockchain solutions:
 - Support of billions of transactions
 - Linear scalability
 - Low-energy consumption
