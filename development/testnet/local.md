@@ -31,22 +31,14 @@ cd assets ; npm install; cd -
 iex -S mix
 ```
 
-## Funding addresses
+## Testnet
 
-To be able to fund some addresses, you can specify in the configuration which will be the addresses and the amount as genesis pool during the network initialization
-
-- Ensure a fresh start
-```
-make clean
-```
-
-- Restart the node with some configuration
-```
-ARCHETHIC_TESTNET_GENESIS_ADDRESS=YOUR_ADDRESS_IN_HEXADECIMAL ARCHETHIC_TESTNET_GENESIS_AMOUNT=AMOUNT_TO_ALLOCATE iex -S mix
-```
+To be able to fund some addresses, the development mode of the running enable the `Testnet Faucet`.
+Just to browse to the http://localhost:4000/faucet and enter any address to send funds to. 
+It will transfer 100 UCO to the given address.
 
 - Check the balance
 
 Go to http://localhost:4000/explorer/transaction/{TYPE_YOUR_ADDRESS_IN_HEXADECIMAL}
 
-It should display some unspent outputs (in the "Ledger inputs" section) 
+It should display 100 unspent outputs (in the "Ledger inputs" section) 
