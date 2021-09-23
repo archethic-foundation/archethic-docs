@@ -34,8 +34,12 @@ iex -S mix
 ## Testnet
 
 To be able to fund some addresses, the development mode of the running enable the `Testnet Faucet`.
-Just to browse to the http://localhost:4000/faucet and enter any address to send funds to. 
-It will transfer 100 UCO to the given address.
+
+- Funding
+
+Browse to the http://localhost:4000/faucet and enter any address to send funds to. 
+
+It should transfer 100 UCO to the given address.
 
 - Check the balance
 
