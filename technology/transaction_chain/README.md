@@ -34,9 +34,9 @@ Its structure is described as below:
 |-----------|------|------|---------------------|--------------------|------------------|
                       |      
                       |
-      |---------|------|--------|------|------------|
-      | Content | Code | Ledger | Keys | Recipients |
-      |---------|------|--------|------|------------|
+      |---------|------|--------|------------|------------|
+      | Content | Code | Ledger | Ownerships | Recipients |
+      |---------|------|--------|------------|------------|
                             |      |
                             |      |
                   |-----|-----|  |-----------------|--------|  
@@ -56,7 +56,7 @@ Its structure is described as below:
       - UCO: for the cryptocurrency transfers
       - NFT: for non-financial transactions (intended for P2P uses - as tokens, loyalties, etc.)
       - Stock: to manage inventory of items (Will be available soon)
-   - Keys: Define some cryptographic delegations
+   - Ownerships: Define some cryptographic authorizations and delegations
       - Authorized keys: list of authorized keys to be able to decrypt secrets
       - Secrets: Encrypted contents which can be decrypted by the authorized keys
    - Recipients: Additional recipients to target smart contracts
