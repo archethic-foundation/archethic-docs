@@ -160,10 +160,10 @@ actions triggered_by: transaction do
 end
 ```
 
-- `add_authorized_key`: Add an authorized public key
+- `add_ownership`: Add a new ownership with a secret and its authorized public keys
 ```
 actions triggered_by: transaction do
-    add_authorized_key public_key: "0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", encrypted_secret_key: "...."
+    add_ownership secret: "...", secret_key: "...", authorized_public_key: ["0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC"]
 end
 ```
 
