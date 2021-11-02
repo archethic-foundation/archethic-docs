@@ -49,6 +49,10 @@ of a tiny set of validation nodes providing the highest level of security
 using self discovery mechanism from incoming connection and network transactions.<br />
 The system is able to maintain a qualified vision of the network while limiting the generation of requests.
 
+## Contributions
+
+If you would like to contribute, please read our [Contribution](/contribution.md) page
+
 ---
 
 ![logo](./archethic.svg ':size=300*300')
