@@ -34,7 +34,7 @@ After the validation of the transaction, validation nodes will be in charge to s
   - Transaction movements addresses storage pools
   - Node movements public key storage pools
   - Recipients addresses storage pools
-- Beacon Storage Pool: Each transaction address must be replicated on the storage nodes of the associated address subset [See BeaconChain](/network/beacon_chain.md)
+- Beacon Storage Pool: Each transaction address must be replicated on the storage nodes of the associated address subset [See BeaconChain](/technology/sharding/beacon_chain.md/)
 
 > For each transaction, the Transaction Chain Storage Pool will change, assuring a completed distribution of nodes and the data replication. Nevertheless, nothing prevents the storage nodes to overlap within the chain.
 
