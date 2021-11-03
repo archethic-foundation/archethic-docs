@@ -5,7 +5,7 @@
     - [Proof Of Work](/technology/arch/proof_of_work.md)
   - [Sharding](/technology/sharding/)
     - [Beacon Chain](/technology/sharding/beacon_chain.md)
-    - [Beacon Chain Explorer](/technology/beacon_explorer/beacon_chain_explorer.md)
+    - [Beacon Chain Explorer](//technology/sharding/beacon_chain/explorer.md)
   - [Fee](/technology/fee.md)
   - [P2P layer](/technology/p2p/)
     - [Node](/technology/p2p/node.md)

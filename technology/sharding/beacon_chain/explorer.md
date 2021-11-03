@@ -9,7 +9,7 @@ So, the developers/users can overcome the overhead of searching in each shard.
 ## Concepts
 To better understand about Beacon Chain Explorer one need to first have overview the some basic concepts below: 
 
-### Sot Timer
+### Slot Timer
 
 It is the time interval for a slot. We can explicitly give any time interval based on our testnet/mainnet environmnent.
 
