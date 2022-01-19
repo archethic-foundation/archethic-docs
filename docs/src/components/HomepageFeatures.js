@@ -2,6 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 
+import { useHistory } from 'react-router-dom';
+
 const FeatureList = [
   {
     title: 'Learn',
@@ -12,6 +14,7 @@ const FeatureList = [
         why it helps to build the more secure and decentralized P2P network
       </>
     ),
+		link: 'learn/about-archethic/archethic-intro'
   },
   {
     title: 'Participate',
@@ -33,16 +36,26 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description, link}) {
+
+	let history = useHistory();
+
+	const handleClick = (e) => {
+    e.preventDefault()
+		history.push(link)
+	}
+
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
+    <div className={clsx('col margin-vert--md')} >
+		  <div className={clsx('card card--full-height card--pointer')} onClick={handleClick}>
+				<div className='text--center'>
+		     <Svg className={styles.featureSvg} alt={title} />
+				</div>
+		    <div className={clsx('card__body padding-horiz--lg padding-bottom--lg')}>
+					<h3 className='text--center'>{title}</h3>
+					<p>{description}</p>
+				</div>
+		  </div>
     </div>
   );
 }

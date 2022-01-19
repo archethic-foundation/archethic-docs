@@ -28,3 +28,14 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .navbar__title { display: none; }
+
+.card--pointer {cursor: pointer; }
+
+html[data-theme='light'] .card:hover{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .card:hover{
+  background: rgba(255, 255, 255, 0.3);
+}
+
