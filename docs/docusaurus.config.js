@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ARCHEthic',
-  tagline: 'True decentralized and limitless network',
+  tagline: 'Welcome to the Internet of Trust' ,
   url: 'localhost',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -42,7 +42,7 @@ const config = {
         items: [
           {
             label: "Learn",
-            to: "learn/archethic-intro",
+            to: "learn/about-archethic/archethic-intro",
             activeBaseRegex: '^/learn/.*'
           },
           {
