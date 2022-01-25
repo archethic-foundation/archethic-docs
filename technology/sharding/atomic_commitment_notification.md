@@ -20,6 +20,8 @@ However, further attestations and confirmations can be checked later during the 
 For example, a beacon chain receiving 1 attestation from a validation node including X storage confirmations 
 will be valid as 3 attestations with their respective confirmations.
 
+### Nested replications
+
 Moreover, when we are dealing with recipients for transfer or smart contract calls, we want to support the recipients shards will be notified 
 only when the main transaction is validated and stored.
 So for example, the replication can be splitted by levels: [ Main Chain ] -> [ Recipient Chains]
@@ -33,6 +35,12 @@ Chain: S1  S2  S3
        /     |   \
       Recipient Shards
 ```
+
+### Client notifications
+
+When a transaction is submitted, the welcome node will transfer this transaction to the validation nodes and return to the client a pending status.
+The client would have to subscribe to notifications about the completion of the transaction.
+Once the transaction will be validated and the validation nodes by notifing the welcome will notify the clients asynchronously.
 
 ## Further improvements
 
