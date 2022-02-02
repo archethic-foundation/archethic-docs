@@ -75,7 +75,7 @@ The $curve\_type$ is a 1 byte long field, hex encoded. Currently, following curv
 $curve\_type$ [1 byte] = 
 
 0: ED25519\
-1: NISTP256\
+1: NISTP256 (SECP256R1/PRIME256V1)\
 2: SECP256K1
 
 :::
@@ -222,9 +222,11 @@ APDU Response = Encoded Origin Public Key i.e., $encode(o_{pub})$.
 ### Get ArchEthic Account Address
 
 :::info
+Very Important: $ewk_{aes}$ is unique per device.
+
 APDU Command [bytes] = 
-|CLA = E0|INS = 04 | P1 = $hash\_type$ (for addr) <br> [1 byte]| P2 = $address\_index$ (for $bip44$) <br> [4 bytes]| Lc = $len(ewk_{aes}+ew_{aes})$ <br> [1 byte] | $ewk_{aes}$ <br> [bytes] | $ew_{aes}$ <br> [bytes] 
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|CLA = E0|INS = 04 | P1 = 00| P2 = 00 | Lc = $len(address\_index + ewk_{aes}+ew_{aes})$ <br> [1 byte] |$address\_index$ (for $bip44$) <br> [4 bytes]| $ewk_{aes}$ <br> [bytes] | $ew_{aes}$ <br> [bytes] 
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 
 APDU Response = Encoded ArchEthic Account Address i.e., $arch\_address$
 :::
@@ -234,103 +236,75 @@ APDU Response = Encoded ArchEthic Account Address i.e., $arch\_address$
 ### Get Signature
 
 :::warning
-APDU Command [bytes] = 
-|CLA = E0|INS = 08 | P1 = $hash\_type$ (of tx\_hash) <br> [1 byte]| P2 = $address\_index$ (for $bip44$) <br> [4 bytes]| Lc = $len(tx\_hash+ewk_{aes}+ew_{aes})$ <br> [1 byte] | $tx\_hash$ <br> [bytes]| $ewk_{aes}$ <br> [bytes] | $ew_{aes}$ <br> [bytes] | 
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+Very Important: $ewk_{aes}$ is unique per device.
 
-APDU Response = ASN DER Signature || Corresponding public key from whose private key the signature was made, i.e., $encode(pub\_key)$
+APDU Command [bytes] = 
+|CLA = E0|INS = 08 | P1 = 00| P2 = 00 | Lc = $len(address\_index+receipient\_address+amount+ewk_{aes}+ew_{aes})$ <br> [1 byte] | $address\_index$ (for $bip44$) <br> [4 bytes] | $receipient\_address$ <br> [bytes]| $amount$ <br> [8 bytes] | $ewk_{aes}$ <br> [bytes] | $ew_{aes}$ <br> [bytes] | 
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+
+APDU Response = Final Tx Hash (SHA256) || Corresponding public key from whose private key the signature was made, i.e., $encode(pub\_key)$ || ASN DER Signature
 
 :::
 
 
-### Transaction Encoding
-
+## Transaction Encoding
+:::info
+This section decribes the format for transaction encoding. All transactions must be constructed according to this format before being signed for parsing portability across ArchEthic ecosystem.
+:::
 Version: 4 bytes
 
-Address: ***See address***
+Sender Address: [See Address](#Account-Address-Format)
 
-Transaction type: [1 byte]
+Transaction type: 1 byte
 
-Transaction data:
+Transaction data:[
   - Smart contract size: 4 bytes
   - Smart contract code: X bytes
   - Content size: 4 bytes
   - Content: X bytes
   - Ownerships length: 1 byte
-  - Ownerships:
- 
-     Ownership:
+  - Ownerships:[
      - Secret size: 4 bytes
-     - Secret: bytes
+     - Secret: X bytes
      - Authorized keys length: 1 byte
-     - Authorized keys (list of public key + encrypted secret key)
-
-        | $authorized\_public\_key$ <br> ***See public key*** | $encrypted\_key$ <br> [bytes]|
-        |:-:|:-:|
-
+     - Authorized keys: list[] ([see encoding format](#Encoding-of-Encrypted-Wallet-Key))]
+     
   - Ledger: 
       - UCO Ledger
         - Transfers length: 1 byte
         - Transfers:
-            :::success
-            | $recipient$ <br> ***see Address*** | $amount$ <br> [8 bytes] |
+            |[recipient](#Account-Address-Format)| $amount*10^8$ <br> [8 bytes] |
             |:-:|:-:|
-            :::
         
       - NFT Ledger
           - Transfers length: 1 byte
-          - Transfers
+          - Transfers:
           
-          | $nft\_address$ <br> see Address | $recipient$ <br> ***See address*** | $amount$ <br> [8 bytes] |
+          | [nft_address](#Account-Address-Format) | [recipient](#Account-Address-Format) | $amount*10^8$ <br> [8 bytes] |
           |:-:|:-:|:-:|
 
 
   - Recipients (size): 1 byte
-  - Recipients: bytes
+  - Recipients: X bytes
   
- - Previous public key: ***See public key***
+ - Previous public key: [See public key format](#Public-Key-Format)
  
- - Previous signature: bytes
- 
- :::info
-This signature is computed from [version, address, type, data]
+ - Previous signature: X bytes
+ :::info 
+ Previous signature is computed from [version, address, type, data]
 :::
  
- ***May be computed by the host***
  
- - Origin signature: bytes
+ - Origin signature: X bytes (***May be computed by the host***)
  
  :::info
- This signature is computed from [version, address, type, data, previous public key, previous signature]
+ Origin signature is computed from [version, address, type, data, previous public key, previous signature]
  :::
 
 
----
 
-Example of encoding
+### Example of encoding:
 
-Version | ***Sender Address*** | Tx Type | 0000 (code size) | 0000 (content size) | 0 (ownerships length) | *1 (uco transfers length)* | 
-
-00000001 | Sender address | 000000FD | 00000000 | 00000000 | 00000000 |  00000001 |
-
-10000000000
-1000000000
-
-0xABCDEE
-ABCDee
-
-EE CD AB
-
-hex number to int -> / 10^8 -> display
-
----
-
-***recipient address*** | ***amount * 10^8*** |
-
----
-0 (nft transfers length) | 0 (recipients)
-
-00000000 | 00000000
-
-
-
+|00000001|02001AF03FFAA1A3AA81E093FD98AA97B7BB4DCFCBA53CF9933A998E3F74B95F7AE9|FD|00000000|00000000|00|01|020019CA33A6CA9E69B5C29E6E8497CC5AC9675952F847347709AD39C92C1B1B5313|000000038407B700|00|00|02000488AB2302D79C83CDB86EE9F2CC8E65172188DB1F865F3CAB581B9B807CB33D0D2BBCE78CE43BEE7E8A8BD9758725E9047C0D29B309D037B2F07408C84BD14941|3045022100bf450ef3d13b0174c9de4b4d77b2358a82f8c40da44cd3c315fd745f55c1dc7202207cafa1fa8b73751c5ca786b57e6bc2069f76429e7924063e70484e45c2ab0a11|ORGIN SIG |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|$version$ <br> [4 bytes]|[sender_address](#Account-Address-Format) <br> [34 bytes] | $tx\_type$ <br> [1 byte]| $code\_size$ <br> [4 bytes] | $content\_size$ <br> [4 bytes] | $ownership\_length$ <br> [1 byte] |  $total\_uco\_transfers$ <br> [1 byte]| [receiver_address](#Account-Address-Format) <br> [34 bytes] | $amount * 10^8$ <br> [8 bytes] | $total\_nft\_transfers$ <br> [1 byte] | $total\_recipients$ <br> [1 byte] | $previous\_publickey$ <br> [67 bytes] | $previous\_signature$ <br> [71 bytes] | $origin\_signature$ <br> [70-71 bytes]|
