@@ -25,6 +25,7 @@ const config = {
 					showLastUpdateTime: true,
 					sidebarPath: require.resolve('./sidebars.js'),
 					routeBasePath:'/',
+					remarkPlugins: [require('mdx-mermaid')]
 				},
         blog: false,
         theme: {
