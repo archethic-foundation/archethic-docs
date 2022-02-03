@@ -50,8 +50,10 @@ function Feature({Svg, title, description, link}) {
     <div className={clsx('col margin-vert--md')} >
 		  <div className={clsx('card card--full-height card--pointer')} onClick={handleClick}>
 				<div className='text--center'>
-		     <Svg className={styles.featureSvg} alt={title} />
-				</div>
+		   {
+				 // <Svg className={styles.featureSvg} alt={title} />
+			 }
+	</div>
 		    <div className={clsx('card__body padding-horiz--lg padding-bottom--lg')}>
 					<h3 className='text--center'>{title}</h3>
 					<p>{description}</p>
