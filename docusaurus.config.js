@@ -9,7 +9,7 @@ const config = {
   title: 'ARCHEthic',
   tagline: 'Welcome to the Internet of Trust' ,
   url: 'https://archethic-foundation.github.io/archethic-docs',
-  baseUrl: '/',
+  baseUrl: '/archethic-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
