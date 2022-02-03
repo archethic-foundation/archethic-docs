@@ -62,7 +62,7 @@ Its structure is described as below:
 - Type: Defines the functional role of the transaction
 - Data: Contains all the operations to be performed (transfers, smart contracts, key authorizations, etc.)
    - Content: Can contain any kind of data. It can be used to host some data (HTML page, text, image, code, etc.) 
-   - Code: Defines the smart contract code to be interpreted by the node. More details on [Smart-Contracts](/technology/smart_contracts/) section.
+   - Code: Defines the smart contract code to be interpreted by the node. More details on [Smart-Contracts](/build/smart-contracts) section.
    - Ledger: Defines several types of ledger operations
       - UCO: for the cryptocurrency transfers
       - NFT: for non-financial transactions (intended for P2P uses - as tokens, loyalties, etc.)
