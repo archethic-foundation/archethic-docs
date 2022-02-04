@@ -1,6 +1,6 @@
 ---
-id: ledger-app
-title: Ledger Application
+id: api
+title: Ledger Application API
 ---
 
 :::success

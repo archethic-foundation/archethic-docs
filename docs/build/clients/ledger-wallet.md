@@ -1,6 +1,6 @@
 ---
-id: hardware-wallet
-title: Hardware wallet
+id: ledger-wallet
+title: Ledger wallet
 ---
 
 # Introduction
