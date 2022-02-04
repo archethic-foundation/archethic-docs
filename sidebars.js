@@ -156,7 +156,8 @@ const sidebars = {
 					]
 				}
 			]
-		}
+		},
+		"contributing"
 	]
 };
 
