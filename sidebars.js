@@ -79,6 +79,13 @@ const sidebars = {
 				},
 				"learn/oracle-chain",
 				"learn/fee",
+				{
+					type: "category",
+					label: "Cryptography",
+					items: [
+						"learn/cryptography/hardware-root-of-trust"
+					]
+				}
 			]
 		},
 		{
@@ -131,7 +138,21 @@ const sidebars = {
 					label: "Client documentation",
 					items: [
 						"build/clients/wallet-spec",
-						"build/clients/ledger-app"
+						{
+							type: "category",
+							link: {
+								id: "build/clients/ledger-wallet",
+								type: "doc"
+							},
+							label: "Ledger application",
+							items: [
+								{
+									label: "API",
+									id: "build/clients/ledger-wallet/api",
+									type: "doc"
+								}
+							]
+						}
 					]
 				}
 			]

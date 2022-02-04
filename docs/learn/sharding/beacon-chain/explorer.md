@@ -51,3 +51,14 @@ On the BeaconChain, once a transaction is replicated a subset will enlist it for
 Then we have the capability to notify subscribed clients (aka explorer nodes) the transaction completion.
 
 But because ARCHEthic is using a rotating sharding implementation, the nodes involved for a given slot will change over the time, therefore behind the scenes the explorer will subscribe for each new slot to have the latest transactions in a soft real time fashion.
+
+```mermaid
+graph TD
+    A[Explorer] -->|Subscribe to updates| B{BeaconChains}
+    B -->D[Subset 0]
+    B -->E[Subset 1]
+    B -->F[Subset 2]
+    F -->|Notify new transaction|A
+    
+    X[Transaction Validator] -->|Attest transaction|F
+```
