@@ -130,7 +130,22 @@ const sidebars = {
 					},
 					items: [
             "build/core/tpm",
-						"build/core/yubikey"
+						"build/core/yubikey",
+						{
+							type: "category",
+							label: "OracleChain",
+							link: {
+								id: "build/core/oracle-chain",
+								type: "doc"
+							},
+							items: [
+								{
+									id: "build/core/oracle-chain/scheduler",
+									type: "doc",
+									label: "Scheduler"
+								}
+							]
+						}
 					]
 				},
 				{
