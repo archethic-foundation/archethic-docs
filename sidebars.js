@@ -82,6 +82,10 @@ const sidebars = {
 				{
 					type: "category",
 					label: "Cryptography",
+					link: {
+             id: "learn/cryptography",
+						 type: "doc"
+					},
 					items: [
 						"learn/cryptography/hardware-root-of-trust"
 					]
