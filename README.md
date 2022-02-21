@@ -1,4 +1,11 @@
-# Website
+# ARCHEthic Documentation
+
+Offical documentation for the ARCHEthic network.
+
+This documentation aims to provide the knowledge, the understanding and the actions to take in order 
+to contribute and make ARCHEthic network more visible.
+
+## Development
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
@@ -26,16 +33,6 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-Using SSH:
+Github actions are setup to ease the deployment of the documentation.
 
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Each time a commit is pushed to the main branch, a job is started to build the documentation and make the Github Page build up to date.
