@@ -246,9 +246,9 @@ Transaction data:
  
   - Recipients (size): 1 byte 
   - Recipients: bytes 
-   
+ 
  - Previous public key: ***See public key*** 
-  
+ - Previous signature size: 1 byte 
  - Previous signature: bytes 
   
 :::info 
@@ -257,6 +257,7 @@ This signature is computed from [version, address, type, data]
   
  ***May be computed by the host*** 
   
+ - Origin signature size: 1 byte 
  - Origin signature: bytes 
   
  :::info 
