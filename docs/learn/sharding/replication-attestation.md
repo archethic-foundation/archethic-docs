@@ -1,6 +1,6 @@
 ---
-id: atomic-commitment-notification
-title: Atomic Commitment Notification
+id: replication-attestation
+title: Replication attestation
 ---
 
 How to ensure a minimun of confirmation from the storage nodes to ensure the data availability of a given transaction.
