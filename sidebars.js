@@ -60,7 +60,7 @@ const sidebars = {
 								}
 							]
 						},
-						"learn/sharding/atomic-commitment-notification"
+						"learn/sharding/replication-attestation"
 					]
 				},
 				{
