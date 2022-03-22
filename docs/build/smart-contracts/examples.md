@@ -11,13 +11,13 @@ title: Smart Contract examples
 condition inherit: [
   type: transfer,
   uco_transfers: [
-     %{ to: "0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", amount: 100000000 }
+     %{ to: "0000D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", amount: 100000000 }
   ]
 ]
 
 actions triggered_by: interval, at: "0 0 1 * *" do
   set_type transfer
-  add_uco_transfer to: "0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", amount: 100000000
+  add_uco_transfer to: "0000D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", amount: 100000000
 end
 ```
 
