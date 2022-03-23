@@ -9,10 +9,10 @@ Those two features helps to achieve a low latency P2P messaging.
 
 ## Stream Multiplexer
 
-Stream Multiplexing allows multiple independent logical streams to all share a common underlying transport stream and <br />
-there are many independent streams of communication between peers, and have several concurrent streams open at the same time with a given remote peer.
+Stream Multiplexing allows multiple independent logical streams to share a common underlying transport stream and <br />
+there are many independent streams of communication between peers.
 
-Stream Multiplexing amortize the overhead of establishing a transport connection and helps to distinguish which messages to handle in a concurrent way.
+Stream Multiplexing amortizes the overhead of establishing a transport connection and helps to distinguish which messages to handle in a concurrent way.
 
 ```
 |---------|                           |---------|
