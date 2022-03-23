@@ -3,7 +3,9 @@ id: p2p
 title: P2P
 ---
 
-ARCHEthic Blockchain redesigned the entire P2P layer to be more effective and support an unlimited permissionless network.
+ARCHEthic redesigned the entire P2P layer to be more effective and support an unlimited permissionless network.
+
+## Existing solutions
 
 ## Exsiting solutions
 
@@ -11,24 +13,29 @@ In the current P2P and distributed networks, there are two methods of communicat
 
 ### Gossip
 
-Gossip mode, whose properties are defined by the knowledge of the outgoing neighbors, which means each node of the network will discover the properties of the other nodes by interrogating them one by one, usually randomly, performing some unnecessary network traffic and sending data through nearest nodes for propagation.
+Inspired from the gossip in the social network, Gossip's properties are defined by the knowledge of the outgoing neighbors, which means each node of the network will discover the properties of the other nodes by interrogating them randomly periodically.
+
+While this approach is high available and fault tolerant, it's performing some unnecessary network traffic and sending data through nearest nodes for propagation. This will use most of the bandwidth and is subject to network latency. 
 
 ![gossip](/img/gossip.svg)
 
 ### Broadcast
 
-Broadcast mode, whose properties are defined by the knowledge of the incoming neighbors, which uses incoming connections and dispatch the data to all the nodes.
+Classical and native communication is called Broadcast which is defined by the knowledge of the incoming neighbors dispatch the data through all the nodes.
+
+This mode of communication is efficient in a small network but in a bigger network the complexity time will not scale.
 
 ![broadcast](/img/broadcast.svg)
 
 ## Archethic's way
 
-ArchEthic Blockchain introduces a new concept called: `Supervised Multicast`
+ArchEthic introduces a new concept called: `Supervised Multicast`
 
 ![supervised_multicast](/img/supervised_multicast.svg)
 
 ARCHEthic is using a hybrid communication that uses Supervised Multicast, which is closer to the properties of Multicast network.
-It using some kind of Multi Unicast communication protocol, where a node communicates with a group of nodes during several phases: transaction validation/replication, beacon chain, self-repair phases, while keeping the exchanging low if no activity is present. 
+It uses some kind of Multi Unicast communication protocol, where a node communicates with a group of nodes during several phases: transaction validation/replication, beacon chain, self-repair phases, while keeping the exchanging low if no activity is present. 
+
 ### Transaction Validation Process
 
 During transaction validation through mining and replication, nodes communicates and are able to gather information from incoming or outgoing connection.
