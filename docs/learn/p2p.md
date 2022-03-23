@@ -60,7 +60,7 @@ To provide a high level of security and privacy, each connection is encrypted an
 
 ### Beacons Chains
 
-[BeaconChain](/learn/sharding/beacon) is a sharded layer able to monitor the entire network and therefore able to snapshot and sampling P2P availability/latencies to produce summaries each day to maintain a qualify vision of the network.
+[BeaconChain](/learn/sharding/beacon-chain) is a sharded layer able to monitor the entire network and therefore able to snapshot and sampling P2P availability/latencies to produce summaries each day to maintain a qualify vision of the network.
 
 The P2P availability can also be broadcasted to the network in a shorter time range (such a epoch/slot times) to provide a fresheer node availability.
 

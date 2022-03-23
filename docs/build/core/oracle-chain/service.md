@@ -23,7 +23,7 @@ The [behavior](https://github.com/archethic-foundation/archethic-node/blob/maste
 
 ## Configuration
 
-Along with the definition of the new service, we need to inform how to add this service to the [scheduler](/build/core/oracle_chain/scheduler).
+Along with the definition of the new service, we need to inform how to add this service to the [scheduler](/build/core/oracle-chain/scheduler).
 For this we need to add the service in the [configuration (config.exs)](https://github.com/archethic-foundation/archethic-node/blob/master/config/config.exs)
 
 ```elixir
