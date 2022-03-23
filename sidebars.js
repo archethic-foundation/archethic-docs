@@ -71,10 +71,8 @@ const sidebars = {
 						type: "doc"
 					},
 					items: [
-					  "learn/p2p/node",
 						"learn/p2p/bootstrapping",
-						"learn/p2p/self-repair",
-						"learn/p2p/messaging",
+						"learn/p2p/self-repair"
 					]
 				},
 				"learn/oracle-chain",
@@ -133,8 +131,38 @@ const sidebars = {
 						type: "doc"
 					},
 					items: [
-            "build/core/tpm",
-						"build/core/yubikey",
+						{
+							type: "category",
+							label: "P2P",
+							items: [
+								{
+									id: "build/core/p2p/messaging",
+									type: "doc"
+								},
+								{
+									id: "build/core/p2p/node",
+									type: "doc"
+								}	
+							]
+						},
+						{
+							type: "category",
+							label: "Cryptography",
+							link: {
+								id: "build/core/cryptography",
+								type: "doc"
+							},
+							items: [
+								{ 
+							    id: "build/core/cryptography/tpm",
+									type: "doc"
+								},
+								{
+									id: "build/core/cryptography/yubikey",
+									type: "doc"
+								}
+							]
+						},
 						{
 							type: "category",
 							label: "OracleChain",
@@ -144,9 +172,19 @@ const sidebars = {
 							},
 							items: [
 								{
+									id: "build/core/oracle-chain/service",
+									type: "doc",
+									label: "Service"
+								},
+								{
 									id: "build/core/oracle-chain/scheduler",
 									type: "doc",
 									label: "Scheduler"
+								},
+								{
+									id: "build/core/oracle-chain/memory-table",
+									type: "doc",
+									label: "In-Memory table"
 								}
 							]
 						}

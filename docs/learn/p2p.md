@@ -3,7 +3,12 @@ id: p2p
 title: P2P
 ---
 
-ARCHEthic redesigned the entire P2P layer to be more effective and support an unlimited permissionless network.
+ARCHEthic is a permissionless network where any node can participate into the network as long as they have some hardware requirements such secure element to enclave the private keys
+avoiding any disclosure of keys. (See [Hardware Root of Trust](/learn/cryptography/hardware-root-of-trust))
+
+However, the network is able to detect if the new joined nodes should act as validation nodes by authorizing them to validate transactions.
+
+So to achieve an unlimited permissionless network, the entire P2P layer have been redesigned from the ground to be more effective to support higher TPS and adaption.
 
 ## Existing solutions
 
@@ -49,6 +54,9 @@ Network transaction chains are a way to annonce information to the network throu
 
 Other networks may leverages gossip for P2P information, Archethic uses transaction based node information for P2P connectivity and cryptography.
 So when a node joins/rejoins the network or when its IP/Port/Key changed, a new transaction is dissiminated to all the nodes in the network after its validation.
+
+Then each node knows the entire list of nodes allowed to participate in the network through the use of Node transaction chains.
+To provide a high level of security and privacy, each connection is encrypted and authenticated by the first node public key known from the transaction chains.
 
 ### Beacons Chains
 
