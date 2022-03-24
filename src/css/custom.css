@@ -42,3 +42,4 @@ html[data-theme='dark'] .card:hover{
 img[alt=gossip] { width: 40%; }
 img[alt=broadcast] { width: 40%; }
 
+#mermaid-svg-1{ position: relative; top: -300px }
