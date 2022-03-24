@@ -203,7 +203,8 @@ const sidebars = {
 								}
 							]
 						},
-						"build/core/account"
+						"build/core/account",
+						"build/core/bootstrap"
 					]
 				},
 				{
