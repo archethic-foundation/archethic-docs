@@ -57,7 +57,7 @@ When a transaction is willing to be validated, its follows the given workflow:
 7. Once all the `Cross Validation Stamps` are received and if the `Atomic Commitment` is reached, the replication phase starts.
 8. Validation nodes send the transaction to the respective storage nodes:
 - Storage nodes responsible for the new transaction chain
-- Storage nodes responsible for the outputs of the transactions (transaction's movements addresses, node movements, recipients)
+- Storage nodes responsible for the outputs of the transactions (transaction's movements addresses, recipients)
 - Storage nodes responsible for the [Beacon Chain](/learn/sharding/beacon-chain)
 9. The storage for the new transaction chain will notify the validation nodes and the `Welcome Node` about the replication, and the `Welcome Node` will notify the client about it.
 

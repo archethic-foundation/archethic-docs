@@ -93,9 +93,9 @@ Those are defined by the given structure:
 | Timestamp | Proof of Work | Proof of Integrity | Proof of Election | Ledger Operations | Recipients | Errors | Signature |
 |-----------|---------------|--------------------|-------------------|-------------------|------------|--------|-----------|
                                                                            |
-                                 |-----|-----------------------|----------------|-----------------|
-                                 | Fee | Transaction movements | Node movements | Unspent outputs |
-                                 |-----|-----------------------|----------------|-----------------|
+                                 |-----|-----------------------|-----------------|
+                                 | Fee | Transaction movements | Unspent outputs |
+                                 |-----|-----------------------|-----------------|
 
 ```
 
@@ -106,7 +106,6 @@ Those are defined by the given structure:
   - Ledger operations: Contains all the ledger operations that will be taken into account by the network
     - fee: Transaction's fee
     - transaction movements: Issuer and resolved transaction movements
-    - Node movements: Effective payment of the nodes involved during the validation
     - Unspent outputs: List of the remaining unspent outputs of the transaction chain after validation
   - Recipients: List of resolved addresses of the recipients
   - Errors: Any errors found in the validation (i.e. pending transaction error)
