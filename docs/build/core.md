@@ -56,15 +56,105 @@ Moreover, we want a database with a high throughput in writing, and ScyllaDB fit
 ## Structure
 
 Code base is divided into domains (contexts) for better single responsibility principle:
-- `TransactionChain`: Manage transaction data structure and chain management
-- `DB`: Manage all the database queries
-- `Crypto`: Manage all the cryptographic operations
-- `P2P`: Manage the P2P node listing and node communication
-- `Election`: Manage the node election algorithms
-- `Mining`: Manage transaction validation
-- `Replication`: Manage the replication
-- `BeaconChain`: Manage BeaconChain subset and synchronization
-- `OracleChain`: Manage OracleChain services, polling and scheduling
-- `SharedSecrets`: Manage Shared Secrets scheduling and listing
-- `SelfRepair` : Manage the SelfRepair scheduling
-- `Bootstrap`: Manage the node bootstrapping
+
+<!-- Source of the SVG on https://markmap.js.org/repl
+## archethic_web 
+
+### Explorer UI
+
+- TransactionChain explorer
+- BeaconChain Live
+- OracleChain Live
+- Node listing
+- Metrics/Dashboard
+- Governance
+
+### API
+
+#### REST
+- Transaction sending
+- Transaction fee
+
+#### GraphQL: Transaction queries
+
+## archethic
+
+### Crypto
+- Node keystore
+- Shared secrets store
+
+### P2P
+- InMemory tables
+- Messaging
+
+### TransactionChain
+- Transaction data
+- Transaction building
+
+### Election
+- Hypergeometric distribution
+- Validation & Storage nodes
+- Heuristic constraints
+
+### Mining
+- Distributed/Standalone workflow
+- Pending transaction validation
+- Proof of work
+- Transaction fee
+
+### Account
+- UCO & NFT Balances
+- UTXO lookup
+
+### Contracts
+- Interpreter
+- Worker
+
+### OracleChain
+- Scheduler
+- Services
+
+### BeaconChain
+- Subset
+- Slot
+- Summary
+- Scheduler
+
+### SharedSecrets
+- Scheduler
+- Node renewal
+- Origin renewal
+- InMemory tables
+
+### Bootstrap
+- Network initialization
+- Node joining
+
+### SelfRepair
+- Scheduler
+- Sync
+
+### Replication
+- Transaction validation
+- Transaction downloading
+
+### Networking
+- IP lookup
+- NAT traversal
+- Port forwarding
+
+### Governance
+- Proposal analyzer
+- Proposal testing
+- Pools
+
+### DB
+- Storage layer
+
+### Metrics
+- Collector
+- Scheduler
+- Parser
+-->
+
+![core structure](/img/core_structure.png)

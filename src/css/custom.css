@@ -39,3 +39,6 @@ html[data-theme='dark'] .card:hover{
   background: rgba(255, 255, 255, 0.3);
 }
 
+img[alt=gossip] { width: 40%; }
+img[alt=broadcast] { width: 40%; }
+
