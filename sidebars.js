@@ -204,7 +204,8 @@ const sidebars = {
 							]
 						},
 						"build/core/account",
-						"build/core/bootstrap"
+						"build/core/bootstrap",
+						"build/core/election"
 					]
 				},
 				{
