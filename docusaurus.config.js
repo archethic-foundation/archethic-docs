@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/archethic-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'archethic-foundation', // Usually your GitHub org/user name.
   projectName: 'archethic-docs', // Usually your repo name.
 	deploymentBranch: 'gh-pages',
