@@ -187,7 +187,23 @@ const sidebars = {
 									label: "In-Memory table"
 								}
 							]
-						}
+						},
+						{
+							type: "category",
+							label: "BeaconChain",
+							link: {
+								id: "build/core/beacon-chain",
+								type: "doc"
+							},
+							items: [
+								{
+									id: "build/core/beacon-chain/p2p-sampling",
+									type: "doc",
+									label: "P2P availability sampling"
+								}
+							]
+						},
+						"build/core/account"
 					]
 				},
 				{
