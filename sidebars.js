@@ -203,9 +203,24 @@ const sidebars = {
 								}
 							]
 						},
+						{
+							type: "category",
+							label: "Mining",
+							link: {
+								type: "doc",
+								id: "build/core/mining"
+							},
+							items: [
+								"build/core/mining/proof-of-work",
+								"build/core/mining/transaction-validation",
+								"build/core/mining/transaction-context"
+
+
+							]
+						},
 						"build/core/account",
 						"build/core/bootstrap",
-						"build/core/election"
+						"build/core/election",
 					]
 				},
 				{
