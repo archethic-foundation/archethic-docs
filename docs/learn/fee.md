@@ -7,15 +7,10 @@ ARCHEthic Blockchain is using specific heuristic algorithms to ensure the best t
 
 The fees are calculated according to the real costs of the network (size, complexity) and is based on the real value of the UCO (using [Oracle Chain](/learn/oracle-chain))
 
-## Distribution
+The entire transaction's fee is burned to make the UCO more rare.
+This programmable destruction of the UCO ensure a deflation and increase the value of each token.
 
-Transaction's fee are distributed across all the actors during the transaction validation:
-- `Coordinator Node`: 10% 
-- `Cross validation Nodes`: 40%
-- `Storage Nodes`: 50%
-
-The remaining 10% will go to the `Network Pool` as a burn mechanism to ensure a programmable destruction of UCO. 
-This mechanism will ensure a deflation and therefore a way to increase the value of each UCO
+This way a fair reward mechanism is put in place for nodes regarding their work and their availability.
 
 ## Calculation
 
@@ -24,7 +19,7 @@ The transaction's fee computation is based on some properties:
 - Number of recipient
 - Size of the transaction
 - Number of replicas
-- Complexity of the smart contract (TODO)
+- Complexity of the smart contract (Coming soon)
 
 
 :::info Minimun fee
