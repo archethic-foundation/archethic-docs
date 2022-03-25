@@ -28,7 +28,63 @@ stateDiagram-v2
 
 ```
 
-## Distributed validation workflow
+## Distributed validation
+
+### Worflow
+
+```mermaid
+sequenceDiagram
+    Client->>+WelcomeNode: Submit new transaction
+   par send transaction
+       WelcomeNode->>+Coordinator: 
+   and 
+      WelcomeNode->>+CrossValidationNode: 
+   end
+   WelcomeNode ->>-Client: Transaction submited
+
+   par build context 
+      Coordinator ->>+PreviousStorageNode: Fetch previous transaction
+      Coordinator ->>+PreviousStorageNode: Fetch unspent outputs
+   and
+      CrossValidationNode ->>+PreviousStorageNode: Fetch previous transaction
+      CrossValidationNode ->>+PreviousStorageNode: Fetch unspent outputs
+      CrossValidationNode ->>+Coordinator: Notify context and availability
+   end
+   
+   
+   Coordinator ->>+Coordinator: Build validation stamp
+   Coordinator ->>+CrossValidationNode: Send validation stamp
+
+   par wait validation stamp
+     CrossValidationNode ->>+CrossValidationNode: Cross validate the stamp
+     CrossValidationNode ->>+CrossValidationNode: Notify cross validation stamp
+     CrossValidationNode ->>+Coordinator: Notify cross validation stamp
+   end
+
+   par chain replication 
+      Coordinator ->>+ChainStorageNode: Replicate transaction
+      CrossValidationNode ->>+ChainStorageNode: Replicate transaction
+   end
+
+   ChainStorageNode ->>+ChainStorageNode: Validate transaction and store transaction
+   alt transaction valid 
+      ChainStorageNode ->>+ CrossValidationNode: Replication confirmation
+      ChainStorageNode ->>+ Coordinator: Replication confirmation
+   end
+
+   par notify replication
+      CrossValidationNode-->+WelcomeNode: Confirm replication
+      Coordinator-->+WelcomeNode: Confirm replication
+      CrossValidationNode-->+PreviousStorageNode: Confirm replication
+      Coordinator-->+PreviousStorageNode: Confirm replication
+      CrossValidationNode-->+BeaconChain: Confirm replication
+      Coordinator-->+BeaconChain: Confirm replication
+   end
+
+   WelcomeNode-->Client: Notify replication confirmations
+```
+
+### FSM
 
 When there are multiple validation nodes, a distributed workflow process is spawn as FSM to define the states and evolution of the ARCH consensus algorithm.
 
@@ -141,4 +197,3 @@ stateDiagram-v2
     }
 
 ```
-
