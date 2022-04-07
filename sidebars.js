@@ -131,6 +131,11 @@ const sidebars = {
 						type: "doc"
 					},
 					items: [
+						{ 
+							id: "build/core/database",
+							label: "Database",
+							type: "doc"
+						},
 						{
 							type: "category",
 							label: "P2P",
