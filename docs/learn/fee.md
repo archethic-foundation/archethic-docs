@@ -39,7 +39,7 @@ Each byte will cost: 10<sup>-9</sup> of the current UCO's price
 :::
 
 :::info Recipient based fee
-After one recipient, each will cost: 10% of the current UCO's price
+After one recipient, each recipient will cost: $0.1 of UCO
 :::
 
 Overall formula:
