@@ -1,9 +1,9 @@
-# ARCHEthic Documentation
+# Archethic Documentation
 
-Offical documentation for the ARCHEthic network.
+Offical documentation for the Archethic network.
 
 This documentation aims to provide the knowledge, the understanding and the actions to take in order 
-to contribute and make ARCHEthic network more visible.
+to contribute and make Archethic network more visible.
 
 ## Development
 
