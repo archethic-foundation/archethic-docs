@@ -46,6 +46,39 @@ The `account` can be anything, by default `0` is the main uco transaction chain,
 
 The `index` is the number of transaction in the chain, used to compute the derived keys and addresses
 
+### Key derivation
+
+In order to derive the keys using the derivation path mentioned above, we implemented our own key derivation scheme, which takes inspiration from BIP32 but simplifies it a bit.
+
+#### Replace the derivation path index
+
+Given the derivation path: `m/650'/0'/0'`, we change the last number (the transaction's index in the chain) we some variable provided by the application(ie: `m/650'/'0/1'` will give the 1st transaction's address on the chain)
+
+#### Hash of the derivation path
+
+Once the derivation path index is replaced we hashed it to give a constant size through `SHA256`
+
+```
+hashedPath = SHA256(ReplaceDerivationPath(derivationPath, index))
+```
+
+#### Derive private key
+
+Then we have to derive the private key based on the hashedPath and the master seed by using HMAC and extracting the first 32 bytes of the result
+
+```
+extendedSeed = HMAC-SHA512(Key=MasterSeed, Data=hashedPath)
+extendedPrivateKey = extendedSeed.slice(0, 32)
+````
+
+#### Derive public key
+
+Now we the given private key we can easily extract the public key for the given curve specified in the Keychain's service
+
+```
+{ publicKey, private } = generateKeyPair(extendedPrivateKey, curve)
+```
+
 ### Encryption
 
 The keychain is using a double encryption scheme where:
