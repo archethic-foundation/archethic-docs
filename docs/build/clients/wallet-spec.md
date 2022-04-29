@@ -139,7 +139,7 @@ The wallet before encryption is encoding into a binary format
 
 | Version | Seed size | Seed | Nb services | Service name size | Service name | Derivation path length | Derivation path | Curve type | Hash type |...|
 |-|-|-|-|-|-|-|-|-|-|-|
-| 1 byte | 1 byte | N bytes | 1 byte | 1 byte | N bytes | 1 byte | N bytes | 1 byte | 1 byte |...|
+| 4 bytes | 1 byte | N bytes | 1 byte | 1 byte | N bytes | 1 byte | N bytes | 1 byte | 1 byte |...|
 
 ### Encoding of Curve Types 
  
