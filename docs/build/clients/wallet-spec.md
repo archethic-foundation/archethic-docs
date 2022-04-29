@@ -73,7 +73,7 @@ extendedPrivateKey = extendedSeed.slice(0, 32)
 
 #### Derive public key
 
-Now we the given private key we can easily extract the public key for the given curve specified in the Keychain's service
+Now with the given private key we can easily extract the public key for the given curve specified in the Keychain's service
 
 ```
 { publicKey, private } = generateKeyPair(extendedPrivateKey, curve)
