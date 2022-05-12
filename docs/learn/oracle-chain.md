@@ -3,7 +3,7 @@ id: oracle-chain
 title: OracleChain
 ---
 
-ARCHEthic Blockchain supports Off-Chain communication through a dedicated transaction chain called `OracleChain`.
+Archethic Blockchain supports Off-Chain communication through a dedicated transaction chain called `OracleChain`.
 
 It aims to gather external data to be used inside the network or the smart contract layer.
 

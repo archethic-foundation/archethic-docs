@@ -5,7 +5,7 @@ title: Smart Contracts
 
 *Smart-contracts are in computing what robots are in real life: they perform actions according to events.* 
 
-ARCHEthic Blockchain leverages next generation of smart contract to make the development of decentralized application easier to bring a mass adoption of the Blockchain technology.
+Archethic Blockchain leverages next generation of smart contract to make the development of decentralized application easier to bring a mass adoption of the Blockchain technology.
 
 They introduce new features to this domain:
 - Completly autonomous and can be triggered from internal states (date, transactions) or real life (OracleChain updates).
@@ -13,7 +13,7 @@ They introduce new features to this domain:
 - Interpreted: Code is interpreted and atomically verified by the miners
 - Without external reality: They are entirely based on the UTXO model and do not depend on the state of an internal database but only the transactions validated
 
-ARCHEthic Smart Contract is defined by: `triggers`, `conditions` and `actions`
+Archethic Smart Contract is defined by: `triggers`, `conditions` and `actions`
 
 - Triggers: events will automatically launch the execution of a contract.
 - Conditions: define the rules to accept new transactions (chain or UTXO)
@@ -21,7 +21,7 @@ ARCHEthic Smart Contract is defined by: `triggers`, `conditions` and `actions`
 
 ## Autonomous
 
-ARCHEthic smart contracts autonomous behavior is due to the capability to define different kind of triggers:
+Archethic smart contracts autonomous behavior is due to the capability to define different kind of triggers:
 - Datetime: when the current date matches this timestamp
 - Interval: when the current dates matches this cron interval scheduler
 - Transaction: when the contract receive a transaction in input (UTXO model)
@@ -33,7 +33,7 @@ Then the contract has to specify a `inherit conditions` to accept new changes.
 
 ## Modifiable:
 
-ARCHEthic relies on TransactionChain which means than a smart contract can have its own transaction chain.
+Archethic relies on TransactionChain which means than a smart contract can have its own transaction chain.
 
 Then, it subjects to the same properties of the transaction chain: any last transaction of a chain is considered as the reference.
 
@@ -51,7 +51,7 @@ So if we send a transaction to `0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5
 
 ## Interpreted
 
-ARCHEthic smart contracts are interpreted instead of compiled, here are the reasons:
+Archethic smart contracts are interpreted instead of compiled, here are the reasons:
 
 - Interpreted code is understandable by the human, and compiled code are only understandable by the computer.
 
@@ -61,7 +61,7 @@ ARCHEthic smart contracts are interpreted instead of compiled, here are the reas
 
 ## Stateless
 
-ARCHEthic Smart Contracts does not depend on internal state or databases, only the UTXO is used as inputs, it's not possible to make a database with them.
+Archethic Smart Contracts does not depend on internal state or databases, only the UTXO is used as inputs, it's not possible to make a database with them.
 
 For example
 

@@ -12,7 +12,7 @@ Reference Files:
 :::
 
 ## initializeYK() :
-Initializes the context of the yubikey application in the variable g_state and connects to the hardware device. If successful, then gets the key index of archethic as well as key index of the yubikey device.
+Initializes the context of the yubikey application in the variable g_state and connects to the hardware device. If successful, then gets the key index of Archethic as well as key index of the yubikey device.
 ## bool checkYK(): 
 displays the model of yubikey device used returns true if the device list contains "Yubico Yubikey".
 ## verifyPinYK(): 
@@ -59,7 +59,7 @@ Calculates the curent key index and fetches the certificate from the object poin
 fetches the certificate of the  key pointed by ykindex and returns it.
 
 ## getPastCertificate(archEthicIndex, certificateSize):
-calculates the slot posistion according to the offset using archethicindex tehn fetches the object at the slot position which is a certificate amd returns it.
+calculates the slot posistion according to the offset using archethicindex then fetches the object at the slot position which is a certificate amd returns it.
 
 ## signCurrentKey(hashToSign, eccSignSize):
 Calculates the current key index then verifies the Yubikey pin using verifyPinYK() and then signs hashToSign using signECDSA(). The signECDSA() signs the key at the currentkeyindex.

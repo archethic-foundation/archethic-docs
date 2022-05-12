@@ -3,10 +3,10 @@ id: self-repair
 title: Self Repair
 ---
 
-ARCHEthic Blockchain is using a self-repair mechanism to be able to sync/re-sync missing transactions to be able
+Archethic Blockchain is using a self-repair mechanism to be able to sync/re-sync missing transactions to be able
 to restore the state of a node.
 
-Because ARCHEthic is using a multidimensional sharding, a node needs to execute a self-repair on multiple occasions, to ensure data availability and security:
+Because Archethic is using a multidimensional sharding, a node needs to execute a self-repair on multiple occasions, to ensure data availability and security:
 
 - When the node bootstrap
 - When a node goes offline

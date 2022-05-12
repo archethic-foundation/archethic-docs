@@ -8,11 +8,11 @@ Onchain wallet (aka **Keychain**) is a wallet stored on Archethic blockchain in 
 This keychain aims to support several way to identify a user and its transaction chains.
 It can also support multichains identification through the use of key derivation and derivation path.
 
-A keychain is then a wallet which stores a main master seed, with a list of services (archethic chains / other crypto identification) encrypted and only accessible by a list of authorized public keys
+A keychain is then a wallet which stores a main master seed, with a list of services (Archethic chains / other crypto identification) encrypted and only accessible by a list of authorized public keys
 
 ## Glossary
 
-- `w_{e}` = Encoded Onchain ArchEthic Wallet
+- `w_{e}` = Encoded Onchain Archethic Wallet
 - `wk_{aes}` = AES256 CTR Key used to encrypt w_{e}
 - `enc(w_{e})` = AES256 CTR Encryption of `w_{e}` using `wk_{aes}`
 - `ew_{aes}` = Encoded `enc(w_{e})`
@@ -101,7 +101,7 @@ enc(w_{e}) = aes256(mode=ctr, key = wk_{aes}, iv = wallet_iv, data = w_{e})
 ```
 
 #### Encoding of Encrypted Wallet 
-The above encrypted wallet `enc(w_{e})` is stored on the ArchEthic Blockchain with the following format. 
+The above encrypted wallet `enc(w_{e})` is stored on the Archethic Blockchain with the following format. 
  
 |enc(w_{e})  [bytes]| 
 |-| 
@@ -126,7 +126,7 @@ auth_tag [16 bytes], reserved [16 bytes] = hmac256(key = auth_key, data = enc(wk
 ```
  
 #### Encoding of Encrypted Wallet Key 
-The above encrypted key `enc(wk_{aes})` is stored on the ArchEthic Blockchain with the following format. 
+The above encrypted key `enc(wk_{aes})` is stored on the Archethic Blockchain with the following format. 
  
 |e_{pub} 04xy [bytes]|auth_tag [16 bytes]|enc(wk_{aes}) [32 bytes]| 
 |-|-|-| 
@@ -209,14 +209,14 @@ APDU Command [bytes]:
 APDU Response = Encoded Origin Public Key i.e., encode(o_{pub}) 
  
  
-### Get ArchEthic Account Address 
+### Get Archethic Account Address 
  
 APDU Command [bytes] = 
 
 |CLA = E0|INS = 04 |P1 = hash_type (for addr) [1 byte]|P2 = address_index (for bip44) [4 bytes]|Lc = len(ewk_{aes}+ew_{aes}) [1 byte] |ewk_{aes} [bytes] |ew_{aes} [bytes]  
 |-|-|-|-|-|-|-| 
  
-APDU Response = Encoded ArchEthic Account Address i.e., arch_address 
+APDU Response = Encoded Archethic Account Address i.e., arch_address 
  
 ### Get Signature 
  

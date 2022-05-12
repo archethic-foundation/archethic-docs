@@ -15,7 +15,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
 				<p>Archethic gives back to humanity control over technology, and to each individual, control over their identity <br />
 		      thanks to a truly decentralized and limitless P2P network</p>
-		    <p>You will find the complete reference of the ARCHEthic network splitted into three main sections:</p>
+		    <p>You will find the complete reference of the Archethic network splitted into three main sections:</p>
 
 		</div>
     </header>

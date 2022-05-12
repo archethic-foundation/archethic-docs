@@ -6,7 +6,7 @@ title: Proof of Work
 Others blockchains are using the concept of `Proof of Work` to ensure an unpredictable and pseudo random election of block validation (mining).
 But this technique requires a lot of energy consumption and can still be subject to exploit by HashRate control.
 
-ARCHEthic Blockchain is using a new kind of `Proof of Work` to ensure the authenticity of the transaction origination devices.
+Archethic Blockchain is using a new kind of `Proof of Work` to ensure the authenticity of the transaction origination devices.
 This allows the additional security requirements on transaction validation like:
 - prohibit any transaction even in case of key theft
 - allow user to consult their balance on any smartphone, but generate a transaction only on a trusted device

@@ -3,9 +3,9 @@ id: arch-consensus
 title: ARCH consensus
 ---
 
-ARCHEthic Blockchain is using a new consensus called `ARCH` (Atomic Rotating Commitment Heuristic) for an uncompromising consensus to support high scalability and high throughput.
+Archethic Blockchain is using a new consensus called `ARCH` (Atomic Rotating Commitment Heuristic) for an uncompromising consensus to support high scalability and high throughput.
 
-ARCHEthic Blockchain is based on three properties:
+Archethic Blockchain is based on three properties:
 
 * Security: Each transaction is validated atomically
 * Data consistency: Algorithms ensure to access the latest write and maximum availability
@@ -19,7 +19,7 @@ ARCHEthic Blockchain is based on three properties:
 
 ## Atomic Commitment
 
-ARCHEthic Blockchain is based on `Hypergeometric distribution` laws which from an unpredictable election and formal consensus make it possible to obtain with certainty (99.99999999%) the same answer by querying 197 nodes as would be obtained by querying 100 000 nodes.
+Archethic Blockchain is based on `Hypergeometric distribution` laws which from an unpredictable election and formal consensus make it possible to obtain with certainty (99.99999999%) the same answer by querying 197 nodes as would be obtained by querying 100 000 nodes.
 
 Therefore, it makes possible the consensus establishment with a small part of nodes and can resist to attacks of 90% of malicious nodes. 
 

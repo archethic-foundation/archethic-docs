@@ -1,6 +1,6 @@
 ---
 id: biometrics-research
-title: ARCHEthic Research introduction
+title: Archethic Research introduction
 ---
 
 This document aims to provide information and resources, related articles and experimentations about research projects.

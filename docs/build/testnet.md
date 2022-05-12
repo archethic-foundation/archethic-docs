@@ -5,7 +5,7 @@ title: Testnet
 
 ## Local
 
-To test and build on top of ARCHEthic network, we encourage people to test with a local instance.
+To test and build on top of Archethic network, we encourage people to test with a local instance.
 
 ### Installation
 
@@ -58,4 +58,4 @@ Public testnet is available at [https://testnet.archethic.net](https://testnet.a
 
 ### Get some funds
 
-You can then go the [faucet](https://testnet.archethic.net/faucet) to get free UCOs to experiment the ARCHEthic network
+You can then go the [faucet](https://testnet.archethic.net/faucet) to get free UCOs to experiment the Archethic network

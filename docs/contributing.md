@@ -3,8 +3,8 @@ id: contributing
 title: Contributing
 ---
 
-This documentation is maintained by the ARCHEthic Foundation. It's an open source project and aims to be the most extensive
-resources of knowledge on ARCHEthic and its ecosystem.
+This documentation is maintained by the Archethic Foundation. It's an open source project and aims to be the most extensive
+resources of knowledge on Archethic and its ecosystem.
 
 We welcome contributions from anyone and are grateful for even the smallest of improvement from typo issues, to proposals, to enhance explaination or create diagrams, etc.
 Therefore, pull requests, discussions, and contributions from the community are encourage 

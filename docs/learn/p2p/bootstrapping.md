@@ -3,7 +3,7 @@ id: bootstrapping
 title: Bootstrapping
 ---
 
-ARCHEthic Blockchain by using Network Transaction and Supervised Multicast, requires some actions to be performed 
+Archethic Blockchain by using Network Transaction and Supervised Multicast, requires some actions to be performed 
 when a node is bootstrapping. These operations will ensure synchronization and P2P awareness.
 
 ## Joining

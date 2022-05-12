@@ -3,7 +3,7 @@ id: uco
 title: UCO token
 ---
 
-ARCHEthic, an open-source public blockchain is an infrastructure that is fuelled by its native cryptocurrency and should ideally scale to the sum of its individual nodes’ performance. It needs to be designed in such a way that it is a self-sustaining economy run by the people, for the people.
+Archethic, an open-source public blockchain is an infrastructure that is fuelled by its native cryptocurrency and should ideally scale to the sum of its individual nodes’ performance. It needs to be designed in such a way that it is a self-sustaining economy run by the people, for the people.
 
 UCO is based on the principle of controlled supply and creating demand. 
 

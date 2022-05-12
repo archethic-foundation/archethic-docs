@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ARCHEthic',
+  title: 'Archethic',
   tagline: 'Welcome to the Internet of Trust' ,
   url: 'https://archethic-foundation.github.io/archethic-docs',
   baseUrl: '/archethic-docs/',
@@ -40,9 +40,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'ARCHEthic',
+        title: 'Archethic',
         logo: {
-          alt: 'ARCHEthic Logo',
+          alt: 'Archethic Logo',
           src: 'img/archethic-white2.png',
         },
         items: [
@@ -75,21 +75,21 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'ARCHEthic Node',
+                label: 'Archethic Node',
                 href: 'https://github.com/archethic-foundation/archethic-node',
               },
               {
-                label: 'ARCHEthic Javascript SDK',
+                label: 'Archethic Javascript SDK',
                 href: 'https://github.com/archethic-foundation/libjs',
               },
               {
-                label: 'ARCHEthic Wallet',
+                label: 'Archethic Wallet',
                 href: 'https://github.com/archethic-foundation/archethic-wallet',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ARCHEthic Foundation. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Archethic Foundation. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

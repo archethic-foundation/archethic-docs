@@ -3,12 +3,12 @@ id: language
 title: Smart Contract Language
 ---
 
-ARCHEthic Blockchain defines a new smart contract language which was designed to resolve the issue of smart contracts:
+Archethic Blockchain defines a new smart contract language which was designed to resolve the issue of smart contracts:
 - Expressiveness
 - Simplify
 - Security
 
-Along with the new features of ARCHEthic Smart Contracts (triggers, conditions, actions), a new custom language is defined
+Along with the new features of Archethic Smart Contracts (triggers, conditions, actions), a new custom language is defined
 
 ## Triggers/Actions
 
@@ -82,7 +82,7 @@ Each of this variables contains the following fields:
 
 ## Functions
 
-ARCHEthic Smart Contracts relies on function which can be used on condition or action blocks.
+Archethic Smart Contracts relies on function which can be used on condition or action blocks.
 
 There are two categories of functions:
 - Utilities

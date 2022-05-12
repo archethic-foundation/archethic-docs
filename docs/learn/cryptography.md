@@ -3,13 +3,13 @@ id: cryptography
 title: Cryptography
 ---
 
-ARCHEthic network through the usage of TransactionChains is leveraging an adaptative and quantum-safe cryptography.
+Archethic network through the usage of TransactionChains is leveraging an adaptative and quantum-safe cryptography.
 
 ## Quantum-Safe
 
 ### Non-Discolure of public keys
 
-ARCHEthic [TransactionChains](/learn/transaction-chain) uses a non-disclosure mechanism of public keys using chains of cryptography. 
+Archethic [TransactionChains](/learn/transaction-chain) uses a non-disclosure mechanism of public keys using chains of cryptography. 
 Each transaction contains an address, which is a hash of the next public key and the previous public key.
 Therefore, we don't have way to know which public key is used for a given transaction until a next one is coming.
 
@@ -22,7 +22,7 @@ So to be allowed to generate a transaction, the task of a quantum computer poten
 
 ## Adaptative
 
-In order to be backward compatible and to evolve the network as the cryptographic research progesses and to provide the choice of cryptographic algorithms to people, organizations or countries, ARCHEthic is a versioned cryptography or metadata cryptography.
+In order to be backward compatible and to evolve the network as the cryptographic research progesses and to provide the choice of cryptographic algorithms to people, organizations or countries, Archethic is a versioned cryptography or metadata cryptography.
 
 While this word sounds complex, it's not hard to get it.
 
@@ -40,7 +40,7 @@ This information helps to determine the length of a hash and to perform some che
 
 ### Transaction addresses
 
-While transaction addresses are often represented as hashes, ARCHEthic provide a new level of information inside the transaction's address. A byte is prepending the hash with an information regarding the elliptic curve used to generate the public key related.
+While transaction addresses are often represented as hashes, Archethic provide a new level of information inside the transaction's address. A byte is prepending the hash with an information regarding the elliptic curve used to generate the public key related.
 
 You may be wondering why would we need this kind of information.
 

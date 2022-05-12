@@ -3,7 +3,7 @@ id: fee
 title: Transaction fee
 ---
 
-ARCHEthic Blockchain is using specific heuristic algorithms to ensure the best transaction's distribution.
+Archethic Blockchain is using specific heuristic algorithms to ensure the best transaction's distribution.
 
 The fees are calculated according to the real costs of the network (size, complexity) and is based on the real value of the UCO (using [Oracle Chain](/learn/oracle-chain))
 

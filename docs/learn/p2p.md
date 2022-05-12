@@ -3,7 +3,7 @@ id: p2p
 title: P2P
 ---
 
-ARCHEthic is a permissionless network where any node can participate into the network as long as they have some hardware requirements such secure element to enclave the private keys
+Archethic is a permissionless network where any node can participate into the network as long as they have some hardware requirements such secure element to enclave the private keys
 avoiding any disclosure of keys. (See [Hardware Root of Trust](/learn/cryptography/hardware-root-of-trust))
 
 However, the network is able to detect if the new joined nodes should act as validation nodes by authorizing them to validate transactions.
@@ -34,11 +34,11 @@ This mode of communication is efficient in a small network but in a bigger netwo
 
 ## Archethic's way
 
-ArchEthic introduces a new concept called: `Supervised Multicast`
+Archethic introduces a new concept called: `Supervised Multicast`
 
 ![supervised_multicast](/img/supervised_multicast.svg)
 
-ARCHEthic is using a hybrid communication that uses Supervised Multicast, which is closer to the properties of Multicast network.
+Archethic is using a hybrid communication that uses Supervised Multicast, which is closer to the properties of Multicast network.
 It uses some kind of Multi Unicast communication protocol, where a node communicates with a group of nodes during several phases: transaction validation/replication, beacon chain, self-repair phases, while keeping the exchanging low if no activity is present. 
 
 ### Transaction Validation Process

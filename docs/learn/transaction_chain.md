@@ -3,7 +3,7 @@ id: transaction-chain
 title: TransactionChains
 ---
 
-In the ARCHEthic network, there are no blocks but only transactions, as each block is reduced to its atomic form - `transaction` with its own validation evidences.
+In the Archethic network, there are no blocks but only transactions, as each block is reduced to its atomic form - `transaction` with its own validation evidences.
 
 ## Principles
 

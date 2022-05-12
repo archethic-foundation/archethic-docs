@@ -3,7 +3,7 @@ id: explorer
 title: Beacon Explorer
 ---
 
-`ARCHEthic` Blockchain leverages `Sharding` to outperform the exiting blockchains using shards called: `subsets` and BeaconChain Explorer displays the entire transactions across subsets. 
+`Archethic` Blockchain leverages `Sharding` to outperform the exiting blockchains using shards called: `subsets` and BeaconChain Explorer displays the entire transactions across subsets. 
 So, users can overcome the overhead of searching in each shard.
 
 ## Concepts
@@ -17,7 +17,7 @@ A slot is responsible for transaction being added to the Beacon Chain and shards
 
 ### Epoch
 
-It is an time interval within ARCHEthic network for the Beacon chain subsets.
+It is an time interval within Archethic network for the Beacon chain subsets.
 One epoch maybe having many slots based on slot timer interval.
 At each epoch a new transaction is emitter to have a summary of the entire epoch.
 
@@ -26,7 +26,7 @@ Epoch interval may differ between mainnet, testnet or development. For instance 
 So in this time interval beacon transactions are sealing the transaction in the current beacon summary transaction and replicates the transactions to other nodes.
 
 ### Subset
-`ARCHEthic` Blockchain have 256 subsets, from 00 to FF [0-255] (two nimbles) as the byte capacity and the first byte of the transaction.
+`Archethic` Blockchain have 256 subsets, from 00 to FF [0-255] (two nimbles) as the byte capacity and the first byte of the transaction.
 
 ## Process to get transaction notifications
 
@@ -50,7 +50,7 @@ On the BeaconChain, once a transaction is replicated a subset will enlist it for
 
 Then we have the capability to notify subscribed clients (aka explorer nodes) the transaction completion.
 
-But because ARCHEthic is using a rotating sharding implementation, the nodes involved for a given slot will change over the time, therefore behind the scenes the explorer will subscribe for each new slot to have the latest transactions in a soft real time fashion.
+But because Archethic is using a rotating sharding implementation, the nodes involved for a given slot will change over the time, therefore behind the scenes the explorer will subscribe for each new slot to have the latest transactions in a soft real time fashion.
 
 ```mermaid
 graph TD

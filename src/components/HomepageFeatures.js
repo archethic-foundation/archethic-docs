@@ -10,7 +10,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Discover ARCHEthic, the TransactionChain, the new ARCH Consensus, 
+        Discover Archethic, the TransactionChain, the new ARCH Consensus, 
         why it helps to build the more secure and decentralized P2P network
       </>
     ),
@@ -21,7 +21,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Join the network and use existing solutions build on ARCHEthic. (<strong>Coming Soon</strong>)
+        Join the network and use existing solutions build on Archethic. (<strong>Coming Soon</strong>)
       </>
     ),
   },
@@ -30,7 +30,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Access documentation and guides to build on ARCHEthic or to contribute to the core development
+        Access documentation and guides to build on Archethic or to contribute to the core development
       </>
     ),
 		link: 'build/smart-contracts'

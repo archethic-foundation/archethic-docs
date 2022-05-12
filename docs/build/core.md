@@ -3,12 +3,12 @@ id: core
 title: Core development
 ---
 
-ARCHEthic Node repository can be found [here](https://github.com/archethic-foundation/archethic-node)
+Archethic Node repository can be found [here](https://github.com/archethic-foundation/archethic-node)
 
 
 ## Technology Stack
 
-ARCHEthic Blockchain node used:
+Archethic Blockchain node used:
 - Elixir
 - C
 - ScyllaDB
