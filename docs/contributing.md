@@ -42,8 +42,7 @@ sequenceDiagram<br />
 </p>
 
 will output this diagram
-<br />
-<br />
+
 ```mermaid
 sequenceDiagram
     Alice->>John: Hello John, how are you?
