@@ -31,7 +31,7 @@ When network transaction(node, node shared secrets) are loaded inside the system
 
 ### Discovery table
 
-| first public key | last public key | IP | P2P port | HTPT port | geo patch | network patch | average availability | availability history | enrollment date | transport | reward ddress |
+| first public key | last public key | IP | P2P port | HTTP port | geo patch | network patch | average availability | availability history | enrollment date | transport | reward ddress |
 |-|-|-|-|-|-|-|-|-|-|-|-|
 
 
