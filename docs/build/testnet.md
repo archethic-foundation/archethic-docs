@@ -19,7 +19,6 @@ git clone https://github.com/archethic-foundation/archethic-node.git
   - [Install Elixir](https://elixir-lang.org/install.html)
   - [Install NodeJS](https://nodejs.org/en/download/)
   - [Install GMP](https://gmplib.org)
-  - [Install ScyllaDB](https://www.scylladb.com/download/#server)
   
 - Fetch the dependencies
 ```
