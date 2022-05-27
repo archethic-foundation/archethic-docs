@@ -87,7 +87,18 @@ const sidebars = {
 					items: [
 						"learn/cryptography/hardware-root-of-trust"
 					]
-				}
+				},
+        {
+          type: "category",
+          label: "Decentralized Identity",
+          link: {
+            id: "learn/decentralized-id",
+            type: "doc"
+          },
+          items: [
+            "learn/decentralized-id/keychain"
+          ]
+        }
 			]
 		},
 		{
@@ -232,7 +243,16 @@ const sidebars = {
 					type: "category",
 					label: "Client documentation",
 					items: [
-						"build/clients/wallet-spec",
+            {
+              type: "doc",
+              label: "Wallet specification",
+              id: "build/clients/wallet-spec"
+            },
+            {
+              type: "doc", 
+              id: "build/clients/wallet-access",
+              label: "Wallet's access"
+            },
 						{
 							type: "category",
 							link: {
