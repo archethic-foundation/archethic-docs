@@ -265,6 +265,11 @@ const sidebars = {
 									label: "API",
 									id: "build/clients/ledger-wallet/api",
 									type: "doc"
+								},
+								{
+									label: "Commands",
+									id: "build/clients/ledger-wallet/commands",
+									type: "doc"
 								}
 							]
 						}
