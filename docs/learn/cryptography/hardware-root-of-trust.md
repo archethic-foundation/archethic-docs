@@ -34,7 +34,7 @@ Along with the initial software crypto library, the HRT is now the de-facto cryp
 
 The Archethic node software delegates all the cryptography operations to the HRT libraries of TPM and Yubikey, which are specially developed for this purpose by Uniris.
 
-Given the latency constraints, a new hybrid mechanism is under development which involves usage of software crypto library and the HRT libraries (TPM/Yubikey). In this approach, the root of trust - crypto operation will be still HRT based while the stem and branches will be software crypto library based.
+Given the latency constraints, a new hybrid mechanism have been developed involving usage of software crypto library and the HRT libraries (TPM/Yubikey). In this approach, the root of trust - crypto operation are still HRT based while the stem and branches will be software crypto library based.
 
 The advantages of this mechanism over pure HRT based mechanism is:
 - Possiblity of key aggregation
