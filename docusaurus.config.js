@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Archethic',
-  tagline: 'Welcome to the Internet of Trust' ,
+  tagline: 'Welcome to the Internet of Trust',
   url: 'https://archethic-foundation.github.io/archethic-docs',
   baseUrl: '/archethic-docs/',
   onBrokenLinks: 'throw',
@@ -15,19 +15,19 @@ const config = {
   favicon: 'img/favicon.png',
   organizationName: 'archethic-foundation', // Usually your GitHub org/user name.
   projectName: 'archethic-docs', // Usually your repo name.
-	deploymentBranch: 'gh-pages',
+  deploymentBranch: 'gh-pages',
 
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs:{ 
-					showLastUpdateTime: true,
-					sidebarPath: require.resolve('./sidebars.js'),
-					routeBasePath:'/',
-					remarkPlugins: [require('mdx-mermaid')]
-				},
+        docs: {
+          showLastUpdateTime: true,
+          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
+          remarkPlugins: [require('mdx-mermaid')]
+        },
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -83,6 +83,10 @@ const config = {
                 href: 'https://github.com/archethic-foundation/libjs',
               },
               {
+                label: 'Archethic Dart SDK',
+                href: 'https://github.com/archethic-foundation/libdart',
+              },
+              {
                 label: 'Archethic Wallet',
                 href: 'https://github.com/archethic-foundation/archethic-wallet',
               },
@@ -97,14 +101,14 @@ const config = {
       },
     }),
   plugins: [
-		[
-			require.resolve("@cmfcmf/docusaurus-search-local"),
-			{
-				indexBlog: false,
-				language: "en"
-			}
-		]
-	]
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        indexBlog: false,
+        language: "en"
+      }
+    ]
+  ]
 };
 
 module.exports = config;
