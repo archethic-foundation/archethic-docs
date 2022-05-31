@@ -40,7 +40,7 @@ to generate keys and addresses.
 Because Archethic cryptography and transaction chain paradigm differs from traditional blockchain (used in BIP32/BIP44)
 we adapted it to use specific derivation scheme (as describe in the BIP43)
 
-The main derivation path of Archethic keychain is: **m/650'/account'/index`** (where 650 is the Archethic transaction chain purpose - in the BIP43 terminology)
+The main derivation path of Archethic keychain is: **m/650'/account/index** (where 650 is the Archethic transaction chain purpose - in the BIP43 terminology)
 
 The `account` can be anything, by default `0` is the main uco transaction chain, but it could be customized to create more entropy.
 
@@ -52,7 +52,7 @@ In order to derive the keys using the derivation path mentioned above, we implem
 
 #### Replace the derivation path index
 
-Given the derivation path: `m/650'/0'/0'`, we change the last number (the transaction's index in the chain) we some variable provided by the application(ie: `m/650'/'0/1'` will give the 1st transaction's address on the chain)
+Given the derivation path: `m/650'/0/0`, we change the last number (the transaction's index in the chain) we some variable provided by the application(ie: `m/650'/0/1` will give the 1st transaction's address on the chain)
 
 #### Hash of the derivation path
 
