@@ -20,12 +20,7 @@ const config = {
   // Adding translation config
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr'],
-    // localeConfigs: {
-    //   en: {
-    //     htmlLang: 'en-GB',
-    //   },
-    // },
+    locales: ['en', 'fr']
   },
 
   presets: [
@@ -77,6 +72,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'left'
+          }
         ],
       },
       footer: {
