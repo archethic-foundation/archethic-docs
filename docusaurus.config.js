@@ -21,11 +21,11 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
-    localeConfigs: {
-      en: {
-        htmlLang: 'en-GB',
-      },
-    },
+    // localeConfigs: {
+    //   en: {
+    //     htmlLang: 'en-GB',
+    //   },
+    // },
   },
 
   presets: [
