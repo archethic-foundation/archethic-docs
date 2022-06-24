@@ -17,6 +17,12 @@ const config = {
   projectName: 'archethic-docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
 
+  // Adding translation config
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr']
+  },
+
   presets: [
     [
       'classic',
@@ -66,6 +72,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'left'
+          }
         ],
       },
       footer: {
