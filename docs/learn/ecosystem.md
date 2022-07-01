@@ -48,7 +48,7 @@ The world wants you to believe that ownership doesn’t matter. We are here to c
 
 Identity is not just about ownership but control and freedom. 
 
-Archethic provides interoperable decentralized identity management using both the traditional key management as well as our crypto-biometrics key management solution. 
+Archethic provides interoperable [decentralized identity management](/learn/decentralized-id) using both the traditional key management as well as our crypto-biometrics key management solution. 
 
 Enter the era of innovation and decentralized identity that is yours to own and control.
 
@@ -68,4 +68,11 @@ To provide an inclusive, generously incentivized, and on-chain Governance, Arche
 
 - **Generous Incentives**: Financing the work associated with updates, new features, and contributions is an essential element. The network has a reserve of one-third of the tokens for this purpose.
 
+### Open enhancements
+
+We are an open-source and decentralized protocol which decision involves community votes and suggestions.
+
+In that sense, we have created **Archethic Improvement Proposals (AEIPs)** to offer opportunity to contribute in the project by proposing technical, informational and process-based enhancements. 
+
+If you are interested, please take on the [AEIP repository](https://github.com/archethic-foundation/aeip)
 

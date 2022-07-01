@@ -33,29 +33,29 @@ An index table is provided to be able to retrieve all the sender UTXOs for a giv
 |-|-|
 
 
-## NFT
+## Token
 
-A memory table is defined to list al the NFT available for a given address
+A memory table is defined to list al the token available for a given address
 
 Few functions are provided to be able to query this table in order to:
-- get the NFT balance s
+- get the token balance s
 - get the UTXOs
 - get the total inputs (spent and unspent)
 - spend all the UTXOs
-- add new NFT UTXO
+- add new token UTXO
 
 ### Ledger 
 
-Each entry is indexed by a tuple recipient/sender/nft address  to identify uniquely an UTXO
+Each entry is indexed by a tuple recipient/sender/token address  to identify uniquely an UTXO
 
-| Recipient, Sender, NFT | Amount | Spent ? | Date |
+| Recipient, Sender, Token | Amount | Spent ? | Date |
 |-|-|-|-|
 
 ### Index
 
 An index table is provided to be able to retrieve all the sender UTXOs for a given recipient
 
-| Recipient | Sender | NFT address
+| Recipient | Sender | Token address
 |-|-|-|
 
 ## Loading

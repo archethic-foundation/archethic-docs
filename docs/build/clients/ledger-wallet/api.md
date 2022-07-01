@@ -204,7 +204,7 @@ address_index = 4 bytes (bip44)
                         uint8_t \*receiveAddr, uint8_t receiveAddrLen,
                         uint8_t \*amount, uint8_t \*txHash, uint8_t \*txHashLen)**
         + Format for Transaction Hash Generation
-            + tx_version | senderAddr | tx_type | code_size | content_size | ownership_length | total_uco_transfers | recieverAddr | amount | total_nft_transfers | recipients
+            + tx_version | senderAddr | tx_type | code_size | content_size | ownership_length | total_uco_transfers | recieverAddr | amount | total_token_transfers | recipients
         + We apply `cx_hash_sha256()` and return the hash in `txHash`
     + We prompt user in GUI to approve the transaction
     + Once approve we performECDSA on the transactionHash

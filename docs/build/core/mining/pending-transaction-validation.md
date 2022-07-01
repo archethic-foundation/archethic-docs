@@ -36,11 +36,11 @@ The following checks are performed:
 - Decoding of the transactio's content
 - Check is the new authorized node proposed are available
 
-### NFT transaction verification
+### Token transaction verification
 
-To create a new asset (NFT), a transaction with a type "nft" is submitted to the network.
+To create a new asset (Token), a transaction with a type "token" is submitted to the network.
 
-The nodes asserts the content of the NFT transactions respects the formatting to be able for the node to interpret it and mint tokens.
+The nodes asserts the content of the Token transactions respects the formatting to be able for the node to interpret it and mint tokens.
 
 ### Oracle transaction verification
 

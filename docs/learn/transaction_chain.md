@@ -50,9 +50,9 @@ Its structure is described as below:
       |---------|------|--------|------------|------------|
                             |      |
                             |      |
-                  |-----|-----|  |-----------------|--------|  
-                  | UCO | NFT |  | Authorized keys | Secret |
-                  |-----|-----|  |-----------------|--------|                     
+                  |-----|-------|  |-----------------|--------|  
+                  | UCO | Token |  | Authorized keys | Secret |
+                  |-----|-------|  |-----------------|--------|                     
   
 
 ```
@@ -65,8 +65,7 @@ Its structure is described as below:
    - Code: Defines the smart contract code to be interpreted by the node. More details on [Smart-Contracts](/build/smart-contracts) section.
    - Ledger: Defines several types of ledger operations
       - UCO: for the cryptocurrency transfers
-      - NFT: for non-financial transactions (intended for P2P uses - as tokens, loyalties, etc.)
-      - Stock: to manage inventory of items (Will be available soon)
+      - Token: for non-financial transactions (intended for P2P uses - as tokens, loyalties, etc.)
    - Ownerships: Define some cryptographic authorizations and delegations
       - Authorized keys: list of authorized keys to be able to decrypt secrets
       - Secrets: Encrypted contents which can be decrypted by the authorized keys

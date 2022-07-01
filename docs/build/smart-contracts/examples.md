@@ -28,7 +28,7 @@ end
 # Ensure the next transaction will be a transfer
 condition inherit: [
   type: transfer,
-  nft_transfers: size() == 1
+  token_transfers: size() == 1
   # TODO: to provide more security, we should check the destination address is within the previous transaction inputs 
 ]
 
@@ -48,7 +48,7 @@ actions triggered_by: transaction do
 
       # Send the new transaction
       set_type transfer
-      add_nft_transfer to: transaction.address, nft: contract.address, amount: token_to_credit
+      add_token_transfer to: transaction.address, token_address: contract.address, amount: token_to_credit
   end 
 end
 ```

@@ -17,6 +17,19 @@ By using ARCH consensus, we ensure the atomic commitment of the data submitted a
 
 Each node received the new transaction from the OracleChain and can apply behaviors from this new data and notify smart contracts which depends on oracle updates.
 
+
+```mermaid
+graph TD
+  A[Node1] -->|1. Fetch data| B
+  B(External service: ie. UCO Price)
+  A --> | 2. Send transaction| C
+  A --> | 2. Send transaction| D
+  C[Node2] --> | 3. Check data | B 
+  D[Node3] --> | 3. Check data |B
+  C[Node2] --> | 4. Validate trransaction | D 
+  D[Node2] --> C
+```
+
 ## Services
 
 The list of services supported by the OracleChain:

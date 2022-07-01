@@ -11,4 +11,16 @@ UCO is based on the principle of controlled supply and creating demand.
 
 To achieve the objective of a self-sustaining crypto economy, the token distribution has been redefined. The transactions growth, users growth ans developers growth based on the set of commissioned applications has been analysed. The cost of running the nodes has been calculated and the adoption and incentivization has been designed to ensure the sustenance of nodes.
 
+<br />
 
+```mermaid
+pie
+  "Network Funding": 38.2
+  "Adoption Rewards": 23.6
+  "Team & Advisors": 14.5
+  "Staking Rewards": 9
+  "Exchange Liquidity": 5.57
+  "Dynamic Mminers Rewards": 3.34
+  "Gamification & Geo incentives": 3.44
+  "Foundation": 2.13
+```

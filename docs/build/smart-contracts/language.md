@@ -39,7 +39,7 @@ To define a condition, we need to specify a condition block with its subject and
 - `authorized_keys`
 - `secrets`
 - `uco_transfers`
-- `nft_transfers`
+- `token_transfers`
 - `previous_public_key`
 - `origin_family`
 
@@ -78,7 +78,7 @@ Each of this variables contains the following fields:
 - `previous_public_key` (hex) 
 - `recipients` (list of smart contract recipients addresses in hex)
 - `uco_transfers` (map of the uco transfers: `%{ recipient_address => amount }`
-- `nft_transfers` (map of the nft transfers: `%{ recipient_address => %{ amount: amount, nft_address: nft_to_transfer}}`
+- `token_transfers` (map of the token transfers: `%{ recipient_address => %{ amount: amount, token_address: token_to_transfer}}`
 
 ## Functions
 
@@ -140,10 +140,10 @@ actions triggered_by: transaction do
 end
 ```
 
-- `add_nft_transfer`: Add a new NFT transfer
+- `add_token_transfer`: Add a new token transfer
 ```
 actions triggered_by: transaction do
-    add_nft_transfer: to: "AF28C3D5B3828AD3F8682F1B1D14A8507B829F65F7BE6C50427A6019CCB6801C", nft: "0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", amount: 1.0
+    add_token_transfer: to: "AF28C3D5B3828AD3F8682F1B1D14A8507B829F65F7BE6C50427A6019CCB6801C", token_address: "0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC", amount: 1.0
 end
 ```
 

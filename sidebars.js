@@ -98,7 +98,8 @@ const sidebars = {
           items: [
             "learn/decentralized-id/keychain"
           ]
-        }
+        },
+        "learn/token"
 			]
 		},
 		{
