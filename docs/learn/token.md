@@ -33,9 +33,9 @@ In order to create a token, you have to:
 ### Fungible
 
 Here an example of a fungible token: 
-```json
+```jsonc
 {
-  "supply": NB_OF_TOKEN_TO_CREATE,
+  "supply": NB_OF_TOKEN_TO_CREATE, // Must be specified in 10e8 notation (10e-8 being the smallest representation of UCO)
   "type": "fungible",
   "symbol": "TOKEN_SYMBOL",
   "name": "TOKEN_NAME",
@@ -46,9 +46,9 @@ Here an example of a fungible token:
 ### Non-fungible
 
 Here another example of non-fungible token: 
-```json
+```jsonc
 {
-  "supply": SIZE_OF_THE COLLECTION,
+  "supply": SIZE_OF_THE COLLECTION, // Must be specified in 10e8 notation (10e-8 being the smallest representation of UCO)
   "type": "non-fungilbe",
   "name": "COLLETION NAME",
   "symbol": "COLLETION_SYMBOL",
@@ -67,10 +67,10 @@ During the transaction validation, the miners will understand how to interpret t
 To make use of those custom tokens, a developer or a user can easily build a new transaction and mentioning in the ledger operations to send this token.
 
 Example of Token ledger operation in the transaction:
-```json
+```jsonc
 {
-  to: "RECIPIENT_ADDRESS",
-  amount: NB_OF_TOKEN_TO_TRANSFER,
-  token_address: "ADDRESS_OF_THE_GENERATED_ADDRESS"
+  "to": "RECIPIENT_ADDRESS",
+  "amount": NB_OF_TOKEN_TO_TRANSFER,
+  "token_address": "ADDRESS_OF_THE_GENERATED_ADDRESS"
 } 
 ```
