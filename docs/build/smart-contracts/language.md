@@ -78,7 +78,7 @@ Each of this variables contains the following fields:
 - `previous_public_key` (hex) 
 - `recipients` (list of smart contract recipients addresses in hex)
 - `uco_transfers` (map of the uco transfers: `%{ recipient_address => amount }`
-- `token_transfers` (map of the token transfers: `%{ recipient_address => %{ amount: amount, token_address: token_to_transfer}}`
+- `token_transfers` (map of the token transfers: `%{ recipient_address => list(%{ amount: amount, token_address: token_to_transfer, token_id: token_id}}) `
 
 ## Functions
 
