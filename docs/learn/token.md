@@ -49,7 +49,7 @@ Here another example of non-fungible token:
 ```jsonc
 {
   "supply": SIZE_OF_THE COLLECTION, // Must be specified in 10e8 notation (10e-8 being the smallest representation of UCO)
-  "type": "non-fungilbe",
+  "type": "non-fungible",
   "name": "COLLETION NAME",
   "symbol": "COLLETION_SYMBOL",
   "properties": [
