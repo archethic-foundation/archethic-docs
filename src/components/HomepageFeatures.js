@@ -10,20 +10,21 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Discover Archethic, the TransactionChain, the new ARCH Consensus, 
+        Discover Archethic, the TransactionChain, the new ARCH Consensus,
         why it helps to build the more secure and decentralized P2P network
       </>
     ),
-		link: 'learn/archethic-intro'
+    link: 'learn/archethic-intro'
   },
   {
     title: 'Participate',
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Join the network and use existing solutions build on Archethic. (<strong>Coming Soon</strong>)
+        Join the network and use existing solutions build on Archethic.
       </>
     ),
+    link: 'participate/archethic-wallet'
   },
   {
     title: 'Build',
@@ -33,32 +34,32 @@ const FeatureList = [
         Access documentation and guides to build on Archethic or to contribute to the core development
       </>
     ),
-		link: 'build/smart-contracts'
+    link: 'build/smart-contracts'
   },
 ];
 
-function Feature({Svg, title, description, link}) {
+function Feature({ Svg, title, description, link }) {
 
-	let history = useHistory();
+  let history = useHistory();
 
-	const handleClick = (e) => {
+  const handleClick = (e) => {
     e.preventDefault()
-		history.push(link)
-	}
+    history.push(link)
+  }
 
   return (
     <div className={clsx('col margin-vert--md')} >
-		  <div className={clsx('card card--full-height card--pointer')} onClick={handleClick}>
-				<div className='text--center'>
-		   {
-				 // <Svg className={styles.featureSvg} alt={title} />
-			 }
-	</div>
-		    <div className={clsx('card__body padding-horiz--lg padding-bottom--lg')}>
-					<h3 className='text--center'>{title}</h3>
-					<p>{description}</p>
-				</div>
-		  </div>
+      <div className={clsx('card card--full-height card--pointer')} onClick={handleClick}>
+        <div className='text--center'>
+          {
+            // <Svg className={styles.featureSvg} alt={title} />
+          }
+        </div>
+        <div className={clsx('card__body padding-horiz--lg padding-bottom--lg')}>
+          <h3 className='text--center'>{title}</h3>
+          <p>{description}</p>
+        </div>
+      </div>
     </div>
   );
 }

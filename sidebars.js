@@ -104,6 +104,17 @@ const sidebars = {
 		},
 		{
 			type: "category",
+			label: "Participate",
+			items: [
+				{
+					type: "doc",
+					label: "Archethic Wallet",
+					id: "participate/archethic-wallet"
+				}
+			]
+		},
+		{
+			type: "category",
 			label: "Build",
 			items: [
 				{
@@ -276,19 +287,9 @@ const sidebars = {
 						}
 					]
 				},
-				{
-					type: "category",
-					label: "Decentralized applications",
-					items: [
-						{
-							type: "doc",
-							label: "Archethic Wallet",
-							id: "build/dapps/archethic-wallet"
-						}
-					]
-				}
 			]
 		},
+
 		"contributing"
 	]
 };
