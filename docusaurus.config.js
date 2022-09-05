@@ -56,6 +56,11 @@ const config = {
             activeBaseRegex: '^/learn/.*'
           },
           {
+            label: "Participate",
+            to: "participate/archethic-wallet",
+            activeBaseRegex: '^/participate/.*'
+          },
+          {
             label: "Build",
             to: "build/smart-contracts",
             activeBaseRegex: '^/build/.*'

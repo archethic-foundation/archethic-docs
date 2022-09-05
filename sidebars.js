@@ -13,7 +13,7 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  docs: [
+	docs: [
 		{
 			type: 'category',
 			label: 'Learn',
@@ -23,7 +23,7 @@ const sidebars = {
 					type: "doc",
 					label: "Introduction"
 				},
-        "learn/uco",
+				"learn/uco",
 				"learn/ecosystem",
 				"learn/transaction-chain",
 				{
@@ -34,14 +34,14 @@ const sidebars = {
 						type: "doc"
 					},
 					items: [
-            "learn/arch-consensus/proof-of-work"
+						"learn/arch-consensus/proof-of-work"
 					]
 				},
 				{
-          type: "category",
+					type: "category",
 					label: "Sharding",
 					link: {
-            id: "learn/sharding",
+						id: "learn/sharding",
 						type: "doc"
 					},
 					items: [
@@ -53,7 +53,7 @@ const sidebars = {
 								id: "learn/sharding/beacon-chain"
 							},
 							items: [
-								{ 
+								{
 									label: "Explorer",
 									type: "doc",
 									id: "learn/sharding/beacon-chain/explorer"
@@ -64,10 +64,10 @@ const sidebars = {
 					]
 				},
 				{
-          type: "category",
+					type: "category",
 					label: "P2P",
 					link: {
-            id: "learn/p2p",
+						id: "learn/p2p",
 						type: "doc"
 					},
 					items: [
@@ -81,56 +81,67 @@ const sidebars = {
 					type: "category",
 					label: "Cryptography",
 					link: {
-             id: "learn/cryptography",
-						 type: "doc"
+						id: "learn/cryptography",
+						type: "doc"
 					},
 					items: [
 						"learn/cryptography/hardware-root-of-trust"
 					]
 				},
-        {
-          type: "category",
-          label: "Decentralized Identity",
-          link: {
-            id: "learn/decentralized-id",
-            type: "doc"
-          },
-          items: [
-            "learn/decentralized-id/keychain"
-          ]
-        },
-        "learn/token"
+				{
+					type: "category",
+					label: "Decentralized Identity",
+					link: {
+						id: "learn/decentralized-id",
+						type: "doc"
+					},
+					items: [
+						"learn/decentralized-id/keychain"
+					]
+				},
+				"learn/token"
 			]
 		},
 		{
-      type: "category",
+			type: "category",
+			label: "Participate",
+			items: [
+				{
+					type: "doc",
+					label: "Archethic Wallet",
+					id: "participate/archethic-wallet"
+				}
+			]
+		},
+		{
+			type: "category",
 			label: "Build",
 			items: [
 				{
-          type: "category",
+					type: "category",
 					label: "Smart-Contracts",
 					link: {
-            type: "doc",
-					 id: "build/smart-contracts"
+						type: "doc",
+						id: "build/smart-contracts"
 					},
 					items: [
-					 { 
-					   label: "Language",
-						 type: "doc",
-						 id: "build/smart-contracts/language"
-					 },
-					 { 
-						 label: "Examples",
-             type: "doc",   
-						 id: "build/smart-contracts/examples"
-					 }
-				  ] 
+						{
+							label: "Language",
+							type: "doc",
+							id: "build/smart-contracts/language"
+						},
+						{
+							label: "Examples",
+							type: "doc",
+							id: "build/smart-contracts/examples"
+						}
+					]
 				},
 				{
-          type: "category",
+					type: "category",
 					label: "SDKs",
 					items: [
-            "build/sdk/js",
+						"build/sdk/js",
 						"build/sdk/dart"
 					]
 				},
@@ -143,7 +154,7 @@ const sidebars = {
 						type: "doc"
 					},
 					items: [
-						{ 
+						{
 							id: "build/core/database",
 							label: "Database",
 							type: "doc"
@@ -159,7 +170,7 @@ const sidebars = {
 								{
 									id: "build/core/p2p/node",
 									type: "doc"
-								}	
+								}
 							]
 						},
 						{
@@ -170,8 +181,8 @@ const sidebars = {
 								type: "doc"
 							},
 							items: [
-								{ 
-							    id: "build/core/cryptography/tpm",
+								{
+									id: "build/core/cryptography/tpm",
 									type: "doc"
 								},
 								{
@@ -244,16 +255,16 @@ const sidebars = {
 					type: "category",
 					label: "Client documentation",
 					items: [
-            {
-              type: "doc",
-              label: "Wallet specification",
-              id: "build/clients/wallet-spec"
-            },
-            {
-              type: "doc", 
-              id: "build/clients/wallet-access",
-              label: "Wallet's access"
-            },
+						{
+							type: "doc",
+							label: "Wallet specification",
+							id: "build/clients/wallet-spec"
+						},
+						{
+							type: "doc",
+							id: "build/clients/wallet-access",
+							label: "Wallet's access"
+						},
 						{
 							type: "category",
 							link: {
@@ -275,9 +286,10 @@ const sidebars = {
 							]
 						}
 					]
-				}
+				},
 			]
 		},
+
 		"contributing"
 	]
 };
