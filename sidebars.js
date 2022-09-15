@@ -110,6 +110,31 @@ const sidebars = {
 					type: "doc",
 					label: "Archethic Wallet",
 					id: "participate/archethic-wallet"
+				},
+				{
+					type: "category",
+					label: "Archethic Web (AEWeb)",
+          items: [
+            {
+              type: "doc",
+              label: "Introduction",
+              id: "participate/aeweb"
+            },
+            {
+              type: "doc",
+              label: "How it works",
+              id: "participate/aeweb/how-it-works"
+            },
+            {
+              type: "doc",
+              label: "Domain Name",
+              id: "participate/aeweb/dns"
+            }
+          ],
+          link: {
+            id: "participate/aeweb",
+            type: "doc"
+          }
 				}
 			]
 		},
