@@ -72,6 +72,7 @@ In that case, once the front-end page have been build from the SPA tooling, inst
   - [x] File
   - [x] Folder
   - [x] Complete website
+  - [ ] Keychain integration
 - [ ] User Interface
   - [ ] Web or Native application
 - [ ] Domain Name System (DNS)
