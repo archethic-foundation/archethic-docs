@@ -7,7 +7,7 @@ Archethic Web (AEWeb) is using transaction chains to host any website on Archeth
 
 We will describe the following process from the building until the delivery to the browser.
 
-# Transaction building
+## Transaction building
 
 On the beginning of any hosting, there is a website composed of:
 
@@ -100,7 +100,7 @@ For example, you could have a website which contains: 5 files:
 }
 ```
 
-# Content delivery
+## Content delivery
 
 On the other side, the transactions are validated and stored on the Archethic Blockchain.
 Any Archethic node expose an API dedicated for the web hosting by AEWeb.
