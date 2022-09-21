@@ -35,11 +35,11 @@ In order to create a token, you have to:
 Here an example of a fungible token: 
 ```jsonc
 {
-  "supply": NB_OF_TOKEN_TO_CREATE, // Must be specified in 10e8 notation (10e-8 being the smallest representation of UCO)
+  "supply": NB_OF_TOKEN_TO_CREATE, // Specified in 10e8 notation (default to 8 decimals)
   "type": "fungible",
   "symbol": "TOKEN_SYMBOL",
   "name": "TOKEN_NAME",
-  "properties": []
+  "properties": {"PROPERTY_NAME": "PROPERTY_VALUE"}
 }
 ```
 
@@ -48,21 +48,22 @@ Here an example of a fungible token:
 Here another example of non-fungible token: 
 ```jsonc
 {
-  "supply": SIZE_OF_THE COLLECTION, // Must be specified in 10e8 notation (10e-8 being the smallest representation of UCO)
+  "supply": SIZE_OF_THE COLLECTION, // Must be specified in 10e8 notation
   "type": "non-fungible",
   "name": "COLLETION NAME",
   "symbol": "COLLETION_SYMBOL",
-  "properties": [
-    [ {"name": "image", "value": "link"} ],
-    [ {"name": "image", "value": "link"} ] ,
-    [ {"name": "image", "value": "link"} ] 
+  "properties": {"globalProperty": "value"},
+  "collection": [
+    {"image": "link"},
+    {"image": "link"},
+    {"image": "link"}
   ]
 }
 ```
 
 During the transaction validation, the miners will understand how to interpret this transaction and create the relative assets and UTXOs to make transfers possible right away.
 
-## Usuability
+## Usage
 
 To make use of those custom tokens, a developer or a user can easily build a new transaction and mentioning in the ledger operations to send this token.
 
@@ -71,6 +72,7 @@ Example of Token ledger operation in the transaction:
 {
   "to": "RECIPIENT_ADDRESS",
   "amount": NB_OF_TOKEN_TO_TRANSFER,
-  "token_address": "ADDRESS_OF_THE_GENERATED_ADDRESS"
+  "tokenAddress": "ADDRESS_OF_THE_GENERATED_ADDRESS",
+  "tokenId": TOKEN_ID // needed for non-fungible token
 } 
 ```
