@@ -15,10 +15,10 @@ To redirect your domain name to your Archethic hosted website, a simple operatio
 
 In your website domain provider administration, you must add two entries:
 
-| NAME                  | TYPE  | VALUE                 |
-| --------------------- | ----- | --------------------- |
-| example.com           | CNAME | mainnet.archethic.net |
-| \_dnslink.example.com | TXT   | archethic://0f1e3.... |
+| NAME                  | TYPE  | VALUE                        |
+| --------------------- | ----- | ---------------------------- |
+| example.com           | CNAME | mainnet.archethic.net        |
+| \_dnslink.example.com | TXT   | dnslink=/archethic/0f1e3.... |
 
 The subdomain `_dnslink` is used to indicate the reference address and will be used by the nodes to redirect to the on-chain version of your website.
 
