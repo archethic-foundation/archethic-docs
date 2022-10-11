@@ -1,11 +1,12 @@
 ---
 id: service
 title: Oracle Chain Service
+sidebar_label: Service
 ---
 
 OracleChain provides a way to extend it and to add more services to the scheduler.
 
-## Behavior 
+## Behavior
 
 The [behavior](https://github.com/archethic-foundation/archethic-node/blob/master/lib/archethic/oracle_chain/services/impl.ex) defines functions to extend to support new services
 
@@ -16,10 +17,10 @@ The [behavior](https://github.com/archethic-foundation/archethic-node/blob/maste
 ### Example
 
 [UCO service behavior](https://github.com/archethic-foundation/archethic-node/blob/master/lib/archethic/oracle_chain/services/uco_price.ex) is implemented in such way:
+
 - Fetch: it request Coingecko to fetch the USD/EUR pair of the Archethic token
 - Verify: fetch Coingecko again to gather the token price and compare price using a standard deviation function with a threshold of 0.01
 - Parse data: Ensure the data is map with the USD/EUR pair and an amount encoded as float
-
 
 ## Configuration
 

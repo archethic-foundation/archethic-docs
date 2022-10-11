@@ -1,0 +1,50 @@
+---
+id: transaction-attestation
+title: TransactionAttestation
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[TransactionAttestation] represents an attestation when a transaction is successfully validated and stored.
+Few attestations can be received with differents confirmations to ensure a better security of the replication.
+
+
+```graphql
+type TransactionAttestation {
+  address: Address
+  maxConfirmations: Int
+  nbConfirmations: Int
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionAttestation.<b>address</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionAttestation.<b>maxConfirmations</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionAttestation.<b>nbConfirmations</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Returned by
+
+[`transactionConfirmed`](/build/api/schema/subscriptions/transaction-confirmed)  <Badge class="secondary" text="subscription"/>
+
+
+

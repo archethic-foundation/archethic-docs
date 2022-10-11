@@ -1,6 +1,8 @@
 ---
 id: how-it-works
-title: AEWeb - How it works !
+title: AEWeb - How it works
+sidebar_label: How it works
+sidebar_position: 1
 ---
 
 Archethic Web (AEWeb) is using transaction chains to host any website on Archethic Blockchain.

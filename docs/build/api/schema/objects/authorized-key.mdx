@@ -1,0 +1,45 @@
+---
+id: authorized-key
+title: AuthorizedKey
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[AuthorizedKey] represents a authorized public key with the encrypted secret key for this given key.
+By decrypting this secret key, the authorized public key will be able to decrypt its related secret
+
+
+```graphql
+type AuthorizedKey {
+  encryptedSecretKey: Hex
+  publicKey: PublicKey
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AuthorizedKey.<b>encryptedSecretKey</b></code>](#)<Bullet />[`Hex`](/build/api/schema/scalars/hex) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AuthorizedKey.<b>publicKey</b></code>](#)<Bullet />[`PublicKey`](/build/api/schema/scalars/public-key) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Ownership`](/build/api/schema/objects/ownership)  <Badge class="secondary" text="object"/>
+
+
+

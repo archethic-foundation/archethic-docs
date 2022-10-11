@@ -1,6 +1,7 @@
 ---
 id: dns
 title: AEWeb (DNS)
+sidebar_label: Domain Names
 ---
 
 DNS (Domain Name System) is a mechanism which resolves websites names to server IP addresses, making website's URL nicer.

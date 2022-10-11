@@ -2,7 +2,7 @@
 
 Offical documentation for the Archethic network.
 
-This documentation aims to provide the knowledge, the understanding and the actions to take in order 
+This documentation aims to provide the knowledge, the understanding and the actions to take in order
 to contribute and make Archethic network more visible.
 
 ## Development
@@ -30,6 +30,14 @@ $ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Update GraphQL documentation
+
+To update the GraphQL schema documentation you can run the following command:
+
+```
+$ npx docusaurus graphql-to-doc
+```
 
 ### Deployment
 

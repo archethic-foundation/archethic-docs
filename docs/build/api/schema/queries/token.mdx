@@ -1,0 +1,51 @@
+---
+id: token
+title: token
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+Query the network to find a token's data
+
+
+```graphql
+token(
+  address: Address!
+): Token
+```
+
+
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>token.<b>address</b></code>](#)<Bullet />[`Address!`](/build/api/schema/scalars/address) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Type
+
+#### [`Token`](/build/api/schema/objects/token) <Badge class="secondary" text="object"/>
+> [token] represents a token metadata.
+It includes:
+- genesis: Genesis address to the token
+- name: Name of the token
+- symbol: Symbol for the token
+- supply: Supply of the token
+- type: Type of the token
+- properties: Properties of the token (if any)
+- collection: List of properties for a collection (if any)
+- id: Unique identification of the token on the chain
+
+> 
+
+
+
+
+

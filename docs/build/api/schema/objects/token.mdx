@@ -1,0 +1,88 @@
+---
+id: token
+title: Token
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[token] represents a token metadata.
+It includes:
+- genesis: Genesis address to the token
+- name: Name of the token
+- symbol: Symbol for the token
+- supply: Supply of the token
+- type: Type of the token
+- properties: Properties of the token (if any)
+- collection: List of properties for a collection (if any)
+- id: Unique identification of the token on the chain
+
+
+```graphql
+type Token {
+  collection: [TokenProperties]
+  decimals: Int
+  genesis: Address
+  id: String
+  name: String
+  properties: TokenProperties
+  supply: Int
+  symbol: String
+  type: String
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>collection</b></code>](#)<Bullet />[`[TokenProperties]`](/build/api/schema/scalars/token-properties) <Badge class="secondary" text="list"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>decimals</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>genesis</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>id</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>name</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>properties</b></code>](#)<Bullet />[`TokenProperties`](/build/api/schema/scalars/token-properties) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>supply</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>symbol</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>type</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Returned by
+
+[`token`](/build/api/schema/queries/token)  <Badge class="secondary" text="query"/>
+
+
+

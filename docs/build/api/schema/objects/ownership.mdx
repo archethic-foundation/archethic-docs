@@ -1,0 +1,43 @@
+---
+id: ownership
+title: Ownership
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[Ownership] represents a block to set a secret and the authorized public keys able to decrypt the secret
+
+```graphql
+type Ownership {
+  authorizedPublicKeys: [AuthorizedKey]
+  secret: Hex
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Ownership.<b>authorizedPublicKeys</b></code>](#)<Bullet />[`[AuthorizedKey]`](/build/api/schema/objects/authorized-key) <Badge class="secondary" text="list"/> <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ownership.<b>secret</b></code>](#)<Bullet />[`Hex`](/build/api/schema/scalars/hex) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Data`](/build/api/schema/objects/data)  <Badge class="secondary" text="object"/>
+
+
+

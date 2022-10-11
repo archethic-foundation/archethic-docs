@@ -1,0 +1,43 @@
+---
+id: transaction-confirmed
+title: transactionConfirmed
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+Subscribe to be notified when a transaction is stored (if acted as welcome node)
+
+
+```graphql
+transactionConfirmed(
+  address: Address!
+): TransactionAttestation
+```
+
+
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>transactionConfirmed.<b>address</b></code>](#)<Bullet />[`Address!`](/build/api/schema/scalars/address) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Type
+
+#### [`TransactionAttestation`](/build/api/schema/objects/transaction-attestation) <Badge class="secondary" text="object"/>
+> [TransactionAttestation] represents an attestation when a transaction is successfully validated and stored.
+Few attestations can be received with differents confirmations to ensure a better security of the replication.
+
+> 
+
+
+
+
+

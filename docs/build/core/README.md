@@ -5,19 +5,15 @@ title: Core development
 
 Archethic Node repository can be found [here](https://github.com/archethic-foundation/archethic-node)
 
-
 ## Technology Stack
 
-Archethic Blockchain node used:
-- Elixir
-- C
-- ScyllaDB
+Archethic Blockchain node used a combination of Elixir & C programming languages to achieve fast and reliable decentralized network.
 
 ### Why Elixir ?
 
 Elixir is a dynamic, functional language for building scalable and maintainable applications.
 
-It leverages the Erlang VM, known for running low-latency, distributed, and fault-tolerant systems. 
+It leverages the Erlang VM, known for running low-latency, distributed, and fault-tolerant systems.
 
 Elixir is successfully used in web development, embedded software, data ingestion, and multimedia processing, across a wide range of industries.
 
@@ -45,20 +41,12 @@ We need to interact with hardware components and C seems the best candidate, so 
 
 But also, for some intensive task which are really complex in computing, we rely on C to perform those processing.
 
-### Why ScyllaDB ?
-
-ScyllaDB is a NoSQL database built from the idea of Cassandra - Wide Column Database - but with more efficiency in terms of memory consumption and CPU processing.
-As it's implemented in C++, it's faster and lightweight and takes advantage of low-level Linux primitives.
-
-We are using a Wide Column Database, but we want to be able to fetch only some part of the data, so a column database fits really well for this kind of purpose.
-Moreover, we want a database with a high throughput in writing, and ScyllaDB fits really well with its LSM storage engine.
-
 ## Structure
 
 Code base is divided into domains (contexts) for better single responsibility principle:
 
 <!-- Source of the SVG on https://markmap.js.org/repl
-## archethic_web 
+## archethic_web
 
 ### Explorer UI
 

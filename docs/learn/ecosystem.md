@@ -1,18 +1,19 @@
 ---
 id: ecosystem
 title: Ecosystem
+sidebar_position: 3
 ---
 
 The technical and functional parameters that make Archethic unique and ready for global adoption:
 
 ## Limitless network
 
-Archethic is outperforming the market standards with some key indicators: 
+Archethic is outperforming the market standards with some key indicators:
+
 - a scalability >1 Million TPS
 - a validation time < 5 sec
 - capability to handle up to 90% maliciousness
 - 3.6 billion times less energy consumption than Bitcoin and 0.1% transaction fee
-
 
 :::success Super Fast & Limitless
 Without impacting the global validation, the heuristic polymorphic replication provides a linear increase of the capacity (in storage and number of validations) allowing us to reach 1 MILLION TPS transactions per second.
@@ -26,7 +27,6 @@ Beyond just PoW (51%) or dBFT (66%), Archethic implements a consensus that can h
 3.6 Billion times less energy consumption than Bitcoin by using the ARCH consensus based on heuristic miners' election and a polymorphic worldwide replication. Each transaction only needs 0.42w of energy.
 :::
 
-
 ## Unlimited applications
 
 Our blockchain platform aims to replace and to improve all current applications with a comprehensive and open ecosystem, allowing people to move from the trust imposed by centralized to a decentralized system.
@@ -39,22 +39,21 @@ Our blockchain platform aims to replace and to improve all current applications 
 ## Decentralized Identity
 
 Your identity is your right. The security and threat issues that centralized systems pose helped us realize that self-sovereign identity is needed now more than ever.
- 
 
-With Archethic, you can access your identity but no one owns it. 
-Have you ever wondered how many times your identity is exploited without your knowledge by centralized monopolies or even your favorite merchant site? 
+With Archethic, you can access your identity but no one owns it.
+Have you ever wondered how many times your identity is exploited without your knowledge by centralized monopolies or even your favorite merchant site?
 
-The world wants you to believe that ownership doesn’t matter. We are here to change that narrative. 
+The world wants you to believe that ownership doesn’t matter. We are here to change that narrative.
 
-Identity is not just about ownership but control and freedom. 
+Identity is not just about ownership but control and freedom.
 
-Archethic provides interoperable [decentralized identity management](/learn/decentralized-id) using both the traditional key management as well as our crypto-biometrics key management solution. 
+Archethic provides interoperable [decentralized identity management](/learn/decentralized-id) using both the traditional key management as well as our crypto-biometrics key management solution.
 
 Enter the era of innovation and decentralized identity that is yours to own and control.
 
 ## Governance
 
-Archethic Foundation is a non-profit organization whose vision is the promotion of the Archethic Public Blockchain Protocol. 
+Archethic Foundation is a non-profit organization whose vision is the promotion of the Archethic Public Blockchain Protocol.
 
 It considers Archethic as a project – where a solid technical foundation is a key to winning the marathon race to global adoption. Its role is to sustainably deploy resources that are under control to support the long-term success of Archethic. This long-term success will only be possible with a vibrant decentralized ecosystem.
 
@@ -72,7 +71,6 @@ To provide an inclusive, generously incentivized, and on-chain Governance, Arche
 
 We are an open-source and decentralized protocol which decision involves community votes and suggestions.
 
-In that sense, we have created **Archethic Improvement Proposals (AEIPs)** to offer opportunity to contribute in the project by proposing technical, informational and process-based enhancements. 
+In that sense, we have created **Archethic Improvement Proposals (AEIPs)** to offer opportunity to contribute in the project by proposing technical, informational and process-based enhancements.
 
 If you are interested, please take on the [AEIP repository](https://github.com/archethic-foundation/aeip)
-

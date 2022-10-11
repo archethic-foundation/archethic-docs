@@ -1,7 +1,10 @@
 ---
 id: archethic-intro
 title: Archethic introduction
+sidebar_label: Learn
+sidebar_position: 1
 ---
+
 Archethic is the next generation of Blockchain which provides a truly decentralized limitless network, using TransactionChain and a new consensus named ARCH (Atomic Rotating Commitment Heuristic),
 to be the most secure and scalable decentralized network.
 
@@ -9,11 +12,11 @@ to be the most secure and scalable decentralized network.
 
 Archethic's network is built to overcome the issues faced by other blockchain solutions:
 
-  - Support of billions of transactions
-  - Linear scalability
-  - Low-energy consumption
-  - Mass adoption
-  - Low transaction fees
+- Support of billions of transactions
+- Linear scalability
+- Low-energy consumption
+- Mass adoption
+- Low transaction fees
 
 This document aims to provide information and resources about the technology and the usage to build new decentralized applications on top of Archethic.
 

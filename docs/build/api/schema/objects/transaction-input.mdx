@@ -1,0 +1,81 @@
+---
+id: transaction-input
+title: TransactionInput
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[TransactionInput] represents the inputs from the transaction
+It includes:
+- From: transaction which send the amount of assets
+- Amount: asset amount
+- Type: UCO/token/Call
+- token address: address of the token if the type is token
+- Spent: determines if the input has been spent
+- Timestamp: Date time when the inputs was generated
+- token id: It is the id for a token which is allocated when the token is minted.
+
+
+```graphql
+type TransactionInput {
+  amount: Int
+  from: Address
+  spent: Boolean
+  timestamp: Timestamp
+  tokenAddress: Address
+  tokenId: Int
+  type: String
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>amount</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>from</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>spent</b></code>](#)<Bullet />[`Boolean`](/build/api/schema/scalars/boolean) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>tokenAddress</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>tokenId</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionInput.<b>type</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Returned by
+
+[`transactionInputs`](/build/api/schema/queries/transaction-inputs)  <Badge class="secondary" text="query"/>
+
+### Member of
+
+[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="secondary" text="object"/>
+
+
+

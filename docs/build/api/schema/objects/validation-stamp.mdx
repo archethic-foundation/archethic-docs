@@ -1,0 +1,64 @@
+---
+id: validation-stamp
+title: ValidationStamp
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[ValidationStamp] represents the validation performs by the coordinator
+It includes:
+- Proof of work: Public key matching the origin signature
+- Proof of integrity: Hash of the previous proof of integrity and the transaction
+- Ledger operations: All the operations performed by the transaction
+- Signature: Coordinator signature of the stamp
+
+
+```graphql
+type ValidationStamp {
+  ledgerOperations: LedgerOperations
+  proofOfIntegrity: Hash
+  proofOfWork: PublicKey
+  signature: Hex
+  timestamp: Timestamp
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>ledgerOperations</b></code>](#)<Bullet />[`LedgerOperations`](/build/api/schema/objects/ledger-operations) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfIntegrity</b></code>](#)<Bullet />[`Hash`](/build/api/schema/scalars/hash) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfWork</b></code>](#)<Bullet />[`PublicKey`](/build/api/schema/scalars/public-key) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>signature</b></code>](#)<Bullet />[`Hex`](/build/api/schema/scalars/hex) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="secondary" text="object"/>
+
+
+

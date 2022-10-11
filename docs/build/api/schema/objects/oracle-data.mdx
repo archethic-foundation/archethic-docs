@@ -1,0 +1,44 @@
+---
+id: oracle-data
+title: OracleData
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+[OracleData] represents an oracle data.
+
+
+```graphql
+type OracleData {
+  services: OracleServices
+  timestamp: Timestamp
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>OracleData.<b>services</b></code>](#)<Bullet />[`OracleServices`](/build/api/schema/objects/oracle-services) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OracleData.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Returned by
+
+[`oracleData`](/build/api/schema/queries/oracle-data)  <Badge class="secondary" text="query"/><Bullet />[`oracleUpdate`](/build/api/schema/subscriptions/oracle-update)  <Badge class="secondary" text="subscription"/>
+
+
+

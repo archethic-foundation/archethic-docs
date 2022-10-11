@@ -14,7 +14,7 @@ const FeatureList = [
         why it helps to build the more secure and decentralized P2P network
       </>
     ),
-    link: 'learn/archethic-intro'
+    link: 'learn'
   },
   {
     title: 'Participate',
@@ -24,7 +24,7 @@ const FeatureList = [
         Join the network and use existing solutions build on Archethic.
       </>
     ),
-    link: 'participate/archethic-wallet'
+    link: 'category/participate'
   },
   {
     title: 'Build',
@@ -34,7 +34,7 @@ const FeatureList = [
         Access documentation and guides to build on Archethic or to contribute to the core development
       </>
     ),
-    link: 'build/smart-contracts'
+    link: 'category/build'
   },
 ];
 

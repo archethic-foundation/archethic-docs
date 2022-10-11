@@ -52,23 +52,18 @@ const config = {
         items: [
           {
             label: "Learn",
-            to: "learn/archethic-intro",
+            to: "learn",
             activeBaseRegex: '^/learn/.*'
           },
           {
             label: "Participate",
-            to: "participate/archethic-wallet",
+            to: "category/participate",
             activeBaseRegex: '^/participate/.*'
           },
           {
             label: "Build",
-            to: "build/smart-contracts",
+            to: "category/build",
             activeBaseRegex: '^/build/.*'
-          },
-          {
-            label: "Research",
-            to: "research/research-intro",
-            activeBaseRegex: '^/research/.*'
           },
           {
             href: 'https://github.com/archethic-foundation/archethic-docs',
@@ -115,6 +110,24 @@ const config = {
       {
         indexBlog: false,
         language: "en"
+      }
+    ],
+    [
+      "@graphql-markdown/docusaurus",
+      {
+        schema: "https://mainnet.archethic.net/api",
+        rootPath: "./docs/build/api",
+        baseUrl: "api",
+        docOptions: {
+          pagination: true,
+          toc: true,
+          index: true
+        },
+        linkRoot: "/build/api",
+        //homepage: "./docs/build/api.md",
+        loaders: {
+          UrlLoader: "@graphql-tools/url-loader"
+        }
       }
     ]
   ]

@@ -1,6 +1,7 @@
 ---
 id: memory-table
 title: OracleChain Memory Tables
+sidebar_label: Memory database
 ---
 
 OracleChain component provides [scheduler](/build/core/oracle-chain/scheduler) and [services](/build/core/oracle-chain/service) to maintain transaction chain and real world data integration.
@@ -12,14 +13,13 @@ For this purpose, the OracleChain service maintains a memory table using ETS to 
 It represented in that way:
 
 | Timestamp | Service | Data |
-|-|-|-|
+| --------- | ------- | ---- |
 
 For example for the UCO service we may have:
 
-|Timestamp|Service|Data|
-|-|-|-|
-| 1622801400 | UCO | %{ "eur" => 0.02 } |
-
+| Timestamp  | Service | Data               |
+| ---------- | ------- | ------------------ |
+| 1622801400 | UCO     | %{ "eur" => 0.02 } |
 
 The table is loading after each oracle or oracle summary transaction and during the bootstrap for faster computation.
 

@@ -1,0 +1,31 @@
+---
+id: timestamp
+title: Timestamp
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+The [Timestamp] scalar type represents a UNIX timestamp in seconds
+
+
+```graphql
+scalar Timestamp
+```
+
+
+
+
+### Member of
+
+[`Node`](/build/api/schema/objects/node)  <Badge class="secondary" text="object"/><Bullet />[`OracleData`](/build/api/schema/objects/oracle-data)  <Badge class="secondary" text="object"/><Bullet />[`oracleData`](/build/api/schema/queries/oracle-data)  <Badge class="secondary" text="query"/><Bullet />[`TransactionInput`](/build/api/schema/objects/transaction-input)  <Badge class="secondary" text="object"/><Bullet />[`ValidationStamp`](/build/api/schema/objects/validation-stamp)  <Badge class="secondary" text="object"/>
+
+
+

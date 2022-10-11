@@ -1,6 +1,7 @@
 ---
 id: scheduler
 title: OracleChain Scheduler
+sidebar_label: Scheduler
 ---
 
 The OracleChain module contains a process in charge of scheduling the data fetching and transaction submitting.
@@ -8,6 +9,7 @@ The OracleChain module contains a process in charge of scheduling the data fetch
 It's modeled as finite state machine.
 
 Three main state are represented:
+
 - `IDLE`: When the process is waiting a new tick to be triggered based on some interval
 - `Polling`: When the process must fetch data from external sources
 - `Summary`: When the process must aggregate the entire polling transactions for a given interval
@@ -17,10 +19,11 @@ Mainnet and Testnet can have different values based on environment variables.
 
 This is due to simulate quicker events and summary.
 
-For example, 
+For example,
+
 - on Mainnet: each polling is triggered each minute and the summary each day at 00:00 UTC.
 - on Testnet: each polling is triggered each 10s and the summary each minute.
-:::
+  :::
 
 For each actionable state, the process determines if the current running node is in charge to fetch or emit the transaction, based on the election algorithm.
 
@@ -42,7 +45,7 @@ stateDiagram-v2
     Is_Summary_Time --> if_state
     if_state --> Summary: "Yes"
     if_state --> Polling: "No"
-    
+
 
     state Polling {
         state if_state_polling <<choice>>
@@ -65,7 +68,7 @@ stateDiagram-v2
     }
 
     Polling --> Idle
-    
+
 
     state Summary {
         state if_state_summary <<choice>>
@@ -83,4 +86,3 @@ stateDiagram-v2
 ```
 
 :::note
-

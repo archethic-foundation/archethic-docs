@@ -10,9 +10,9 @@ concurrent writes and reads while avoiding much as I/O as possible.
 
 Several solutions have been analyzed and uses from benchmarks, to implementation until the need to implement a solution which will fit the needs and requirements. (ie. LevelDB, RocksDB, Cassandra, ScyllaDB, Aerospike, Redis, etc.)
 
-There are multiple database engines which provides different needs, but we wanted to focus on NoSQL and efficient disk amangement and writes. 
+There are multiple database engines which provides different needs, but we wanted to focus on NoSQL and efficient disk amangement and writes.
 
-Our choice ended with log structued family storages (instead of B-tree which are more read efficient, but suffer for random writes) 
+Our choice ended with log structued family storages (instead of B-tree which are more read efficient, but suffer for random writes)
 
 ### Log Structured Merge
 
@@ -22,8 +22,8 @@ Append only writes are really efficient in term of disk I/O as a single seek in 
 
 There are also shipped with inmemory structure which is flush over time while keeping this append-only log on disk for backup and safety measure. So those dumps are immutable and provided the database view at certain time.
 
-But because most of the KeyValue database using LSM, involving updates of keys, they must manage the redundancy of the data and provide cleanup (deleted or updates entries). 
-To support this clean, they are using `compaction` which is a merge operation which take only the last data information from multiple immutable dumps. 
+But because most of the KeyValue database using LSM, involving updates of keys, they must manage the redundancy of the data and provide cleanup (deleted or updates entries).
+To support this clean, they are using `compaction` which is a merge operation which take only the last data information from multiple immutable dumps.
 
 ### Log Structured Hash Tables
 
@@ -33,7 +33,7 @@ Its main requirement is to hold all the key of the value into the memory otherwi
 
 This approach also invovles a `compaction` as data blocks are appended with immutability but needs to be merged after some time to avoid filesystem exhaustion.
 
-### Our approach 
+### Our approach
 
 All those database Key-value, Wide column storage, etc.. which are using LSM are considered as global database to support different kind of use cases. However in our case, we have a specific need and requirements: **we are only dealing with immutable data at all**. The data stored in the transaction will never changed, and the mutation and views are managed from an application perspective but not from the disk itself.
 
@@ -56,7 +56,7 @@ Each chain is uniquely identified by its `genesis address`: which is the address
 ![](/img/write_transaction.png)
 
 :::info
-The append-only strategy is straighforward, each time a new transaction in a chain is persisted, the transaction is added at the end of the file of a chain. So in term of disk access and I/O, it requires a simple seek at the end of the file and dumps of the transaction serialized. 
+The append-only strategy is straighforward, each time a new transaction in a chain is persisted, the transaction is added at the end of the file of a chain. So in term of disk access and I/O, it requires a simple seek at the end of the file and dumps of the transaction serialized.
 
 This concept led to the streaming capability of the writes to avoid exhaustion of the system (as a backpressure mechanism)
 :::
@@ -65,9 +65,9 @@ So in order to be able to read specific columns from the transaction, the transa
 This encoding wraps each key value of the transaction into self-descriptive and schema less write.
 Each key/value pair is encoded in that way:
 
-| Column name size (1 byte) | Value size (32 byte) | Column name (binary) | Value (binary) |
-|-|-|-|-|
-| 7 | 33 | Address | 00743B809ADDE7E1E3E9B5AFB704813D06155958FBBB78CD052CC45A1B19F976BE
+| Column name size (1 byte) | Value size (32 byte) | Column name (binary) | Value (binary)                                                     |
+| ------------------------- | -------------------- | -------------------- | ------------------------------------------------------------------ |
+| 7                         | 33                   | Address              | 00743B809ADDE7E1E3E9B5AFB704813D06155958FBBB78CD052CC45A1B19F976BE |
 
 However, because we are using a schemaless approach letting the code defining the encoding and decoding, each transaction is prepended by its size length (4 bytes) and its version.
 
@@ -82,8 +82,9 @@ Different kind of indexing are performed some completly both in memory and disks
 #### File indexes
 
 ##### Summary
+
 To provide a way to find a transaction without knowing its genesis address, we implemented a summary index (as there are in other solutions) to help the identify the location of the data.
-Then, as the [BeaconChain](/learn/sharding/beacon-chain) used this concept, we also applied the address's subset identification here. 
+Then, as the [BeaconChain](/learn/sharding/beacon-chain) used this concept, we also applied the address's subset identification here.
 So each address contains a subset which is the first byte of the digest (exluding the metadata to identify curve and hash algorithm).
 
 So each subset has its own index, with a list of transaction, genesis addresses, the transaction size and its offset (location in the chain's genesis file)
@@ -97,7 +98,7 @@ So during the transaction validation, nodes are able to resolve recipient last a
 
 But in order to make this possible, previous nodes of a given chain need to keep a track of the last transaction of the chain.
 
-Then a specific index file is provided (`"Genesis-address"-addresses`) for this purpose which contains a given chain (genesis file), a list of timestamps and addresses for this chain. 
+Then a specific index file is provided (`"Genesis-address"-addresses`) for this purpose which contains a given chain (genesis file), a list of timestamps and addresses for this chain.
 
 ![](/img/last_address_index.png)
 
@@ -126,7 +127,6 @@ Then a index is given by type for this purpose where the addresses are appended
 
 ![](/img/type_index.png)
 
-
 #### Memory indexes
 
 Among the files indexes for backup or long term storage, we are proving some in memory indexes (a bit like Log structured Hash tables) to read data with predictable latency.
@@ -137,6 +137,7 @@ This make reads fast.
 ##### Transaction index
 
 This index works a bit like a chache and is identified by a transaction address with the following information:
+
 - genesis address
 - offset
 - size
@@ -148,7 +149,7 @@ But if the transaction is not present, we can easily use the index summary as fa
 ##### Chain stats
 
 This index is built from the genesis chain files and contains information about the number of transactions within and the last offset.
-So during the write, the transaction index/summary is notified about the last offset of the chain, and help to move forward in the location of new transaction. 
+So during the write, the transaction index/summary is notified about the last offset of the chain, and help to move forward in the location of new transaction.
 
 ##### Last index
 
@@ -158,21 +159,9 @@ So this table is filled every time a node receives a last address notification.
 
 ##### Type index
 
-Because we have type index file, we can also leverages a memory index to know how many transactions for a given type exists. 
-This is useful for key derivation for network transactions. 
+Because we have type index file, we can also leverages a memory index to know how many transactions for a given type exists.
+This is useful for key derivation for network transactions.
 So we can easily and quickly get the size of a chain.
-
-##### Bloom filters
-
-While indexes are great addition to avoid disk I/O, sometimes we need to fetch data to check or not its existence.
-However, we can use data structures which can help us to avoid unnecessary reads.
-
-Other databases usually leverages `Bloom filters` which are probabilistic way to assert something true.
-So it cannot have false positive.
-
-Then this structure helps to asserts a transaction exists, and if so, we can read from disk information, if needed.
-
-In order to make it works, each time a transaction is written the bloom filter is updated, where the bytes of the addresses are marked as 1, then we can easily determine if a transaction exists or not.
 
 ### Chain reader
 
@@ -196,6 +185,7 @@ So in order to be written, a transaction follows a write path to make reads effi
 After a transaction is written to disk in the genesis chain file, several disks and memory writes are performed to help the indexing of this transaction.
 
 Transaction's address is written to:
+
 - the summary index from the subset of the transaction (file)
 - the last addresses index of the chain (in memory and file)
 - the transaction's type index (in memory)
@@ -223,6 +213,7 @@ For now, we have covered the scope of chain storage and retrieval, however we al
 So we have to leverage others kind of storages and indexes as simple key-value in memory loaded from disk.
 
 The scope of those storages are:
+
 - Bootstrapping information (last P2P bootstrapping seeds, storage nonce, last sync date)
 - Network statistics (aggregated TPS and nb of transactions)
 - P2P view (aggregated node availability from the beacon chain)
