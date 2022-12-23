@@ -18,28 +18,28 @@ A slot is responsible for transaction being added to the Beacon Chain and shards
 ### Epoch
 
 It is an time interval within Archethic network for the Beacon chain subsets.
-One epoch maybe having many slots based on slot timer interval.
-At each epoch a new transaction is emitter to have a summary of the entire epoch.
+One epoch may have many slots based on the slot timer interval.
+At each epoch a new transaction is emitted to have a summary of the entire epoch.
 
-Epoch interval may differ between mainnet, testnet or development. For instance mainnet epoch interval is daily while testnet for now is each minute to ease the integration and simulation of the network.
+Epoch interval may differ between mainnet, testnet or development. For instance mainnet epoch interval is daily while for testnet it is currently every minute, to ease integration and simulation of the network.
 
 So in this time interval beacon transactions are sealing the transaction in the current beacon summary transaction and replicates the transactions to other nodes.
 
 ### Subset
-`Archethic` Blockchain have 256 subsets, from 00 to FF [0-255] (two nimbles) as the byte capacity and the first byte of the transaction.
+`Archethic` Blockchain have 256 subsets, from 00 to FF [0-255] (two nibbles) as the byte capacity and the first byte of the transaction.
 
 ## Process to get transaction notifications
 
-Beacon Chain will store the transactions in slots and at the beacon summary time all those transactions are summarized and will be replicated among the beacon storage nodes which are elected are storage nodes.
+Beacon Chain will store the transactions in slots and at the beacon summary time all those transactions are summarized and will be replicated among the beacon storage nodes which are elected as storage nodes.
 
 The day 1 will be the next beacon summary date from the first node enrollment date, which means, if the first node joins on `02/11/2021 10:00:00`, the beacon chain date to pull will be `03/11/2021 00:00:00`
 
-The explorer expose then a pagination based on date, since we can easily reproduce the addresses through a deterministic
+The explorer then exposes a pagination based on date, since we can easily reproduce the addresses through a deterministic
 address generation based on date.
 
 So from the `day 1` until now, we can offer pagination over the beacon summaries.
 
-Because we are able to have a reproducible storage node election algorithm we can fetch data for a give date
+Because we are able to have a reproducible storage node election algorithm we can fetch data for a given date
 for the right nodes.
 
 ## How to get transactions in realtime

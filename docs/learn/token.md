@@ -10,17 +10,17 @@ Archethic allows users to create and transaction with an unlimited-defined (cust
 
 ## Native 
 
-Archethic tokens are considered as native as for developers, there are not need to create smart contract to mint or transfer tokens.
+Archethic tokens are considered as native as for developers, there is no need to create smart contract to mint or transfer tokens.
 
-The transaction's structure support - since its design, asn extension of the ledger model (more than UCO-only transaction)
+The transaction's structure supports - by design, asn extension of the ledger model (more than UCO-only transaction)
 
 All the layer of complexity have been removed to make them efficient and performant.
 
-Because of this, the transfer of tokens is simple as a transfer of UCO (just UTXO), making it fast and cheap. 
+Because of this, the transfer of tokens is as simple as a transfer of UCO (just UTXO), making it fast and cheap. 
 
 ## Standardized
 
-Archethic's tokens are also unified through a specification to help implementers, develoeprs and users to have clear understanding of their definition
+Archethic's tokens are also unified through a specification to help implementers, developers and users to have a clear understanding of their definition
 
 For more details please take a look at the [AEIP-2](https://github.com/archethic-foundation/aeip/blob/main/AEIP-2.md)
 
@@ -65,7 +65,7 @@ During the transaction validation, the miners will understand how to interpret t
 
 ## Usage
 
-To make use of those custom tokens, a developer or a user can easily build a new transaction and mentioning in the ledger operations to send this token.
+To make use of those custom tokens, a developer or a user can easily build a new transaction and use the ID in the ledger operations to send this token.
 
 Example of Token ledger operation in the transaction:
 ```jsonc

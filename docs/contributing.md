@@ -7,7 +7,7 @@ This documentation is maintained by the Archethic Foundation. It's an open sourc
 resources of knowledge on Archethic and its ecosystem.
 
 We welcome contributions from anyone and are grateful for even the smallest of improvement from typo issues, to proposals, to enhance explaination or create diagrams, etc.
-Therefore, pull requests, discussions, and contributions from the community are encourage 
+Therefore, pull requests, discussions, and contributions from the community are encouraged.
 
 
 ## How to contribute

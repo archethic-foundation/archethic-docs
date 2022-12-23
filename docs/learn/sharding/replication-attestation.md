@@ -3,16 +3,16 @@ id: replication-attestation
 title: Replication attestation
 ---
 
-How to ensure a minimun of confirmation from the storage nodes to ensure the data availability of a given transaction.
-If we are not providing this kind of mechanism, we can end up into a network split / mistmatch where shards and beacon aren't cross linked.
-Also we do not want to overload the beacon chain by broadcasting it with hundred of messages for single transaction summary.
+How to ensure a minimum of confirmation from the storage nodes to ensure the data availability of a given transaction.
+If we are not providing this kind of mechanism, we can end up into a network split / mismatch where shards and beacon aren't cross linked.
+Also we do not want to overload the beacon chain by broadcasting it with hundred of messages for a single transaction summary.
 
 ## Heuristic solution
 
 Each validation node will notify the replications nodes in charge, and wait their confirmations to attest the validity 
-and the availability of the transaction in the shard before to notify the beacon chain and the welcome node.
+and the availability of the transaction in the shard before notifying the beacon chain and the welcome node.
 
-In 1st approx, a single notification from the validation nodes is sufficient to ensure the availability. This attestation will contains a list of signatures, 
+In 1st approx, a single notification from the validation nodes is sufficient to ensure the availability. This attestation will contain a list of signatures, 
 from the replication nodes, to status about their commitment to store the transaction. 
 However, further attestations and confirmations can be checked later during the time, to provide more security.
 
@@ -37,7 +37,7 @@ Chain: S1  S2  S3
 
 ### Client notifications
 
-When a transaction is submitted, the welcome node will transfer this transaction to the validation nodes and return to the client a pending status.
+When a transaction is submitted, the welcome node will transfer this transaction to the validation nodes and return a pending status to the client.
 The client would have to subscribe to notifications about the completion of the transaction.
 Once the transaction will be validated and the validation nodes by notifing the welcome will notify the clients asynchronously.
 

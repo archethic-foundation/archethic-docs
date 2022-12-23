@@ -3,9 +3,9 @@ id: sharding
 title: Sharding
 ---
 
-To become an unlimited decentralized network, Archethic Blockchain is using a feature call `Sharding` uses to split processing and storage power to ensure a scalable system.
+To become an unlimited decentralized network, Archethic Blockchain is using a feature called `Sharding`, used to split processing and storage power to ensure a scalable system.
 
-Thanks to the `Transaction Chain` paradigm, transactions can be divided into chain, to ensure a concurrent processing 
+Thanks to the `Transaction Chain` paradigm, transactions can be divided into chains, to ensure a concurrent processing 
 as the opposite of traditional blockchains.
 
 Other new blockchain networks start to use `Sharding` but sometimes not in a complete form: 
@@ -18,10 +18,10 @@ Archethic Blockchain supports a complete sharding scheme for validation and for 
 
 Each transaction is validated by a new set of rotating nodes.
 
-This ensures the distribution of validation and the processing, to achieve a linear scalability and a high TPS.
+This ensures the distribution of validation and processing, to achieve a linear scalability and a high TPS.
 
 Because transaction are using the UTXO model, 
-there is no reality out of the transaction, so the network is not subject to issue like:
+there is no reality out of the transaction, so the network is not subject to issues like:
 
 - cross shards synchronization
 - state channels communication

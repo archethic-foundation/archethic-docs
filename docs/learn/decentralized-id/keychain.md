@@ -11,7 +11,7 @@ It describes wallet which is stored encrypted on chain, as only you and the auth
 
 Technically speaking, this wallet - also referenced as `Decentralized Identity` - is made up of randomly generated `seed` (root key) from which it's possible to generate all keys according to a path of derivation. 
 
-So for any acess to a service or an application, a key will be generated on the fly from the `seed` (root key) and the first public key associated with a service or an application.
+So for any access to a service or an application, a key will be generated on the fly from the `seed` (root key) and the first public key associated with a service or an application.
 
 Thus allowing creating an infinite number of identities without even having to store related keys. 
 
@@ -38,7 +38,7 @@ This avoids disclosure of critical information and prevents unauthorized access.
 
 Archethic decentralized identity and keychain concepts is also compliant with industry standard in the field of online and digital identity.
 
-Then once created, the keychain embedded on-chain a representation of a [W3C DID (Decentralized Identitifier)](https://www.w3.org/TR/did-core/) document which help the discovery of your key materials.
+Then once created, the keychain embeds on-chain a representation of a [W3C DID (Decentralized Identitifier)](https://www.w3.org/TR/did-core/) document which help the discovery of your key materials.
 
 It displays a JSON message with the list of public key you own and you allow other parties to interact with, such as your main Archethic public key or your Amazon public for example.
 
@@ -46,9 +46,9 @@ This coupled with [verifiable credentials](https://www.w3.org/TR/vc-data-model/)
 
 ## Customization
 
-Because this wallet should be your digital identity security, we can customized the services and way the keys are generated.
+Because this wallet should be your digital identity security, we can customize the services and way the keys are generated.
 
-Each service in the keychain is joined with other properties customizable:
+Each service in the keychain is joined with other customizable property:
 - derivation path: this will inform how the key will be generated. For example, the default one is `m/650'/0/0` informing we are using Archethic derivation method (`650` instead of the usual BIP44) and then the `0/0` indicates the first account and the first key of the chain.
 
 But nothing prevent to add something like: `m/650'/Amazon/0` or `m/650'/JohnDoeUCO@!/0`
