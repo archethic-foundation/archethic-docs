@@ -15,7 +15,7 @@ It's using a long-polling mechanism to get data from external sources and submit
 
 By using ARCH consensus, we ensure the atomic commitment of the data submitted and ensure validity of the information written into the transaction.
 
-Each node received the new transaction from the OracleChain and can apply behaviors from this new data and notify smart contracts which depends on oracle updates.
+Each node receives the new transaction from the OracleChain and can apply behaviors from this new data and notify smart contracts which depends on oracle updates.
 
 
 ```mermaid
@@ -26,7 +26,7 @@ graph TD
   A --> | 2. Send transaction| D
   C[Node2] --> | 3. Check data | B 
   D[Node3] --> | 3. Check data |B
-  C[Node2] --> | 4. Validate trransaction | D 
+  C[Node2] --> | 4. Validate transaction | D 
   D[Node2] --> C
 ```
 

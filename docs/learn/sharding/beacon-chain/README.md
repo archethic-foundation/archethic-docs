@@ -10,7 +10,7 @@ a `Beacon Chain` is used to keep a global synchronization and reference.
 
 ## Concepts
 
-`Beacon Chain` is used as tracer/marker of a global state but to face some scalability issue, Archethic Blockchain is using `Sharding` also for the `BeaconChain`.
+`Beacon Chain` is used as tracer/marker of a global state but to face some scalability issue, Archethic Blockchain is using `Sharding` also for the `Beacon Chain`.
 
 Which means that the `Beacon Chain` is sharded and divided into `subset` defined by the transaction's address and a given date.
 
@@ -29,11 +29,11 @@ Because each transaction has its own storage nodes, `Beacon Chains` are balanced
 
 ## Status and Network Coordinates of nodes
 
-Beacon Chains also contain network status of the nodes where the public key starts by the Beacon Chain subset.
+Beacon Chains also contains network status of the nodes where the public key starts by the Beacon Chain subset.
 
 The storage nodes in each subset is in charge of:
-- check the node availabilities
-- gather networking information such as latency, bandwidth
+- checking the node availabilities
+- gathering networking information such as latency, bandwidth
 
 At the end of the day, a transaction is formed as well and a last transaction is computed to generate a summary of node availability and network coordinates
 

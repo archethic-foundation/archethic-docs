@@ -74,7 +74,7 @@ Following are the ways to access:
 - by **PIN code**, comprising of 6 digits, with the possibility to mix the numbers of the keyboard to reduce the risks of access to your code by observation,
 - by **password**,
 - by using a **YubiKey**, it is an electronic authentication device to secure your access. Whether you are using NFC with your mobile or USB on your desktop, you can identify yourself with this key,
-- by the **touch ID or face ID system**, depends on the capabilities of your device.
+- by the **touch ID or face ID system**, depending on your device capabilities.
 
 In the case of **PIN** and **password**, authentication information is stored locally (see "What data is stored in my device?").
 In the case of **touch ID or Face ID**, the [Flutter Local Auth library](https://pub.dev/packages/local_auth) provides the means to authenticate on devices supporting fingerprint or facial recognition authentication.
@@ -119,7 +119,7 @@ Remember that Archethic will never pass on your data to a third party or use you
 These data are stored in clear text because they are not sensitive.
 
 **On the other hand, the information related to security management must be protected.** Here again, Hive is used but the stored values are encrypted. Hive provides a helper function to generate a secure encryption key using the [Fortuna](https://en.wikipedia.org/wiki/Fortuna_%28PRNG%29) random number generator.
-The key is stored base 64 encoded in a secure space via the [FlutterSecureStorage library](https://pub.dev/packages/flutter_secure_storage).
+The key is stored base64 encoded in a secure space via the [FlutterSecureStorage library](https://pub.dev/packages/flutter_secure_storage).
 
 ```dart
 static Future<Vault> getInstance() async {
