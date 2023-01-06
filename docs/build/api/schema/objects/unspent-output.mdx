@@ -20,15 +20,18 @@ It includes:
 - Type: UCO/token
 - token address: address of the token if the type is token
 - token id: It is the id for a token which is allocated when the token is minted.
-
+- Timestamp: Date time when the UTXO created/manipulated
+- Version: Version of the UTXO data structure
 
 ```graphql
 type UnspentOutput {
   amount: Int
   from: Address
+  timestamp: Timestamp
   tokenAddress: Address
   tokenId: Int
   type: String
+  version: Int
 }
 ```
 
@@ -43,6 +46,10 @@ type UnspentOutput {
 > 
 > 
 
+#### [<code style={{ fontWeight: 'normal' }}>UnspentOutput.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>UnspentOutput.<b>tokenAddress</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
 > 
 > 
@@ -52,6 +59,10 @@ type UnspentOutput {
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UnspentOutput.<b>type</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UnspentOutput.<b>version</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
 > 
 > 
 

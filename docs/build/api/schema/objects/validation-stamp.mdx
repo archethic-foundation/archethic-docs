@@ -19,13 +19,14 @@ It includes:
 - Proof of integrity: Hash of the previous proof of integrity and the transaction
 - Ledger operations: All the operations performed by the transaction
 - Signature: Coordinator signature of the stamp
-
+- Protocol version: Version of the transaction validation protocol
 
 ```graphql
 type ValidationStamp {
   ledgerOperations: LedgerOperations
   proofOfIntegrity: Hash
   proofOfWork: PublicKey
+  protocolVersion: Int
   signature: Hex
   timestamp: Timestamp
 }
@@ -43,6 +44,10 @@ type ValidationStamp {
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfWork</b></code>](#)<Bullet />[`PublicKey`](/build/api/schema/scalars/public-key) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>protocolVersion</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
 > 
 > 
 

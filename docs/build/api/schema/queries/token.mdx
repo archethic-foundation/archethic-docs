@@ -15,7 +15,6 @@ export const Badge = (props) => <><span class={'badge badge--' + props.class}>{p
 
 Query the network to find a token's data
 
-
 ```graphql
 token(
   address: Address!
@@ -36,13 +35,14 @@ token(
 It includes:
 - genesis: Genesis address to the token
 - name: Name of the token
-- symbol: Symbol for the token
+- symbol: Symbol of the token
 - supply: Supply of the token
 - type: Type of the token
+- decimals: Number of decimals of the token
 - properties: Properties of the token (if any)
 - collection: List of properties for a collection (if any)
+- ownerships: authorization/delegations containing list of secrets and their authorized public keys to proof the ownership
 - id: Unique identification of the token on the chain
-
 > 
 
 

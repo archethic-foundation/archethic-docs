@@ -17,13 +17,14 @@ export const Badge = (props) => <><span class={'badge badge--' + props.class}>{p
 It includes:
 - genesis: Genesis address to the token
 - name: Name of the token
-- symbol: Symbol for the token
+- symbol: Symbol of the token
 - supply: Supply of the token
 - type: Type of the token
+- decimals: Number of decimals of the token
 - properties: Properties of the token (if any)
 - collection: List of properties for a collection (if any)
+- ownerships: authorization/delegations containing list of secrets and their authorized public keys to proof the ownership
 - id: Unique identification of the token on the chain
-
 
 ```graphql
 type Token {
@@ -32,6 +33,7 @@ type Token {
   genesis: Address
   id: String
   name: String
+  ownerships: [Ownership]
   properties: TokenProperties
   supply: Int
   symbol: String
@@ -59,6 +61,10 @@ type Token {
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>Token.<b>name</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Token.<b>ownerships</b></code>](#)<Bullet />[`[Ownership]`](/build/api/schema/objects/ownership) <Badge class="secondary" text="list"/> <Badge class="secondary" text="object"/>
 > 
 > 
 

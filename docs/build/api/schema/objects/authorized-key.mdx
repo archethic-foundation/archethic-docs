@@ -16,7 +16,6 @@ export const Badge = (props) => <><span class={'badge badge--' + props.class}>{p
 [AuthorizedKey] represents a authorized public key with the encrypted secret key for this given key.
 By decrypting this secret key, the authorized public key will be able to decrypt its related secret
 
-
 ```graphql
 type AuthorizedKey {
   encryptedSecretKey: Hex

@@ -1,6 +1,6 @@
 ---
-id: oracle-data
-title: oracleData
+id: version
+title: version
 hide_table_of_contents: false
 ---
 
@@ -13,25 +13,17 @@ export const SpecifiedBy = (props) => <>Specification<a className="link" style={
 export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
 
 
-Query the network to get the value of an oracle at a specific time or the last value
+List protocol, transaction and code versions
 
 ```graphql
-oracleData(
-  timestamp: Timestamp
-): OracleData
+version: Version
 ```
 
 
-### Arguments
-
-#### [<code style={{ fontWeight: 'normal' }}>oracleData.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="secondary" text="scalar"/>
-> 
-> 
-
 ### Type
 
-#### [`OracleData`](/build/api/schema/objects/oracle-data) <Badge class="secondary" text="object"/>
-> [OracleData] represents an oracle data.
+#### [`Version`](/build/api/schema/objects/version) <Badge class="secondary" text="object"/>
+> [Version] represents code, transaction and protocol version
 > 
 
 
