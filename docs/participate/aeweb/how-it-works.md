@@ -130,7 +130,7 @@ Any Archethic node expose an API dedicated for the web hosting by AEWeb.
 This API takes a reference address as a parameter, and then proceeds to take the path of the file, just like any web server would do.
 
 ```sh
-https://mainnet.archethic.net/api/web_hosting/0cs19fd13......../image.jpg
+https://mainnet.archethic.net/api/web_hosting/0c19fd13......../image.jpg
 ```
 
 ![aeweb_CDN](/img/aeweb_CDN.svg)
