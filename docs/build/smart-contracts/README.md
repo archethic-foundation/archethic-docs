@@ -3,11 +3,12 @@ id: smart-contracts
 title: Smart Contracts
 ---
 
-*Smart-contracts are in computing what robots are in real life: they perform actions according to events.* 
+_Smart-contracts are in computing what robots are in real life: they perform actions according to events._
 
 Archethic Blockchain leverages next generation of smart contract to make the development of decentralized application easier to bring a mass adoption of the Blockchain technology.
 
 They introduce new features to this domain:
+
 - Completly autonomous and can be triggered from internal states (date, transactions) or real life (OracleChain updates).
 - Entirely modifiable: TransactionChains make update seamless
 - Interpreted: Code is interpreted and atomically verified by the miners
@@ -22,6 +23,7 @@ Archethic Smart Contract is defined by: `triggers`, `conditions` and `actions`
 ## Autonomous
 
 Archethic smart contracts autonomous behavior is due to the capability to define different kind of triggers:
+
 - Datetime: when the current date matches this timestamp
 - Interval: when the current dates matches this cron interval scheduler
 - Transaction: when the contract receive a transaction in input (UTXO model)
@@ -30,6 +32,11 @@ Archethic smart contracts autonomous behavior is due to the capability to define
 !> Since smart contracts can autonomous and create transactions on the behalf of the owner, transaction should authorize nodes to use the cryptographic keys to generate transaction.
 
 Then the contract has to specify a `inherit conditions` to accept new changes.
+
+:::info
+By default inherit condition will expect the transaction's data values to be the same from the previous ones. This ensures consistency while delegating to the node the contract execution.
+Hence, for any specific change regarding transaction's data (ie. code, content, transfers, ...), a inherit condition must be specified.
+:::
 
 ## Modifiable:
 
@@ -47,7 +54,9 @@ But clients which depends on the smart contract don't need to update their code 
 
 So if we send a transaction to `0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC`, the code executed will be at `AF28C3D5B3828AD3F8682F1B1D14A8507B829F65F7BE6C50427A6019CCB6801C`
 
-?> Also, because we are not relying on internal state and database, and only with the UTXO, we do need to provide migrations of data or funds, and neither implement cross shard synchronization
+:::info
+Because we are not relying on internal state and database, and only with the UTXO, we don't need to provide migrations of data or funds, and neither implement cross shard synchronization
+:::
 
 ## Interpreted
 
