@@ -121,7 +121,7 @@ condition transaction: [
 
 - `regex_extract(data, pattern)`: Extract data from a regular expression
 
-- json_match?: Verify the data matches a JSONPath expression
+- `json_match?`: Verify the data matches a JSONPath expression
 
 ```
 condition oracle: [
@@ -136,6 +136,18 @@ condition oracle: [
     content: json_extract("$.uco.usd") > 0.2
 ]
 ```
+
+- `get_calls()`: Fetch the calls that triggered this contract (Useful for batch processing)
+
+It returns a list of transaction objects
+
+```
+actions triggered_by: interval, at: "0 0 1 * *" do
+  calls = get_calls()
+  ...
+end
+```
+
 
 ### Statements
 
