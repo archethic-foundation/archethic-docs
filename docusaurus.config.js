@@ -66,6 +66,11 @@ const config = {
             activeBaseRegex: '^/build/.*'
           },
           {
+            label: "FAQ",
+            to: "category/FAQ",
+            activeBaseRegex: '^/FAQ/.*'
+          },
+          {
             href: 'https://github.com/archethic-foundation/archethic-docs',
             label: 'GitHub',
             position: 'right',

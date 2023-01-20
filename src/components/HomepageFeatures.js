@@ -36,6 +36,16 @@ const FeatureList = [
     ),
     link: 'category/build'
   },
+  {
+    title: 'FAQ',
+    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Learn more about Archethic solutions by exploring our FAQ section.
+      </>
+    ),
+    link: 'category/FAQ'
+  },
 ];
 
 function Feature({ Svg, title, description, link }) {
