@@ -4,7 +4,6 @@ title: Archethic Bridge
 ---
 
 ## **Will the Archethic Network be available on Metamask?**
-
 No, Archethic blockchain is not Ethereum Virtual Machine (EVM) compatible.
 
 ## **How can I add a network on Metamask?**
@@ -47,3 +46,28 @@ Only UCOs can be “bridged”.
 
 You would have to pay the fees on ETH/BSC/MATIC to transfers your UCO and proceed to the transfer.
 However, you won’t have to pay the fees on Archethic, which is the purpose of the bridge: to get funds on the Archethic’s network.
+
+## **I want to get the Archethic address from the Wallet app, how can I know it is the Testnet or the Mainnet address?**
+
+I will update the app in few weeks for this point. For the moment: click on receive button + “See on explorer” button and see if the link goes to the Mainnet or the Testnet.
+
+## **I’m using the Mainnet network in the Wallet, how can I switch on the Testnet?**
+
+The switch is not possible because the seed is not shared between Mainnet and Testnet. Later, the wallet will be multiseeds, but not for the moment. The only way for the moment is to remove the Wallet (don’t forget the 24 words) and create/import a wallet in the Testnet network.
+
+## **If I sent the tokens to the Mainnet address, what to do?**
+
+You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1)
+
+## **I want to get the Archethic address from the Wallet app, how can I know it is the Testnet or the Mainnet address?**
+
+On the wallet app, from the version 2.0.8, the network is displayed in the main menu (click on the burger icon to access to the main menu).
+
+## **I’m using the Mainnet network in the Wallet, how can I switch on the Testnet?**
+
+The switch is not possible because the seed is not shared between Mainnet and Testnet. Later, the wallet will be multiseeds, but not for the moment. 
+The only way for the moment is to remove the Wallet (don’t forget the 24 words) and create/import a wallet in the Testnet network.
+
+## **If I sent the tokens to a wrong Mainnet address, what to do?**
+
+You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1)
