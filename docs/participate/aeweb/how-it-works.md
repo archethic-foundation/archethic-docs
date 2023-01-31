@@ -41,13 +41,19 @@ The reference transaction's address will become the address of the website manag
 
 ```json
 {
-  "index.html": {
-    "addresses": ["0FB27DAC...."],
-    "encodage": "gzip"
-  },
-  "scripts/main.js": {
-    "addresses": ["0AC1BFA9..."]
-  }
+  "aewebVersion": 1,
+  "metaData": {
+    "index.html": {
+      "addresses": ["0FB27DAC...."],
+      "encoding": "gzip",
+      "size": "10000",
+      "hash": "0df1Acd..."
+    },
+    "scripts/main.js": {
+      "addresses": ["0AC1BFA9..."],
+      ...
+    },
+  } 
 }
 ```
 
@@ -72,14 +78,20 @@ For example, you could have a website which contains: 5 files:
 
 ```json
 {
-  "index.html": {
-    "addresses": ["0ac7fj..."]
-  },
-  "app.css": {
-    "addresses": ["0ac7fj..."]
-  },
-  "image.jpg": {
-    "addresses": ["0ac7fj...", "1fb2ha..."]
+  "aewebVersion": 1,
+  "metaData": {
+    "index.html": {
+      "addresses": ["0ac7fj..."],
+      ...
+    },
+    "app.css": {
+      "addresses": ["0ac7fj..."],
+      ...
+    },
+    "image.jpg": {
+      "addresses": ["0ac7fj...", "1fb2ha..."],
+      ...
+    }
   }
 }
 ```
@@ -103,7 +115,6 @@ For example, you could have a website which contains: 5 files:
 ```
 
 ## Content delivery
-
 On the other side, the transactions are validated and stored on the Archethic Blockchain.
 Any Archethic node expose an API dedicated for the web hosting by AEWeb.
 
