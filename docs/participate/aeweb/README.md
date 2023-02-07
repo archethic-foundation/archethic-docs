@@ -65,9 +65,9 @@ In that case, once the front-end page have been build from the SPA tooling, inst
 ## Roadmap
 
 - [x] Design
-- [ ] Blockchain integration
+- [x] Blockchain integration
   - [x] API
-  - [ ] HTTPS & certificates
+  - [x] HTTPS & certificates
 - [ ] Command Line Interface (CLI)
   - [x] File
   - [x] Folder
