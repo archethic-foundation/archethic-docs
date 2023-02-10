@@ -46,8 +46,13 @@ html[data-theme="dark"] .card:hover {
 img[alt="gossip"] {
   width: 40%;
 }
+
 img[alt="broadcast"] {
   width: 40%;
+}
+
+img[alt="bridge-blockchains"] {
+  width: 20%;
 }
 
 #mermaid-svg-1 {
@@ -60,6 +65,7 @@ img[alt="aeweb_CDN"] {
   display: block;
   margin: auto;
 }
+
 img[alt="aeweb_dns"] {
   width: 70%;
   display: block;
