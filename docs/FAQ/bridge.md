@@ -64,9 +64,8 @@ Here is a link giving a tutorial to install Metamask : [https://www.coindesk.com
 ## Issues management
 
 
-### **What happens if a problem occurs or I refuse a transaction during the transfer?**
-During the delay of the acknowledgment, you should wait the end of the duration and you can tell the refund of your ERC20 Wallet with the "REFUND" button available on your Archethic Bridge application.
-
+### **What happens if a problem occurs, or I refuse a transaction during the transfer?**
+During the delay of the acknowledgment, you should wait for the end of the duration, and you can tell the refund of your ERC20 Wallet with the "REFUND" button available on your Archethic Bridge application.
 ### **If I sent the tokens to a wrong Mainnet address, what to do?**
 
 You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1).
@@ -83,5 +82,4 @@ Developers can use smart contract or atomic swap technology to facilitate the tr
 
 ### **I’m using the Mainnet network in the Wallet, how can I switch on the Testnet?**
 
-The switch is not possible because the seed is not shared between Mainnet and Testnet. Later, the wallet will be multiseeds, but not for the moment. 
-The only way for the moment is to remove the Wallet (don’t forget the 24 words) and create/import a wallet in the Testnet network.
+The switch is not possible because the seed is not shared between Mainnet and Testnet. Later, the wallet will be multiseeds, but not for the moment. The only way for the moment is to remove the Wallet (don’t forget the 24 words) and create/import a wallet on the Testnet network.
