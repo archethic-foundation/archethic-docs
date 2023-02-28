@@ -48,10 +48,6 @@ The `condition transaction` block is used to check the incoming transaction that
 - `for name in names do ... end`
 - `for i in 1..10 do ... end`
 
-:::danger
-RANGES ARE NOT AUTHORIZED YET
-:::
-
 ## Variables & Scopes
 
 ```elixir
