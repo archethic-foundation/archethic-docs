@@ -436,6 +436,14 @@ This module is special in many ways.
 - Almost all functions mutates an internal state. We call this internal state the "next transaction".
 - This "next transaction" is initiated with current contract (all values but transfers are copied)
 
+### get_calls/0
+
+```elixir
+Contract.get_calls() # [tx1, tx2]
+```
+
+Returns a list of transactions that have this contract's transaction address in the recipients. This is useful for "aggregators contracts" with 1 "interval/datetime" trigger and no "transaction" trigger.
+
 ### set_type/1
 
 ```elixir
