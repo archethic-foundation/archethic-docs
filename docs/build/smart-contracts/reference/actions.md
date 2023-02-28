@@ -16,19 +16,65 @@ The `contract` variable is a map of the current contract's transaction. See [App
 
 ### transaction
 
-The `transaction` variable is a map of the transaction that triggered the `actions` block. See [Appendix 1](#appendix-1-the-transaction-map). It is only available when the trigger is a transaction: 
-
-```elixir 
-actions triggered_by: transaction do 
-   ...
-end
-```
-
+The `transaction` variable is a map of the transaction that triggered the `actions` block. See [Appendix 1](#appendix-1-the-transaction-map). **It is only available when the trigger is a transaction**:
 
 ## Examples
 
-:::danger TODO
-:::
+Here's an example implementation of a faucet contract:
+```elixir
+# every hour
+actions triggered_by: interval, at: "0 0 * * *" do
+	now = Time.now() # Current time
+	faucet_delay = 6 * 60 * 60 # 6 hour delay
+	calls = Contract.get_calls() # list of calls since last tick
+
+	# work only if there is at least one call
+	if calls != [] do
+		# remove the addresses that have waited long enough
+		content = ""
+		for line: Regex.scan(contract.content, "^(\\w+),(\\d+)$") do
+			address = List.at(line, 0)
+			at = List.at(line, 1)
+
+			if now - String.to_int(at) <= faucet_delay do
+				content = "#{content}#{address},#{at}\n"
+			end
+		end
+
+		# get the genesis and if allowed, add the transfer
+		for call in calls do
+			genesis_address = Chain.get_genesis_address(call.address)
+
+			if Regex.extract(content, genesis_address) == "" do
+				# transfer 5 uco
+				Contract.add_uco_transfer(to: genesis_address, amount: 5)
+
+				# update state
+				content = "#{content}#{genesis_address},#{now}\n"
+			end
+		end
+
+		# update the state
+		Contract.set_content(content)
+	end
+end
+```
+
+An ICO (Initial Coin Offering) contract:
+```elixir
+actions triggered_by: transaction do
+  # Get the amount of UCO send to this contract
+  amount_send = Map.get(transaction.uco_transfers, contract.address)
+
+  if amount_send > 0 do
+      # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
+      token_to_credit = amount_send * 10000
+
+      Contract.add_token_transfer(to: transaction.address, token_address: contract.address, amount: token_to_credit)
+  end
+end
+```
+
 
 ## Appendix 1: The transaction map
 
