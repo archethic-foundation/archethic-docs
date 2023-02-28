@@ -104,9 +104,13 @@ Returns the text representation of `float`.
 
 ## Map
 
-:::danger 
-[WE DO NOT HAVE EMPTY MAP REPRESENTATION]
-:::
+### new/0
+
+```elixir
+Map.new() # empty map
+```
+
+Returns an empty map. There is no shorthand notation.
 
 ### size/1
 
@@ -131,6 +135,10 @@ Parameters:
 - `key` the key
 
 Returns the value at `key` in `map` or `nil` if `key` is not in the `map`.
+
+:::tip
+There is a shorthand notation `map.key` when key is not a variable.
+:::
 
 ### get/3
 

@@ -80,7 +80,7 @@ There are many things to note from this example:
 
 ## Lists
 
-The list is the data structure to work with collections. The syntax is: `[1, 2]`.
+The list is the data structure to work with collections. The syntax is: `[1, 2]`. An empty list is: `[]`.
 There is a [List module](/build/smart-contracts/reference/library#list) in the library to manipulate lists.
 
 :::info
@@ -91,6 +91,10 @@ Lists are actually [Linked Lists](https://en.wikipedia.org/wiki/Linked_list).
 
 The map is the key-value data structure in the Smart Contract language. The syntax is: `[key1: 1, key2: 2]`.
 There is a [Map module](/build/smart-contracts/reference/library#map) module in the library to manipulate maps.
+
+:::note
+Since the maps and the lists have a very close syntax, it is impossible to differentiate an empty map from an empty list. So, for semantic reasons, to create an empty map, use the `Map.new()` function call.
+:::
 
 :::tip
 The brackets are actually optional! `key1: 1, key2: 2` will work as well.
