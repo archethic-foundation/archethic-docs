@@ -71,6 +71,35 @@ There are 2 global variables for this condition block:
 
 See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-the-transaction-map) for the details of the transaction map.
 
+### Examples
+
+Pass only if it is executed before a timestamp:
+```elixir 
+condition inherit: [
+    timestamp: next.timestamp < 1677598185
+]
+```
+
+Pass only if a counter (stored in content) was incremented:
+```elixir 
+condition inherit: [
+    content: String.to_int(previous.content) + 1 == String.to_int(next.content)
+]
+```
+
+Pass only if chain has been closed (the code part) and there is a UCO transfer to an address depending on the time:
+```elixir 
+condition inherit: [
+    code: "condition inherit: []",
+    uco_transfers: 
+        if Time.now() >= 1674564088 do
+            ["00003bafdfb7a8e66b59de5692b79088063853bbd69a7d555faec906e6215e57ff98": 2]
+        else
+            ["0000ba28ce06631ff2ef4fe3dc89a34be13c0d252f8952bbfa3173b03dbef3c04afd": 2]
+        end
+]
+```
+
 
 ## Condition transaction
 
@@ -85,6 +114,23 @@ There are 2 global variables for this condition block:
 1. `transaction` is the transaction that triggered the contract.
 
 See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-the-transaction-map) for the details of the transaction map.
+
+### Examples
+
+Pass only if the transaction that triggered the contract is a descendant of a specific address:
+```elixir 
+condition transaction: [
+    address: Chain.get_genesis_address() == "00001234ab..."
+]
+```
+
+Pass only if the transaction that triggered sent 10 UCOs to this contract:
+```elixir 
+condition transaction: [
+    uco_transfers: Map.get(contract.address) == 10
+]
+```
+
 
 ## Condition oracle
 

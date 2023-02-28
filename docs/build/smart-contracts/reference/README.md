@@ -20,6 +20,8 @@ The `condition transaction` block is used to check the incoming transaction that
 
 ## Basic Types
 
+This language is based on a functional language (elixir), but we added some imperative twist to it, to make it friendlier!
+
 - Comments are lines that start with a `#`
 - Strings are double quoted `"I am a string"`
 - String interpolation `"hello #{name}"`
@@ -31,7 +33,11 @@ The `condition transaction` block is used to check the incoming transaction that
 
 ## Comparaison
 
+We compare by value, which means you can pretty much compare anything and it will work as you expect. 
+
 - `1 == 1.0`
+- `[1,2] == [1,2]`
+- `[name: "John"] == [name: "John"]`
 - `true != false`
 - `if <expr> do ... end`
 - `if <expr> do ... else ... end`
@@ -39,6 +45,7 @@ The `condition transaction` block is used to check the incoming transaction that
 ## Arithmetic
 
 - `1 + 2 == 3`
+- `2 - 1 == 1`
 - `1 * 2 == 2`
 - `1 / 1 == 1.0`
 - `div(1, 1) == 1`
@@ -89,7 +96,7 @@ Lists are actually [Linked Lists](https://en.wikipedia.org/wiki/Linked_list).
 
 ## Maps
 
-The map is the key-value data structure in the Smart Contract language. The syntax is: `[key1: 1, key2: 2]`.
+The map is the key-value data structure in the Smart Contract language. The syntax is: `[key1: 1, key2: 2]` or if key starts with a number: `["00001abc...": 1]`. The keys must be strings.
 There is a [Map module](/build/smart-contracts/reference/library#map) module in the library to manipulate maps.
 
 :::note
@@ -108,4 +115,4 @@ You may use any functions from the library. The syntax is `Module.function(arg1,
 The parenthesis are actually optional! `Module.function arg1, arg2` will work as well.
 :::
 
-To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/library).
+To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/reference/library).
