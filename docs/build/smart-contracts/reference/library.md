@@ -104,10 +104,14 @@ Returns the text representation of `float`.
 
 ## Map
 
+:::danger 
+[WE DO NOT HAVE EMPTY MAP REPRESENTATION]
+:::
+
 ### size/1
 
 ```elixir
-Map.size(key1: "value", key2: "value2" ) # 2
+Map.size(key1: "value", key2: "value2") # 2
 ```
 
 Parameters: 
@@ -115,13 +119,46 @@ Parameters:
 
 Returns the number of keys in `map`.
 
-:::danger 
-[WE DO NOT HAVE EMPTY MAP REPRESENTATION]
-:::
+### get/2
 
-:::danger 
-[MISSING MAP SET/GET]
-:::
+```elixir
+Map.get([key1: "value", key2: "value2"], "key1") # "value"
+Map.get([key1: "value", key2: "value2"], "key3") # nil
+```
+
+Parameters: 
+- `map` the map
+- `key` the key
+
+Returns the value at `key` in `map` or `nil` if `key` is not in the `map`.
+
+### get/3
+
+```elixir
+Map.get([key1: "value", key2: "value2"], "key1", "not in map") # "value"
+Map.get([key1: "value", key2: "value2"], "key3", "not in map") # "not in map"
+```
+
+Parameters: 
+- `map` the map
+- `key` the key
+- `default` the default value
+
+Returns the value at `key` in `map` or `default` if `key` is not in the `map`.
+
+### set/3
+
+```elixir
+Map.set([key1: "value", key2: "value2"], "key1", "valueX") # [key1: "valueX", key2: "value2"]
+Map.get([key1: "value", key2: "value2"], "key3", "value3") # [key1: "value", key2: "value2, key3: "value3"]
+```
+
+Parameters: 
+- `map` the map
+- `key` the key
+- `value` the value to set
+
+Returns a copy of `map` where the value at `key` is `value`.
 
 ---------
 
@@ -223,6 +260,20 @@ Parameters:
 - `element` the element
 
 Returns a new list where `element` is appended to the start of `list`.
+
+
+### join/2
+
+```elixir
+List.join([], ", ")    # ""
+List.join(["Mike", "Robert", "Joe"], ", ")   # "Mike, Robert, Joe"
+```
+
+Parameters:
+- `list` the list of strings
+- `separator` the separator
+
+Returns a string where all `list`'s elements have been joined with `separator` separator.
 
 ---------
 
