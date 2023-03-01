@@ -70,6 +70,16 @@ During the delay of the acknowledgment, you should wait for the end of the durat
 
 You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1).
 
+### **What if I want to reset the process?**
+
+The bridge only allows one transfer at a time. If a transfer is started, you must complete it before starting a new one.
+
+In some cases, a started transfer can be resumed at a particular stage if, for example, you refused a transaction in your wallet or closed your browser.
+
+In case you don't want to resume the current transfer, you can use the "clear local storage" option to reset the transfer tool and make a new transfer.
+
+Warning: if you empty your local storage, the funds associated with the uncompleted transfer will be lost.
+
 ## Dev
 
 ### **How can developers use Archethic bridge to create new decentralized applications?**
