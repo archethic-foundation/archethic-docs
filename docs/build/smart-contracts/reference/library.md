@@ -533,7 +533,7 @@ For any other data structure, you should serialize it with the [Json module](/bu
 ### set_code/1
 
 ```elixir
-Contract.set_code("@version \"1.0.0\"\ncondition inherit: []")
+Contract.set_code("@version 1\ncondition inherit: []")
 ```
 
 Parameters:

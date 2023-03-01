@@ -15,7 +15,7 @@ In this scenario:
 - a `transaction` variable is available in the `actions` block.
 
 ```elixir 
-@version "1.0.0"
+@version 1
 condition inherit: [
     ...
 ]
@@ -34,7 +34,7 @@ end
 You may trigger a contract at a specific date. You need to specify a [Unix time](https://en.wikipedia.org/wiki/Unix_time) (secs since epoch). 
 
 ```elixir 
-@version "1.0.0"
+@version 1
 condition inherit: [
     ...
 ]
@@ -54,7 +54,7 @@ On the **MainNet**, the minimum granularity is the minute. On the **TestNet** th
  
 
 ```elixir
-@version "1.0.0"
+@version 1
 condition inherit: [
     ...
 ]
@@ -75,7 +75,7 @@ You may use multiple triggers in the same contract, but you are **limited to one
 
 DO:
 ```elixir
-@version "1.0.0"
+@version 1
 condition inherit: [
     ...
 ]
@@ -95,7 +95,7 @@ end
 
 DON'T:
 ```elixir
-@version "1.0.0"
+@version 1
 condition inherit: [
     ...
 ]

@@ -79,7 +79,7 @@ To understand how the fees work, check the [Fees' page](/build/smart-contracts/f
 Open the [Smart Contract Playground](https://scplayground.archethic.net) and paste the following code in the right panel.
 
 ```elixir
-@version "1.0.0"
+@version 1
 
 actions triggered_by: interval, at: "0 * * * *" do
     Contract.add_uco_transfer(
