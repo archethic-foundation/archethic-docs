@@ -89,7 +89,7 @@ actions triggered_by: interval, at: "0 * * * *" do
 end
 
 condition inherit: [
-    uco_transfers: Map.size() == 1
+    uco_transfers: ["000030831178cd6a49fe446778455a7a980729a293bfa16b0a1d2743935db210da76": 1]
 ]
 ```
 
@@ -98,7 +98,7 @@ to be able to improve the language and still be able to run contracts written wi
 
 Then, in the `actions` block, we define that this contract is triggered once per minute. This contract is doing a transfer of 1 UCO to a specific address.
 
-Finally, in the `condition inherit` block, we just ensure that there is 1 and only 1 UCO transfer resulting of the contract execution.
+Finally, in the `condition inherit` block, we just ensure that there is the expected transfer.
 
 We will not explain further than this, but if you're feeling curious, check the [Reference](/build/smart-contracts/reference).
 

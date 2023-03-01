@@ -104,7 +104,7 @@ Since the maps and the lists have a very close syntax, it is impossible to diffe
 :::
 
 :::tip
-The brackets are actually optional! `key1: 1, key2: 2` will work as well.
+The brackets are mostly optional! `key1: 1, key2: 2` will work as well. But if you have a nested map, you cannot omit them!
 :::
 
 ## Library
