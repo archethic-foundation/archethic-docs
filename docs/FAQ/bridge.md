@@ -72,13 +72,13 @@ You lose the tokens if the Mainnet address is not your address. Same thing if yo
 
 ### **What if I want to reset the process?**
 
-The bridge only allows one transfer at a time. If a transfer is started, you must complete it before starting a new one.
+The bridge will only allow one transfer at a time. If you have started a transfer, you must complete it before you can start a new one.
 
-In some cases, a started transfer can be resumed at a particular stage if, for example, you refused a transaction in your wallet or closed your browser.
+In some cases, a transfer in progress can be resumed at a later stage, for example if you have declined a transaction in your wallet or closed your browser.
 
-In case you don't want to resume the current transfer, you can use the "clear local storage" option to reset the transfer tool and make a new transfer.
+If you don't want to continue the current transfer, you can use the 'clear local storage' option to reset the transfer tool and start a new transfer.
 
-Warning: if you empty your local storage, the funds associated with the uncompleted transfer will be lost.
+Warning: If you clear your local memory, the funds associated with the unfinished transfer will be lost.
 
 ## Dev
 
