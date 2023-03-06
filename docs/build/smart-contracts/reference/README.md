@@ -97,6 +97,13 @@ Lists are actually [Linked Lists](https://en.wikipedia.org/wiki/Linked_list).
 ## Maps
 
 The map is the key-value data structure in the Smart Contract language. The syntax is: `[key1: 1, key2: 2]` or if key starts with a number: `["00001abc...": 1]`. The keys must be strings.
+There is 3 ways to retrieve a value:
+- `map.property`
+- `map["property"]`
+- `Map.get(map, "property")`
+
+We suggest to use the 1st syntax as often as possible. Use the 2nd or 3rd when dealing with dynamic properties.
+
 There is a [Map module](/build/smart-contracts/reference/library#map) module in the library to manipulate maps.
 
 :::note

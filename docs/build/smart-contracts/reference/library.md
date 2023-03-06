@@ -168,6 +168,40 @@ Parameters:
 
 Returns a copy of `map` where the value at `key` is `value`.
 
+### keys/1
+
+```elixir
+Map.keys(key1: "value", key2: "value2") # ["key1", "key2"]
+```
+
+Parameters: 
+- `map` the map
+
+Returns the list of keys in `map`. 
+
+:::tip 
+Use it with a `for loop` to iterate on a map! 
+
+```
+for key in Map.keys(map) do
+    ...
+    value = map[key]
+    ...
+end
+```
+:::
+
+### values/1
+
+```elixir
+Map.values(key1: "value", key2: "value2") # ["value", "value2"]
+```
+
+Parameters: 
+- `map` the map
+
+Returns the list of values in `map`.
+
 ---------
 
 ## List

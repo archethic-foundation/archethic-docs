@@ -32,7 +32,7 @@ actions triggered_by: interval, at: "0 0 * * *" do
 	if calls != [] do
 		# remove the addresses that have waited long enough
 		content = ""
-		for line: Regex.scan(contract.content, "^(\\w+),(\\d+)$") do
+		for line in Regex.scan(contract.content, "^(\\w+),(\\d+)$") do
 			address = List.at(line, 0)
 			at = List.at(line, 1)
 
