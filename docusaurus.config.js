@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Archethic',
   tagline: 'Welcome to the Internet of Trust',
-  url: 'https://archethic-foundation.github.io/archethic-docs',
-  baseUrl: '/archethic-docs/',
+  url: 'https://wiki.archethic.net',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
