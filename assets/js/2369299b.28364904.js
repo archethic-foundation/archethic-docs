@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[9307],{4125:e=>{e.exports=JSON.parse('{"title":"GraphQL","slug":"/category/graphql","permalink":"/archethic-docs/category/graphql","navigation":{"previous":{"title":"API","permalink":"/archethic-docs/category/api"},"next":{"title":"Schema Documentation","permalink":"/archethic-docs/schema"}}}')}}]);
