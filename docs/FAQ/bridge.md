@@ -11,6 +11,9 @@ Archethic's bridge relies on atomic swap technology to have a transactional agre
 This acknowledgment must be done in a predetermined time (known as timelock).
 After this time, you can claim your funds, so your UCO will be refunded into your ERC20 wallet.
 
+### **how to access the Archethic Bridge?**
+You can access the bridge at : [https://bridge.archethic.net](https://bridge.archethic.net)
+
 ### **How long is the predetermined time?**
 The timelock lasts 2 hours.
 
