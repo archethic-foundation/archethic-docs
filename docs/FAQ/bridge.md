@@ -1,17 +1,17 @@
 ---
 id: bridge
-title: Archethic Bridge
+title: Archethic Bridge $UCO one-way
 ---
 
 ## General 
 
-### **What is Archethic Bridge?**
+### **What is Archethic Bridge $UCO one-way?**
 
 Archethic's bridge relies on atomic swap technology to have a transactional agreement used in the cryptocurrency to transfer funds after acknowledgment of a cryptographic proof of payment.
 This acknowledgment must be done in a predetermined time (known as timelock).
 After this time, you can claim your funds, so your UCO will be refunded into your ERC20 wallet.
 
-### **how to access the Archethic Bridge?**
+### **how to access the Archethic Bridge $UCO one-way?**
 You can access the bridge at : [https://bridge.archethic.net](https://bridge.archethic.net)
 
 ### **How long is the predetermined time?**
