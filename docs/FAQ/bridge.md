@@ -83,6 +83,12 @@ If you don't want to continue the current transfer, you can use the 'clear local
 
 Warning: If you clear your local memory, the funds associated with the unfinished transfer will be lost.
 
+### **Can I help the developers analyze the problems?**
+
+You can help developers improve the application by submitting information that describes the state of the application. 
+
+To do this, you can export your local storage with the option available on the interface.
+
 ## Dev
 
 ### **How can developers use Archethic bridge to create new decentralized applications?**
