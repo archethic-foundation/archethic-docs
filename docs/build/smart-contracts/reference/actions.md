@@ -5,22 +5,39 @@ sidebar_label: Actions
 sidebar_position: 2
 ---
 
-The `actions` block is the code executed when the [trigger](/build/smart-contracts/reference/triggers) is triggered. 
-There are many differents triggers, but the only difference to note is, for the trigger **transaction**, you will have a global variable `transaction` available in the code.
+The `actions` block is the code executed when the associated [trigger](/build/smart-contracts/reference/triggers) is triggered. 
+
 
 ## Global variables
+Depending on the trigger, there are different global variables accessible.
 
-### contract 
+#### contract 
 
 The `contract` variable is a map of the current contract's transaction. See [Appendix 1](#appendix-1-the-transaction-map).
 
-### transaction
+#### transaction 
 
 The `transaction` variable is a map of the transaction that triggered the `actions` block. See [Appendix 1](#appendix-1-the-transaction-map). **It is only available when the trigger is a transaction**:
 
 ## Examples
 
-Here's an example implementation of a faucet contract:
+
+An ICO (Initial Coin Offering) contract:
+```elixir
+actions triggered_by: transaction do
+  # Get the amount of UCO send to this contract
+  amount_send = Map.get(transaction.uco_transfers, contract.address)
+
+  if amount_send > 0 do
+      # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
+      token_to_credit = amount_send * 10000
+
+      Contract.add_token_transfer(to: transaction.address, token_address: contract.address, amount: token_to_credit)
+  end
+end
+```
+
+A Faucet contract:
 ```elixir
 # every hour
 actions triggered_by: interval, at: "0 0 * * *" do
@@ -36,7 +53,7 @@ actions triggered_by: interval, at: "0 0 * * *" do
 			address = List.at(line, 0)
 			at = List.at(line, 1)
 
-			if now - String.to_int(at) <= faucet_delay do
+			if now - String.to_number(at) <= faucet_delay do
 				content = "#{content}#{address},#{at}\n"
 			end
 		end
@@ -60,20 +77,6 @@ actions triggered_by: interval, at: "0 0 * * *" do
 end
 ```
 
-An ICO (Initial Coin Offering) contract:
-```elixir
-actions triggered_by: transaction do
-  # Get the amount of UCO send to this contract
-  amount_send = Map.get(transaction.uco_transfers, contract.address)
-
-  if amount_send > 0 do
-      # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
-      token_to_credit = amount_send * 10000
-
-      Contract.add_token_transfer(to: transaction.address, token_address: contract.address, amount: token_to_credit)
-  end
-end
-```
 
 
 ## Appendix 1: The transaction map

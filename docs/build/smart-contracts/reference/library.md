@@ -6,7 +6,7 @@ sidebar_position: 4
 ---
 
 The Smart Contract library is composed of many modules with many functions in each.
-Unless it is explicitely written, the functions will not mutate their arguments:
+**Unless it is explicitely written, the functions will not mutate their arguments**:
 
 ```elixir
 # Don't
@@ -51,54 +51,30 @@ Parameters:
 
 Returns whether the `needle` is in the `haystack`.
 
-### to_int/1
+### to_number/1
 
 ```elixir
-String.to_int("12")     # 12
-String.to_int("-12")    # -12
-String.to_int("12.1")   # exception
+String.to_number("12")     # 12
+String.to_number("-12")    # -12
+String.to_number("12.1")   # 12.1
 ```
 
 Parameters:
 - `str` the string
 
-Returns the integer whose text representation is `str`.
+Returns the number whose text representation is `str`.
 
-### from_int/1
+### from_number/1
 
 ```elixir
-String.from_int(13)     # "13"
-String.from_int(13.2)   # exception
+String.from_number(13)     # "13"
+String.from_number(13.2)   # "13.2"
 ```
 
 Parameters:
-- `int` the integer
+- `number` the number
 
-Returns the text representation of `int`.
-
-### to_float/1
-
-```elixir
-String.to_float("12.0") # 12.0
-String.to_float("12")   # exception
-```
-
-Parameters:
-- `str` the string
-
-Returns the float whose text representation is `str`.
-
-### from_float/1
-
-```elixir
-String.from_float(13.0) # "13.0"
-String.from_float("13") # exception
-```
-
-Parameters:
-- `float` the float
-
-Returns the text representation of `float`.
+Returns the text representation of `number`.
 
 ---------
 
@@ -414,6 +390,19 @@ Parameters:
 
 Returns the Json representation of `any`.
 
+### parse/1
+
+```elixir
+Json.parse("1")                     # "1"
+Json.parse("\"str\"")               # "str"
+Json.parse("[1,2,3]")               # [1,2,3]
+Json.parse("{\"foo\":\"bar\"}")     # foo: "bar"
+```
+Parameters:
+- `json` the json string
+
+Returns the value represented by `json`.
+
 ### is_valid?/1
 
 ```elixir
@@ -535,7 +524,7 @@ This module is special in many ways.
 Contract.get_calls() # [tx1, tx2]
 ```
 
-Returns a list of transactions that have this contract's transaction address in the recipients. This is useful for "aggregators contracts" with 1 "interval/datetime" trigger and no "transaction" trigger.
+Returns a list of transactions that have this contract's transaction address in the recipients. This is useful to do batching.
 
 ### set_type/1
 

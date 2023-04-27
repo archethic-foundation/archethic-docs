@@ -9,12 +9,13 @@ A Smart Contract is defined as followed:
 
 - 1 version attribute
 - 1 or many [actions](/build/smart-contracts/reference/actions) block (maximum, one per [trigger](/build/smart-contracts/reference/triggers))
-- 1 [condition inherit](/build/smart-contracts/reference/condition#inherit) block
+- 0 or 1 [condition inherit](/build/smart-contracts/reference/condition#inherit) block
 - 0 or 1 [condition transaction](/build/smart-contracts/reference/condition#transaction) block
+- 0 or 1 [condition oracle](/build/smart-contracts/reference/condition#oracle) block
 
 The `actions` blocks contain the code to execute when a specific event is triggered.
 
-The `condition inherit` block is used to check the resulting transaction of the execution.
+The `condition inherit` block is used to check the outgoing transaction (result) of the contract.
 
 The `condition transaction` block is used to check the incoming transaction that triggered the contract.
 
@@ -26,7 +27,6 @@ This language is based on a functional language (elixir), but we added some impe
 - Strings are double quoted `"I am a string"`
 - String interpolation `"hello #{name}"`
 - Integers & Floats can use `_` at your convenience `10_000` `10_000.0`
-- Integers & Floats are actually BigInt but this is transparent for you
 - Floats can use the scientific format: `1.0e2 == 100` 
 - Booleans syntax: `true` / `false`
 - The absence of value: `nil`
@@ -45,12 +45,19 @@ We compare by value, which means you can pretty much compare anything and it wil
 ## Arithmetic
 
 - `1 + 2 == 3`
-- `2 - 1 == 1`
-- `1 * 2 == 2`
+- `2.0 - 1.1 == 0.9`
+- `1 * 2.0 == 2`
 - `1 / 1 == 1.0`
-- `div(1, 1) == 1`
+- `1 / 0` contract failure
 
-## Loop & Ranges
+The arithmetic is done with the [Decimal library](https://github.com/ericmj/decimal) to ensure there is no floating point precision issue.
+**The only thing to keep in mind is that we truncate at decimal 8.**
+
+## Ranges
+
+- `1..5` is equivalent to `[1,2,3,4,5]`
+
+## Loop
 
 - `for name in names do ... end`
 - `for i in 1..10 do ... end`
@@ -61,10 +68,10 @@ We compare by value, which means you can pretty much compare anything and it wil
 names = ["Tom", "Jerry", ""]       
 text = ""                           
 for name in names do                # ENTER SCOPE 1
-    if name != "" do                # ENTER SCOPE 2
+    if name != "" do                # ENTER SCOPE 1.1
         new_line = "\n"             
         text = "#{name}#{new_line}" 
-    end                             # EXIT SCOPE 2
+    end                             # EXIT SCOPE 1.1
 end                                 # EXIT SCOPE 1
 ```
 
@@ -75,7 +82,7 @@ Here's the tree of scopes and variables for the above example:
 ├── text
 └── [SCOPE 1]
     ├── name
-    └── [SCOPE 2]
+    └── [SCOPE 1.1]
         └── new_line
 ```
 
