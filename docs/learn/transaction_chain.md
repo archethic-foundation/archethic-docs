@@ -1,7 +1,7 @@
 ---
 id: transaction-chain
 title: TransactionChains
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 In the Archethic network, there are no blocks but only transactions, as each block is reduced to its atomic form - `transaction` with its own validation evidences.
@@ -42,18 +42,18 @@ Its structure is described as below:
 
 ```
 |-----------|------|------|---------------------|--------------------|------------------|
-|  Address  | Type | Data | Previous public key | Previous signature | Origin signature |
-|-----------|------|------|---------------------|--------------------|------------------|
-                      |
-                      |
-      |---------|------|--------|------------|------------|
-      | Content | Code | Ledger | Ownerships | Recipients |
-      |---------|------|--------|------------|------------|
-                            |      |
-                            |      |
-                  |-----|-------|  |-----------------|--------|
-                  | UCO | Token |  | Authorized keys | Secret |
-                  |-----|-------|  |-----------------|--------|
+| Address   | Type    | Data     | Previous public key | Previous signature | Origin signature |
+| --------- | ------- | -------- | ------------------- | ------------------ | ---------------- |
+|           |
+|           |
+| --------- | ------  | -------- | ------------        | ------------       |
+| Content   | Code    | Ledger   | Ownerships          | Recipients         |
+| --------- | ------  | -------- | ------------        | ------------       |
+|           |
+|           |
+| -----     | ------- |          | -----------------   | --------           |
+| UCO       | Token   |          | Authorized keys     | Secret             |
+| -----     | ------- |          | -----------------   | --------           |
 
 
 ```
@@ -82,19 +82,19 @@ Those are defined by the given structure:
 ```
 |------------------|-------------------------|
 | Validation Stamp | Cross Validation Stamps |
-|------------------|-------------------------|
-         |                      |
-         |             |-----------------|-----------|
-         |             | Node public key | Signature |
-         |             |-----------------|-----------|
-         |
-|-----------|---------------|--------------------|-------------------|-------------------|------------|--------|-----------|
-| Timestamp | Proof of Work | Proof of Integrity | Proof of Election | Ledger Operations | Recipients | Errors | Signature |
-|-----------|---------------|--------------------|-------------------|-------------------|------------|--------|-----------|
-                                                                           |
-                                 |-----|-----------------------|-----------------|
-                                 | Fee | Transaction movements | Unspent outputs |
-                                 |-----|-----------------------|-----------------|
+| ---------------- | ----------------------- |
+|                  |
+|                  | -----------------       | -----------          |
+|                  | Node public key         | Signature            |
+|                  | -----------------       | -----------          |
+|                  |
+| -----------      | ---------------         | -------------------- | ------------------- | ------------------- | ------------ | -------- | ----------- |
+| Timestamp        | Proof of Work           | Proof of Integrity   | Proof of Election   | Ledger Operations   | Recipients   | Errors   | Signature   |
+| -----------      | ---------------         | -------------------- | ------------------- | ------------------- | ------------ | -------- | ----------- |
+|                  |
+| -----            | ----------------------- | -----------------    |
+| Fee              | Transaction movements   | Unspent outputs      |
+| -----            | ----------------------- | -----------------    |
 
 ```
 
