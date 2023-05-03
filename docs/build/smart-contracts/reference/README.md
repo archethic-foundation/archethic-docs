@@ -19,6 +19,15 @@ The `condition inherit` block is used to check the outgoing transaction (result)
 
 The `condition transaction` block is used to check the incoming transaction that triggered the contract.
 
+## Version attribute
+
+A version attribute must be specified on the first line of the code. This version is used by the interpreter to have the right behavior in case of breaking changes.
+
+```elixir
+@version 1
+# Rest of the code
+```
+
 ## Basic Types
 
 This language is based on a functional language (elixir), but we added some imperative twist to it, to make it friendlier!
