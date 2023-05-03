@@ -8,7 +8,10 @@ sidebar_position: 1
 # Triggers
 ### Contract triggered by a transaction
 
-You may trigger a contract by creating a transaction with the contract's address in the `recipients` part.
+:::tip
+To trigger a SC execution, the incoming transaction must add the SC address in the `recipients` part of the transaction.  
+This allow to activate a SC without sending funds to it, or to send funds to it without activating the code execution. As the `recipients` field is a list, you can trigger multiple contract in the same transaction
+:::
 
 In this scenario:
 - a `condition transaction: []` may be used to check the incoming transaction (before executing the trigger)
