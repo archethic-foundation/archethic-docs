@@ -497,7 +497,7 @@ Returns the hash of `str` by using `algo` algorithm.
 
 ## Token
 
-### hash/2
+### fetch_id_from_address/2
 
 ```elixir
 Token.fetch_id_from_address("000012345") # "3C21EF708BF11B4232..."

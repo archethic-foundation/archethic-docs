@@ -59,8 +59,10 @@ We compare by value, which means you can pretty much compare anything and it wil
 - `1 / 1 == 1.0`
 - `1 / 0` contract failure
 
+:::caution
 The arithmetic is done with the [Decimal library](https://github.com/ericmj/decimal) to ensure there is no floating point precision issue.
 **The only thing to keep in mind is that we truncate at decimal 8.**
+:::
 
 ## Ranges
 
@@ -73,6 +75,12 @@ The arithmetic is done with the [Decimal library](https://github.com/ericmj/deci
 
 ## Variables & Scopes
 
+Variables are not typed, you can assign any value to them.
+
+Variables are mutable, if you update a variable declared in a parent scope, it will also update the value of this variable for the parent scope.
+
+A new scope is created each type you enter a new block (`do .. end`). A scope can access (read/write) the variables declared in it's parents scope, but not it's childs scope.
+
 ```elixir
 names = ["Tom", "Jerry", ""]       
 text = ""                           
@@ -81,7 +89,10 @@ for name in names do                # ENTER SCOPE 1
         new_line = "\n"             
         text = "#{name}#{new_line}" 
     end                             # EXIT SCOPE 1.1
+    # new_line does not exists here
 end                                 # EXIT SCOPE 1
+# test = "Tom\nJerry\n"
+# name and new_line does not exists here
 ```
 
 Here's the tree of scopes and variables for the above example:
@@ -94,12 +105,6 @@ Here's the tree of scopes and variables for the above example:
     └── [SCOPE 1.1]
         └── new_line
 ```
-
-There are many things to note from this example:
-- Variables are mutable
-- There is a new scope for every `do...end` block
-- Scopes can access (read/write) parent scope's variables
-
 
 ## Lists
 
