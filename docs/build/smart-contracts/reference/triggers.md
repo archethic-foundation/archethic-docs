@@ -10,7 +10,7 @@ sidebar_position: 1
 
 :::tip
 To trigger a SC execution, the incoming transaction must add the SC address in the `recipients` part of the transaction.  
-This allow to activate a SC without sending funds to it, or to send funds to it without activating the code execution. As the `recipients` field is a list, you can trigger multiple contract in the same transaction
+This allows to activate a SC without sending funds to it, or to send funds to it without activating the code execution. As the `recipients` field is a list, you can trigger multiple contracts in the same transaction
 :::
 
 In this scenario:

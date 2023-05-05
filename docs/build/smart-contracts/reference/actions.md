@@ -21,7 +21,7 @@ The `transaction` variable is a map of the transaction that triggered the `actio
 ## Generating the next transaction
 
 The main goal of the action block is to generate a new transaction in the smart contract chain.  
-To do so, you can use the [Contract](/build/smart-contracts/reference/library#contract) module that permit to set the transaction field value.
+To do so, you can use the [Contract](/build/smart-contracts/reference/library#contract) module that allows to set the transaction field value.
 
 ```elixir
 # Set uco ATH in content
@@ -38,7 +38,7 @@ end
 ```
 
 :::info
-Note that there is 3 fields that are preset before executing the action code.
+Note that there are 3 fields that are preset before executing the action code.
 - type: set to "contract" by default
 - code: set with the previous contract code
 - ownerships: set with the previous contract ownerships
@@ -51,7 +51,7 @@ So you don't need to set the type, the code and the ownerships each time you gen
 An ICO (Initial Coin Offering) contract:
 ```elixir 
 actions triggered_by: transaction do
-    # Get the amount of UCO send to this contract
+    # Get the amount of UCO sent to this contract
     amount_send = Map.get(transaction.uco_transfers, contract.address)
 
     if amount_send > 0 do
@@ -75,7 +75,7 @@ actions triggered_by: interval, at: "0 */10 * * *" do
     end
 
     for call in calls do
-        # Get the amount of UCO send to this contract
+        # Get the amount of UCO sent to this contract
         amount_send = Map.get(call.uco_transfers, contract.address)
 
         if amount_send > 0 do
@@ -101,7 +101,7 @@ end
 ["00001ab...": 1, "00001bc...": 2]
 ```
 
-- `token_transfers` is a map of list of token transfers by address of the transaction 
+- `token_transfers` is a map of list of token transfers grouped by address of the transaction 
 
 ```
 ["00001ab...": 

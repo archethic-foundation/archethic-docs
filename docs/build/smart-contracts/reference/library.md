@@ -62,7 +62,7 @@ String.to_number("12.1")   # 12.1
 Parameters:
 - `str` the string
 
-Returns the number whose text representation is `str`.
+Returns the number which text representation is `str`.
 
 ### from_number/1
 
@@ -340,7 +340,7 @@ Parameters:
 Returns the data from `text` extract via the regex `pattern`. 
 
 :::note
-This function require the usage of capture groups (subexpressions).
+This function requires the usage of capture groups (subexpressions).
 :::
 
 ---------

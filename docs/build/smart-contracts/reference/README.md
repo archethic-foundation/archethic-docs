@@ -79,7 +79,7 @@ Variables are not typed, you can assign any value to them.
 
 Variables are mutable, if you update a variable declared in a parent scope, it will also update the value of this variable for the parent scope.
 
-A new scope is created each type you enter a new block (`do .. end`). A scope can access (read/write) the variables declared in it's parents scope, but not it's childs scope.
+A new scope is created every time you enter a new block (`do .. end`). A scope can access (read/write) the variables declared in its parent's scope, but not its child's scope.
 
 ```elixir
 names = ["Tom", "Jerry", ""]       
