@@ -10,6 +10,8 @@ Its goal is to compile the source code into `archethic_node` release.
 The CI part is powered by `scripts/proposal_ci_job.sh`.
 The script runs in a container named `archethic-prop-{address}`, it produces: release upgrade of `archethic_node` and combined log of application of a code proposal to the source code, execution of unit tests, and log from linter. The log can be obtained with `docker logs`, the release upgrade and the validator with `docker cp`, after that the container can be disposed.
 
+the logs are collected in `ci_logfile.txt` and this file is copied at the end to tmp directory created in filesystem.
+
 the script runs multiple commands:
 
 * Creates a branch prop_{proposal_address}

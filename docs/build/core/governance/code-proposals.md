@@ -24,3 +24,5 @@ For a code proposal to be valid it needs to validate 3 conditions:
 * the code proposal is applicable on the current branch
 
 Code proposals can be visualised in the governance section of the UI.
+
+when a code proposal get enough approvals from members of technical council (more than the threshhold), it automatically launchs the CI/CD process.
