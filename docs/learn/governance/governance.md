@@ -11,7 +11,7 @@ the process begins when a contributor creates a code proposal, this code proposa
 
 After the code proposal is verified, we start going over the details of the proposal and verifying that it contains correct version, valid appup and valid changes for example.
 
-When the code proposal is considered valid, and after gathering enough approvals from members of the technical council (more than the threshhold) we start the CI part.
+When the code proposal is considered valid, and after gathering enough approvals from members of the technical council (more than the threshhold) we start the CI (Continuous Integration) part.
 
 The role of the CI part is to check that the proposal passes the CI pipeline (tests, security checks and style).
 
