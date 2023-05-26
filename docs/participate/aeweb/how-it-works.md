@@ -131,7 +131,8 @@ This API takes a reference address as a parameter, and then proceeds to take the
 https://mainnet.archethic.net/api/web_hosting/0c19fd13......../image.jpg
 ```
 
-![aeweb_CDN](/img/aeweb_CDN.svg)
+![aeweb_CDN](/img/aeweb_CDN.svg#gh-light-mode-only)
+![aeweb_CDN](/img/aeweb_CDN-dark.svg#gh-dark-mode-only)
 
 The welcome node will request the reference transaction download to its related shard.
 It will parse the reference content and detect the transactions to download for the requested file.

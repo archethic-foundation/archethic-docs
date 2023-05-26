@@ -24,7 +24,8 @@ In your website domain provider administration, you must add two entries:
 
 The subdomain `_dnslink` is used to indicate the reference address and will be used by the nodes to redirect to the on-chain version of your website.
 
-![aeweb_dns](/img/aeweb_dns.svg)
+![aeweb_CDN](/img/aeweb_dns.svg#gh-light-mode-only)
+![aeweb_CDN](/img/aeweb_dns-dark.svg#gh-dark-mode-only)
 
 ## SSL 
 
