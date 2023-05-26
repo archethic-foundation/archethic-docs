@@ -29,7 +29,7 @@ Archethic smart contracts autonomous behavior is due to the capability to define
 - Transaction: when the contract receive a transaction in input (UTXO model)
 - Oracle: when the OracleChain pushed new data
 
-!> Since smart contracts can autonomous and create transactions on the behalf of the owner, transaction should authorize nodes to use the cryptographic keys to generate transaction.
+!> Since smart contracts can be autonomous and create transactions on the behalf of the owner, transaction should authorize nodes to use the cryptographic keys to generate transaction.
 
 Then the contract has to specify a `inherit conditions` to accept new changes.
 
@@ -40,7 +40,7 @@ Hence, for any specific change regarding transaction's data (ie. code, content, 
 
 ## Modifiable:
 
-Archethic relies on TransactionChain which means than a smart contract can have its own transaction chain.
+Archethic relies on TransactionChain which means that a smart contract can have its own transaction chain.
 
 Then, it subjects to the same properties of the transaction chain: any last transaction of a chain is considered as the reference.
 
