@@ -97,7 +97,6 @@ For example, you could have a website which contains: 5 files:
       ...
       // image.jpg is too big to fit in a single data transaction
       "addresses": ["0ac7fj...", "1fb2ha..."] 
-    }
   }
 }
 ```
@@ -123,7 +122,6 @@ For example, you could have a website which contains: 5 files:
 ```
 
 ## Content delivery
-
 On the other side, the transactions are validated and stored on the Archethic Blockchain.
 Any Archethic node expose an API dedicated for the web hosting by AEWeb.
 
@@ -140,7 +138,7 @@ It will parse the reference content and detect the transactions to download for 
 
 Once the file downloaded, the content will send back to the client and the browser will display the file.
 
-Because websites render is composed of multiple HTTP requests for each file, the browser will be able to understand the responses and display the website entirely - while leveraging a single reference on-chain.
+Because websites rendering is composed of multiple HTTP requests for each file, the browser will be able to understand the responses and display the website entirely - while leveraging a single reference on-chain.
 
 :::info Good to know
 Once the website retrieved, the data will be cached locally. So, the next time the same person will visit the website, no data will be fetched again.

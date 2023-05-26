@@ -8,17 +8,17 @@ Archethic has developed a new solution to host websites on a decentralized netwo
 ## Motivations
 
 Web hosting is still a subject of innovation nowadays, even with the rise of Web3.
-Existing solutions provide P2P and distributed hosting, but it can lack some important aspects such easy to use or completely on-chain and trusted.
+Existing solutions provides P2P and distributed hosting, but it can lack some important aspects such as ease-of-use, fully on-chain and trust.
 
 ### Easy
 
-Since its design, **AEWeb** motivation was to allow to deploy websites in just few steps. No need to transform your website to match our solution. The website you developed and know will be the same one deployed.
+Since its design, **AEWeb** motivation was to allow deployment of websites in just a few steps. No need to transform your website to match our solution. The website you developed and know will be the same one deployed.
 
 **Your website will be transformed into transaction without additional work**
 
 ### Security
 
-Web hosting solutions are either centralized and decentralized. The first doesn't provide security, as being centralized and subject to censorship. The latter would be quite often no secure as being not hosting on blockchain, like traditional P2P system (torrents, etc.)
+Web hosting solutions are either centralized and decentralized. The first doesn't provide security, as being centralized and subject to censorship. The latter would be quite often insecure because hosted out of the blockchain, like traditional P2P system (torrents, etc.)
 
 We wanted to make it completely secure and on-chain.
 Hence, each of the websites will first be validated across the Archethic network with the ARCH consensus capable to handle even 90% of maliciousness.
@@ -32,7 +32,7 @@ There are rare situations when websites can be hosted on a blockchain due to its
 
 Transactions on Archethic are cost-efficient, so hosting websites on-chain will be a cheap solution regarding existing centralized and decentralized protocols.
 
-Because of the nature of Web3 and decentralized network, once a website is deployed there is no maintenance cost as renting a VPS on a centralized system each month for acouple of bucks. As long as the website doesn't need to change, there will be not cost.
+Because of the nature of Web3 and decentralized network, once a website is deployed there is no maintenance cost such as renting a VPS on a centralized system each month for a couple of bucks. As long as the website doesn't need to change, there will be not cost.
 
 :::info
 Example: a VPS can cost around $5/month to host any website. On Archethic a website of 1MB could cost around $2 (with UCO at: $1 and with 200 replicas).
@@ -42,7 +42,7 @@ You might think it's more expensive, but the VPS was only a single instance. For
 
 ## Target
 
-Because of the Web is so wide, we have distinguished what AEWeb is capable to do and do not.
+Because of the Web is so wide, we have distinguished what AEWeb is capable to do or not.
 
 :::info Website vs WebApp
 Website are usually not Web app.
@@ -52,7 +52,7 @@ Websites are often simple static pages (HTML, stylesheets, images, scripts) to c
 On the other side Web app (Web Application) are far more complex and provide a complete suite of administration and back-office with authentication and databases.
 :::
 
-For now, AEWeb solution only provides website hosting. So any website which contains static files can be hosting on-chain.
+For now, AEWeb solution only provides website hosting. So any website which contains static files can be hosted on-chain.
 
 For more complex web applications, the front-end can still be hosted with AEWeb but the backend or business logic have to be managed in other ways, such as:
 
@@ -65,9 +65,9 @@ In that case, once the front-end page have been build from the SPA tooling, inst
 ## Roadmap
 
 - [x] Design
-- [ ] Blockchain integration
+- [x] Blockchain integration
   - [x] API
-  - [ ] HTTPS & certificates
+  - [x] HTTPS & certificates
 - [ ] Command Line Interface (CLI)
   - [x] File
   - [x] Folder
@@ -79,7 +79,7 @@ In that case, once the front-end page have been build from the SPA tooling, inst
   - [x] DNSLink integration
   - [ ] Automation
 
-The development started few months back, and we are now in the phase of testing as beta version.
+The development started few months ago, and we are now in the phase of testing as beta version.
 
 Currently we are targeting **developers** throught a CLI to help them to test and deploy existing websites.
 

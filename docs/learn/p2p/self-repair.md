@@ -8,7 +8,7 @@ to restore the state of a node.
 
 Because Archethic is using a multidimensional sharding, a node needs to execute a self-repair on multiple occasions, to ensure data availability and security:
 
-- When the node bootstrap
+- When the node bootstraps
 - When a node goes offline
 - When the code and heuristic algorithms changes
 
