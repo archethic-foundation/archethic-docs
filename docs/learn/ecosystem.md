@@ -31,7 +31,7 @@ Beyond just PoW (51%) or dBFT (66%), Archethic implements a consensus that can h
 
 Our blockchain platform aims to replace and to improve all current applications with a comprehensive and open ecosystem, allowing people to move from the trust imposed by centralized to a decentralized system.
 
-- `AEWweb`: One app for website maintenance, security, handling and costing on the blockchain at a fraction of the current hosting costs!
+- `AEWeb`: One app for website maintenance, security, handling and costing on the blockchain at a fraction of the current hosting costs!
 - `AEMail`: Email Redefined! An all-in-one email, messaging, wallet and payments app that provides the full suite for a user. Coming soon
 - `AENFT`: Archethic embeds in its transaction structure NFTs and are therefore native to the network. However a decentralized marketplace reimagined in collaboration with artists will come soon !
 - And so more...

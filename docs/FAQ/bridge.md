@@ -1,15 +1,18 @@
 ---
 id: bridge
-title: Archethic Bridge
+title: Archethic Bridge $UCO one-way
 ---
 
 ## General 
 
-### **What is Archethic Bridge?**
+### **What is Archethic Bridge $UCO one-way?**
 
 Archethic's bridge relies on atomic swap technology to have a transactional agreement used in the cryptocurrency to transfer funds after acknowledgment of a cryptographic proof of payment.
 This acknowledgment must be done in a predetermined time (known as timelock).
 After this time, you can claim your funds, so your UCO will be refunded into your ERC20 wallet.
+
+### **how to access the Archethic Bridge $UCO one-way?**
+You can access the bridge at : [https://bridge.archethic.net](https://bridge.archethic.net)
 
 ### **How long is the predetermined time?**
 The timelock lasts 2 hours.
@@ -69,6 +72,22 @@ During the delay of the acknowledgment, you should wait for the end of the durat
 ### **If I sent the tokens to a wrong Mainnet address, what to do?**
 
 You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1).
+
+### **What if I want to reset the process?**
+
+The bridge will only allow one transfer at a time. If you have started a transfer, you must complete it before you can start a new one.
+
+In some cases, a transfer in progress can be resumed at a later stage, for example if you have declined a transaction in your wallet or closed your browser.
+
+If you don't want to continue the current transfer, you can use the 'clear local storage' option to reset the transfer tool and start a new transfer.
+
+Warning: If you clear your local memory, the funds associated with the unfinished transfer will be lost.
+
+### **Can I help the developers analyze the problems?**
+
+You can help developers improve the application by submitting information that describes the state of the application. 
+
+To do this, you can export your local storage with the option available on the interface.
 
 ## Dev
 
