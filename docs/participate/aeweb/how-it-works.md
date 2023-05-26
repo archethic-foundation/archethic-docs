@@ -42,26 +42,30 @@ The reference transaction's address will become the address of the website manag
 ```json
 {
   "aewebVersion": 1,
+  "hashFunction": "sha-1",
   "metaData": {
     "index.html": {
-      "addresses": ["0FB27DAC...."],
+      "size": 68420,
+      "hash": "ABC123F...",
       "encoding": "gzip",
-      "size": "10000",
-      "hash": "0df1Acd..."
+      "addresses": ["0FB27DAC...."]
     },
     "scripts/main.js": {
-      "addresses": ["0AC1BFA9..."],
-      ...
-    },
-  } 
+      "size": 255121,
+      "hash": "01AB2CD...",
+      "encoding": "gzip",
+      "addresses": ["0AC1BFA9..."]
+    } 
+  }
 }
 ```
 
-The other transactions will contain the content of the files
+The other transactions (called `data`) will contain the content of the files encoded in base64
 
 ```json
 {
-  "index.html": "b298kJKFS98dj7Xdnsq...." // base64 of the file's content
+  "index.html": "b298kJKFS98dj7Xdnsq....", 
+  "scripts/main.js": "aGVsbG8gd29ybGQ=" 
 }
 ```
 
@@ -76,41 +80,44 @@ For example, you could have a website which contains: 5 files:
 
 1. Reference:
 
-```json
+```jsonc
 {
   "aewebVersion": 1,
+  "hashFunction": "sha-1",
   "metaData": {
     "index.html": {
-      "addresses": ["0ac7fj..."],
       ...
+      "addresses": ["0ac7fj..."]
     },
-    "app.css": {
-      "addresses": ["0ac7fj..."],
+    "assets/app.css": {
       ...
+      "addresses": ["0ac7fj..."]
     },
-    "image.jpg": {
-      "addresses": ["0ac7fj...", "1fb2ha..."],
+    "assets/image.jpg": {
       ...
-    }
+      // image.jpg is too big to fit in a single data transaction
+      "addresses": ["0ac7fj...", "1fb2ha..."] 
   }
 }
 ```
 
 2. HTML + CSS + Image (chunked by 30%)
 
-```json
+```jsonc 
+// data transaction: "0ac7fj..."
 {
     "index.html": "...",
-    "app.css": "..."
-    "image.jpg": "..."
+    "assets/app.css": "..."
+    "assets/image.jpg": "..."
 }
 ```
 
 3. Image (remaining chunks)
 
-```json
+```jsonc
+// data transaction: "1fb2ha..."
 {
-  "image.jpg": "..."
+  "assets/image.jpg": "..."
 }
 ```
 
@@ -121,7 +128,7 @@ Any Archethic node expose an API dedicated for the web hosting by AEWeb.
 This API takes a reference address as a parameter, and then proceeds to take the path of the file, just like any web server would do.
 
 ```sh
-https://mainnet.archethic.net/api/web_hosting/0cs19fd13......../image.jpg
+https://mainnet.archethic.net/api/web_hosting/0c19fd13......../image.jpg
 ```
 
 ![aeweb_CDN](/img/aeweb_CDN.svg)
