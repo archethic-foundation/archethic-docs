@@ -80,7 +80,7 @@ For example, you could have a website which contains: 5 files:
 
 1. Reference:
 
-```json
+```jsonc
 {
   "aewebVersion": 1,
   "hashFunction": "sha-1",
@@ -104,7 +104,7 @@ For example, you could have a website which contains: 5 files:
 
 2. HTML + CSS + Image (chunked by 30%)
 
-```json 
+```jsonc 
 // data transaction: "0ac7fj..."
 {
     "index.html": "...",
@@ -115,7 +115,7 @@ For example, you could have a website which contains: 5 files:
 
 3. Image (remaining chunks)
 
-```json
+```jsonc
 // data transaction: "1fb2ha..."
 {
   "assets/image.jpg": "..."
