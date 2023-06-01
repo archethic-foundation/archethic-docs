@@ -424,10 +424,12 @@ Returns whether the string is valid JSON or not.
 Time.now()  # 1677493444
 ```
 
-Returns the current unix time (seconds since epoch).
+Returns an approximation of current time (seconds since epoch). 
+**It will always return the same value within a contract.**
 
-:::danger 
-[THIS REQUIRE SOME CHANGE TO BE DETERMINIST]
+:::info Why an approximation?
+Because we need the smart contracts to be determinist.
+Many nodes will run them and all of them must produce the same transaction to validate a contract's execution.
 :::
 
 ---------
