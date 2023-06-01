@@ -27,9 +27,7 @@ To do so, you can use the [Contract](/build/smart-contracts/reference/library#co
 # Set uco ATH in content
 actions triggered_by: oracle do
     current_ath = String.to_number(contract.content)
-    new_price = String.to_number(
-        Json.path_extract(transaction.content, "$.uco.usd")
-    )
+    new_price = Json.path_extract(transaction.content, "$.uco.usd")
 
     if new_price > current_ath do
         Contract.set_content(new_price)
