@@ -1,7 +1,7 @@
 ---
 id: deploy
-title: AEWeb - Deploy
-sidebar_label: Deploy
+title: AEWeb - CLI
+sidebar_label: CLI
 sidebar_position: 3
 ---
 
