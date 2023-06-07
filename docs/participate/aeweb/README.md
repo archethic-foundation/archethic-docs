@@ -68,11 +68,11 @@ In that case, once the front-end page have been build from the SPA tooling, inst
 - [x] Blockchain integration
   - [x] API
   - [x] HTTPS & certificates
-- [ ] Command Line Interface (CLI)
+- [x] Command Line Interface (CLI)
   - [x] File
   - [x] Folder
   - [x] Complete website
-  - [ ] Keychain integration
+  - [x] Keychain integration
 - [ ] User Interface
   - [ ] Web or Native application
 - [ ] Domain Name System (DNS)
