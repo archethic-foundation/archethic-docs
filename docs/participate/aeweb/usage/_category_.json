@@ -2,7 +2,6 @@
   "label": "Usage",
   "position": 2,
   "link": {
-    "type": "generated-index",
-    "title": "Usage"
+    "type": "generated-index"
   }
 }
