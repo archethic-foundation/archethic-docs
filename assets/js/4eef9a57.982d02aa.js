@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1172],{1253:e=>{e.exports=JSON.parse('{"title":"Usage","slug":"/category/usage","permalink":"/category/usage","navigation":{"previous":{"title":"Domain Names","permalink":"/participate/aeweb/dns"},"next":{"title":"CLI","permalink":"/participate/aeweb/usage/cli"}}}')}}]);
