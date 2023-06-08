@@ -31,7 +31,7 @@ $ aeweb generate-address --seed myseedphrase --index 0
 
 ## aeweb deploy
 
-This command is used to deploy the content of a folder or a single file. It will create the [transactions](./how-it-works), estimate the fees and, after confirmation, will write the transactions on the network.
+This command is used to deploy the content of a folder or a single file. It will create the [transactions](/participate/aeweb/how-it-works), estimate the fees and, after confirmation, will write the transactions on the network.
 
 Parameters: 
 - `seed` The keychain seed, used to prove you are the owner of the transaction chain used to pay the fees
