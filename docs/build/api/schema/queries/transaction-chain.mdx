@@ -18,6 +18,7 @@ Query the network to find a transaction chain
 ```graphql
 transactionChain(
   address: Address!
+  order: SortOrder
   pagingAddress: Address
 ): [Transaction]
 ```
@@ -26,6 +27,10 @@ transactionChain(
 ### Arguments
 
 #### [<code style={{ fontWeight: 'normal' }}>transactionChain.<b>address</b></code>](#)<Bullet />[`Address!`](/build/api/schema/scalars/address) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>transactionChain.<b>order</b></code>](#)<Bullet />[`SortOrder`](/build/api/schema/enums/sort-order) <Badge class="secondary" text="enum"/>
 > 
 > 
 

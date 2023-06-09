@@ -1,0 +1,42 @@
+---
+id: genesis-address
+title: genesisAddress
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+Query the network to find the genesis address of a transaction
+
+```graphql
+genesisAddress(
+  address: Address!
+): Address
+```
+
+
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>genesisAddress.<b>address</b></code>](#)<Bullet />[`Address!`](/build/api/schema/scalars/address) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Type
+
+#### [`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+> The [Address] scalar type represents a transaction's address.
+The Address appears in a JSON response as Base16 formatted string. The parsed address will
+be converted to a binary and any invalid address with an invalid algorithm or invalid size will be rejected
+> 
+
+
+
+
+
