@@ -7,10 +7,5 @@ sidebar_position: 999
 
 
 :::caution Disclaimer
-This specification is supported before v1.1.X
-
-To check the network's version, you can go on :
-- [https://mainnet.archethic.net/metrics/dashboard](https://mainnet.archethic.net/metrics/dashboard)
-- [https://testnet.archethic.net/metrics/dashboard](https://testnet.archethic.net/metrics/dashboard) 
-- [http://localhost:4000/metrics/dashboard](https://localhost:4000/metrics/dashboard) if you run a node locally (for developement for example)
+This specification is deprecated and will be still be valid for SC before [1.1.0](https://github.com/archethic-foundation/archethic-node/releases/tag/v1.1.0). The new version is available [here](/build/smart-contracts/reference)
 :::
