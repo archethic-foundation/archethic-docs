@@ -6,7 +6,7 @@ sidebar_position: 2
 ---
 
 Conditions are blocks which purpose is to check the validity of a transaction. There are 3 types of `condition` block: `inherit`, `transaction`, and `oracle`. The condition blocks are not code block, they are maps of what we call "boolean expressions". In this map, the keys are the transaction property, and the values are expressions that must return a boolean or a value.  
-Condition `inherit` is mandatory in all cases, conditions `transaction` and `oracle` are mandatory if the associated trigger is used.
+Conditions `transaction` and `oracle` are mandatory if the associated trigger is used. Condition `inherit` is optional.
 
 Pseudo-code:
 ```elixir
@@ -94,16 +94,20 @@ condition inherit: [
 ]
 ```
 
-Pass only if chain has been closed (the code part) and there is a UCO transfer to an address depending on the time:
+Pass only if chain has been closed (the code part) and there is a 2 UCO transfer to an address depending on the time:
 ```elixir 
 condition inherit: [
     code: "condition inherit: []",
-    uco_transfers: 
+    uco_transfers: (
+        address = ""
         if Time.now() >= 1674564088 do
-            ["00003bafdfb7a8e66b59de5692b79088063853bbd69a7d555faec906e6215e57ff98": 2]
-        else
-            ["0000ba28ce06631ff2ef4fe3dc89a34be13c0d252f8952bbfa3173b03dbef3c04afd": 2]
+            address = String.to_hex("00003bafdfb7a8e66b59de5692b79088063853bbd69a7d555faec906e6215e57ff98")
+        else 
+            address = String.to_hex("0000ba28ce06631ff2ef4fe3dc89a34be13c0d252f8952bbfa3173b03dbef3c04afd")
         end
+
+        Map.size() == 1 && Map.get(address) == 2
+    )
 ]
 ```
 
@@ -148,7 +152,7 @@ See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-th
 Pass only if the transaction that triggered the contract comes from a specific chain (a chain can be identified by it's genesis address):
 ```elixir 
 condition transaction: [
-    address: Chain.get_genesis_address() == "00001234ab..."
+    address: Chain.get_genesis_address() == String.to_hex("00001234ab...")
 ]
 ```
 

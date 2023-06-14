@@ -59,9 +59,25 @@ We compare by value, which means you can pretty much compare anything and it wil
 - `1 / 1 == 1.0`
 - `1 / 0` contract failure
 
-:::caution
+:::info
 The arithmetic is done with the [Decimal library](https://github.com/ericmj/decimal) to ensure there is no floating point precision issue.
 **The only thing to keep in mind is that we truncate at decimal 8.**
+:::
+
+## Hexadecimals
+
+In the Archethic blockchain, we extensively uses hexadecimals to convert all addresses, public keys on the user-facing interfaces. A Smart Contract is one of these interfaces.
+
+Archethic chose to represent hexadecimals with **uppercase** string: _"00002223B...76AFA"_.
+
+:::success
+Use this helper function [`String.to_hex/1`](/build/smart-contracts/reference/library#to_hex1) whenever you need to write an hexadecimal value.
+
+```elixir
+transaction.address == String.to_hex("00002223b...76afa")
+```
+
+When comparing hexadecimals, this remove the possibility of errors.
 :::
 
 ## Ranges
