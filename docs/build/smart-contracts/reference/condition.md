@@ -98,16 +98,13 @@ Pass only if chain has been closed (the code part) and there is a 2 UCO transfer
 ```elixir 
 condition inherit: [
     code: "condition inherit: []",
-    uco_transfers: (
-        address = ""
+    uco_transfers: [
         if Time.now() >= 1674564088 do
-            address = String.to_hex("00003bafdfb7a8e66b59de5692b79088063853bbd69a7d555faec906e6215e57ff98")
-        else 
-            address = String.to_hex("0000ba28ce06631ff2ef4fe3dc89a34be13c0d252f8952bbfa3173b03dbef3c04afd")
+            [hex00003bafdfb7a8e66b59de5692b79088063853bbd69a7d555faec906e6215e57ff98: 2]
+        else
+            [hex0000ba28ce06631ff2ef4fe3dc89a34be13c0d252f8952bbfa3173b03dbef3c04afd: 2]
         end
-
-        Map.size() == 1 && Map.get(address) == 2
-    )
+    ]
 ]
 ```
 
@@ -152,7 +149,7 @@ See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-th
 Pass only if the transaction that triggered the contract comes from a specific chain (a chain can be identified by it's genesis address):
 ```elixir 
 condition transaction: [
-    address: Chain.get_genesis_address() == String.to_hex("00001234ab...")
+    address: Chain.get_genesis_address() == hex00001234ab
 ]
 ```
 
