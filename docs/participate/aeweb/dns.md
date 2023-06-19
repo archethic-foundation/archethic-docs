@@ -23,6 +23,11 @@ In your website domain provider administration, you must add two entries:
 | example.com           | CNAME | mainnet.archethic.net        |
 | \_dnslink.example.com | TXT   | dnslink=/archethic/0f1e3.... |
 
+The subdomain `_dnslink` is used to indicate the reference address and will be used by the nodes to redirect to the on-chain version of your website.
+
+![aeweb_CDN](/img/aeweb_dns.svg#gh-light-mode-only)
+![aeweb_CDN](/img/aeweb_dns-dark.svg#gh-dark-mode-only)
+
 ### Hosting provider integration
 
 import Tabs from '@theme/Tabs';
@@ -36,11 +41,6 @@ import TabItem from '@theme/TabItem';
     <img src="/img/gandi_add_dns_record.png" />
   </TabItem>
 </Tabs>
-
-The subdomain `_dnslink` is used to indicate the reference address and will be used by the nodes to redirect to the on-chain version of your website.
-
-![aeweb_CDN](/img/aeweb_dns.svg#gh-light-mode-only)
-![aeweb_CDN](/img/aeweb_dns-dark.svg#gh-dark-mode-only)
 
 ## SSL 
 
