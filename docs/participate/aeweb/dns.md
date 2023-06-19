@@ -5,6 +5,7 @@ sidebar_label: Domain Names
 sidebar_position: 2
 ---
 
+
 DNS (Domain Name System) is a mechanism which resolves websites names to server IP addresses, making website's URL nicer.
 
 This works well for classical websites, however for decentralized websites new solutions need to be found such as: DNSLink, extensions, etc.
@@ -21,6 +22,20 @@ In your website domain provider administration, you must add two entries:
 | --------------------- | ----- | ---------------------------- |
 | example.com           | CNAME | mainnet.archethic.net        |
 | \_dnslink.example.com | TXT   | dnslink=/archethic/0f1e3.... |
+
+### Hosting provider integration
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="gandi" label="Gandi" default>
+    <p>Click on the "Add record" from the DNS record page</p>
+    <img src="/img/gandi_list_dns_record.png" />
+    <p>Fill the form with "TXT" record type and with _dnslink entry to point the website to the hosting transaction chain</p>
+    <img src="/img/gandi_add_dns_record.png" />
+  </TabItem>
+</Tabs>
 
 The subdomain `_dnslink` is used to indicate the reference address and will be used by the nodes to redirect to the on-chain version of your website.
 
