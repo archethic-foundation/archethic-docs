@@ -18,7 +18,7 @@ The transaction's fee computation is based on some properties:
 - Minimum fee: *$0.01 of the current UCO price*
 - Number of recipient (for transfers or smart contractcalls)
   - 1: no more additional fee 
-  - \> 1: each additional recipient will have an additinal cost of $0.1 UCO(*Because sending transaction to multiple leverages more resources in term of network and storage, as the transaction must be replicated in all the chain targets*)
+  - \> 1: each additional recipient will have an additional cost of $0.1 UCO(*Because sending transaction to multiple leverages more resources in term of network and storage, as the transaction must be replicated in all the chain targets*)
 - Size of the transaction: each stored byte will cost 10<sup>-9</sup> of the current UCO's price
 - Number of replicas
 - Complexity of the smart contract (Coming soon)
