@@ -14,7 +14,7 @@ Source code: https://github.com/archethic-foundation/aeweb
 This web application, built with Flutter, can be used to deploy and manage static sites to the Archethic Blockchain.
 
 :::success
-Before reading the following tutorials, please understand <a href="/participate/aeweb/how-it-works" target="_blank">how AEWeb works</a>. 
+Before reading the following tutorials, understand <a href="/participate/aeweb/how-it-works" target="_blank">how AEWeb works</a>. 
 :::
 
 ## Tutorials
