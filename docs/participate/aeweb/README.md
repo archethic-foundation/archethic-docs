@@ -74,7 +74,7 @@ In that case, once the front-end page have been build from the SPA tooling, inst
   - [x] Complete website
   - [x] Keychain integration
 - [ ] User Interface
-  - [ ] Web or Native application
+  - [x] Web or Native application
 - [ ] Domain Name System (DNS)
   - [x] DNSLink integration
   - [ ] Automation
