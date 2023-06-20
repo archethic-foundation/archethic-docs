@@ -39,12 +39,21 @@ import TabItem from '@theme/TabItem';
     <img src="/img/gandi_list_dns_record.png" />
     <p>Fill the form with "TXT" record type and with _dnslink entry to point the website to the hosting transaction chain</p>
     <img src="/img/gandi_add_dns_record.png" />
+    <p>Then you need to do the same for the "CNAME" record to point it to mainnet.archethic.net</p>
   </TabItem>
   <TabItem value="cloudfare" label="Cloudfare" default>
     <p>Click on the "Add record" from the DNS record page</p>
     <img src="/img/cloudfare_list_dns_record.png" />
     <p>Fill the form with "TXT" record type and with _dnslink entry to point the website to the hosting transaction chain</p>
     <img src="/img/cloudfare_add_dns_record.png" />
+    <p>Then you need to do the same for the "CNAME" record to point it to mainnet.archethic.net</p>
+  </TabItem>
+  <TabItem value="ovh" label="OVH" default>
+    <p>Click on the "Add record" from the DNS record page</p>
+    <img src="/img/ovh_list_dns_record.png" />
+    <p>Fill the form with "TXT" record type and with _dnslink entry to point the website to the hosting transaction chain</p>
+    <img src="/img/ovh_add_dns_record.png" />
+    <p>Then you need to do the same for the "CNAME" record to point it to mainnet.archethic.net</p>
   </TabItem>
 </Tabs>
 
