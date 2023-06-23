@@ -44,17 +44,17 @@ This language is based on a functional language (elixir), but we added some impe
 
 In the Archethic blockchain, we extensively uses hexadecimals to convert all addresses, public keys or hashes on the user-facing interfaces. A Smart Contract is one of these interfaces.
 
-To reduce the possibility of errors when comparing hexadecimals (`"000ABCD" != "000abcd"` even if it's actually the same value), we introduced a new syntax: `hex`. The goal of this syntax is only to facilitate comparaison: `hex000ABCD == hex000abcd`.
+To reduce the possibility of errors when comparing hexadecimals (`"000ABCD" != "000abcd"` even if it's actually the same value), we introduced a new syntax: `0x`. The goal of this syntax is only to facilitate comparaison: `0x000ABCD == 0x000abcd`.
 
 ```elixir
 # don't 
 transaction.address == "000ABCD123"
 
 # do 
-transaction.address == hex000ABCD123 # no quotes!
+transaction.address == 0x000ABCD123 # no quotes!
 ```
 
-So whenever you write a hexadecimal value by hand, prefix it with `hex`.
+So whenever you write a hexadecimal value by hand, prefix it with `0x`.
 
 ## Comparaison
 
