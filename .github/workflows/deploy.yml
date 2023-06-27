@@ -18,7 +18,7 @@ jobs:
         working-directory: .
         run: |
           npm ci
-          npm build
+          npm run build
 
 
       - name: Deploy to Github Pages
