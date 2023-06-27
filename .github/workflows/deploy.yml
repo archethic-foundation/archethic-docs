@@ -13,12 +13,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: yarn
+          cache: npm
       - name: Build website
         working-directory: .
         run: |
-          yarn install --frozen-lockfile
-          yarn build
+          npm ci
+          npm build
 
 
       - name: Deploy to Github Pages
