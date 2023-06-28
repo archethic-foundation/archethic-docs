@@ -6,18 +6,6 @@ sidebar_position: 4
 
 In the Archethic network, there are no blocks but only transactions, as each block is reduced to its atomic form - `transaction` with its own validation evidences.
 
-```mermaid
-timeline
-    title TransactionChain
-    Alice : Alice@1
-    Bob : Bob@1
-        : Bob@2
-    Charlie : Charlie@1
-    Tom : Tom@1
-        : Tom@2
-        : Tom@3
-```
-
 ## Principles
 
 :::note Liveness
