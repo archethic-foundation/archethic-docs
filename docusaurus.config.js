@@ -41,13 +41,13 @@ const config = {
   ],
 
   themeConfig: {
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false
     },
     mermaid: {
-      theme: {light: 'forest', dark: 'dark'},
+      theme: { light: 'forest', dark: 'dark' },
     },
     navbar: {
       title: 'Archethic',
@@ -83,6 +83,7 @@ const config = {
         },
       ],
     },
+    scripts: [{ src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'wiki.archethic.net' }],
     footer: {
       style: 'dark',
       links: [
