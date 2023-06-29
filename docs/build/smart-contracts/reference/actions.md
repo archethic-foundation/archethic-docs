@@ -62,28 +62,31 @@ actions triggered_by: transaction do
 end
 ```
 
-An ICO contract using batching of input transactions:
+A naive voting system
 ```elixir
-# Run every 10 minutes
-actions triggered_by: interval, at: "0 */10 * * *" do
-	calls = Contract.get_calls() # list of calls since last tick
+ @version 1
 
-    if calls != [] do
-        Contract.set_type("transfer")
-    end
+ # naive voting system
+ # initial content: {"x": 0, "y": 0}
 
-    for call in calls do
-        # Get the amount of UCO sent to this contract
-        amount_send = Map.get(call.uco_transfers, contract.address)
+ condition transaction: [
+   timestamp: Time.now() < 1700000000,
+   content: Regex.match?("^[X|Y]$")
+ ]
 
-        if amount_send > 0 do
-            # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
-            token_to_credit = amount_send * 10000
+ actions triggered_by: transaction do
+	 vote_for_x = Json.path_extract(contract.content, "$.x")
+	 vote_for_y = Json.path_extract(contract.content, "$.y")
 
-            Contract.add_token_transfer(to: call.address, token_address: contract.address, amount: token_to_credit)
-        end
-    end
-end
+	 if transaction.content == "X" do
+	   vote_for_x = vote_for_x + 1
+	 else
+	   vote_for_y = vote_for_y + 1
+	 end
+	 
+	 Contract.set_content Json.to_string([x: vote_for_x, y: vote_for_y])
+
+ end
 ```
 
 ## Appendix 1: The transaction map

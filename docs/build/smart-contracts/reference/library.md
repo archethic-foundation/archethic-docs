@@ -517,16 +517,8 @@ Returns the token's id of the token at `address`.
 This module is special in many ways. 
 
 - It is only available in the `actions` block.
-- Almost all functions mutates an internal state. We call this internal state the "next transaction".
+- All all functions mutates an internal state. We call this internal state the "next transaction".
 - This "next transaction" is initiated with current contract (all values but transfers are copied)
-
-### get_calls/0
-
-```elixir
-Contract.get_calls() # [tx1, tx2]
-```
-
-Returns a list of transactions that have this contract's transaction address in the recipients. This is useful to do batching.
 
 ### set_type/1
 
