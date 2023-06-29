@@ -160,6 +160,16 @@ If you then press the `Create Transaction for Service` button, you will get a ne
 
 The mechanism to configure a keychain transaction for a service is the same as the one for a transaction (described above). Only a few configuration are not possible (like the endpoint, the seed, the index and the elliptic curve).
 
+## CLI - Archethic Command Line Interpreter
+
+It is also possible to call the archethic cli tool using the command line.
+
+For details of available commands, you can
+- consult the [readme](https://github.com/archethic-foundation/archethic-cli#cli) of the corresponding github project.
+- display help with the command `--help`.
+
+![Help command](/img/cli/help-command.png)
+
 
 ## Contribution
 
