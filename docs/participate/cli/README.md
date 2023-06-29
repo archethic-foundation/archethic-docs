@@ -10,7 +10,9 @@ This tool helps you to connect to your decentralized wallet (keychain), manage i
 
 ## Installation
 
-Install it with go:
+Download a pre-compiled binary or package from the [releases](https://github.com/archethic-foundation/archethic-cli/releases) page.
+
+Or install it with go:
 
 ```bash
 go install github.com/archethic-foundation/archethic-cli@latest
