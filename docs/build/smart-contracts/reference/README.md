@@ -40,6 +40,22 @@ This language is based on a functional language (elixir), but we added some impe
 - Booleans syntax: `true` / `false`
 - The absence of value: `nil`
 
+## Hexadecimals
+
+In the Archethic blockchain, we extensively uses hexadecimals to convert all addresses, public keys or hashes on the user-facing interfaces. A Smart Contract is one of these interfaces.
+
+To reduce the possibility of errors when comparing hexadecimals (`"000ABCD" != "000abcd"` even if it's actually the same value), we introduced a new syntax: `0x`. The goal of this syntax is only to facilitate comparaison: `0x000ABCD == 0x000abcd`.
+
+```elixir
+# don't 
+transaction.address == "000ABCD123"
+
+# do 
+transaction.address == 0x000ABCD123 # no quotes!
+```
+
+So whenever you write a hexadecimal value by hand, prefix it with `0x`.
+
 ## Comparaison
 
 We compare by value, which means you can pretty much compare anything and it will work as you expect. 
@@ -59,7 +75,7 @@ We compare by value, which means you can pretty much compare anything and it wil
 - `1 / 1 == 1.0`
 - `1 / 0` contract failure
 
-:::caution
+:::info
 The arithmetic is done with the [Decimal library](https://github.com/ericmj/decimal) to ensure there is no floating point precision issue.
 **The only thing to keep in mind is that we truncate at decimal 8.**
 :::
@@ -144,3 +160,10 @@ The parenthesis are actually optional! `Module.function arg1, arg2` will work as
 :::
 
 To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/reference/library).
+
+
+## Reserved keywords
+
+- `hex` prefixed variables
+
+... to be completed

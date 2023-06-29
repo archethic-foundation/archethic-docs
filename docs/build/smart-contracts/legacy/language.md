@@ -194,7 +194,7 @@ end
 - `add_recipient`: Add a contract address to reach
 
 ```
-actions triggered_by: datetime, at: 1391309030 do
+actions triggered_by: datetime, at: 1391309040 do
     add_recipient "0D574D171A484F8DEAC2D61FC3F7CC984BEB52465D69B3B5F670090742CBF5CC"
 end
 

@@ -28,9 +28,13 @@ actions triggered_by: transaction do
 end
 ```
 
-### Contract triggered at a specific date
+### Contract triggered at a specific date and time
 
-You may trigger a contract at a specific date. You need to specify a [Unix time](https://en.wikipedia.org/wiki/Unix_time) (seconds since epoch). 
+You may trigger a contract at a specific date and time. You need to specify a [Unix time](https://en.wikipedia.org/wiki/Unix_time) (seconds since epoch).
+
+:::warning The datetime must be rounded to the minute
+A contract will not parse if the datetime isn't rounded.
+:::
 
 ```elixir 
 @version 1
@@ -39,7 +43,7 @@ actions triggered_by: datetime, at: 1676332800 do
 end
 ```
 
-### Contract triggered every N period
+### Contract triggered at a specific interval
 
 You may trigger a contract at a specific interval. You need to specify a [CRON Format String](https://en.wikipedia.org/wiki/Cron).
 

@@ -76,6 +76,41 @@ Parameters:
 
 Returns the text representation of `number`.
 
+### to_hex/1
+
+```elixir
+String.to_hex("592ac76afa") # "592AC76AFA"
+String.to_hex("592AC76AFA") # "592AC76AFA"
+String.to_hex("ZZZ") # nil
+```
+
+Parameters: 
+- `str` the string
+
+Return the text representation of hexadecimal `str` or `nil`.
+
+### to_uppercase/1
+
+```elixir
+String.to_uppercase("Arsène Lupin") # "ARSÈNE LUPIN"
+```
+
+Parameters:
+- `str` the string
+
+Return the `str` in uppercase.
+
+### to_lowercase/1
+
+```elixir
+String.to_lowercase("Sherlock Holmes") # "sherlock holmes"
+```
+
+Parameters:
+- `str` the string
+
+Return the `str` in lowercase.
+
 ---------
 
 ## Map
