@@ -15,6 +15,7 @@ const config = {
   favicon: 'img/favicon.png',
   organizationName: 'archethic-foundation', // Usually your GitHub org/user name.
   projectName: 'archethic-docs', // Usually your repo name.
+  scripts: [{ src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'wiki.archethic.net' }],
   deploymentBranch: 'gh-pages',
   themes: ['@docusaurus/theme-mermaid'],
   markdown: {
@@ -83,7 +84,6 @@ const config = {
         },
       ],
     },
-    scripts: [{ src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'wiki.archethic.net' }],
     footer: {
       style: 'dark',
       links: [
