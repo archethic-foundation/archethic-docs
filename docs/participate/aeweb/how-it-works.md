@@ -149,7 +149,7 @@ This will be true until the website and the reference chain evolves.
 
 ## Website updates
 
-The first thing a node does when it receives an AEWeb request is to download the latest `reference` transaction from the chain. This behaviour allow an user to update its website and keep the same URL.
+The first thing a node does when it receives an AEWeb request is to download the latest `reference` transaction from the chain. This behaviour allows a user to update its website and to keep the same URL.
 
 This means that updating a website is as simple as sending a new `reference` transaction!
 
