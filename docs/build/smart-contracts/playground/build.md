@@ -53,7 +53,7 @@ What you see above is the JSON representation of the output transaction payload.
 
 ### Test trigger 'transaction'
 
-This trigger is more complex to test because it require you to mock the transaction that should trigger the contract. After selecting the `transaction` from the trigger selector, a form appears:
+This trigger is more complex to test because it requires you to mock the transaction that should trigger the contract. After selecting the `transaction` from the trigger selector, a form appears:
 
 ![the transaction form appears in the panel](/img/playground/playground_build_step2b.png)
 
