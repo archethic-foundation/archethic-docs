@@ -21,7 +21,7 @@ The deploy panel opens on the left hand side:
 The panel is a big form composed of two forms: 
 
 1. the [transaction form](/build/smart-contracts/playground/transaction-form) which is used to define the transaction that holds the contract.
-1. the deploy form which specify which network and keychain to use.
+1. the deploy form which specifies which network and keychain to use.
 
 ## The transaction form
 
