@@ -146,3 +146,27 @@ Once the website retrieved, the data will be cached locally. So, the next time t
 
 This will be true until the website and the reference chain evolves.
 :::
+
+## Website updates
+
+The first thing a node does when it receives an AEWeb request is to download the latest `reference` transaction from the chain. This behaviour allows a user to update its website and to keep the same URL.
+
+This means that updating a website is as simple as sending a new `reference` transaction!
+
+## Website unpublication
+
+Introduced by [AEIP-13](https://github.com/archethic-foundation/aeip/blob/main/AEIP-13.md), a website can be unpublished by sending the following `reference` transaction:
+
+```json
+{
+    "aeip": [8, 13],
+    "aewebVersion": 1,
+    "publicationStatus": "UNPUBLISHED"
+}
+```
+
+As long as this `reference` transaction is the latest, the nodes will not serve the website. An HTTP status code 410 is sent.
+
+:::caution Data is permanent
+The data from an unpublished website (and all previous version as a matter of fact) always remain in the blockchain. Here, we only disable the endpoint to access it.
+:::
