@@ -25,7 +25,7 @@ The panel is a big form composed of two forms:
 
 ## The transaction form
 
-You may want to define it's `type` to "contract" (not mandatory), you might want to define an initial `content` or some `ownerships`. 
+You may want to define its `type` to "contract" (not mandatory), you might want to define an initial `content` or some `ownerships`. 
 
 The only thing **required** is to reveal the seed to the nodes in the `secrets`. 
 This is because the nodes must know the seed of the contract's transaction chain to be able to create new transactions.
