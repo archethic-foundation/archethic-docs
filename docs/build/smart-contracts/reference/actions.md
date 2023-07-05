@@ -50,7 +50,7 @@ An ICO (Initial Coin Offering) contract:
 ```elixir 
 actions triggered_by: transaction do
     # Get the amount of UCO sent to this contract
-    amount_send = Map.get(transaction.uco_transfers, contract.address)
+    amount_send = Map.get(transaction.uco_movements, contract.address)
 
     if amount_send > 0 do
         # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
@@ -96,6 +96,23 @@ A naive voting system
 - `content` is the transaction's content (it's a string that can contain anything, for example a smart contract state)
 - `code` is the transaction's code
 - `timestamp` is the transaction's validation timestamp
+- `uco_movements` is a map of UCO transfers grouped by _resolved_ address of the transaction.
+
+```
+["00001ab...": 1, "00001bc...": 2]
+```
+
+- `token_movements` is a map of list of token transfers grouped by _resolved_ address of the transaction 
+
+```
+["00001ab...": 
+    [
+        [amount: 1, token_address: "0000ab12..." , token_id: 1],
+        [amount: 1, token_address: "0000ab12..." , token_id: 4],
+    ]
+]
+```
+
 - `uco_transfers` is a map of UCO transfers grouped by address of the transaction.
 
 ```
@@ -112,3 +129,30 @@ A naive voting system
     ]
 ]
 ```
+
+:::info Difference between transfers and movements
+The transfers and movements are almost the same thing. The difference is in the addresses.
+The addresses of the transfers are "raw" whereas the addresses of the movements are "resolved". 
+
+- `raw address`: address that was specified on a transfer (usually the genesis but not mandatory)
+- `resolved address`: address of the latest transaction of the chain (the chain that contains `raw address`)
+
+Here's an example to understand the difference:
+
+This is a UCO transfer to MyAmazingContract. The transfer is usually done on the genesis address (here: `0x00abc`). But the transfer is actually creating an UTXO on the latest transaction of the chain (here: `0x00def`).
+
+```mermaid
+flowchart LR
+  subgraph MyAmazingContract
+  Tx1((genesis 0x00abc)) --> Tx2[transaction 0x00bcd]
+  Tx2 --> Tx3[transaction 0x00cde]
+  Tx3 --> Tx4[transaction 0x00def]
+  end
+  Transfer-.->|raw|Tx1
+  Transfer-.->|resolved|Tx4
+```
+
+Thus `contract.uco_transfers == [0x00abc: 1]` and `contract.uco_movements == [0x00def: 1]`. 
+
+**In most cases, you'll want to use `movements` instead of `transfers`.**
+:::
