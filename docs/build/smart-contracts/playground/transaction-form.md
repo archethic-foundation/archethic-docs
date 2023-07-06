@@ -17,8 +17,6 @@ We'll describe here every subpart of this form.
 ## type
 This is a selector to choose the transaction's type. It is used to give a hint about what's in the transaction. Some types impose some rules to follow.
 
-Please see the [transaction types](/learn/transaction-types) page for a detailed list. 
-
 ## code
 This is the text field for the code of the Smart Contract. It may be hidden because in the Smart Contracts Playground, the code is usually at the root level of the user interface.
 
