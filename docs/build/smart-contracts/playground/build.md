@@ -43,7 +43,9 @@ You are now able to select which trigger you want to test, for this contract a s
 
 ![the trigger selector](/img/playground/playground_trigger_selector.png)
 
-### Test trigger 'interval'
+You'll also see the [mock form](/build/smart-contracts/playground/mock-form) that is used to mock the functions that does side-effect. 
+
+### Test trigger 'interval' 
 
 An interval trigger is a contract that triggers automatically at a specific interval. It does not require anything so it's pretty easy to test. Just click on the `trigger` button.
 
@@ -65,9 +67,18 @@ Which results in a very big form but we are not going to cover it here. Click on
 
 ![the resulting transaction is displayed in the console](/img/playground/playground_build_step2c.png)
 
-I can now control that the ouput transaction payload is correct.
+I can now control that the output transaction payload is correct.
+
+### Test trigger 'datetime'
+
+Testing a 'datetime' trigger is similar to testing a trigger 'interval'.
+
+### Test trigger 'oracle'
+
+Testing an 'oracle' trigger is similar to testing a trigger 'transaction' (where the transaction is of type 'oracle'). 
 
 
 :::success That's it!
 You should now be able to build your own smart contracts and test them! The next step now is to [deploy them](/build/smart-contracts/playground/deploy).
 :::
+

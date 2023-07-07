@@ -1,6 +1,6 @@
 ---
 id: transaction-chain
-title: TransactionChains
+title: Transaction chains
 sidebar_position: 4
 ---
 

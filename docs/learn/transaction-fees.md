@@ -1,6 +1,7 @@
 ---
 id: fee
-title: Transaction fee
+title: Transaction fees
+sidebar_position: 4
 ---
 
 Archethic Blockchain is using specific heuristic algorithms to ensure the best transaction's distribution.
