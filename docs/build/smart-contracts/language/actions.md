@@ -5,7 +5,7 @@ sidebar_label: Actions
 sidebar_position: 3
 ---
 
-The `actions` block is the code executed when the associated [trigger](/build/smart-contracts/reference/triggers) is triggered. 
+The `actions` block is the code executed when the associated [trigger](/build/smart-contracts/language/triggers) is triggered. 
 
 ## Global variables
 Depending on the trigger, there are different global variables accessible.
@@ -21,7 +21,7 @@ The `transaction` variable is a map of the transaction that triggered the `actio
 ## Generating the next transaction
 
 The main goal of the action block is to generate a new transaction in the smart contract chain.  
-To do so, you can use the [Contract](/build/smart-contracts/reference/library#contract) module that allows to set the transaction field value.
+To do so, you can use the [Contract](/build/smart-contracts/language/library#contract) module that allows to set the transaction field value.
 
 ```elixir
 # Set uco ATH in content
@@ -46,7 +46,7 @@ So you don't need to set the type, the code and the ownerships each time you gen
 
 ## Examples
 
-An ICO (Initial Coin Offering) contract:
+ICO (Initial Coin Offering)
 ```elixir 
 actions triggered_by: transaction do
     # Get the amount of UCO sent to this contract
@@ -62,18 +62,8 @@ actions triggered_by: transaction do
 end
 ```
 
-A naive voting system
+naive voting system
 ```elixir
- @version 1
-
- # naive voting system
- # initial content: {"x": 0, "y": 0}
-
- condition transaction: [
-   timestamp: Time.now() < 1700000000,
-   content: Regex.match?("^[X|Y]$")
- ]
-
  actions triggered_by: transaction do
 	 vote_for_x = Json.path_extract(contract.content, "$.x")
 	 vote_for_y = Json.path_extract(contract.content, "$.y")

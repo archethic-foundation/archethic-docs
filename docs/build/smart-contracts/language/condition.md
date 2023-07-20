@@ -18,7 +18,7 @@ condition <type>: [
 ]
 ```
 - `type` is either `inherit`, `transaction` or `oracle`.
-- `prop` is a property of the transaction or `origin_family`. See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-the-transaction-map) for the available properties.
+- `prop` is a property of the transaction or `origin_family`. See [Action's Appendix 1](/build/smart-contracts/language/actions#appendix-1-the-transaction-map) for the available properties.
 - `expr` is a code expression.
 
 Example:
@@ -70,7 +70,7 @@ There are 2 global variables for this condition block:
 1. `previous` is the transaction of the current contract.
 1. `next` is the "next transaction".
 
-See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-the-transaction-map) for the details of the transaction map.
+See [Action's Appendix 1](/build/smart-contracts/language/actions#appendix-1-the-transaction-map) for the details of the transaction map.
 
 :::caution
 A specific rule is applied for inherit condition, if a field is not specified in the conditions, it assumes that it must have the same value as the previous transaction. ie. `code: previous.code == next.code`
@@ -142,7 +142,7 @@ There are 2 global variables for this condition block:
 1. `contract` is the transaction of the current contract.
 1. `transaction` is the transaction that triggered the contract.
 
-See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-the-transaction-map) for the details of the transaction map.
+See [Action's Appendix 1](/build/smart-contracts/language/actions#appendix-1-the-transaction-map) for the details of the transaction map.
 
 ### Examples
 
@@ -176,7 +176,7 @@ There are 2 global variables for this condition block:
 1. `contract` is the transaction of the current contract.
 1. `transaction` is the oracle transaction that triggered the contract.
 
-See [Action's Appendix 1](/build/smart-contracts/reference/actions#appendix-1-the-transaction-map) for the details of the transaction map.
+See [Action's Appendix 1](/build/smart-contracts/language/actions#appendix-1-the-transaction-map) for the details of the transaction map.
 
 ### Examples
 

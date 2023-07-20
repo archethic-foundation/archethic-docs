@@ -1,17 +1,17 @@
 ---
-id: reference
-title: Reference
-sidebar_label: Reference
+id: language
+title: Smart Contracts - Language
+sidebar_label: Language
 sidebar_position: 2
 ---
 
 A Smart Contract is defined as followed: 
 
 - 1 version attribute
-- 1 or many [actions](/build/smart-contracts/reference/actions) block (maximum, one per [trigger](/build/smart-contracts/reference/triggers))
-- 0 or 1 [condition inherit](/build/smart-contracts/reference/condition#inherit) block
-- 0 or 1 [condition transaction](/build/smart-contracts/reference/condition#transaction) block
-- 0 or 1 [condition oracle](/build/smart-contracts/reference/condition#oracle) block
+- 1 or many [actions](/build/smart-contracts/language/actions) block (maximum, one per [trigger](/build/smart-contracts/language/triggers))
+- 0 or 1 [condition inherit](/build/smart-contracts/language/condition#inherit) block
+- 0 or 1 [condition transaction](/build/smart-contracts/language/condition#transaction) block
+- 0 or 1 [condition oracle](/build/smart-contracts/language/condition#oracle) block
 
 The `actions` blocks contain the code to execute when a specific event is triggered.
 
@@ -125,7 +125,7 @@ Here's the tree of scopes and variables for the above example:
 ## Lists
 
 The list is the data structure to work with collections. The syntax is: `[1, 2]`. An empty list is: `[]`.
-There is a [List module](/build/smart-contracts/reference/library#list) in the library to manipulate lists.
+There is a [List module](/build/smart-contracts/language/library#list) in the library to manipulate lists.
 
 :::info
 Lists are actually [Linked Lists](https://en.wikipedia.org/wiki/Linked_list).
@@ -141,7 +141,7 @@ There is 3 ways to retrieve a value:
 
 We suggest to use the 1st syntax as often as possible. Use the 2nd or 3rd when dealing with dynamic properties.
 
-There is a [Map module](/build/smart-contracts/reference/library#map) module in the library to manipulate maps.
+There is a [Map module](/build/smart-contracts/language/library#map) module in the library to manipulate maps.
 
 :::note
 Since the maps and the lists have a very close syntax, it is impossible to differentiate an empty map from an empty list. So, for semantic reasons, to create an empty map, use the `Map.new()` function call.
@@ -159,11 +159,9 @@ You may use any functions from the library. The syntax is `Module.function(arg1,
 The parenthesis are actually optional! `Module.function arg1, arg2` will work as well.
 :::
 
-To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/reference/library).
+To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/language/library).
 
 
 ## Reserved keywords
-
-- `hex` prefixed variables
 
 ... to be completed

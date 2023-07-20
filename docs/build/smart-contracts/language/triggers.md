@@ -5,7 +5,6 @@ sidebar_label: Triggers
 sidebar_position: 1
 ---
 
-# Triggers
 ### Contract triggered by a transaction
 
 :::tip
