@@ -579,7 +579,7 @@ Parameters:
 
 :::tip
 While `content` is always a string when you read it, it is possible here to send an integer or a float for convenience.
-For any other data structure, you should serialize it with the [Json module](/build/smart-contracts/reference/library#json) for example.
+For any other data structure, you should serialize it with the [Json module](/build/smart-contracts/language/library#json) for example.
 :::
 
 ### set_code/1
