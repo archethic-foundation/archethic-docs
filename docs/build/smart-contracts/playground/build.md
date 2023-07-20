@@ -40,9 +40,6 @@ The trigger panel opens on the left hand side:
 ![the trigger panel](/img/playground/playground_trigger_panel.png)
 
 You are now able to select which trigger you want to test, for this contract a selector of two triggers is displayed (as per the contract): 
-
-![the trigger selector](/img/playground/playground_trigger_selector.png)
-
 You'll also see the [mock form](/build/smart-contracts/playground/mock-form) that is used to mock the functions that does side-effect. 
 
 ### Test trigger 'interval' 
@@ -51,7 +48,14 @@ An interval trigger is a contract that triggers automatically at a specific inte
 
 ![the resulting transaction is displayed in the console](/img/playground/playground_build_step2a.png)
 
-What you see above is the JSON representation of the output transaction payload. Here I can control that my contract behaved as I expected. The `content` is set to what I expected, the `code` did not change and the other fields are empty.
+What you see above is the JSON representation of the output transaction payload. Here we can control that my contract behaved as expected. The `content` is set to "Hello from interval" as expected.
+
+You probably saw the `trigger and update contract's transaction` button. Let's click on it to see the difference: 
+
+![the resulting transaction is displayed in the contract' transaction panel](/img/playground/playground_build_step2e.png)
+
+The difference is not easy to spot, but the transaction of the contract (the right panel) has been updated. This is useful to test a sequence of triggers.
+
 
 ### Test trigger 'transaction'
 
@@ -63,7 +67,7 @@ This form is composed of two forms:
 1. the [transaction form](/build/smart-contracts/playground/transaction-form) 
 1. the [mock form](/build/smart-contracts/playground/mock-form) 
 
-Which results in a very big form but we are not going to cover it here. Click on the links if you are interested. For this contract, we'll just submit the form without changing anything. 
+Which results in a very big form that are covered in the links above. For this contract, we'll just submit the form without changing anything. 
 
 ![the resulting transaction is displayed in the console](/img/playground/playground_build_step2c.png)
 

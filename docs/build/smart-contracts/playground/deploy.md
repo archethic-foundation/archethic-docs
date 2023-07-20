@@ -18,30 +18,20 @@ The deploy panel opens on the left hand side:
 
 ![the deploy panel](/img/playground/playground_panel_deploy.png)
 
-The panel is a big form composed of two forms: 
 
-1. the [transaction form](/build/smart-contracts/playground/transaction-form) which is used to define the transaction that holds the contract.
-1. the deploy form which specifies which network and keychain to use.
+1. Choose the network where you want to deploy the Smart Contract. This will always be "https://testnet.archethic.net" for now.
+1. You'll see that we automatically retrieve the `storage nonce public key` that is used to give ownership of the contract to the authorized nodes (miners).
+1. Then specify a seed of a transaction chain that will host the contract. 
 
-## The transaction form
+While modifying the seed, you can see that the future contract's address is displayed. The contract's genesis address is also displayed. 
 
-You may want to define its `type` to "contract" (not mandatory), you might want to define an initial `content` or some `ownerships`. 
+:::info Genesis address
+The genesis address is the one you'll use in the [faucet](https://testnet.archethic.net/faucet) to transfer funds.
+:::
 
-The only thing **required** is to reveal the seed to the nodes in the `secrets`. 
-This is because the nodes must know the seed of the contract's transaction chain to be able to create new transactions.
-To achieve this, write the seed in the `secret` field and click on the `Load storage nonce public key` button and then click on the `Create secret` button.
+Now you may click on `estimate fees` and then `deploy`. Hopefully you'll see a success message!
+You may follow the link to view the transaction on the explorer.
 
-![the ownership containing the seed is displayed](/img/playground/playground_sc_ownership.png)
-
-
-## The deploy form
-
-1. Choose the network where you want to deploy the Smart Contract. Use "local" if you run a node on your computer, "testnet" otherwise. 
-1. Then at the bottom specify the seed of a keychain with some funds to pay the fees.
-
-- To generate an address from a seed, use the [address generator](/participate/cli/#generate-address) from the CLI.
-- To get funds, use the [faucet](https://testnet.archethic.net/faucet).
-
-Before clicking on the `Deploy` button, you may click on the `Estimate fees` button.
-A message should inform you of the status of the deployment. If successful, you'll get a link to the transaction on the [explorer](https://testnet.archethic.net/explorer).
-
+:::success That's it!
+Congratulations on your contract's deployment.
+:::

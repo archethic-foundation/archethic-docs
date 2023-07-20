@@ -26,16 +26,6 @@ A function can be mocked multiple times, for example to mock multiple different 
 
 Time.now/0 can be mocked to simulate a future execution of the contract. This one is actually optional, the playground will use current time if it is not set.
 
-All you need to do is fill the expected output (seconds since epoch):
-
-![mocking the Time.now/0](/img/playground/playground_form_mock_time_now.png)
-
-Then click on the `Add` button:
-
-![Time.now/0 is mocked](/img/playground/playground_form_mock_time_now2.png)
-
-You may now test a Smart Contract that uses `Time.now/0`: 
-
 ```elixir
 @version 1
 actions triggered_by: interval, at: "* * * * *" do 
@@ -43,7 +33,13 @@ actions triggered_by: interval, at: "* * * * *" do
 end
 ```
 
-![a contract that used Time.now/0 is tested](/img/playground/playground_form_mock_time_now_example.png)
+All you need to do is fill the expected output (seconds since epoch):
+
+![mocking the Time.now/0](/img/playground/playground_form_mock_time_now.png)
+
+Then click on the `Add` button, then `trigger` to test the Smart Contract:
+
+![Time.now/0 is mocked](/img/playground/playground_form_mock_time_now2.png)
 
 We can see via the console that the mock was called as expected.
 

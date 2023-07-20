@@ -26,11 +26,11 @@ This is the text field for the code of the Smart Contract. It may be hidden beca
 The content is a text field. It often depends on the transaction's type.
 For Smart Contracts, we use it to store the aggregated state. This might change in the very near future (see [AEIP-14](https://github.com/archethic-foundation/aeip/blob/main/AEIP-14.md)).
 
-### validation timestamp (not available in deploy panel)
+### validation timestamp (not used in deployment)
 
 It represents the time at which the transaction was validated. This is only used to mock a value for your tests.
 
-### address (not available in deploy panel)
+### address (not used in deployment)
 
 It's the transaction's address. It must be a 68 characters hexadecimal. This is only used to mock a value for your tests.
 
@@ -66,8 +66,10 @@ Every secret is defined by 2 fields:
 - `secret`: required - the **non-encrypted** secret  (the SDK will encrypt with a key that is then encrypted for every authorized_public_keys below)
 - `authorized_public_keys`: required - the list of public keys allowed to decrypt the secret
 
-:::note
-As explained in the [Deploy](/build/smart-contracts/playground/deploy) page, one secret is required for the initial contract's transaction.
+:::note contract's ownership
+When deploying, the playground automatically creates a secret that is used to give the ability to execute the contract to all authorized nodes. 
+
+In raw terms, it encrypts the `seed` with the `storage nonce public key`.
 :::
 
 :::danger TODO

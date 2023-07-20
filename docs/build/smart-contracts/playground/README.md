@@ -11,5 +11,5 @@ It is available here: https://playground.archethic.net/.
 - Follow the [Build](/build/smart-contracts/playground/build) menu to build a smart contracts with the playground.
 - Follow the [Deploy](/build/smart-contracts/playground/deploy) menu to deploy a smart contracts.
 
-![The Smart Contracts playground](/img/playground/playground_ico_contract.png)
+![The Smart Contracts playground](/img/playground/playground_hello_contract.png)
 
