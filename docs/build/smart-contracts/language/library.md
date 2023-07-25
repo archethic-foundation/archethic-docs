@@ -567,7 +567,7 @@ end
 Parameters:
 - `url` the url to fetch
 
-Fetch the given url and returns a map with `status` (integer) and `body` (string or nil).
+Fetch the given url and returns a map with `status` (integer) and `body` (string).
 
 This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) the endpoint returns or one of these:
 
@@ -594,7 +594,7 @@ end
 Parameters:
 - `urls` a list of urls to fetch (max: 5)
 
-Fetch the given urls and returns a list of map with `status` (integer) and `body` (string or nil). Order and length is preserved.
+Fetch the given urls and returns a list of map with `status` (integer) and `body` (string). Order and length is preserved.
 Please refer to `fetch/1` for details.
 
 ---------
