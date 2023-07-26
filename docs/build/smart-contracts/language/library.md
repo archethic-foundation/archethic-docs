@@ -509,6 +509,17 @@ Parameters:
 
 Returns the genesis public key of `public_key`.
 
+### get_transaction/1
+
+```elixir
+Chain.get_transaction(0x00ABCD..) # [address: "00ABCD..", content: "...", uco_transfers: [], ...]
+```
+
+Parameters:
+- `address` the transaction address
+
+Returns the transaction at `address`. If there is no transaction at `address`, it returns `nil`. See [Appendix 1](#appendix-1-the-transaction-map).
+
 ---------
 
 ## Crypto
