@@ -509,6 +509,14 @@ Parameters:
 
 Returns the genesis public key of `public_key`.
 
+### get_burn_address/0
+
+```elixir
+Chain.get_burn_address() # "0000000000..."
+```
+
+Returns the burn address
+
 ---------
 
 ## Crypto
