@@ -584,7 +584,7 @@ Crypto.hash("my text", "sha512") # "A3D7E45A0D9BE5F..."
 Parameters:
 
 - `str` the text to hash
-- `algo` the hash algorithm ("sha256", "sha512", "sha3_256", "sha3_512", "blake2b")
+- `algo` the hash algorithm ("sha256", "sha512", "sha3_256", "sha3_512", "blake2b", "keccak256")
 
 Returns the hash of `str` by using `algo` algorithm.
 
