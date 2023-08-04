@@ -85,7 +85,7 @@ Finally, for **OTP via Yubicloud**: Yubico OTP is a simple yet strong authentica
 Archethic Wallet stores a set of information so that the application is functional in both online and offline mode.
 
 The first group of information represents the globally available user preferences:
-- **First Launch: Allows to know if this is the first launch of the application in order to clear the keystore for iOS. Indeed, iOS key store is persistent, so if this is first launch then we will clear the keystore.
+- **First Launch**: Allows to know if this is the first launch of the application in order to clear the keystore for iOS. Indeed, iOS key store is persistent, so if this is first launch then we will clear the keystore.
 - **Authentification Method**: Allows to know which authentication mode is used (PIN, password, YubiKey, biometrics).
 - **Current Currency**: Allows you to know what currency is used in the application.
 - **Current Language**: Allows you to know which language is used in the application.
@@ -95,13 +95,18 @@ The first group of information represents the globally available user preference
 - **Current Theme**: Allows to know which theme is used in the application.
 - **Lock**: Allows to know if it is necessary to authenticate at the launching of the application.
 - **Lock Timeout**: Allows to know after how long the application requires authentication at its launch if the user has left the application open to browse for another one for example.
+- **Auto Lock Date**: Contains the timestamp of the last autolock.
 - **Pin Pad Shuffle**: Allows you to determine whether the PIN code keyboard should be shuffled when entering.
 - **Show Balances**: Allows you to determine if the financial information should be displayed.
 - **Show Blog**: Allows you to know which blog articles should be displayed.
 - **Show Price Chart**: Allows you to determine whether the graph and indicators of the UCO price chart should be displayed.
+- **Price Chart Scale**: Current scale of the price chart.
 - **Active Vibrations**: Allows to know if at each action, a small vibration is emitted on the mobiles.
 - **Active Notifications**: Allows to know if the notifications of reception of UCO are active or not.
+- **Active RPC Server**: Allows DApps connect to the wallet to get informations or send/sign transactions.
 - **Language Seed**: Allows to know if the seed phrase is composed of French or English words.
+- **Current Version**: Current version of the wallet app installed.
+- **Main Screen Current Page**: Current page selected on the main screen.
 
 The second group of information represents the sensitive elements related to security:
 - **Seed**: Allows to store the wallet seed needed to perform transactions on the Archethic blockchain.
@@ -109,6 +114,7 @@ The second group of information represents the sensitive elements related to sec
 - **Password**: Allows to keep the password in case this authentication method has been chosen.
 - **Yubicloud ID and API Key**: Allows to keep the authentication information for the management of the OTP with the YubiKey in case this authentication method has been chosen.
 This information is stored securely.
+- **Keychain secured informations**: Keychain's informations like keychain's seed, keychain's version and the associated list of services.
 - And finally, **a secure 256-bit (32 bytes) encryption key** to secure data on the disk.
 
 :::info
@@ -121,32 +127,6 @@ These data are stored in clear text because they are not sensitive.
 **On the other hand, the information related to security management must be protected.** Here again, Hive is used but the stored values are encrypted. Hive provides a helper function to generate a secure encryption key using the [Fortuna](https://en.wikipedia.org/wiki/Fortuna_%28PRNG%29) random number generator.
 The key is stored base64 encoded in a secure space via the [FlutterSecureStorage library](https://pub.dev/packages/flutter_secure_storage).
 
-```dart
-static Future<Vault> getInstance() async {
-    try {
-      const FlutterSecureStorage secureStorage = FlutterSecureStorage();
-      final Uint8List encryptionKey;
-      String? secureKey =
-          await secureStorage.read(key: 'archethic_wallet_secure_key');
-      if (secureKey == null || secureKey.isEmpty) {
-        final List<int> key = Hive.generateSecureKey();
-        encryptionKey = Uint8List.fromList(key);
-        secureKey = base64UrlEncode(key);
-        await secureStorage.write(
-            key: 'archethic_wallet_secure_key', value: secureKey);
-      } else {
-        encryptionKey = base64Url.decode(secureKey);
-      }
-      final Box<dynamic> encryptedBox = await Hive.openBox<dynamic>(_vaultBox,
-          encryptionCipher: HiveAesCipher(encryptionKey));
-      return Vault._(encryptedBox);
-    } catch (e) {
-      dev.log(e.toString());
-      throw Exception();
-    }
-  }
-```
-
 ## Interactions with the Archethic blockchain
 
 Based on the Archethic JS SDK, [**a SDK has been developed in dart**](/docs/build/sdk/dart.md) and is maintained by the Archethic teams in order to offer internal or community-developed Flutter DApps to interact with the Archethic Blockchain.
@@ -157,8 +137,8 @@ This open-source SDK **"archethic_lib_dart"**, available on [GitHub](https://git
 ## Setup
 
 ### Pre-requisites
-- Flutter 3.0+
-- Dart 2.17+
+- Flutter 3.10+
+- Dart 3.0+
 
 ### Instructions
 - Download the [repo](https://github.com/archethic-foundation/archethic-wallet) into a folder
