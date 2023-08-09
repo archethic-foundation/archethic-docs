@@ -5,7 +5,7 @@ sidebar_label: Language
 sidebar_position: 2
 ---
 
-A Smart Contract is defined as followed: 
+A Smart Contract is defined as followed:
 
 - 1 version attribute
 - 1 or many [actions](/build/smart-contracts/language/actions) block (maximum, one per [trigger](/build/smart-contracts/language/triggers))
@@ -36,7 +36,7 @@ This language is based on a functional language (elixir), but we added some impe
 - Strings are double quoted `"I am a string"`
 - String interpolation `"hello #{name}"`
 - Integers & Floats can use `_` at your convenience `10_000` `10_000.0`
-- Floats can use the scientific format: `1.0e2 == 100` 
+- Floats can use the scientific format: `1.0e2 == 100`
 - Booleans syntax: `true` / `false`
 - The absence of value: `nil`
 
@@ -47,10 +47,10 @@ In the Archethic blockchain, we extensively uses hexadecimals to convert all add
 To reduce the possibility of errors when comparing hexadecimals (`"000ABCD" != "000abcd"` even if it's actually the same value), we introduced a new syntax: `0x`. The goal of this syntax is only to facilitate comparaison: `0x000ABCD == 0x000abcd`.
 
 ```elixir
-# don't 
+# don't
 transaction.address == "000ABCD123"
 
-# do 
+# do
 transaction.address == 0x000ABCD123 # no quotes!
 ```
 
@@ -58,7 +58,7 @@ So whenever you write a hexadecimal value by hand, prefix it with `0x`.
 
 ## Comparaison
 
-We compare by value, which means you can pretty much compare anything and it will work as you expect. 
+We compare by value, which means you can pretty much compare anything and it will work as you expect.
 
 - `1 == 1.0`
 - `[1,2] == [1,2]`
@@ -98,12 +98,12 @@ Variables are mutable, if you update a variable declared in a parent scope, it w
 A new scope is created every time you enter a new block (`do .. end`). A scope can access (read/write) the variables declared in its parent's scope, but not its child's scope.
 
 ```elixir
-names = ["Tom", "Jerry", ""]       
-text = ""                           
+names = ["Tom", "Jerry", ""]
+text = ""
 for name in names do                # ENTER SCOPE 1
     if name != "" do                # ENTER SCOPE 1.1
-        new_line = "\n"             
-        text = "#{name}#{new_line}" 
+        new_line = "\n"
+        text = "#{name}#{new_line}"
     end                             # EXIT SCOPE 1.1
     # new_line does not exists here
 end                                 # EXIT SCOPE 1
@@ -112,6 +112,7 @@ end                                 # EXIT SCOPE 1
 ```
 
 Here's the tree of scopes and variables for the above example:
+
 ```
 [SCOPE 0]
 ├── names
@@ -135,6 +136,7 @@ Lists are actually [Linked Lists](https://en.wikipedia.org/wiki/Linked_list).
 
 The map is the key-value data structure in the Smart Contract language. The syntax is: `[key1: 1, key2: 2]` or if key starts with a number: `["00001abc...": 1]`. The keys must be strings.
 There is 3 ways to retrieve a value:
+
 - `map.property`
 - `map["property"]`
 - `Map.get(map, "property")`
@@ -151,6 +153,72 @@ Since the maps and the lists have a very close syntax, it is impossible to diffe
 The brackets are mostly optional! `key1: 1, key2: 2` will work as well. But if you have a nested map, you cannot omit them!
 :::
 
+## Functions
+
+In the Archethic Smart Contract Language, you can declare 2 types of functions:
+
+- Internal Functions declared with the `fun` keyword
+- External Functions declared with the `export fun` keyword
+
+### Internal Functions
+
+Internal functions are functions that are only available in the Smart Contract. They are not callable from the outside.
+
+They are declared with the `fun` keyword and can be called from the [Action](/build/smart-contracts/language/actions) or [Condition](/build/smart-contracts/language/condition) blocks.
+
+They can have 0 argument :
+
+```elixir
+fun hello() do
+    "Hello World!"
+end
+```
+
+Or more :
+
+```elixir
+fun sum(a, b) do
+    a + b
+end
+```
+
+**These functions aren't able to call another internal function** but can call an external one.
+
+:::info
+Internal functions are able to use [library module](#library) IO functions. IO stands for Input/Output. These functions are used to fetch data from the blockchain.
+:::
+:::warning
+Internal functions are not able to mutate the state of the Smart Contract.
+
+(IE: Contract.set_content)
+:::
+
+### External Functions
+
+External functions are functions that are callable from the Smart Contract but also through the JSON-RPC API.
+
+They are declared with the `export fun` keyword and can be called from the [Action](/build/smart-contracts/language/actions) or [Condition](/build/smart-contracts/language/condition) blocks but also from an internal function.
+
+They can have 0 argument :
+
+```elixir
+export fun hello_outside() do
+    "Hello World!"
+end
+```
+
+Or more :
+
+```elixir
+export fun sum(a, b) do
+    a + b
+end
+```
+
+:::warning
+External functions cannot modify the Smart Contract's state, use IO functions, or invoke any other custom functions.
+:::
+
 ## Library
 
 You may use any functions from the library. The syntax is `Module.function(arg1, arg2)`.
@@ -160,7 +228,6 @@ The parenthesis are actually optional! `Module.function arg1, arg2` will work as
 :::
 
 To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/language/library).
-
 
 ## Reserved keywords
 
