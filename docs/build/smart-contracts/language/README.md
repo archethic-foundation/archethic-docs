@@ -187,8 +187,8 @@ end
 :::info
 Internal functions are able to use [library module](#library) IO functions. IO stands for Input/Output. These functions are used to fetch data from the blockchain.
 :::
-:::warning
-Internal functions are not able to mutate the state of the Smart Contract.
+:::caution
+Internal functions are not able to modify the Smart Contract's state nor update the next Contract transaction.
 
 (IE: Contract.set_content)
 :::
@@ -215,8 +215,8 @@ export fun sum(a, b) do
 end
 ```
 
-:::warning
-External functions cannot modify the Smart Contract's state, use IO functions, or invoke any other custom functions.
+:::caution
+External functions cannot modify the Smart Contract's state, update the next Contract transaction, use IO functions nor invoke any other custom functions.
 :::
 
 ## Library
