@@ -549,12 +549,6 @@ Returns the token's id of the token at `address`.
 
 ## Http
 
-This module is only available from an `actions` block.
-
-:::info
-Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
-:::
-
 ### fetch/1
 
 ```elixir
@@ -567,15 +561,19 @@ end
 Parameters:
 - `url` the url to fetch
 
-Fetch the given url and returns a map with `status` (integer) and `body` (string).
+Fetch the given url (with a `GET`) and returns a map with `status` (integer) and `body` (string).
+This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
-This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) the endpoint returns or one of these:
+- The URL must use HTTPS protocol.
+- The response body's size must be less than 256KB.
+- The response must be received in less than 2 seconds.
+- The response must be idempotent (= identical every time it is called)
+- Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
 
-- `-4000 Internal Error`
-- `-4001 Timeout`
-- `-4002 Body too large`
-- `-4003 Too many urls`
-- `-4004 Non-HTTPS`
+:::caution
+The function raises if these requirements are not meet.
+:::
+
 
 ### fetch_many/1
 
@@ -592,10 +590,21 @@ end
 ```
 
 Parameters:
-- `urls` a list of urls to fetch (max: 5)
+- `urls` a list of urls to fetch
 
-Fetch the given urls and returns a list of map with `status` (integer) and `body` (string). Order and length is preserved.
-Please refer to `fetch/1` for details.
+Fetch the given urls **in parallel** and returns a list of map with `status` (integer) and `body` (string). Order and length is preserved.
+This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+
+- The URLs must use HTTPS protocol.
+- The sum of response bodies' size must not be bigger than 256KB.
+- The responses must be received in less than 2 seconds.
+- The responses must be idempotent (= identical every time it is called)
+- Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
+- The URLs are limited to 5.
+
+:::caution
+The function raises if these requirements are not meet.
+:::
 
 ---------
 
