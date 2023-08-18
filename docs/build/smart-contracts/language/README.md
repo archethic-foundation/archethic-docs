@@ -158,7 +158,7 @@ The brackets are mostly optional! `key1: 1, key2: 2` will work as well. But if y
 In the Archethic Smart Contract Language, you can declare 2 types of functions:
 
 - Internal Functions declared with the `fun` keyword
-- External Functions declared with the `export fun` keyword
+- Exported Functions declared with the `export fun` keyword
 
 ### Internal Functions
 
@@ -166,7 +166,7 @@ Internal functions are functions that are only available in the Smart Contract. 
 
 They are declared with the `fun` keyword and can be called from the [Action](/build/smart-contracts/language/actions) or [Condition](/build/smart-contracts/language/condition) blocks.
 
-They can have 0 argument :
+They can have 0 argument:
 
 ```elixir
 fun hello() do
@@ -174,7 +174,7 @@ fun hello() do
 end
 ```
 
-Or more :
+Or more:
 
 ```elixir
 fun sum(a, b) do
@@ -182,41 +182,43 @@ fun sum(a, b) do
 end
 ```
 
-**These functions aren't able to call another internal function** but can call an external one.
-
-:::info
-Internal functions are able to use [library module](#library) IO functions. IO stands for Input/Output. These functions are used to fetch data from the blockchain.
-:::
-:::caution
-Internal functions are not able to modify the Smart Contract's state nor update the next Contract transaction.
-
-(IE: Contract.set_content)
-:::
-
-### External Functions
-
-External functions are functions that are callable from the Smart Contract but also through the JSON-RPC API.
-
-They are declared with the `export fun` keyword and can be called from the [Action](/build/smart-contracts/language/actions) or [Condition](/build/smart-contracts/language/condition) blocks but also from an internal function.
-
-They can have 0 argument :
+You can also have the same function name with different signature:
 
 ```elixir
-export fun hello_outside() do
-    "Hello World!"
-end
-```
-
-Or more :
-
-```elixir
-export fun sum(a, b) do
+fun sum(a, b) do
     a + b
 end
+
+fun sum(list) do
+    acc = 0
+    for i in list do
+        acc = acc + i
+    end
+    acc
+end
 ```
 
-:::caution
-External functions cannot modify the Smart Contract's state, update the next Contract transaction, use IO functions nor invoke any other custom functions.
+**These functions aren't able to call another internal function** but can call an Exported one.
+
+:::info
+Internal functions are able to use [library module](/build/smart-contracts/language/library) functions tagged as `I/O` but not the functions tagged as `UPDATE_CONTRACT`.
+:::
+
+### Exported Functions
+
+Exported functions are callable from the Smart Contract but also through the outside via the JSON-RPC API.
+They are declared like internal function but with the `export fun` syntax.
+
+```elixir
+export fun get_current_count() do
+    String.to_number contract.content
+end
+```
+
+Unlike internal functions, they can be called from any block of code.
+
+:::info
+External functions are not able to use [library module](/build/smart-contracts/language/library) functions tagged as `I/O` or `UPDATE_CONTRACT`.
 :::
 
 ## Library
@@ -230,5 +232,9 @@ The parenthesis are actually optional! `Module.function arg1, arg2` will work as
 To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/language/library).
 
 ## Reserved keywords
+
+- `for`
+- `do`
+- `end`
 
 ... to be completed

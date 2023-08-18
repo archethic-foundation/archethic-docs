@@ -11,11 +11,11 @@ The Smart Contract library is composed of many modules with many functions in ea
 ```elixir
 # Don't
 sold_items = [1,2,3]
-List.concat(sold_items, [4,5,6]) 
+List.concat(sold_items, [4,5,6])
 
 # Do
 sold_items = [1,2,3]
-sold_items = List.concat(sold_items, [4,5,6]) 
+sold_items = List.concat(sold_items, [4,5,6])
 ```
 
 :::note function/arity
@@ -33,10 +33,10 @@ String.size("hello")   # 5
 String.size("你好")     # 2
 ```
 
-Parameters: 
-- `str` the string 
+Parameters:
+- `str` the string
 
-Returns the number of characters in `str`. 
+Returns the number of characters in `str`.
 
 ### in?/2
 
@@ -84,7 +84,7 @@ String.to_hex("592AC76AFA") # "592AC76AFA"
 String.to_hex("ZZZ") # nil
 ```
 
-Parameters: 
+Parameters:
 - `str` the string
 
 Return the text representation of hexadecimal `str` or `nil`.
@@ -129,7 +129,7 @@ Returns an empty map. There is no shorthand notation.
 Map.size(key1: "value", key2: "value2") # 2
 ```
 
-Parameters: 
+Parameters:
 - `map` the map
 
 Returns the number of keys in `map`.
@@ -141,7 +141,7 @@ Map.get([key1: "value", key2: "value2"], "key1") # "value"
 Map.get([key1: "value", key2: "value2"], "key3") # nil
 ```
 
-Parameters: 
+Parameters:
 - `map` the map
 - `key` the key
 
@@ -158,7 +158,7 @@ Map.get([key1: "value", key2: "value2"], "key1", "not in map") # "value"
 Map.get([key1: "value", key2: "value2"], "key3", "not in map") # "not in map"
 ```
 
-Parameters: 
+Parameters:
 - `map` the map
 - `key` the key
 - `default` the default value
@@ -172,7 +172,7 @@ Map.set([key1: "value", key2: "value2"], "key1", "valueX") # [key1: "valueX", ke
 Map.get([key1: "value", key2: "value2"], "key3", "value3") # [key1: "value", key2: "value2, key3: "value3"]
 ```
 
-Parameters: 
+Parameters:
 - `map` the map
 - `key` the key
 - `value` the value to set
@@ -185,13 +185,13 @@ Returns a copy of `map` where the value at `key` is `value`.
 Map.keys(key1: "value", key2: "value2") # ["key1", "key2"]
 ```
 
-Parameters: 
+Parameters:
 - `map` the map
 
-Returns the list of keys in `map`. 
+Returns the list of keys in `map`.
 
-:::tip 
-Use it with a `for loop` to iterate on a map! 
+:::tip
+Use it with a `for loop` to iterate on a map!
 
 ```
 for key in Map.keys(map) do
@@ -208,7 +208,7 @@ end
 Map.values(key1: "value", key2: "value2") # ["value", "value2"]
 ```
 
-Parameters: 
+Parameters:
 - `map` the map
 
 Returns the list of values in `map`.
@@ -228,7 +228,7 @@ List.at(["a", "b", "c"], 2)     # "c"
 List.at([], 0)                  # nil
 ```
 
-Parameters: 
+Parameters:
 - `list` the list
 - `index` the index (zero-based)
 
@@ -241,7 +241,7 @@ List.size([])           # 0
 List.size([1,2,3,4])    # 4
 ```
 
-Parameters: 
+Parameters:
 - `list` the list
 
 Returns the number of keys in `list`.
@@ -298,7 +298,7 @@ Parameters:
 Returns a new list where `element` is appended to the end of `list`.
 
 :::tip
-If order doesn't matter, we suggest to use `prepend/2` instead (Complexity: O(1) instead of O(n)). 
+If order doesn't matter, we suggest to use `prepend/2` instead (Complexity: O(1) instead of O(n)).
 :::
 
 ### prepend/2
@@ -343,7 +343,7 @@ Parameters:
 - `text` the list
 - `pattern` the element
 
-Returns the data from `text` extract via the regex `pattern`. 
+Returns the data from `text` extract via the regex `pattern`.
 
 ### match?/2
 
@@ -372,7 +372,7 @@ Parameters:
 - `text` the list
 - `pattern` the element
 
-Returns the data from `text` extract via the regex `pattern`. 
+Returns the data from `text` extract via the regex `pattern`.
 
 :::note
 This function requires the usage of capture groups (subexpressions).
@@ -459,7 +459,7 @@ Returns whether the string is valid JSON or not.
 Time.now()  # 1677493444
 ```
 
-Returns an approximation of current time (seconds since epoch). 
+Returns an approximation of current time (seconds since epoch).
 **It will always return the same value within a contract.**
 
 :::info Why an approximation?
@@ -469,9 +469,9 @@ Many nodes will run them and all of them must produce the same transaction to va
 
 ---------
 
-## Chain 
+## Chain
 
-### get_genesis_address/1
+### get_genesis_address/1 `[I/O]`
 
 ```elixir
 Chain.get_genesis_address("000012345...") # "000056789..."
@@ -483,7 +483,7 @@ Parameters:
 
 Returns the genesis address of the transaction chain that contains a transaction at `address`. If there is no transaction at `address`, it returns `address`.
 
-### get_first_transaction_address/1
+### get_first_transaction_address/1 `[I/O]`
 
 ```elixir
 Chain.get_first_transaction_address("000012345...") # "000056789..."
@@ -498,7 +498,7 @@ Returns the address of the first transaction of the transaction chain that conta
 [IT CURRENTLY CRASH IF THERE IS NO TRANSACTION]
 :::
 
-### get_genesis_public_key/1
+### get_genesis_public_key/1 `[I/O]`
 
 ```elixir
 Chain.get_genesis_public_key("00013B08D...") # "000108A5C..."
@@ -534,7 +534,7 @@ Returns the hash of `str` by using `algo` algorithm.
 
 ## Token
 
-### fetch_id_from_address/2
+### fetch_id_from_address/2 `[I/O]`
 
 ```elixir
 Token.fetch_id_from_address("000012345") # "3C21EF708BF11B4232..."
@@ -549,13 +549,13 @@ Returns the token's id of the token at `address`.
 
 ## Contract
 
-This module is special in many ways. 
+This module is special in many ways.
 
 - It is only available in the `actions` block.
 - All all functions mutates an internal state. We call this internal state the "next transaction".
 - This "next transaction" is initiated with current contract (all values but transfers are copied)
 
-### set_type/1
+### set_type/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.set_type("transfer")
@@ -566,7 +566,7 @@ Parameters:
 
 **Mutates** the next transaction to be of type `type`.
 
-### set_content/1
+### set_content/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.set_content("Hello Smart Contract")
@@ -575,14 +575,14 @@ Contract.set_content("Hello Smart Contract")
 Parameters:
 - `content` the transaction's content (we usually use this as the state of the smart contract)
 
-**Mutates** the next transaction content to be `content`. 
+**Mutates** the next transaction content to be `content`.
 
 :::tip
 While `content` is always a string when you read it, it is possible here to send an integer or a float for convenience.
 For any other data structure, you should serialize it with the [Json module](/build/smart-contracts/language/library#json) for example.
 :::
 
-### set_code/1
+### set_code/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.set_code("@version 1\ncondition inherit: []")
@@ -591,13 +591,13 @@ Contract.set_code("@version 1\ncondition inherit: []")
 Parameters:
 - `code` the code
 
-**Mutates** the next transaction code to be `code`. 
+**Mutates** the next transaction code to be `code`.
 
 :::tip
 This example "closes" the contract, by adding an `condition inherit` that doesn't accept anything. It will be impossible to create a new transaction in this chain.
 :::
 
-### add_uco_transfer/1
+### add_uco_transfer/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_uco_transfer(to: "000012345...", amount: 1)
@@ -610,20 +610,20 @@ Parameters:
 
 **Mutates** the next transaction to add the `uco_transfer`.
 
-### add_uco_transfers/1
+### add_uco_transfers/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_uco_transfer/1](#add_uco_transfer1) for each element of the list
+Equivalent to call [add_uco_transfer/1](#add_uco_transfer1-update_contract) for each element of the list
 
-### add_token_transfer/1
+### add_token_transfer/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_token_transfer(
     to: "000012345...",
-    amount: 1.2, 
+    amount: 1.2,
     token_address: "000023456...")
 Contract.add_token_transfer(
     to: "000012345...",
-    amount: 1.2, 
+    amount: 1.2,
     token_id: 4,
     token_address: "000023456...")
 ```
@@ -637,16 +637,16 @@ Parameters:
 
 **Mutates** the next transaction to add the `token_transfer`.
 
-### add_token_transfers/1
+### add_token_transfers/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_token_transfer/1](#add_token_transfer1) for each element of the list
+Equivalent to call [add_token_transfer/1](#add_token_transfer1-update_contract) for each element of the list
 
-### add_ownership/1
+### add_ownership/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_ownership(
-    secret: "ENCODED_SECRET1", 
-    authorized_public_keys: ["000108A5C..."], 
+    secret: "ENCODED_SECRET1",
+    authorized_public_keys: ["000108A5C..."],
     secret_key: "___")
 ```
 
@@ -662,11 +662,11 @@ Parameters:
 [PROBABLY REQUIRE AN EXAMPLE OR A BETTER EXPLANATION]
 :::
 
-### add_ownerships/1
+### add_ownerships/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_ownership/1](#add_ownership1) for each element of the list
+Equivalent to call [add_ownership/1](#add_ownership1-update_contract) for each element of the list
 
-### add_recipient/1
+### add_recipient/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_recipient("000012345...")
@@ -675,12 +675,12 @@ Contract.add_recipient("000012345...")
 Parameters:
 - `address`: a transaction address (one with a smart contract)
 
-**Mutates** the next transaction to add the `address` in the recipients. 
+**Mutates** the next transaction to add the `address` in the recipients.
 
-:::info 
+:::info
 Recipients are used to trigger smart contracts
 :::
 
-### add_recipients/1
+### add_recipients/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_recipients/1](#add_recipient1) for each element of the list
+Equivalent to call [add_recipients/1](#add_recipient1-update_contract) for each element of the list
