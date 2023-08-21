@@ -81,13 +81,14 @@ Returns the text representation of `number`.
 ```elixir
 String.to_hex("592ac76afa") # "592AC76AFA"
 String.to_hex("592AC76AFA") # "592AC76AFA"
-String.to_hex("ZZZ") # nil
+String.to_hex("hello") # "68656C6C6F"
 ```
 
 Parameters:
 - `str` the string
 
-Return the text representation of hexadecimal `str` or `nil`.
+Return the text representation of hexadecimal `str`.  
+If `str` is already an hex it just uppercase it
 
 ### to_uppercase/1
 
