@@ -81,13 +81,14 @@ Returns the text representation of `number`.
 ```elixir
 String.to_hex("592ac76afa") # "592AC76AFA"
 String.to_hex("592AC76AFA") # "592AC76AFA"
-String.to_hex("ZZZ") # nil
+String.to_hex("hello") # "68656C6C6F"
 ```
 
 Parameters:
 - `str` the string
 
-Return the text representation of hexadecimal `str` or `nil`.
+Return the text representation of hexadecimal `str`.  
+If `str` is already an hex it just uppercase it
 
 ### to_uppercase/1
 
@@ -509,6 +510,26 @@ Parameters:
 
 Returns the genesis public key of `public_key`.
 
+### get_burn_address/0
+
+```elixir
+Chain.get_burn_address() # "0000000000..."
+```
+
+Returns the burn address
+
+
+### get_transaction/1
+
+```elixir
+Chain.get_transaction(0x00ABCD..) # [address: "00ABCD..", content: "...", uco_transfers: [], ...]
+```
+
+Parameters:
+- `address` the transaction address
+
+Returns the transaction at `address`. If there is no transaction at `address`, it returns `nil`. See [Appendix 1](#appendix-1-the-transaction-map).
+
 ---------
 
 ## Crypto
@@ -547,12 +568,121 @@ Returns the token's id of the token at `address`.
 
 ---------
 
+## Code
+
+### is_same?/2
+
+```elixir
+code = """
+@version
+
+condition transaction: []
+
+actions triggered_by: transaction do
+  Contract.add_uco_transfer to: 0x1234, amount: 15.5
+end
+"""
+
+Code.is_same?(code, transaction.code)
+```
+
+Parameters:
+- `first_code` a string containing a smart contract code
+- `second_code` a string containing a smart contract code
+
+Return true if codes are the same, false otherwise.  
+This function is more accurate than comparing two strings, as it convert code into structured AST and compare only code instruction and not line numbers, carriage return ...
+
+### is_valid?/1
+
+```elixir
+code = """
+@version
+
+condition transaction: []
+
+actions triggered_by: transaction do
+  Contract.add_uco_transfer to: 0x1234, amount: 15.5
+end
+"""
+
+Code.is_valid?(code)
+```
+
+Parameters:
+- `code` a string containing a smart contract code
+
+Returns true if the code is valid according to Archethic smart contracts language, false otherwise
+
+---------
+
+## Http
+
+### fetch/1
+
+```elixir
+response = Http.fetch("https://fakerapi.it/api/v1/addresses?_quantity=1&_seed=watermelon") # [status: 200, body: "..."]
+if response.status == 200 do
+    # do something with response.body
+end
+```
+
+Parameters:
+- `url` the url to fetch
+
+Fetch the given url (with a `GET`) and returns a map with `status` (integer) and `body` (string).
+This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+
+- The URL must use HTTPS protocol.
+- The response body's size must be less than 256KB.
+- The response must be received in less than 2 seconds.
+- The response must be idempotent (= identical every time it is called)
+- Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
+
+:::caution
+The function raises if these requirements are not meet.
+:::
+
+
+### fetch_many/1
+
+```elixir
+responses = Http.fetch_many([
+    "https://fakerapi.it/api/v1/users?_quantity=1&_gender=male&_seed=cucumber",
+    "https://fakerapi.it/api/v1/users?_quantity=1&_gender=female&_seed=tomato"
+])
+for r in responses do
+    if r.status == 200 do
+        # do something with r.body
+    end
+end
+```
+
+Parameters:
+- `urls` a list of urls to fetch
+
+Fetch the given urls **in parallel** and returns a list of map with `status` (integer) and `body` (string). Order and length is preserved.
+This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+
+- The URLs must use HTTPS protocol.
+- The sum of response bodies' size must not be bigger than 256KB.
+- The responses must be received in less than 2 seconds.
+- The responses must be idempotent (= identical every time it is called)
+- Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
+- The URLs are limited to 5.
+
+:::caution
+The function raises if these requirements are not meet.
+:::
+
+---------
+
 ## Contract
 
 This module is special in many ways.
 
 - It is only available in the `actions` block.
-- All all functions mutates an internal state. We call this internal state the "next transaction".
+- All functions mutates an internal state. We call this internal state the "next transaction".
 - This "next transaction" is initiated with current contract (all values but transfers are copied)
 
 ### set_type/1 `[UPDATE_CONTRACT]`

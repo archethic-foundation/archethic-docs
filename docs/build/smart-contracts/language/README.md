@@ -56,6 +56,15 @@ transaction.address == 0x000ABCD123 # no quotes!
 
 So whenever you write a hexadecimal value by hand, prefix it with `0x`.
 
+### ASCII character in string
+
+If you need to use some specific character in a string, you can use their hexadecimal representation by prefixing the hexadecimal with `\x`
+
+```elixir
+"hello" == "\x68\x65\x6C\x6C\x6F"
+# true
+```
+
 ## Comparaison
 
 We compare by value, which means you can pretty much compare anything and it will work as you expect.
