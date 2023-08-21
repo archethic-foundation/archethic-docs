@@ -245,5 +245,8 @@ To see the list of functions available in the Smart Contract Language, check the
 - `for`
 - `do`
 - `end`
+- `if`
+- `else`
+
 
 ... to be completed
