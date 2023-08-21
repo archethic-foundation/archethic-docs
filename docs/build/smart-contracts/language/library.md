@@ -472,7 +472,7 @@ Many nodes will run them and all of them must produce the same transaction to va
 
 ## Chain
 
-### get_genesis_address/1
+### get_genesis_address/1 `[I/O]`
 
 ```elixir
 Chain.get_genesis_address("000012345...") # "000056789..."
@@ -484,7 +484,7 @@ Parameters:
 
 Returns the genesis address of the transaction chain that contains a transaction at `address`. If there is no transaction at `address`, it returns `address`.
 
-### get_first_transaction_address/1
+### get_first_transaction_address/1 `[I/O]`
 
 ```elixir
 Chain.get_first_transaction_address("000012345...") # "000056789..."
@@ -499,7 +499,7 @@ Returns the address of the first transaction of the transaction chain that conta
 [IT CURRENTLY CRASH IF THERE IS NO TRANSACTION]
 :::
 
-### get_genesis_public_key/1
+### get_genesis_public_key/1 `[I/O]`
 
 ```elixir
 Chain.get_genesis_public_key("00013B08D...") # "000108A5C..."
@@ -555,7 +555,7 @@ Returns the hash of `str` by using `algo` algorithm.
 
 ## Token
 
-### fetch_id_from_address/2
+### fetch_id_from_address/2 `[I/O]`
 
 ```elixir
 Token.fetch_id_from_address("000012345") # "3C21EF708BF11B4232..."
@@ -685,7 +685,7 @@ This module is special in many ways.
 - All functions mutates an internal state. We call this internal state the "next transaction".
 - This "next transaction" is initiated with current contract (all values but transfers are copied)
 
-### set_type/1
+### set_type/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.set_type("transfer")
@@ -696,7 +696,7 @@ Parameters:
 
 **Mutates** the next transaction to be of type `type`.
 
-### set_content/1
+### set_content/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.set_content("Hello Smart Contract")
@@ -712,7 +712,7 @@ While `content` is always a string when you read it, it is possible here to send
 For any other data structure, you should serialize it with the [Json module](/build/smart-contracts/language/library#json) for example.
 :::
 
-### set_code/1
+### set_code/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.set_code("@version 1\ncondition inherit: []")
@@ -727,7 +727,7 @@ Parameters:
 This example "closes" the contract, by adding an `condition inherit` that doesn't accept anything. It will be impossible to create a new transaction in this chain.
 :::
 
-### add_uco_transfer/1
+### add_uco_transfer/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_uco_transfer(to: "000012345...", amount: 1)
@@ -740,11 +740,11 @@ Parameters:
 
 **Mutates** the next transaction to add the `uco_transfer`.
 
-### add_uco_transfers/1
+### add_uco_transfers/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_uco_transfer/1](#add_uco_transfer1) for each element of the list
+Equivalent to call [add_uco_transfer/1](#add_uco_transfer1-update_contract) for each element of the list
 
-### add_token_transfer/1
+### add_token_transfer/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_token_transfer(
@@ -767,11 +767,11 @@ Parameters:
 
 **Mutates** the next transaction to add the `token_transfer`.
 
-### add_token_transfers/1
+### add_token_transfers/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_token_transfer/1](#add_token_transfer1) for each element of the list
+Equivalent to call [add_token_transfer/1](#add_token_transfer1-update_contract) for each element of the list
 
-### add_ownership/1
+### add_ownership/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_ownership(
@@ -792,11 +792,11 @@ Parameters:
 [PROBABLY REQUIRE AN EXAMPLE OR A BETTER EXPLANATION]
 :::
 
-### add_ownerships/1
+### add_ownerships/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_ownership/1](#add_ownership1) for each element of the list
+Equivalent to call [add_ownership/1](#add_ownership1-update_contract) for each element of the list
 
-### add_recipient/1
+### add_recipient/1 `[UPDATE_CONTRACT]`
 
 ```elixir
 Contract.add_recipient("000012345...")
@@ -811,6 +811,6 @@ Parameters:
 Recipients are used to trigger smart contracts
 :::
 
-### add_recipients/1
+### add_recipients/1 `[UPDATE_CONTRACT]`
 
-Equivalent to call [add_recipients/1](#add_recipient1) for each element of the list
+Equivalent to call [add_recipients/1](#add_recipient1-update_contract) for each element of the list
