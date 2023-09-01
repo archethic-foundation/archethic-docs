@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2849],{6014:e=>{e.exports=JSON.parse('{"title":"Build","slug":"/category/build","permalink":"/category/build","navigation":{"previous":{"title":"Communication with DApps","permalink":"/participate/wallet/dapps-communication"},"next":{"title":"Clients","permalink":"/category/clients"}}}')}}]);
