@@ -34,6 +34,7 @@ String.size("你好")     # 2
 ```
 
 Parameters:
+
 - `str` the string
 
 Returns the number of characters in `str`.
@@ -46,6 +47,7 @@ String.in?("bob,alice,julia", "fred")   # false
 ```
 
 Parameters:
+
 - `str1` the haystack
 - `str2` the needle
 
@@ -60,6 +62,7 @@ String.to_number("12.1")   # 12.1
 ```
 
 Parameters:
+
 - `str` the string
 
 Returns the number which text representation is `str`.
@@ -72,6 +75,7 @@ String.from_number(13.2)   # "13.2"
 ```
 
 Parameters:
+
 - `number` the number
 
 Returns the text representation of `number`.
@@ -85,9 +89,10 @@ String.to_hex("hello") # "68656C6C6F"
 ```
 
 Parameters:
+
 - `str` the string
 
-Return the text representation of hexadecimal `str`.  
+Return the text representation of hexadecimal `str`.
 If `str` is already an hex it just uppercase it
 
 ### to_uppercase/1
@@ -97,6 +102,7 @@ String.to_uppercase("Arsène Lupin") # "ARSÈNE LUPIN"
 ```
 
 Parameters:
+
 - `str` the string
 
 Return the `str` in uppercase.
@@ -108,6 +114,7 @@ String.to_lowercase("Sherlock Holmes") # "sherlock holmes"
 ```
 
 Parameters:
+
 - `str` the string
 
 Return the `str` in lowercase.
@@ -131,6 +138,7 @@ Map.size(key1: "value", key2: "value2") # 2
 ```
 
 Parameters:
+
 - `map` the map
 
 Returns the number of keys in `map`.
@@ -143,6 +151,7 @@ Map.get([key1: "value", key2: "value2"], "key3") # nil
 ```
 
 Parameters:
+
 - `map` the map
 - `key` the key
 
@@ -160,6 +169,7 @@ Map.get([key1: "value", key2: "value2"], "key3", "not in map") # "not in map"
 ```
 
 Parameters:
+
 - `map` the map
 - `key` the key
 - `default` the default value
@@ -174,6 +184,7 @@ Map.get([key1: "value", key2: "value2"], "key3", "value3") # [key1: "value", key
 ```
 
 Parameters:
+
 - `map` the map
 - `key` the key
 - `value` the value to set
@@ -187,6 +198,7 @@ Map.keys(key1: "value", key2: "value2") # ["key1", "key2"]
 ```
 
 Parameters:
+
 - `map` the map
 
 Returns the list of keys in `map`.
@@ -201,6 +213,7 @@ for key in Map.keys(map) do
     ...
 end
 ```
+
 :::
 
 ### values/1
@@ -210,6 +223,7 @@ Map.values(key1: "value", key2: "value2") # ["value", "value2"]
 ```
 
 Parameters:
+
 - `map` the map
 
 Returns the list of values in `map`.
@@ -230,6 +244,7 @@ List.at([], 0)                  # nil
 ```
 
 Parameters:
+
 - `list` the list
 - `index` the index (zero-based)
 
@@ -243,6 +258,7 @@ List.size([1,2,3,4])    # 4
 ```
 
 Parameters:
+
 - `list` the list
 
 Returns the number of keys in `list`.
@@ -255,6 +271,7 @@ List.in?(["bob", "alice"], "fred")  # false
 ```
 
 Parameters:
+
 - `list` the haystack
 - `element` the needle
 
@@ -268,6 +285,7 @@ List.empty?(["apple"])  # false
 ```
 
 Parameters:
+
 - `list` the list
 
 Returns whether the `list` is empty or not.
@@ -280,6 +298,7 @@ List.concat([1,2], [3,4])   # [1,2,3,4]
 ```
 
 Parameters:
+
 - `list1` a list
 - `list2` another list
 
@@ -293,6 +312,7 @@ List.append([1], 2)   # [1,2]
 ```
 
 Parameters:
+
 - `list` the list
 - `element` the element
 
@@ -310,11 +330,11 @@ List.prepend([1], 0)   # [0,1]
 ```
 
 Parameters:
+
 - `list` the list
 - `element` the element
 
 Returns a new list where `element` is appended to the start of `list`.
-
 
 ### join/2
 
@@ -324,6 +344,7 @@ List.join(["Mike", "Robert", "Joe"], ", ")   # "Mike, Robert, Joe"
 ```
 
 Parameters:
+
 - `list` the list of strings
 - `separator` the separator
 
@@ -341,6 +362,7 @@ Regex.extract("voodoo", "[abc]")        # ""
 ```
 
 Parameters:
+
 - `text` the list
 - `pattern` the element
 
@@ -354,6 +376,7 @@ Regex.match?("123456abc", "^[0-9]+$")   # false
 ```
 
 Parameters:
+
 - `text` the list
 - `pattern` the element
 
@@ -370,6 +393,7 @@ Regex.scan("A0B1C2,123\nD3E4F5,456\n", "^(\\w+),(\\d+)$")   # [["A0B1C2", "123"]
 ```
 
 Parameters:
+
 - `text` the list
 - `pattern` the element
 
@@ -386,6 +410,7 @@ This function requires the usage of capture groups (subexpressions).
 Functions to manipulate JSON strings.
 
 Useful resources:
+
 - [JSONPath documentation](https://goessner.net/articles/JsonPath/)
 
 ### path_extract/2
@@ -395,6 +420,7 @@ Json.path_extract("{ \"firstName\": \"John\", \"lastName\": \"Doe\"}", "$.firstN
 ```
 
 Parameters:
+
 - `json` the json string
 - `path` the path
 
@@ -408,6 +434,7 @@ Json.path_match?("{\"1622541930\":{\"uco\":{\"eur\":0.176922,\"usd\":0.21642}}}"
 ```
 
 Parameters:
+
 - `json` the json string
 - `path` the path
 
@@ -421,7 +448,9 @@ Json.to_string("str")       # "\"str\""
 Json.to_string([1,2,3])     # "[1,2,3]"
 Json.to_string(foo: "bar")  # "{\"foo\":\"bar\"}"
 ```
+
 Parameters:
+
 - `any` anything
 
 Returns the Json representation of `any`.
@@ -434,7 +463,9 @@ Json.parse("\"str\"")               # "str"
 Json.parse("[1,2,3]")               # [1,2,3]
 Json.parse("{\"foo\":\"bar\"}")     # foo: "bar"
 ```
+
 Parameters:
+
 - `json` the json string
 
 Returns the value represented by `json`.
@@ -445,7 +476,9 @@ Returns the value represented by `json`.
 Json.is_valid?("str")        # false
 Json.is_valid?("\"str\"")    # true
 ```
+
 Parameters:
+
 - `json` the json string
 
 Returns whether the string is valid JSON or not.
@@ -480,6 +513,7 @@ Chain.get_genesis_address("000012345...") # "000012345..."
 ```
 
 Parameters:
+
 - `address` the transaction address
 
 Returns the genesis address of the transaction chain that contains a transaction at `address`. If there is no transaction at `address`, it returns `address`.
@@ -491,6 +525,7 @@ Chain.get_first_transaction_address("000012345...") # "000056789..."
 ```
 
 Parameters:
+
 - `address` the transaction address
 
 Returns the address of the first transaction of the transaction chain that contains a transaction at `address`.
@@ -506,6 +541,7 @@ Chain.get_genesis_public_key("00013B08D...") # "000108A5C..."
 ```
 
 Parameters:
+
 - `public_key` the public key
 
 Returns the genesis public key of `public_key`.
@@ -518,7 +554,6 @@ Chain.get_burn_address() # "0000000000..."
 
 Returns the burn address
 
-
 ### get_transaction/1
 
 ```elixir
@@ -526,6 +561,7 @@ Chain.get_transaction(0x00ABCD..) # [address: "00ABCD..", content: "...", uco_tr
 ```
 
 Parameters:
+
 - `address` the transaction address
 
 Returns the transaction at `address`. If there is no transaction at `address`, it returns `nil`. See [Appendix 1](#appendix-1-the-transaction-map).
@@ -546,6 +582,7 @@ Crypto.hash("my text", "sha512") # "A3D7E45A0D9BE5F..."
 ```
 
 Parameters:
+
 - `str` the text to hash
 - `algo` the hash algorithm ("sha256", "sha512", "sha3_256", "sha3_512", "blake2b")
 
@@ -562,6 +599,7 @@ Token.fetch_id_from_address("000012345") # "3C21EF708BF11B4232..."
 ```
 
 Parameters:
+
 - `address` the token address
 
 Returns the token's id of the token at `address`.
@@ -587,10 +625,11 @@ Code.is_same?(code, transaction.code)
 ```
 
 Parameters:
+
 - `first_code` a string containing a smart contract code
 - `second_code` a string containing a smart contract code
 
-Return true if codes are the same, false otherwise.  
+Return true if codes are the same, false otherwise.
 This function is more accurate than comparing two strings, as it convert code into structured AST and compare only code instruction and not line numbers, carriage return ...
 
 ### is_valid?/1
@@ -610,6 +649,7 @@ Code.is_valid?(code)
 ```
 
 Parameters:
+
 - `code` a string containing a smart contract code
 
 Returns true if the code is valid according to Archethic smart contracts language, false otherwise
@@ -628,6 +668,7 @@ end
 ```
 
 Parameters:
+
 - `url` the url to fetch
 
 Fetch the given url (with a `GET`) and returns a map with `status` (integer) and `body` (string).
@@ -642,7 +683,6 @@ This status integer can be any [HTTP status code](https://developer.mozilla.org/
 :::caution
 The function raises if these requirements are not meet.
 :::
-
 
 ### fetch_many/1
 
@@ -659,6 +699,7 @@ end
 ```
 
 Parameters:
+
 - `urls` a list of urls to fetch
 
 Fetch the given urls **in parallel** and returns a list of map with `status` (integer) and `body` (string). Order and length is preserved.
@@ -692,6 +733,7 @@ Contract.set_type("transfer")
 ```
 
 Parameters:
+
 - `type` the transaction type ("contract", "transfer", "data", "hosting")
 
 **Mutates** the next transaction to be of type `type`.
@@ -703,6 +745,7 @@ Contract.set_content("Hello Smart Contract")
 ```
 
 Parameters:
+
 - `content` the transaction's content (we usually use this as the state of the smart contract)
 
 **Mutates** the next transaction content to be `content`.
@@ -719,6 +762,7 @@ Contract.set_code("@version 1\ncondition inherit: []")
 ```
 
 Parameters:
+
 - `code` the code
 
 **Mutates** the next transaction code to be `code`.
@@ -734,9 +778,10 @@ Contract.add_uco_transfer(to: "000012345...", amount: 1)
 ```
 
 Parameters:
+
 - `uco_transfer` a map with two keys:
-    - `to`: the destination address
-    - `amount`: the number of UCO
+  - `to`: the destination address
+  - `amount`: the number of UCO
 
 **Mutates** the next transaction to add the `uco_transfer`.
 
@@ -759,11 +804,12 @@ Contract.add_token_transfer(
 ```
 
 Parameters:
+
 - `token_transfer` a map with three or four keys:
-    - `to`: the destination address
-    - `amount`: the number of UCO
-    - `token_address`: the transaction address of the token
-    - `[token_id]`: an optional integer to specify which index in the list (used for the NFTs)
+  - `to`: the destination address
+  - `amount`: the number of UCO
+  - `token_address`: the transaction address of the token
+  - `[token_id]`: an optional integer to specify which index in the list (used for the NFTs)
 
 **Mutates** the next transaction to add the `token_transfer`.
 
@@ -781,10 +827,11 @@ Contract.add_ownership(
 ```
 
 Parameters:
+
 - `ownership` a map with three keys:
-    - `secret`: the encoded secret
-    - `authorized_public_keys`: the list of public keys that may decode the secret
-    - `secret_key`: the secret key used to encode the secret
+  - `secret`: the encoded secret
+  - `authorized_public_keys`: the list of public keys that may decode the secret
+  - `secret_key`: the secret key used to encode the secret
 
 **Mutates** the next transaction to add the `ownership`.
 
@@ -803,6 +850,7 @@ Contract.add_recipient("000012345...")
 ```
 
 Parameters:
+
 - `address`: a transaction address (one with a smart contract)
 
 **Mutates** the next transaction to add the `address` in the recipients.
