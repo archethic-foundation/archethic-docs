@@ -7,7 +7,7 @@ sidebar_position: 5
 
 ## Hello World
 
-This simple contract will be triggered once, at the specified unix timestamp. 
+This simple contract will be triggered once, at the specified unix timestamp.
 It will create a new transaction with a content "Hello world!".
 
 ```elixir
@@ -23,9 +23,9 @@ Users can send UCOs to this contract and will receive 10000 times the amount as 
 It is possible for users to define a different receive address by specifying it as the content of the transaction.
 The Smart Contract's chain must define a token.
 
-```elixir 
+```elixir
 @version 1
-condition transaction: []
+condition triggered_by: transaction, as: []
 actions triggered_by: transaction do
     # Get the amount of UCO sent to this contract
     amount_send = Map.get(transaction.uco_movements, contract.address)
@@ -39,8 +39,8 @@ actions triggered_by: transaction do
         # Users can specify to send the token in a different address
         # default to the trigger transaction's chain
         destination = transaction.address
-        if transaction.content != "" && 
-           String.to_hex(transaction.content) do 
+        if transaction.content != "" &&
+           String.to_hex(transaction.content) do
             destination = transaction.content
         end
 
@@ -49,7 +49,7 @@ actions triggered_by: transaction do
 end
 ```
 
-## Recurring ICO 
+## Recurring ICO
 
 This contract will automatically call the ICO contract with 2 UCOs every hours.
 The tokens will be transfered in a different chain.
@@ -65,7 +65,7 @@ actions triggered_by: interval, at: "0 * * * *" do
 
     # 0x00ABCD... is the ICO smart contract's address
     Contract.add_recipient(0x00ABCD...)
-    Contract.add_uco_transfer(amount: 2, to: 0x00ABCD...) 
+    Contract.add_uco_transfer(amount: 2, to: 0x00ABCD...)
 end
 ```
 
@@ -76,7 +76,7 @@ It uses a JSON string to persist the state. The initial content of the contract 
 
 ```elixir
 @version 1
-condition transaction: [
+condition triggered_by: transaction, as: [
     content: List.in?(["X", "Y"], transaction.content)
 ]
 actions triggered_by: transaction do
@@ -88,8 +88,7 @@ actions triggered_by: transaction do
     else
         count_y = count_y + 1
     end
-    
+
     Contract.set_content(Json.to_string([x: count_x, y: count_y]))
 end
 ```
-

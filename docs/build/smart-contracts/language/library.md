@@ -614,7 +614,7 @@ Returns the token's id of the token at `address`.
 code = """
 @version
 
-condition transaction: []
+condition triggered_by: transaction, as: []
 
 actions triggered_by: transaction do
   Contract.add_uco_transfer to: 0x1234, amount: 15.5
@@ -638,7 +638,7 @@ This function is more accurate than comparing two strings, as it convert code in
 code = """
 @version
 
-condition transaction: []
+condition triggered_by: transaction, as: []
 
 actions triggered_by: transaction do
   Contract.add_uco_transfer to: 0x1234, amount: 15.5
