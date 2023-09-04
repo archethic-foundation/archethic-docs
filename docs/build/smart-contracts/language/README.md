@@ -8,9 +8,10 @@ sidebar_position: 2
 A Smart Contract is defined as followed:
 
 - 1 version attribute
-- 1 or many [actions](/build/smart-contracts/language/actions) block (maximum, one per [trigger](/build/smart-contracts/language/triggers))
+- n [actions](/build/smart-contracts/language/actions) block (maximum, one per [trigger](/build/smart-contracts/language/triggers))
 - 0 or 1 [condition inherit](/build/smart-contracts/language/condition#inherit) block
 - 0 or 1 [condition transaction](/build/smart-contracts/language/condition#transaction) block
+- n [condition transaction on](/build/smart-contracts/language/condition#transaction) block
 - 0 or 1 [condition oracle](/build/smart-contracts/language/condition#oracle) block
 
 The `actions` blocks contain the code to execute when a specific event is triggered.
@@ -18,6 +19,8 @@ The `actions` blocks contain the code to execute when a specific event is trigge
 The `condition inherit` block is used to check the outgoing transaction (result) of the contract.
 
 The `condition transaction` block is used to check the incoming transaction that triggered the contract.
+
+The `condition oracle` block is used to check the incoming oracle transaction when there is an action triggered by oracle.
 
 ## Version attribute
 
@@ -247,6 +250,5 @@ To see the list of functions available in the Smart Contract Language, check the
 - `end`
 - `if`
 - `else`
-
 
 ... to be completed
