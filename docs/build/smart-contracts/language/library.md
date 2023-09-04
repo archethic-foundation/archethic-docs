@@ -554,7 +554,7 @@ Chain.get_burn_address() # "0000000000..."
 
 Returns the burn address
 
-### get_transaction/1
+### get_transaction/1  `[I/O]`
 
 ```elixir
 Chain.get_transaction(0x00ABCD..) # [address: "00ABCD..", content: "...", uco_transfers: [], ...]
