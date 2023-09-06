@@ -10,12 +10,12 @@ Let's create a small smart contracts that reacts to two different triggers. We'l
 ```elixir
 @version 1
 
-actions triggered_by: interval, at: "0 * * * *" do 
+actions triggered_by: interval, at: "0 * * * *" do
   Contract.set_content "Hello from interval"
 end
 
-condition transaction: []
-actions triggered_by: transaction do 
+condition triggered_by: transaction, as: []
+actions triggered_by: transaction do
   Contract.set_content "Hello from tx"
 end
 ```
@@ -25,7 +25,7 @@ end
 Write the code of the smart contract in the text area:
 ![the contract is written in the textarea](/img/playground/playground_build_step1.png)
 
-As you write, you might see the console at the bottom reacting with different errors: 
+As you write, you might see the console at the bottom reacting with different errors:
 
 ![a parsing error visible in the console](/img/playground/playground_parse_error.png)
 
@@ -35,14 +35,14 @@ To test a smart contract, you need to test all its triggers. We are going to ope
 
 ![the trigger button](/img/playground/playground_button_trigger.png)
 
-The trigger panel opens on the left hand side: 
+The trigger panel opens on the left hand side:
 
 ![the trigger panel](/img/playground/playground_trigger_panel.png)
 
-You are now able to select which trigger you want to test, for this contract a selector of two triggers is displayed (as per the contract): 
-You'll also see the [mock form](/build/smart-contracts/playground/mock-form) that is used to mock the functions that does side-effect. 
+You are now able to select which trigger you want to test, for this contract a selector of two triggers is displayed (as per the contract):
+You'll also see the [mock form](/build/smart-contracts/playground/mock-form) that is used to mock the functions that does side-effect.
 
-### Test trigger 'interval' 
+### Test trigger 'interval'
 
 An interval trigger is a contract that triggers automatically at a specific interval. It does not require anything so it's pretty easy to test. Just click on the `trigger` button.
 
@@ -50,12 +50,11 @@ An interval trigger is a contract that triggers automatically at a specific inte
 
 What you see above is the JSON representation of the output transaction payload. Here we can control that my contract behaved as expected. The `content` is set to "Hello from interval" as expected.
 
-You probably saw the `trigger and update contract's transaction` button. Let's click on it to see the difference: 
+You probably saw the `trigger and update contract's transaction` button. Let's click on it to see the difference:
 
 ![the resulting transaction is displayed in the contract' transaction panel](/img/playground/playground_build_step2e.png)
 
 The difference is not easy to spot, but the transaction of the contract (the right panel) has been updated. This is useful to test a sequence of triggers.
-
 
 ### Test trigger 'transaction'
 
@@ -63,11 +62,12 @@ This trigger is more complex to test because it requires you to mock the transac
 
 ![the transaction form appears in the panel](/img/playground/playground_build_step2b.png)
 
-This form is composed of two forms: 
-1. the [transaction form](/build/smart-contracts/playground/transaction-form) 
-1. the [mock form](/build/smart-contracts/playground/mock-form) 
+This form is composed of two forms:
 
-Which results in a very big form that are covered in the links above. For this contract, we'll just submit the form without changing anything. 
+1. the [transaction form](/build/smart-contracts/playground/transaction-form)
+1. the [mock form](/build/smart-contracts/playground/mock-form)
+
+Which results in a very big form that are covered in the links above. For this contract, we'll just submit the form without changing anything.
 
 ![the resulting transaction is displayed in the console](/img/playground/playground_build_step2c.png)
 
@@ -79,10 +79,8 @@ Testing a 'datetime' trigger is similar to testing a trigger 'interval'.
 
 ### Test trigger 'oracle'
 
-Testing an 'oracle' trigger is similar to testing a trigger 'transaction' (where the transaction is of type 'oracle'). 
-
+Testing an 'oracle' trigger is similar to testing a trigger 'transaction' (where the transaction is of type 'oracle').
 
 :::success That's it!
 You should now be able to build your own smart contracts and test them! The next step now is to [deploy them](/build/smart-contracts/playground/deploy).
 :::
-
