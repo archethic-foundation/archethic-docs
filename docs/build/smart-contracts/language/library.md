@@ -228,6 +228,19 @@ Parameters:
 
 Returns the list of values in `map`.
 
+### delete/2
+
+```elixir
+Map.delete([key1: "value", key2: "value2"], "key2") # [key1: "value"]
+```
+
+Parameters:
+
+- `map` the map
+- `key` the key to remove
+
+Returns a copy of the `map` without the value at given `key`.
+
 ---------
 
 ## List
@@ -720,11 +733,25 @@ The function raises if these requirements are not meet.
 
 ## Contract
 
-This module is special in many ways.
+Functions tagged with `UPDATE_CONTRACT` are special:
 
-- It is only available in the `actions` block.
-- All functions mutates an internal state. We call this internal state the "next transaction".
+- They are only available in the `actions` block.
+- They mutate an internal state, the "next transaction".
 - This "next transaction" is initiated with current contract (all values but transfers are copied)
+
+### call_function/3 `[I/O]`
+
+```elixir
+Contract.call_function(0x0000ABCD..., "add", [1, 2])
+```
+
+Parameters:
+
+- `contract_address` the contract's adddress
+- `function_name` the function name
+- `args` the list of arguments to call the function with
+
+Calls the exported function `function_name` of the Smart Contract at `contract_address` with given `args` and return the result value.
 
 ### set_type/1 `[UPDATE_CONTRACT]`
 
