@@ -230,7 +230,7 @@ end
 Unlike internal functions, they can be called from any block of code.
 
 :::info
-External functions are not able to use [library module](/build/smart-contracts/language/library) functions tagged as `I/O` or `UPDATE_CONTRACT`.
+External functions are not able to use [library module](/build/smart-contracts/language/library) functions tagged as `I/O` or `Transaction`.
 :::
 
 ## Library

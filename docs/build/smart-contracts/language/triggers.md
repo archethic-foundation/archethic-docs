@@ -7,9 +7,13 @@ sidebar_position: 1
 
 ### Contract triggered by a transaction
 
-:::tip
 To trigger a SC execution, the incoming transaction must add the SC address in the `recipients` part of the transaction.
-This allows to activate a SC without sending funds to it, or to send funds to it without activating the code execution. As the `recipients` field is a list, you can trigger multiple contracts in the same transaction
+
+
+:::tip
+This allows to activate a SC without sending funds to it, or to send funds to it without activating the code execution. 
+
+Because the `recipients` field is a list, you can trigger multiple contracts in the same transaction :wink:
 :::
 
 In this scenario:
@@ -53,7 +57,7 @@ end
 
 You may trigger a contract at a specific date and time. You need to specify a [Unix time](https://en.wikipedia.org/wiki/Unix_time) (seconds since epoch).
 
-:::warning The datetime must be rounded to the minute
+:::caution The datetime must be rounded to the minute
 A contract will not parse if the datetime isn't rounded.
 :::
 
@@ -74,6 +78,16 @@ The minimum granularity is the minute. Except in local development where the min
 
 ```elixir
 @version 1
+
+#                                    ┌───────────── minute (0 - 59)
+#                                    │ ┌───────────── hour (0 - 23)
+#                                    │ │ ┌───────────── day of the month (1 - 31)
+#                                    │ │ │ ┌───────────── month (1 - 12)
+#                                    │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday)
+#                                    │ │ │ │ │
+#                                    │ │ │ │ │
+#                                    │ │ │ │ │
+#                                    * * * * *
 actions triggered_by: interval, at: "0 8 * * *" do
   # do something each day at 8AM UTC
 end

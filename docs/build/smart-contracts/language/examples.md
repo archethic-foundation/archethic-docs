@@ -12,6 +12,7 @@ It will create a new transaction with a content "Hello world!".
 
 ```elixir
 @version 1
+
 actions triggered_by: datetime, at: 1689857160 do
   Contract.set_content("Hello world!")
 end
@@ -19,34 +20,57 @@ end
 
 ## ICO (Initial Coin Offering)
 
+This contract the crowdsale of an ICO.
+
 Users can send UCOs to this contract and will receive 10000 times the amount as token from this contract.
-It is possible for users to define a different receive address by specifying it as the content of the transaction.
+
+It is possible for users to define a different receive address.
+
 The Smart Contract's chain must define a token.
 
 ```elixir
 @version 1
-condition triggered_by: transaction, as: []
-actions triggered_by: transaction do
+
+condition triggered_by: transaction, on: buyToken(recipient_address), as: [
+    uco_transfers: check_amount(transaction.uco_movements)
+]
+
+actions triggered_by: transaction, on: buyToken(recipient_address) do
+    transfers = get_transfered_amount()
+
     # Get the amount of UCO sent to this contract
-    amount_send = Map.get(transaction.uco_movements, contract.address)
+    amount_send = number_of_uco_sent()
 
-    if amount_send > 0 do
-        # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
-        token_to_credit = amount_send * 10000
+    # Convert UCO to the number of tokens to credit. Each UCO worth 10000 token
+    token_to_credit = number_of_tokens(amount_send)
 
-        Contract.set_type("transfer")
+    Contract.set_type("transfer")
 
-        # Users can specify to send the token in a different address
-        # default to the trigger transaction's chain
-        destination = transaction.address
-        if transaction.content != "" &&
-           String.to_hex(transaction.content) do
-            destination = transaction.content
-        end
-
-        Contract.add_token_transfer(to: destination, token_address: contract.address, amount: token_to_credit)
-    end
+    # Users can specify to send the token in a different address
+    Contract.add_token_transfer(to: recipient_address, token_address: token_address(), amount: token_to_credit)
 end
+
+fun number_of_tokens(uco_amount) do
+  uco_amount * 10000
+end
+
+fun number_of_uco_sent() do
+  Map.get(transaction.uco_movements, contract.address)
+end
+
+fun get_transfered_amount() do
+  Map.get(transaction.uco_transfers, contract.address)
+end
+
+fun check_amount(transfers) do  
+  transfered_amount = Map.get(transfers, contract.address)
+  transfered_amount != nil && transfered_amount > 0
+end
+
+fun token_address() do
+  Chain.get_genesis_address(contract.address)
+end
+
 ```
 
 ## Recurring ICO
@@ -56,39 +80,58 @@ The tokens will be transfered in a different chain.
 
 ```elixir
 @version 1
+
 actions triggered_by: interval, at: "0 * * * *" do
+
+    ico_contract = 0x0000993F3BE0CE40541E47735AA083854ECAC7785B39435C90D8456C777B9E9D81F1
+
     Contract.set_type("transfer")
-
-    # 0x001234... is the chain to send the tokens to
-    # we put it in the content so the ICO contract will directly send funds there
-    Contract.set_content(0x001234)
-
-    # 0x00ABCD... is the ICO smart contract's address
-    Contract.add_recipient(0x00ABCD...)
-    Contract.add_uco_transfer(amount: 2, to: 0x00ABCD...)
+    Contract.add_recipient address: ico_contract, action: "buyTokens", args: [0x0000A3A066DD64FBD51AE384F2383684B3803BC72012BFEAA9CD1C93AB7C60F584DC]
+    Contract.add_uco_transfer(amount: 2, to: ico_contract)
 end
 ```
 
-## Counting system
+## Vote system
 
-This contract counts the number of times it received a transaction with the content "X" or "Y".
-It uses a JSON string to persist the state. The initial content of the contract must be `{"x": 0, "y": 0}`.
+This contract counts the number of votes for list of candidates (Mr.X and Mrs.Y).
+
+For each vote request, it increments the number of votes for the given candidate,
+and create a new transaction out of it, with the new state in the `content` field of the transaction as JSON document.
+
+:::info
+A public function is available to be able to easily query the number of votes in the system
+:::
 
 ```elixir
 @version 1
-condition triggered_by: transaction, as: [
-    content: List.in?(["X", "Y"], transaction.content)
+condition triggered_by: transaction, on: vote(candidate), as: [
+    content: List.in?(["X", "Y"], candidate)
 ]
-actions triggered_by: transaction do
-    count_x = Json.path_extract(contract.content, "$.x")
-    count_y = Json.path_extract(contract.content, "$.y")
 
-    if transaction.content == "X" do
-        count_x = count_x + 1
+actions triggered_by: transaction, on: vote(candidate) do
+    votes = []
+
+    if contract.content == "" do
+      votes = add_vote([x: 0, y: 0], candidate)
     else
-        count_y = count_y + 1
+      votes = get_votes()
+      votes = add_vote(votes, candidate)
     end
 
-    Contract.set_content(Json.to_string([x: count_x, y: count_y]))
+    Contract.set_content(Json.to_string(votes))
+end
+
+fun add_vote(votes, candidate) do
+  if candidate == "X" do
+    Map.set(votes, "x", votes.x + 1)
+  else
+    Map.set(votes, "y", votes.y + 1)
+  end
+end
+
+export fun get_votes() do
+  count_x = Json.path_extract(contract.content, "$.x")
+  count_y = Json.path_extract(contract.content, "$.y")
+  [x: count_x, y: count_y]
 end
 ```

@@ -24,6 +24,19 @@ In this page, the number after the slash indicates the arity of the function (nu
 For example `size/1` means the function `size` has 1 argument.
 :::
 
+:::info Tagged functions
+
+Functions are tagged as `[Transaction]` are special:
+- They are only available in the `actions` block.
+- They mutate an internal state, the "next transaction".
+- This "next transaction" is initiated with current contract (all values but transfers are copied)
+
+Other functions are tagged as `[I/O]` and help to fetch data making network calls by either:
+- requesting Archethic
+- requesting the outside world
+
+:::
+
 ## String
 
 ### size/1
@@ -671,7 +684,7 @@ Returns true if the code is valid according to Archethic smart contracts languag
 
 ## Http
 
-### fetch/1
+### fetch/1 `[I/O]`
 
 ```elixir
 response = Http.fetch("https://fakerapi.it/api/v1/addresses?_quantity=1&_seed=watermelon") # [status: 200, body: "..."]
@@ -697,7 +710,7 @@ This status integer can be any [HTTP status code](https://developer.mozilla.org/
 The function raises if these requirements are not meet.
 :::
 
-### fetch_many/1
+### fetch_many/1 `[I/O]`
 
 ```elixir
 responses = Http.fetch_many([
@@ -733,12 +746,6 @@ The function raises if these requirements are not meet.
 
 ## Contract
 
-Functions tagged with `UPDATE_CONTRACT` are special:
-
-- They are only available in the `actions` block.
-- They mutate an internal state, the "next transaction".
-- This "next transaction" is initiated with current contract (all values but transfers are copied)
-
 ### call_function/3 `[I/O]`
 
 ```elixir
@@ -753,7 +760,7 @@ Parameters:
 
 Calls the exported function `function_name` of the Smart Contract at `contract_address` with given `args` and return the result value.
 
-### set_type/1 `[UPDATE_CONTRACT]`
+### set_type/1 `[Transaction]`
 
 ```elixir
 Contract.set_type("transfer")
@@ -765,7 +772,7 @@ Parameters:
 
 **Mutates** the next transaction to be of type `type`.
 
-### set_content/1 `[UPDATE_CONTRACT]`
+### set_content/1 `[Transaction]`
 
 ```elixir
 Contract.set_content("Hello Smart Contract")
@@ -782,7 +789,7 @@ While `content` is always a string when you read it, it is possible here to send
 For any other data structure, you should serialize it with the [Json module](/build/smart-contracts/language/library#json) for example.
 :::
 
-### set_code/1 `[UPDATE_CONTRACT]`
+### set_code/1 `[Transaction]`
 
 ```elixir
 Contract.set_code("@version 1\ncondition inherit: []")
@@ -798,7 +805,7 @@ Parameters:
 This example "closes" the contract, by adding an `condition inherit` that doesn't accept anything. It will be impossible to create a new transaction in this chain.
 :::
 
-### add_uco_transfer/1 `[UPDATE_CONTRACT]`
+### add_uco_transfer/1 `[Transaction]`
 
 ```elixir
 Contract.add_uco_transfer(to: "000012345...", amount: 1)
@@ -812,11 +819,11 @@ Parameters:
 
 **Mutates** the next transaction to add the `uco_transfer`.
 
-### add_uco_transfers/1 `[UPDATE_CONTRACT]`
+### add_uco_transfers/1 `[Transaction]`
 
-Equivalent to call [add_uco_transfer/1](#add_uco_transfer1-update_contract) for each element of the list
+Equivalent to call [add_uco_transfer/1](#add_uco_transfer1-Transaction) for each element of the list
 
-### add_token_transfer/1 `[UPDATE_CONTRACT]`
+### add_token_transfer/1 `[Transaction]`
 
 ```elixir
 Contract.add_token_transfer(
@@ -840,11 +847,11 @@ Parameters:
 
 **Mutates** the next transaction to add the `token_transfer`.
 
-### add_token_transfers/1 `[UPDATE_CONTRACT]`
+### add_token_transfers/1 `[Transaction]`
 
-Equivalent to call [add_token_transfer/1](#add_token_transfer1-update_contract) for each element of the list
+Equivalent to call [add_token_transfer/1](#add_token_transfer1-Transaction) for each element of the list
 
-### add_ownership/1 `[UPDATE_CONTRACT]`
+### add_ownership/1 `[Transaction]`
 
 ```elixir
 Contract.add_ownership(
@@ -866,11 +873,11 @@ Parameters:
 [PROBABLY REQUIRE AN EXAMPLE OR A BETTER EXPLANATION]
 :::
 
-### add_ownerships/1 `[UPDATE_CONTRACT]`
+### add_ownerships/1 `[Transaction]`
 
-Equivalent to call [add_ownership/1](#add_ownership1-update_contract) for each element of the list
+Equivalent to call [add_ownership/1](#add_ownership1-Transaction) for each element of the list
 
-### add_recipient/1 `[UPDATE_CONTRACT]`
+### add_recipient/1 `[Transaction]`
 
 ```elixir
 Contract.add_recipient("000012345...")
@@ -886,6 +893,6 @@ Parameters:
 Recipients are used to trigger smart contracts
 :::
 
-### add_recipients/1 `[UPDATE_CONTRACT]`
+### add_recipients/1 `[Transaction]`
 
-Equivalent to call [add_recipients/1](#add_recipient1-update_contract) for each element of the list
+Equivalent to call [add_recipients/1](#add_recipient1-Transaction) for each element of the list
