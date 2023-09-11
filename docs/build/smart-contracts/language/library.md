@@ -618,7 +618,7 @@ Returns the hash of `str` by using `algo` algorithm.
 
 ## Token
 
-### fetch_id_from_address/2 `[I/O]`
+### fetch_id_from_address/1 `[I/O]`
 
 ```elixir
 Token.fetch_id_from_address("000012345") # "3C21EF708BF11B4232..."

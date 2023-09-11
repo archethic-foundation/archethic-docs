@@ -8,8 +8,8 @@ sidebar_position: 99
 The transaction form is a form that you might encounter at different places:
 
 1. Trigger panel
-1. Previous contract panel
-1. Deploy panel
+2. Previous contract panel
+3. Deploy panel
 
 The goal of this form is to prepare a transaction payload (everything non-crypto).
 We'll describe here every subpart of this form.

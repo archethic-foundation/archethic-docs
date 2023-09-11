@@ -30,7 +30,7 @@ The genesis address is the one you'll use in the [faucet](https://testnet.archet
 :::
 
 Now you may click on `estimate fees` and then `deploy`. Hopefully you'll see a success message!
-You may follow the link to view the transaction on the explorer.
+You may follow the link to view the     transaction on the explorer.
 
 :::success That's it!
 Congratulations on your contract's deployment.

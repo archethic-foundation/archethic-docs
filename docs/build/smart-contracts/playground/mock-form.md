@@ -14,11 +14,13 @@ The mock form is part of the trigger panel.
 
 These functions must be mocked to test Smart Contracts that use them:
 
-- [Chain.get_genesis_address/1](/build/smart-contracts/language/library#get_genesis_address1)
-- [Chain.get_first_transaction_address/1](/build/smart-contracts/language/library#get_first_transaction_address1)
-- [Chain.get_genesis_public_key/1](/build/smart-contracts/language/library#get_genesis_public_key1)
+- [Chain.get_genesis_address/1](/build/smart-contracts/language/library#get_genesis_address1-io)
+- [Chain.get_first_transaction_address/1](/build/smart-contracts/language/library#get_first_transaction_address1-io)
+- [Chain.get_genesis_public_key/1](/build/smart-contracts/language/library#get_genesis_public_key1-io)
 - [Time.now/0](/build/smart-contracts/language/library#now0)
-- [Token.fetch_id_from_address/1](/build/smart-contracts/language/library#fetch_id_from_address1)
+- [Token.fetch_id_from_address/1](/build/smart-contracts/language/library#fetch_id_from_address1-io)
+- [Http.fetch/1](/build/smart-contracts/language/library#fetch1-io)
+- [Http.fetch_many/1](/build/smart-contracts/language/library#fetch_many1-io)
 
 A function can be mocked multiple times, for example to mock multiple different inputs.
 
@@ -61,3 +63,5 @@ end
 ![a contract that used Chain.get_genesis_address/1 is tested](/img/playground/playground_form_mock_chain_get_genesis_address.png)
 
 We can see via the console that the mock was called as expected.
+
+![a contract that used Chain.get_genesis_address/1 is tested](/img/playground/playground_form_mock_chain_get_genesis_address2.png)

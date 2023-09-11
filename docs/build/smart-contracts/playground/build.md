@@ -69,8 +69,6 @@ This form is composed of two forms:
 
 Which results in a very big form that are covered in the links above. For this contract, we'll just submit the form without changing anything.
 
-![the resulting transaction is displayed in the console](/img/playground/playground_build_step2c.png)
-
 I can now control that the output transaction payload is correct.
 
 ### Test trigger 'datetime'
