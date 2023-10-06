@@ -580,7 +580,7 @@ Returns the genesis public key of `public_key`.
 Chain.get_burn_address() # "0000000000..."
 ```
 
-Returns the burn address
+Returns the burn address.
 
 ### get_transaction/1  `[I/O]`
 
@@ -973,7 +973,7 @@ The function raises if these requirements are not meet.
 :::
 
 :::danger Disclaimer
-We discourage to call services that change some state directly. Because Archethic **relies on atomic commitment of all storage nodes**, it may happen that atomic commitment is not reached and the transaction resulting of a Smart Contract is not validated.
+We discourage to call services that change their internal state directly (such as writing to a database or notifying a user). Because Archethic **relies on atomic commitment of all storage nodes**, it may happen that atomic commitment is not reached and the transaction resulting of a Smart Contract is not validated.
 
 Instead, you should notify the service of the transaction being validated. The service subscribes to that transaction via the GraphQL API, and once it receives a confirmation, it should act accordingly.
 :::
