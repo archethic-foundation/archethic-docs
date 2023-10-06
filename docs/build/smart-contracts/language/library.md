@@ -592,7 +592,7 @@ Parameters:
 
 - `address` the transaction address
 
-Returns the transaction at `address`. If there is no transaction at `address`, it returns `nil`. See [Appendix 1](#appendix-1-the-transaction-map).
+Returns the transaction at `address`. If there is no transaction at `address`, it returns `nil`. See [Appendix 1](/build/smart-contracts/language/actions#appendix-1-the-transaction-map).
 
 ### get_last_address/1 `[I/O]`
 
@@ -617,7 +617,7 @@ Parameters:
 
 - `address` the transaction address
 
-Returns the latest transaction of the chain that contains the transaction at `address`. May return nil if `address` does not exist. See [Appendix 1](#appendix-1-the-transaction-map).
+Returns the latest transaction of the chain that contains the transaction at `address`. May return nil if `address` does not exist. See [Appendix 1](/build/smart-contracts/language/actions#appendix-1-the-transaction-map).
 
 ### get_previous_address/1
 
@@ -650,9 +650,9 @@ The return value is a map with two keys `uco` and `tokens`. The value behind `to
 
 Useful if you need to retrieve the entire list of tokens (and uco) at the same time.
 
-- If you're only interested at UCO, consider `get_uco_balance/1`.
-- If you're only interested in a specific token, consider `get_token_balance/2`.
-- If you're only interested in a few specific tokens, consider `get_tokens_balance/2`.
+- If you're only interested at UCO, consider [get_uco_balance/1](#get_uco_balance1-io).
+- If you're only interested in a specific token, consider [get_token_balance/2](#get_token_balance2-io).
+- If you're only interested in a few specific tokens, consider [get_tokens_balance/2](#get_tokens_balance2-io).
 
 ### get_uco_balance/1 `[I/O]`
 
@@ -668,7 +668,7 @@ Returns the amount of UCO in the chain that contains the transaction at `address
 
 ### get_token_balance/2 `[I/O]`
 
-Same as `get_token_balance/3` called with `token_id: 0`.
+Same as [get_token_balance/3](#get_token_balance3-io) called with `token_id: 0`.
 
 ### get_token_balance/3 `[I/O]`
 
@@ -705,9 +705,11 @@ Parameters:
 Returns a subset of the token balance of the chain that contains the transaction at `address`.
 The return value is a map where the keys are the tokens' identifiers: `[token_address: HEX, token_id: POS_INT]` and the value are floats.
 
-Useful if you need to retrieve many tokens at the same time, if you're only interested in a specific token, consider `get_token_balance/2`.
+Useful if you need to retrieve many tokens at the same time.
 
-### get_tokens_balance/2
+- If you're only interested in a specific token, consider  [get_token_balance/2](#get_token_balance2-io).
+
+### get_tokens_balance/2 `[I/O]`
 
 ```elixir
 balance = Chain.get_tokens_balance(0x00ABCD.., [
@@ -726,7 +728,9 @@ Parameters:
 Returns a subset of the token balance of the chain that contains the transaction at `address`.
 The return value is a map where the keys are the tokens' identifiers: `[token_address: HEX, token_id: POS_INT]` and the value are floats.
 
-Useful if you need to retrieve many tokens at the same time, if you're only interested in a specific token, consider `get_token_balance/2`.
+Useful if you need to retrieve many tokens at the same time.
+
+- If you're only interested in a specific token, consider [get_token_balance/2](#get_token_balance2-io).
 
 ---------
 
@@ -774,6 +778,19 @@ Parameters:
 - `key` the key to perform the hmac (if the data is hexadecimal it will be decoded in binary)
 
 Returns the hmac of `data` with `key` using `algo`.
+
+### sign_with_recovery/1
+
+```elixir
+signature_payload = Crypto.hash("tintin", "keccak256")
+Crypto.sign_with_recovery(signature_payload) # [r: "00ABCD...", s: "00BCDE...", v: 0]
+```
+
+Parameters:
+
+- `hash` the hash to sign
+
+Return a signature of the given `hash`.
 
 ---------
 
@@ -913,10 +930,22 @@ Returns the remainder (modulo) of a division.
 
 ## Http
 
-### fetch/1 `[I/O]`
+### request/1 `[I/O]`
+
+Similar to [request/2](#request2-io) with `method: "GET"`.
+
+### request/2 `[I/O]`
+
+Similar to [request/3](#request3-io) with `headers: Map.new()`.
+
+### request/3 `[I/O]`
+
+Similar to [request/4](#request4-io) with `body: nil`.
+
+### request/4 `[I/O]`
 
 ```elixir
-response = Http.fetch("https://fakerapi.it/api/v1/addresses?_quantity=1&_seed=watermelon") # [status: 200, body: "..."]
+response = Http.request("https://fakerapi.it/api/v1/addresses?_quantity=1&_seed=watermelon", "GET", Map.new(), nil) # [status: 200, body: "..."]
 if response.status == 200 do
     # do something with response.body
 end
@@ -925,26 +954,36 @@ end
 Parameters:
 
 - `url` the url to fetch
+- `method` the HTTP method (`"GET"`, `"POST"`, `"PUT"`, `"DELETE"` or `"PATCH"`)
+- `headers` the HTTP headers
+- `body` the HTTP body
 
-Fetch the given url (with a `GET`) and returns a map with `status` (integer) and `body` (string).
+Performs a HTTP request and returns a map with `status` (integer) and `body` (string).
+
 This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
 - The URL must use HTTPS protocol.
 - The response body's size must be less than 256KB.
 - The response must be received in less than 2 seconds.
 - The response must be idempotent (= identical every time it is called)
-- Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
+- Only 1 call of either `request/1,2,3,4` or `request_many/1` is allowed per execution.
 
 :::caution
 The function raises if these requirements are not meet.
 :::
 
-### fetch_many/1 `[I/O]`
+:::danger Disclaimer
+We discourage to call services that change some state directly. Because Archethic **relies on atomic commitment of all storage nodes**, it may happen that atomic commitment is not reached and the transaction resulting of a Smart Contract is not validated.
+
+Instead, you should notify the service of the transaction being validated. The service subscribes to that transaction via the GraphQL API, and once it receives a confirmation, it should act accordingly.
+:::
+
+### request_many/1 `[I/O]`
 
 ```elixir
-responses = Http.fetch_many([
-    "https://fakerapi.it/api/v1/users?_quantity=1&_gender=male&_seed=cucumber",
-    "https://fakerapi.it/api/v1/users?_quantity=1&_gender=female&_seed=tomato"
+responses = Http.request_many([
+    [url: "https://fakerapi.it/api/v1/users?_quantity=1&_gender=male&_seed=cucumber"],
+    [url: "https://fakerapi.it/api/v1/users?_quantity=1&_gender=female&_seed=tomato", method: "GET", headers: Map.new(), body: nil]
 ])
 for r in responses do
     if r.status == 200 do
@@ -955,21 +994,11 @@ end
 
 Parameters:
 
-- `urls` a list of urls to fetch
+- `request` a list of requests to perform
 
-Fetch the given urls **in parallel** and returns a list of map with `status` (integer) and `body` (string). Order and length is preserved.
-This status integer can be any [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+Performs a HTTP request and returns a map with `status` (integer) and `body` (string). Order and length is preserved.
 
-- The URLs must use HTTPS protocol.
-- The sum of response bodies' size must not be bigger than 256KB.
-- The responses must be received in less than 2 seconds.
-- The responses must be idempotent (= identical every time it is called)
-- Only 1 call of either `fetch/1` or `fetch_many/1` is allowed per execution.
-- The URLs are limited to 5.
-
-:::caution
-The function raises if these requirements are not meet.
-:::
+See [request/4](#request4-io) for rules and more details.
 
 ---------
 
@@ -1125,3 +1154,33 @@ Recipients are used to trigger smart contracts
 ### add_recipients/1 `[Transaction]`
 
 Equivalent to call [add_recipients/1](#add_recipient1-transaction) for each element of the list
+
+---------
+
+## Evm
+
+### abi_encode/2
+
+```elixir
+Evm.abi_encode(signature, data)
+```
+
+Parameters:
+
+- `signature`: the function or tuple signature (ex: "baz(uint,address)")
+- `data`: the data to encode
+
+Encodes the given `data` according to the `signature`.
+
+### abi_decode/2
+
+```elixir
+Evm.abi_decode(signature, encoded_data)
+```
+
+Parameters:
+
+- `signature`: the function or tuple signature (ex: "baz(uint,address)")
+- `encoded_data`: the data to decode
+
+Decodes the given `encoded_data` according to the `signature`.
