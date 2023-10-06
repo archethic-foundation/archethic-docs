@@ -1112,24 +1112,25 @@ Equivalent to call [add_token_transfer/1](#add_token_transfer1-transaction) for 
 ### add_ownership/1 `[Transaction]`
 
 ```elixir
+authorized_keys = Map.new()
+authorized_keys = Map.set(authorized_keys, public_key, encoded_secret_key)
 Contract.add_ownership(
     secret: "ENCODED_SECRET1",
-    authorized_public_keys: ["000108A5C..."],
-    secret_key: "___")
+    authorized_keys: authorized_keys
+)
 ```
 
 Parameters:
 
-- `ownership` a map with three keys:
+- `ownership` a map with two keys:
   - `secret`: the encoded secret
-  - `authorized_public_keys`: the list of public keys that may decode the secret
-  - `secret_key`: the secret key used to encode the secret
+  - `authorized_keys`: a map where the keys are the `public_keys` and the values are the `encoded_secret_keys` (the keys to decode the secret encoded by each `public_key`)
+
+:::info
+It is the developer's job to encode the secret & the secret key for each authorized key.
+:::
 
 **Mutates** the next transaction to add the `ownership`.
-
-:::danger
-[PROBABLY REQUIRE AN EXAMPLE OR A BETTER EXPLANATION]
-:::
 
 ### add_ownerships/1 `[Transaction]`
 
