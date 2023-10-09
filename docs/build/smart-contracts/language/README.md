@@ -75,6 +75,7 @@ We compare by value, which means you can pretty much compare anything and it wil
 - `1 == 1.0`
 - `[1,2] == [1,2]`
 - `[name: "John"] == [name: "John"]`
+- `!true == false`
 - `true != false`
 - `if <expr> do ... end`
 - `if <expr> do ... else ... end`
@@ -223,7 +224,7 @@ They are declared like internal function but with the `export fun` syntax.
 
 ```elixir
 export fun get_current_count() do
-    String.to_number contract.content
+    State.get("count")
 end
 ```
 
