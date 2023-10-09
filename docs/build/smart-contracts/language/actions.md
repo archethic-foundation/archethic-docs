@@ -8,6 +8,7 @@ sidebar_position: 3
 The `actions` block is the code executed when the associated [trigger](/build/smart-contracts/language/triggers) is triggered.
 
 ## Global variables
+
 Depending on the trigger, there are different global variables accessible.
 
 #### contract
@@ -25,7 +26,7 @@ Be careful not to rebind them inadvertedly. Do not use any of the [reserved keyw
 
 :::note Argument VS Parameter
 A parameter is a variable in a function definition. It is a placeholder and hence does not have a concrete value. An argument is a value passed during function invocation. In a way, arguments fill in the place the parameters have held for them.
-Source: https://www.educative.io/answers/parameter-vs-argument
+Source: <https://www.educative.io/answers/parameter-vs-argument>
 :::
 
 ```elixir
@@ -43,24 +44,24 @@ To do so, you can use the [Contract](/build/smart-contracts/language/library#con
 ```elixir
 # Set uco ATH in content
 actions triggered_by: oracle do
-    current_ath = String.to_number(contract.content)
+    current_ath = State.get("ath", -1)
     new_price = Json.path_extract(transaction.content, "$.uco.usd")
 
     if new_price > current_ath do
-        Contract.set_content(new_price)
+        State.set("ath", new_price)
     end
 end
 ```
 
 :::info
 Note that there are 3 fields that are preset before executing the action code.
+
 - type: set to "contract" by default
 - code: set with the previous contract code
 - ownerships: set with the previous contract ownerships
 
 So you don't need to set the type, the code and the ownerships each time you generate a new transaction.
 :::
-
 
 ## Appendix 1: The transaction map
 
