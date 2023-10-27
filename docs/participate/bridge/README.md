@@ -3,51 +3,44 @@ id: bridge
 title: Archethic's bridge
 ---
 
-Archethic has developed a decentralized and P2P bridge to ease the swap of your UCO ERC20 tokens from other blockchains (ie. Ethereum, Polygon, BSC) and allow to simply and securly exchange assets in the most atomic way.
+Archethic has developed a decentralized and P2P bridge to facilitate the exchange of your UCO ERC20 tokens with other blockchains (e.g., Ethereum, Polygon, BSC) and to allow for a simple and secure exchange of assets in the most atomic way.
 
 :::caution Testnet's only
-The current version of the Archethic's bridge is only available on testnet.
-You can experiment and start to bridge your assets, go to [bridge.testnet.archethic.net/](https://bridge.testnet.archethic.net/)
+The current version of Archethic's bridge is only available on the testnet.
+You can experiment and start bridging your assets by visiting [bridge.testnet.archethic.net/](https://bridge.testnet.archethic.net/)
 :::
 
 ## Key concepts
 
-### HTLC
+### HTLC (Hash Time Lock Contract)
 
-Archethic's bridge relies on atomic swap technology to exchange securely assets in a P2P and cryptographic way without intermediary and allows revert and refund of assets after the lock time period.
+Archethic's bridge relies on atomic swap technology to securely exchange assets in a peer-to-peer and cryptographic manner without intermediaries. It also allows for the reversal and refund of assets after a specified lock time period.
 
-This means specific contracts called **HTLC** (*Hash Time Lock Contract*) are used to lock your funds 
-until the reveal of the secret (like a secret's box) or after a locktime to provide a refund capability.
+This involves the use of specific contracts known as **Hash Time Lock Contracts (HTLC)**, which lock your funds until a secret is revealed (similar to a secret box) or after a lock time period to provide refund capabilities. These contracts must be deployed on both chains involved in the swap.
 
-On the both chains on the swap, those contract have to be deployed.
+Both chains must be ready to transfer assets by revealing the private part of the secret encoded in the contracts, which enables the exchange. Once the secret is revealed on one chain, the other can proceed as the secret is now public.
 
-The two chains are ready to transfer assets - which consists of revealing the private part of the secret encoded in the contracts, to allow the exchange.
-
-Once the secret is revealed in one chain, the second one can proceed to the reveal, as the secret is now public.
-
-This way atomic swap provides secure transfers between chains as there is no pool holding all the assets but hard-coding of recipients and rules in a one-time contract.
+This atomic swap method ensures secure transfers between chains without a central pool holding all the assets. Instead, it relies on hard-coded recipients and rules within a one-time contract.
 
 ### Archethic's cross-chain verification
 
-Usual atomic swaps are using HTLC techniques to ensure safety through the P2P and cryptography approach.
+While conventional atomic swaps rely on HTLC techniques for security through peer-to-peer and cryptographic approaches, Archethic enhances its atomic swap protocol by enabling data retrieval outside of the blockchain. This enhancement makes the process completely decentralized and strengthens the security model.
 
-Nevertheless, thanks to the capability of Archethic to be able to fetch data outside of the blockchain, we enhanced our atomic swap protocol to be compleltely decentralized and increase our security model.
-
-Indeed, Archethic's node are able to fetch transaction's status on other chains (i.e EVM blockchains) to determine the status of a swap in a strong consensus.
-
-With the combination of HTLC and Archethic's specifics, we can have strong trust of the origin/reveal capability of any swap relying on cryptography and cross-chain data retrieval.
+Archethic's nodes can fetch transaction status on other chains, such as EVM blockchains, to establish the status of a swap with a strong consensus. 
+Combining HTLC and Archethic's specific capabilities provides a high level of trust in the origin and reveal capabilities of any swap, relying on cryptography and cross-chain data retrieval.
 
 ### Safety Module
 
-To minimize the risk introduced by bridging assets, we introduce a **Safety Module** as a mechanism designed to address deficiencies that may arise when an unexpected event disrupts the operation of the bridge. 
+To mitigate the risks associated with bridging assets, Archethic introduces a **Safety Module**, designed to address deficiencies that may occur when unexpected events disrupt the bridge's operation.
 
-It acts as a reserve of tokens that can be used if the pool experiences a token loss or if the locked amount varies between both chains.
+The Safety Module serves as a reserve of tokens that can be used in case of token loss or variations in the locked amount between both chains. 
 
-Upon the launch of any pool, the maximum amount of tokens held by the pool will match the amount held in the safety module. Each pool has its dedicated safety module, which will grow over time, thereby enabling increased liquidity in the bridge pool.
+At the launch of any pool, the maximum amount of tokens held by the pool will match the amount in the Safety Module. Each pool has its dedicated Safety Module, which will grow over time, increasing liquidity in the bridge pool.
 
-To fund the safety module, a fee will be deducted from each transfer originating from EVM to Archethic. This fee will be deposited directly into the safety module to bolster the reserve. The greater the number of tokens held in the safety module, the lower the fee rate will become.
+Funding the Safety Module involves deducting a fee from each transfer originating from EVM to Archethic. This fee is deposited directly into the Safety Module to strengthen the reserve. The more tokens held in the Safety Module, the lower the fee rate becomes. 
 
-The safety module is represented by a multisignature wallet managed by the bridge’s governance.
+The Safety Module is represented by a multisignature wallet managed by the bridge's governance.
+
 
 ## Usage
 
@@ -56,44 +49,42 @@ TODO
 
 ## Specifics
 
-### EVM -> Archethic
+### EVM to Archethic
 
-Everything start we a secret holded by a client (in our case the bridge's dApp) and its hash (derivated representation of the secret) to form a lock upon the reveal of this secret.
+The process begins with a secret held by a client (in this case, the bridge's dApp) and its hash, which forms a lock upon revealing the secret. 
 
-The user deploy HTLC smart contract on EVM blockchain through the bridge's EVM pool.
+The user deploys an HTLC smart contract on the EVM blockchain through the bridge's EVM pool.
 
-This pool will ensure the funds capacity of the swap's initiator, the fee distribution ([see Safety Module](#safety-module)), locktime's period and the recipient's address of the assets to bridge.
+ This pool ensures the capacity of the swap's initiator, fee distribution (see [see Safety Module](#safety-module)), lock time period, and the recipient's address for the assets to be bridged.
 
-Symetrically, the user will have to deploy a contract on Archethic using the same conditions 
-while indicating its recipient wallet to receive the funds.
+Similarly, the user must deploy a contract on Archethic under the same conditions while specifying the recipient wallet to receive the funds. 
 
-Once done, a request will be perfomed on the Archethic's pool (owner of the wrapped tokens) to ask funds to fill the HTLC.
+Subsequently, a request is made to the Archethic's pool (which holds the wrapped tokens) to fill the HTLC.
 
-Because the tokens are wrapped on Archethic, the pool will mint new tokens after cross-chain verification ([see Archethic's specific](#archethics-cross-chain-verification))
+Because the tokens are wrapped on Archethic, the pool will mint new tokens after cross-chain verification ([see Archethic's specific](#archethics-cross-chain-verification)).
 
-The remaning part is then the reveal of the secret on EVM to transfer funds to the bridge's recipient wallet (including the safety module).
-And reproduce this step on Archethic, which will ensure the action is done on EVM blockchains through off-chain requests.
+The remaining step involves revealing the secret on EVM to transfer the funds to the bridge's recipient wallet (including the safety module), and replicating this process on Archethic, ensuring that the action is executed on EVM blockchains through off-chain requests.
 
-At the end, the both conterparties will receive their funds creating a parity in the bridged assets.
+This results in both counterparties receiving their funds, achieving parity in the bridged assets.
 
-### Archethic -> EVM 
 
-To exchange assets from Archethic to EVM, we will use the same behavior but ofcourse in reverse order.
-However, we will introduce a new feature on the smart contracts, because EVM cannot request information outside of the blockchain, we have
-to ensure on EVM's side, an action have been performed on Archethic's side.
+### Archethic to EVM 
 
-To do so, we are using cryptography to assert through signature an action and to give a non-repudation proof for the Archethic's pool.
+To exchange assets from Archethic to EVM, the process follows a similar pattern but in reverse order.
+However, a new feature is introduced in the smart contracts. Since EVM cannot request information outside the blockchain, steps are taken to ensure that an action has been performed on Archethic's side. Cryptography is employed to assert the action through a signature and provide non-repudiation proof for the Archethic's pool.
 
-This time, the user create HTLC contract on Archethic and funds it with its tokens (wrapped or native tokens) indicating the recipient's wallet given by the Archethic's pool but without allocating at first place the secret and its lock.
+In this scenario, the user creates an HTLC contract on Archethic and funds it with tokens (wrapped or native), specifying the recipient's wallet provided by Archethic's pool, without initially revealing the secret and its lock.
 
-The user request to the Archethic's pool to get a secret, its hash and a signature asserting the action have been done Archethic. While doing it, the Archethic's pool will contact the HTLC to update its condition for the secret's reveal. (insertion of the generated secret's hash from the pool)
+The user then requests the Archethic's pool to obtain a secret, its hash, and a signature confirming the action's completion on Archethic's side.
 
-On this other side, the user can request the EVM pool to create and provision HTLC contract based on the proof given by the Archethic's pool about an existing and funded HTLC.
-The EVM pool can now create and transfers funds to this new contract.
+During this process, the Archethic's pool contacts the HTLC to update its conditions for the secret's reveal by inserting the generated secret's hash from the pool.
 
-The remaning part is the reveal of the secret, so the user asks the Archethic's pool to reveal the secret into the HTLC and also provide a signature for this action. 
-At this step the locked tokens will be burnt.
+On the other side, the user can request the EVM pool to create and provision an HTLC contract based on the proof provided by Archethic's pool regarding an existing and funded HTLC.
 
-As the secret is now revealed, the user can reveal the secret on EVM HTLC and provide the signature of Archethic's pool, unlocking the assets to the user's wallet registered into the contract.
+The EVM pool can now create and transfer funds to this new contract.
 
-At the end, the both conterparties will receive their funds creating a parity in the bridged assets.
+The remaining step is to reveal the secret. The user asks the Archethic's pool to reveal the secret within the HTLC and provide a signature for this action. At this point, the locked tokens will be burnt. 
+
+With the secret revealed, the user can also reveal the secret on the EVM HTLC and provide the signature from Archethic's pool, unlocking the assets to the user's wallet registered within the contract.
+
+This process ensures that both counterparties receive their funds, achieving parity in the bridged assets.
