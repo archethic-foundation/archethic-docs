@@ -54,7 +54,8 @@ const config = {
       title: 'Archethic',
       logo: {
         alt: 'Archethic Logo',
-        src: 'img/archethic-white2.png',
+        src: 'img/archethic-white.png',
+        srcDark: 'img/archethic-black.png',
       },
       items: [
         {
