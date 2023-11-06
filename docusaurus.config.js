@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Archethic',
-  tagline: 'Welcome to the Internet of Trust',
+  tagline: 'Digital sovereignty at your fingertips',
   url: 'https://wiki.archethic.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
