@@ -12,6 +12,21 @@ sidebar_position: 4
 Currently, the two-way bridge is available exclusively on the testnet.
 :::
 
+:::info
+The Archethic Bridge application is exclusively available as a web application accessible through internet browsers.
+:::
+
+:::caution
+The application is compatible only with the desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
+:::
+
+Ensure that you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet/).
+
+:::tip
+For optimal performance, it is recommended to use the latest version of your internet browser and keep your desktop wallet updated.
+:::
+
+
 Access: https://bridge.testnet.archethic.net<br/>
 Source code: https://github.com/archethic-foundation/bridge
 
