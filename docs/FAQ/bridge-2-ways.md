@@ -58,6 +58,49 @@ Bridging from Archethic to EVM follows a similar pattern but in reverse. It intr
 
 The switch is not possible because the seed is not shared between Mainnet and Testnet. Later, the wallet will be multiseeds, but not for the moment. The only way for the moment is to remove the Wallet (don’t forget the 24 words) and create/import a wallet on the Testnet network.
 
+### Why can't I connect to the Archethic wallet with my Brave browser?
+
+Brave includes a shield feature that might block certain local connections.
+To successfully connect to the Archethic wallet, you'll need to modify the Brave browser’s shield settings as per its documentation
+
+## Testnet
+
+### How do I set up Ethereum Sepolia, Binance Testnet and Polygon Mumbai in my EVM Wallet?
+
+To configure these networks in your EVM Wallet, you'll need to go to the wallet's settings and manually add each network using the Chain ID and Explorer URL provided above.
+
+Ethereum Sepolia Testnet:<br/>
+Chain ID: 11155111<br/>
+Symbol: ETH<br/>
+Explorer URL: [https://sepolia.etherscan.io/](https://sepolia.etherscan.io/)<br/>
+
+Binance Smart Chain Testnet:<br/>
+Chain ID: 97<br/>
+Symbol: tBNB<br/>
+Explorer URL: [https://testnet.bscscan.com/](https://testnet.bscscan.com/)<br/>
+
+Polygon Mumbai Testnet:<br/>
+Chain ID: 80001<br/>
+Symbol: MATIC<br/>
+Explorer URL: [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)<br/>
+
+### How can I buy $UCO after receiving $ETH, $MATIC, or $BNB?
+
+You will be able to buy some $UCO with $ETH / $MATIC or $BNB using the appropriate decentralized exchange (DEX) for your network. 
+Remember to set the slippage according to the amount's impact on liquidity. 
+Here's how you can do it for each network:
+
+ETH : [https://app.uniswap.org/](https://app.uniswap.org/)<br/>
+$UCO contract address: 0x8a3d77e9d6968b780564936d15B09805827C21fa<br/>
+
+Polygon: [https://app.uniswap.org/](https://app.uniswap.org/)<br/>
+$UCO contract address: 0x3c720206bfacb2d16fa3ac0ed87d2048dbc401fc<br/>
+
+BSC: [https://pancakeswap.finance/liquidity?chain=bscTestnet](https://pancakeswap.finance/liquidity?chain=bscTestnet)<br/>
+$UCO contract address: 0xb001f1e7c8bda414ac7cf7ecba5469fe8d24b6de<br/>
+
+Ensure that you connect your wallet to the respective DEX platform and follow the instructions to make the swap.
+
 ## Issues management
 
 ### What happens if a problem occurs, or I refuse a transaction during the transfer?
