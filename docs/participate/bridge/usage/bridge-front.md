@@ -37,6 +37,12 @@ Before proceeding, familiarize yourself with [Archethic's Bridge Key Concepts](/
 :::
 
 
+## Prerequisites
+
+To bridge, you must first configure your EVM wallet for the testnet networks with which you wish to interact, as well as obtain funds. 
+We recommend consulting the testnet-related information in the [dedicated FAQ section](/FAQ/bridge-2-ways#testnet).
+
+
 ## Welcome Screen
 
 Upon accessing the Archethic Bridge application, you are greeted with a welcome screen. To begin, click on the 'Bridge' button.
