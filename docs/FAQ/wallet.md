@@ -47,3 +47,4 @@ You can now enjoy the Archethic ecosystem. Enjoy!
 
 ### ** How to create a token on the Archethic Wallet?**
 
+TEST
