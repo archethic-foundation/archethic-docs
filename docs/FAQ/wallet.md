@@ -44,3 +44,6 @@ Do not share them with anyone and write them down so you can confirm them on the
 10) After a few seconds of waiting, your keychain is created with your first account.<br/>
 
 You can now enjoy the Archethic ecosystem. Enjoy!
+
+### ** How to create a token on the Archethic Wallet?**
+
