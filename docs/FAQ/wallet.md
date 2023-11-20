@@ -47,4 +47,47 @@ You can now enjoy the Archethic ecosystem. Enjoy!
 
 ### ** How to create a token on the Archethic Wallet?**
 
-TEST
+1) Open your Archethic Wallet and click on tokens.
+![wallet-address](/img/faq/wallet/tokens1.png)
+
+2) Click on create token.
+![wallet-address](/img/faq/wallet/tokens2.png)
+
+3) Insert all the information:
+
+- Name: Name of the token, e.g., "Archethic"
+- Symbol: Symbol of the token, e.g., "UCO"
+- Initial Supply: The maximum supply of your token.
+
+And click on "Create Token".
+![wallet-address](/img/faq/wallet/tokens3.png)
+
+4) Confirm the transaction.
+
+5) You have successfully created your Token!
+![wallet-address](/img/faq/wallet/tokens4.png)
+
+### ** How to create a NFT on the Archethic Wallet?**
+
+1) Click on 'NFT' at the bottom right of the application.
+
+2) Choose a category
+
+3) Click on create a NFT
+![wallet-address](/img/faq/wallet/NFT1.png)
+
+4) Insert all the information:
+- Name: Name of the NFT such as "Archers"
+- Symbol: Symbol such as "UCO"
+- Description: Describe your NFT 
+![wallet-address](/img/faq/wallet/NFT2.png)
+
+5) Import your NFT
+![wallet-address](/img/faq/wallet/NFT3.png)
+
+6) Go to summary and click on "Create the NFT", confirm the mint
+![wallet-address](/img/faq/wallet/NFT4.png)
+
+7) You have successfully created an NFT and can locate it in the category you selected during step 2.
+
+
