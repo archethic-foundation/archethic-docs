@@ -45,13 +45,13 @@ Do not share them with anyone and write them down so you can confirm them on the
 
 You can now enjoy the Archethic ecosystem. Enjoy!
 
-### ** How to create a token on the Archethic Wallet?**
+### ** How to create a fungible token on the Archethic Wallet?**
 
-1) Open your Archethic Wallet and click on tokens.
-![wallet-address](/img/faq/wallet/tokens1.png)
+1) Open your Archethic Wallet and click on tokens in the main tab.
+<img src="/img/faq/wallet/tokens1.png" width="400px"/>
 
-2) Click on create token.
-![wallet-address](/img/faq/wallet/tokens2.png)
+2) Click on create token.   
+<img src="/img/faq/wallet/tokens2.png" width="400px"/>
 
 3) Insert all the information:
 
@@ -60,12 +60,13 @@ You can now enjoy the Archethic ecosystem. Enjoy!
 - Initial Supply: The maximum supply of your token.
 
 And click on "Create Token".
-![wallet-address](/img/faq/wallet/tokens3.png)
+
+<img src="/img/faq/wallet/tokens3.png" width="400px"/>
 
 4) Confirm the transaction.
 
-5) You have successfully created your Token!
-![wallet-address](/img/faq/wallet/tokens4.png)
+You have successfully created your Token!
+<img src="/img/faq/wallet/tokens4.png" width="400px"/>
 
 ### ** How to create a NFT on the Archethic Wallet?**
 
@@ -74,20 +75,22 @@ And click on "Create Token".
 2) Choose a category
 
 3) Click on create a NFT
-![wallet-address](/img/faq/wallet/NFT1.png)
+
+<img src="/img/faq/wallet/NFT1.png" width="400px"/>
 
 4) Insert all the information:
 - Name: Name of the NFT such as "Archers"
 - Symbol: Symbol such as "UCO"
 - Description: Describe your NFT 
-![wallet-address](/img/faq/wallet/NFT2.png)
+  
+<img src="/img/faq/wallet/NFT2.png" width="400px"/>
 
 5) Import your NFT
-![wallet-address](/img/faq/wallet/NFT3.png)
+<img src="/img/faq/wallet/NFT3.png" width="400px"/>
 
 6) Go to summary and click on "Create the NFT", confirm the mint
-![wallet-address](/img/faq/wallet/NFT4.png)
+<img src="/img/faq/wallet/NFT4.png" width="400px"/>
 
-7) You have successfully created an NFT and can locate it in the category you selected during step 2.
+You have successfully created an NFT and can locate it in the category you selected during step 2.
 
 
