@@ -70,16 +70,19 @@ To successfully connect to the Archethic wallet, you'll need to modify the Brave
 To configure these networks in your EVM Wallet, you'll need to go to the wallet's settings and manually add each network using the Chain ID and Explorer URL provided above.
 
 Ethereum Sepolia Testnet:<br/>
+URL RPC: Choose a RPC [https://chainlist.org/chain/11155111](https://chainlist.org/chain/11155111)<br/>
 Chain ID: 11155111<br/>
 Symbol: ETH<br/>
 Explorer URL: [https://sepolia.etherscan.io/](https://sepolia.etherscan.io/)<br/>
 
 Binance Smart Chain Testnet:<br/>
+URL RPC: Choose a RPC [https://chainlist.org/chain/97](https://chainlist.org/chain/97)<br/>
 Chain ID: 97<br/>
 Symbol: tBNB<br/>
 Explorer URL: [https://testnet.bscscan.com/](https://testnet.bscscan.com/)<br/>
 
 Polygon Mumbai Testnet:<br/>
+URL RPC: Choose a RPC [https://chainlist.org/chain/80001](https://chainlist.org/chain/80001)<br/>
 Chain ID: 80001<br/>
 Symbol: MATIC<br/>
 Explorer URL: [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)<br/>
