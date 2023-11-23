@@ -86,8 +86,8 @@ actions triggered_by: interval, at: "0 * * * *" do
     ico_contract = 0x0000993F3BE0CE40541E47735AA083854ECAC7785B39435C90D8456C777B9E9D81F1
 
     Contract.set_type("transfer")
-    Contract.add_recipient address: ico_contract, action: "buyTokens", args: [0x0000A3A066DD64FBD51AE384F2383684B3803BC72012BFEAA9CD1C93AB7C60F584DC]
-    Contract.add_uco_transfer(amount: 2, to: ico_contract)
+    Contract.add_recipient(address: ico_contract, action: "buyToken", args: [0x0000A3A066DD64FBD51AE384F2383684B3803BC72012BFEAA9CD1C93AB7C60F584DC])
+    Contract.add_uco_transfer(to: ico_contract, amount: 2)
 end
 ```
 
