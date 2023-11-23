@@ -1,6 +1,6 @@
 ---
 id: hardware-root-of-trust
-title: Harware Root of Trust
+title: Hardware Root of Trust
 ---
 
 ## What is hardware root of trust?
