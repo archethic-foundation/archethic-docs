@@ -90,6 +90,23 @@ Gets the endpoint URL used on AEWallet.
 }
 ```
 
+
+## refresh_current_account
+
+Request the wallet to refresh current account info
+
+### Request
+
+```typescript
+// no payload in request
+```
+
+### Success Response
+
+```typescript
+// no response
+```
+
 ## get_accounts
 
 Gets the accounts avalaible on AEWallet.
@@ -124,6 +141,7 @@ Signs and sends a transaction.
   "type": String,                 // Type of transaction
   "version": Number,              // Version of the transaction (used for backward compatiblity)
   "data": Object,                 // Transaction data zone (identity, keychain, smart contract, etc.)
+  "generateEncryptedSeedSC": bool // (Optional) : if true, add a encrypted (by storage nonce public key) seed in the transaction's ownerships to allow nodes to manage smart contract
 }
 ```
 
