@@ -8,6 +8,7 @@ sidebar_position: 1
 In the blockchain ecosystem, decentralized applications (dApps) are becoming increasingly popular. To enable reliable and secure communication between these applications and the blockchain, Archethic has developed a communication protocol with its Archethic Wallet application. This protocol allows dApps to delegate secure communication with the blockchain to the wallet and to protect private information within the wallet (seed, private keys) without exposing it to the dApps.
 
 # Point of view on usage
+
 When a dApp wants to perform a transaction that requires the use of private keys, it must call on the user’s wallet to protect this information and avoid unauthorized exposure. There are several ways to do this:
 
 The dApp can solicit the wallet in a “covert” manner without requiring the user’s intervention. For example, it can retrieve information about the current account or services available in the decentralized wallet.
@@ -123,8 +124,9 @@ Gets the accounts avalaible on AEWallet.
 {
   "accounts": [
     {
-      "name": String,           // Account name
-      "genesisAddress": String, // Genesis address
+      "shortName": String,        // Account name
+      "serviceName": String,      // Service name
+      "genesisAddress": String,   // Genesis address
     }
   ]
 }
@@ -154,7 +156,6 @@ Signs and sends a transaction.
   "maxConfirmations": Number,    // Max number of confirmations.
 }
 ```
-
 
 ## add_service
 
@@ -215,7 +216,7 @@ Derive a keypair for the given service at the index given and get the public key
   "pathSuffix": String    // Additional information to add to a service derivation path (optional - default to empty)
 }
 ```
- 
+
 ### Success Response
 
 ```typescript
@@ -223,7 +224,6 @@ Derive a keypair for the given service at the index given and get the public key
   "publicKey": String     // Public key of the service at the index given
 }
 ```
-
 
 ## keychain_derive_address
 
@@ -238,7 +238,7 @@ Derive an address for the given service at the index given
   "pathSuffix": String    // Additional information to add to a service derivation path (optional - default to empty)
 }
 ```
- 
+
 ### Success Response
 
 ```typescript
@@ -261,8 +261,9 @@ Gets the current account selected on AEWallet.
 
 ```typescript
 {
-  "name": String,           // Account name
-  "genesisAddress": String, // Genesis address
+  "shortName": String,       // Account name
+  "serviceName": String,     // Service name
+  "genesisAddress": String,  // Genesis address
 }
 ```
 
@@ -302,6 +303,7 @@ Signs many transactions.
 ```
 
 # In conclusion
+
 The communication protocol developed by Archethic allows an easy and secure interaction between dApps and the blockchain by delegating the communication to the user’s wallet. The integration methods proposed are simple and efficient, especially thanks to the “Archethic Wallet Client” (AWC) communication library which facilitates the use of the API. Developers can focus on developing their application without having to manage communication with the wallet and the blockchain. This cross-platform solution is therefore a wise choice for developers who want to write dApps that are compatible with different platforms. Finally, the availability of interfaces in the “libjs” library also facilitates integration for developers of applications written in JavaScript.
 
 Find more information at the following links.
