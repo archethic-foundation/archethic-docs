@@ -17,24 +17,35 @@ This way a fair reward mechanism is put in place for nodes regarding their work 
 
 The transaction's fee computation is based on some properties:
 - Minimum fee: *$0.01 of the current UCO price*
-- Number of recipient (for transfers or smart contractcalls)
+- Number of recipient (for transfers or smart contract calls)
   - 1: no more additional fee 
-  - \> 1: each additional recipient will have an additional cost of $0.1 UCO(*Because sending transaction to multiple leverages more resources in term of network and storage, as the transaction must be replicated in all the chain targets*)
+  - \> 1: each additional recipient will have an additional cost logarithmically. However we want to ensure for a simple transaction, the price doesn't go beyond $0.01. 
+
+    :::note
+    We take the assumption than a recipient replication cost is something around 1/3 of the load for a given transaction.
+    Indeed, sending transaction to multiple leverages more resources in terms of network load and storage capability as the transaction must be replicated in all the chains.
+    To make it more fare, we apply a logarithmic progression, as the cost of replication might be reduced by the overlap of storage node election
+    :::
+
 - Size of the transaction: each stored byte will cost 10<sup>-8</sup> of the current UCO's price
 - Number of replicas
-- Complexity of the smart contract (Coming soon)
-
+- Smart contract execution fee:
+   - Cost of resulting transaction: During transaction's validation, we simulate the output's transaction from a smart contract execution and apply a transaction fee calculation.
+   - Complexity of the smart contract execution (Coming soon)
 
 Overall formula:
 ```
-Transaction Fee = minimum_fee + fee_for_storage(size * nb_replicas) + fee_for_complexity + cost_per_recipient
+Transaction Fee = minimum fee (UCO's price)
+                 + fee for storage (size * nb of replicas)
+                 + fee for cost per recipients
+                 + fee for smart contract
 ```
 
 :::info
 Regular transfer of UCO to single person would cost around ~$0.01 (+/- additional information + nb of replicas)
 :::
 
-:::warning
+:::caution Important
 The $0.01 cost is static only as minimum fee for any transaction. 
 Depending on the number of recipients, size, etc. the fee will increase, as it requires more work for the network
 :::
@@ -67,3 +78,8 @@ An additional fee is determined in that case through the following formula:
 So the transaction fee will gradually increase according of the number of unique token to create (= new UTXO)
 
 ![](/img/nft_additional_fee.svg)
+
+:::info
+Token definition allows to send at the time of minting to list of first recipients.
+Hence, the rules to multiple transfers is applied to logarithmically increases the transaction's fee
+:::
