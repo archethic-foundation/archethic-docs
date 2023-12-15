@@ -62,6 +62,16 @@ For more complex web applications, the front-end can still be hosted with AEWeb 
 For instance, today a lot of web apps are leveraging SPA (Single Page Application) with front-end frameworks which are talking to external backend servers (fetching data, or authenticate users, etc.).
 In that case, once the front-end page have been build from the SPA tooling, instead of being deployed on centralized servers, the generated static files could be hosted on Archethic through AEWeb tooling.
 
+## Try out
+
+### Graphical interface
+
+To test the user interface to deploy websites, visit the [project](https://github.com/archethic-foundation/aeweb) by downloading the app to make webhosting no only for developers but for anyone which have static website to deploy.
+
+### Developers
+
+You can try the [CLI](https://github.com/archethic-foundation/aeweb-cli) to help developers to test and deploy existing websites using terminal.
+
 ## Roadmap
 
 - [x] Design
@@ -73,14 +83,10 @@ In that case, once the front-end page have been build from the SPA tooling, inst
   - [x] Folder
   - [x] Complete website
   - [x] Keychain integration
-- [ ] User Interface
+- [x] User Interface
   - [x] Web or Native application
 - [ ] Domain Name System (DNS)
   - [x] DNSLink integration
   - [ ] Automation
 
-The development started few months ago, and we are now in the phase of testing as beta version.
 
-Currently we are targeting **developers** throught a [CLI](https://github.com/archethic-foundation/aeweb-cli) to help them to test and deploy existing websites.
-
-Next achievement is to produce a [user interface](https://github.com/archethic-foundation/aeweb) to make webhosting no only for developers but for anyone which have static website to deploy.

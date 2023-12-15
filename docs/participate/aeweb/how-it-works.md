@@ -35,9 +35,9 @@ graph TD
 
 ```
 
-One of this transaction is called the `reference`. Its goals is to act as a pointer to other transactions. This will help the retrieval of the files and makes upgrades seamless and transparent for end users.
+One of this transaction is called the `reference`. Its goals is to act as a pointer to other transactions helping the retrieval of the files and allows upgrades to be transparent for the users.
 
-The reference transaction's address will become the address of the website managing its lifecycle.
+The reference transaction's address will become the address of the website, hence managing its lifecycle.
 
 ```json
 {
@@ -70,7 +70,7 @@ The other transactions (called `data`) will contain the content of the files enc
 ```
 
 To leverage the maximum of the transaction size, all the content are grouped into the smallest amount of transaction possible.
-For example, you could have a website which contains: 5 files:
+For example, you could have a website which contains: 3 files:
 
 - HTML page
 - Image
@@ -123,12 +123,12 @@ For example, you could have a website which contains: 5 files:
 
 ## Content delivery
 On the other side, the transactions are validated and stored on the Archethic Blockchain.
-Any Archethic node expose an API dedicated for the web hosting by AEWeb.
+Any Archethic node exposes an API dedicated for the web hosting by AEWeb.
 
 This API takes a reference address as a parameter, and then proceeds to take the path of the file, just like any web server would do.
 
 ```sh
-https://mainnet.archethic.net/api/web_hosting/0c19fd13......../image.jpg
+https://mainnet.archethic.net/aeweb/0c19fd13......../image.jpg
 ```
 
 ![aeweb_CDN](/img/aeweb_CDN.svg#gh-light-mode-only)
