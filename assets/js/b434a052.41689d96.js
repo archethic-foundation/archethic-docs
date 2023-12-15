@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[7866],{1917:e=>{e.exports=JSON.parse('{"title":"Clients","slug":"/category/clients","permalink":"/category/clients","navigation":{"previous":{"title":"Build","permalink":"/category/build"},"next":{"title":"Ledger wallet","permalink":"/build/clients/ledger-wallet/"}}}')}}]);
