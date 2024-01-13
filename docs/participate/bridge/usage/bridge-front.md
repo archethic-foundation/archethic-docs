@@ -9,15 +9,14 @@ sidebar_position: 4
 # Bridge Front end - Tutorial
 
 :::info
-Currently, the two-way bridge is available exclusively on the testnet.
-:::
-
-:::info
 The Archethic Bridge application is exclusively available as a web application accessible through internet browsers.
 :::
 
 :::caution
 The application is compatible only with the desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
+:::
+:::caution
+The application is not compatible with Edge, Internet explorer browsers
 :::
 
 Ensure that you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet/).
@@ -27,21 +26,14 @@ For optimal performance, it is recommended to use the latest version of your int
 :::
 
 
-Access: https://bridge.testnet.archethic.net<br/>
-Source code: https://github.com/archethic-foundation/bridge
+Access: https://bridge.archethic.net<br/>
+Source code: https://github.com/archethic-foundation/bridge and https://github.com/archethic-foundation/bridge-contracts
 
 This Flutter-built web application enables seamless asset deposits and withdrawals.
 
 :::success
 Before proceeding, familiarize yourself with [Archethic's Bridge Key Concepts](/participate/bridge/).
 :::
-
-
-## Prerequisites
-
-To bridge, you must first configure your EVM wallet for the testnet networks with which you wish to interact, as well as obtain funds. 
-We recommend consulting the testnet-related information in the [dedicated FAQ section](/FAQ/bridge-2-ways#testnet).
-
 
 ## Welcome Screen
 
@@ -86,10 +78,6 @@ Firstly, select the originating and target blockchains.
 
 :::caution
 Ensure both Archethic and your chosen EVM wallets are connected before blockchain selection. Refer to the [FAQ](/category/faq) for connectivity issues.
-:::
-
-:::tip
-Choose a testnet blockchain for testing purposes.
 :::
 
 :::tip

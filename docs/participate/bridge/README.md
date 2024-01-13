@@ -5,11 +5,6 @@ title: Archethic's bridge
 
 Archethic has developed a decentralized and P2P bridge to facilitate the exchange of your UCO ERC20 tokens with other blockchains (e.g., Ethereum, Polygon, BSC) and to allow for a simple and secure exchange of assets in the most atomic way.
 
-:::caution Testnet's only
-The current version of Archethic's bridge is only available on the testnet.
-You can experiment and start bridging your assets by visiting [bridge.testnet.archethic.net/](https://bridge.testnet.archethic.net/)
-:::
-
 ## Key concepts
 
 ### HTLC (Hash Time Lock Contract)
