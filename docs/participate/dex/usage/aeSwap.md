@@ -5,7 +5,6 @@ sidebar_label: aeSwap
 sidebar_position: 1
 ---
 
-
 # aeSwap - Tutorial
 
 :::info
@@ -26,23 +25,21 @@ Ensure that you have the appropriate desktop version of the Archethic wallet ins
 For optimal performance, it is recommended to use the latest version of your internet browser and keep your desktop wallet updated.
 :::
 
-
-Access: https://dex.testnet.archethic.net<br/>
+Access: https://dex.testnet.archethic.net  
 Source code: https://github.com/archethic-foundation/dex
 
-This Flutter-built web application enables swap assets on-chain, add liquidity and access yield farming.
+This Flutter-built web application enables swapping assets on-chain, adding liquidity, and accessing yield farming.
 
 :::success
 Before proceeding, familiarize yourself with [Archethic's DEX Key Concepts](/participate/dex/).
 :::
 
-
 ## Welcome Screen
 
-Upon accessing aeSwap, you are greeted with a welcome screen. To begin, click on the 'Go !' button.
+Upon accessing aeSwap, you are greeted with a welcome screen. To begin, click on the 'Go!' button.
 
 ![Welcome Screen](/img/tutorial/aeSwap/aeSwap-Welcome.png)  
-![aeSWap Main Screen](/img/tutorial/aeSwap/aeSwap-Main-Screen.png)
+![aeSwap Main Screen](/img/tutorial/aeSwap/aeSwap-Main-Screen.png)
 
 ### Application Menu
 
@@ -54,25 +51,25 @@ A right-hand header menu provides links to essential information and application
 
 The top menu grants access to various DEX functionalities:
 
-- Swap assets
-- List Pools / Add or remove Liquidity
-- Farm
+- Swapping assets
+- Listing Pools / Adding or removing Liquidity
+- Farming
 
 ![Menu Features](/img/tutorial/aeSwap/aeSwap-Features.png)
 
-## Swapping Your tokens
+## Swapping Your Tokens
 
 The DEX process involves multiple steps:
 
 1. Inputting information to initiate the swap
 2. Confirming the entered details
-3. Executing the swap, with progress tracking and transaction signing in Archethic wallet
+3. Executing the swap, with progress tracking and transaction signing in the Archethic wallet
 
 ### Step 1: Swap - Essential Information
 
 ![Swap form](/img/tutorial/aeSwap/aeSwap-Swap-Form.png)
 
-**Select tokens to swap**: Click on "Select a token" to access to a popup with tokens info
+**Select tokens to swap**: Click on "Select a token" to access a popup with token info
 
 ![Token Selection](/img/tutorial/aeSwap/aeSwap-Select-Token.png)
 
@@ -90,7 +87,7 @@ If the price impact exceeds certain thresholds (greater than 1% or 5%), the syst
 - **Current TVL of the Pool**: The Total Value Locked (TVL) in the pool is provided, giving you an idea of the pool's size and liquidity. A larger TVL indicates a more significant pool, which generally leads to lower price impact from individual transactions.
 - **Current Token Ratio**: Lastly, you will see the current ratio of tokens in the pool. This ratio is vital for understanding the liquidity dynamics and potential price movements within the pool.
 
-**Swap**: Click the "Swap" button to finalize your swap. This action initiates the transaction and swap your tokens.
+**Swap**: Click the "Swap" button to finalize your swap. This action initiates the transaction and swaps your tokens.
 
 #### Pre-transaction Validations
 
@@ -98,7 +95,7 @@ Before swapping, the system performs a vital check to ensure:
 - **Token Availability**: Verifies that the necessary token to swap is available in your wallet.
 
 :::info
-When swapping involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with iquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
+When swapping involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
 
 ### Step 2: Finalizing swap: Confirmation and Validation Steps
@@ -106,7 +103,7 @@ When swapping involving UCO (the native token of the Archethic blockchain), the 
 After you submit the swap form by clicking the "Swap" button, you will be directed to a confirmation screen. This screen serves a critical role in the swap process, enabling you to:
 
 - **Minimum received**
-- **Balances Verification**: Check your account balances before and after swap to understand the impact of your transaction.
+- **Balances Verification**: Check your account balances before and after the swap to understand the impact of your transaction.
 - **Fees**
 - **Price impact**
 If the details align with your intentions and you are content with the proposed setup, proceed by clicking on the "Confirm swap" button to move forward in the process.
@@ -227,13 +224,12 @@ Before adding liquidity, the system performs a vital check to ensure:
 - **Token Availability**: Verifies that the necessary tokens are available in your wallet for the liquidity addition.
 
 :::info
-When adding liquidity involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with iquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
+When adding liquidity involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
 
+### Step 2: Finalizing Liquidity Addition: Confirmation and Validation Steps
 
-### Step 2: Finalizing Liquidity adding: Confirmation and Validation Steps
-
-After you submit the liquidity adding form by clicking the "Add liquidity" button, you will be directed to a confirmation screen. This screen serves a critical role in the liquidity adding process, enabling you to:
+After you submit the liquidity addition form by clicking the "Add liquidity" button, you will be directed to a confirmation screen. This screen serves a critical role in the liquidity addition process, enabling you to:
 
 - **Review Token Ratio**: Examine the initial ratio between the two tokens in your new pool to ensure it aligns with your expectations.
 - **Balance Verification**: Check your account balances before and after liquidity is added to understand the impact of your transaction.
@@ -267,16 +263,16 @@ Transaction Details: Once you've set the amount, the system will display informa
 - **Amounts of token to get back**: This crucial piece of information tells you exactly how many of each token in the pool you will receive in return for the specified amount of LP tokens. This is calculated based on the current ratio of tokens within the pool and the total amount of liquidity you're choosing to withdraw.
 By presenting these details, the system aims to provide users with a clear understanding of the outcome of their liquidity removal transaction, allowing for precise and confident decision-making.
 
-**Remove Liquidity**: Click the "Remove liquidity" button to finalize your contribution. This action initiates the transaction, removes (or "burns") your LP tokens from circulation, and the corresponding amount of the original tokens you provided as liquidity will be returned to you. The exact amounts are calculated according to the current liquidity ratio within the pool and the total number of LP tokens you are redeeming.
+**Remove Liquidity**: Click the "Remove liquidity" button to finalize your withdrawal. This action initiates the transaction, removes (or "burns") your LP tokens from circulation, and the corresponding amount of the original tokens you provided as liquidity will be returned to you. The exact amounts are calculated according to the current liquidity ratio within the pool and the total number of LP tokens you are redeeming.
 
 #### Pre-transaction Validations
 
-Before adding liquidity, the system performs a vital check to ensure:
-- **Token Availability**: Verifies that the necessary LP token are available in your wallet for the liquidity removal.
+Before removing liquidity, the system performs a vital check to ensure:
+- **Token Availability**: Verifies that the necessary LP tokens are available in your wallet for the liquidity removal.
 
-### Step 2: Finalizing Liquidity removing: Confirmation and Validation Steps
+### Step 2: Finalizing Liquidity Removal: Confirmation and Validation Steps
 
-After you submit the liquidity removing form by clicking the "Remove liquidity" button, you will be directed to a confirmation screen. This screen serves a critical role in the liquidity removing process, enabling you to:
+After you submit the liquidity removal form by clicking the "Remove liquidity" button, you will be directed to a confirmation screen. This screen serves a critical role in the liquidity removal process, enabling you to:
 
 - **Balance Verification**: Check your account balances before and after liquidity is removed to understand the impact of your transaction.
 If the details align with your intentions and you are content with the proposed setup, proceed by clicking on the "Confirm" button to move forward in the process.
@@ -290,4 +286,3 @@ If the details align with your intentions and you are content with the proposed 
 **Transaction Address**: Upon successful completion of this transaction, you will be provided with the address. This address allows you to verify the transaction on the blockchain, ensuring transparency and security in your operation.
 
 ![Remove liquidity end](/img/tutorial/aeSwap/aeSwap-LiquidityRemove-End.png)
-
