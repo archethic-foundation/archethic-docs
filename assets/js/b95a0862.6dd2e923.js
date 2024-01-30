@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[3218],{2841:e=>{e.exports=JSON.parse('{"title":"Usage","slug":"/category/usage-2","permalink":"/category/usage-2","navigation":{"previous":{"title":"Archethic\'s DEX","permalink":"/participate/dex/"},"next":{"title":"aeSwap","permalink":"/participate/dex/usage/aeSwap"}}}')}}]);
