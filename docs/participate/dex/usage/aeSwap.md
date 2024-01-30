@@ -4,29 +4,26 @@ title: DEX - Application Front End
 sidebar_label: aeSwap
 sidebar_position: 1
 ---
-
 # aeSwap - Tutorial
 
 :::info
-Currently, aeSwap is available exclusively on the testnet.
+Please note that aeSwap is currently available exclusively on the testnet.
 :::
 
 :::info
-aeSwap is exclusively available as a web application accessible through internet browsers.
+aeSwap is a web application accessible through internet browsers and is compatible only with desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
 :::
 
 :::caution
-The application is compatible only with the desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
+Ensure you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. You can download the wallet from [here](https://www.archethic.net/wallet/).
 :::
-
-Ensure that you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet/).
 
 :::tip
-For optimal performance, it is recommended to use the latest version of your internet browser and keep your desktop wallet updated.
+For optimal performance, use the latest version of your internet browser and keep your desktop wallet updated.
 :::
 
-Access: https://dex.testnet.archethic.net  
-Source code: https://github.com/archethic-foundation/dex
+**Access:** [https://dex.testnet.archethic.net](https://dex.testnet.archethic.net)  
+**Source code:** [https://github.com/archethic-foundation/dex](https://github.com/archethic-foundation/dex)
 
 This Flutter-built web application enables swapping assets on-chain, adding liquidity, and accessing yield farming.
 
@@ -140,6 +137,7 @@ Before creating a liquidity pool, the system conducts several checks to ensure c
 :::info
 When creating a pool involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with pool creation and liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
+
 ---
 
 ![Add pool form](/img/tutorial/aeSwap/aeSwap-AddPool-Form.png)
