@@ -68,21 +68,58 @@ The DEX process involves multiple steps:
 2. Confirming the entered details
 3. Executing the swap, with progress tracking and transaction signing in Archethic wallet
 
-### Step 1: Select tokens
+### Step 1: Swap - Essential Information
 
-Click on "Select a token" to access to a popup with tokens info
+![Swap form](/img/tutorial/aeSwap/aeSwap-Swap-Form.png)
+
+**Select tokens to swap**: Click on "Select a token" to access to a popup with tokens info
 
 ![Token Selection](/img/tutorial/aeSwap/aeSwap-Select-Token.png)
 
-### Step 2: Fill amounts to swap
+**Entering Token Amount to swap**: Begin by inputting the amount of one of the two tokens in the pool's pair. The system will automatically calculate the necessary amount of the second token based on the current pool ratio.
 
-Fill the amount to swap in the form's input.
-You can initialize the field manually or calculate the half or the max of your balance
+**Slippage Tolerance Configuration**: To manage the impact of price fluctuations during your transaction, click on the wheel icon next to "slippage tolerance." Slippage occurs when the price at which your transaction is executed differs from the price when you submitted it. Adjusting your slippage tolerance allows you to control the maximum price variation you're willing to accept.
 
-:::note
-The balance of the token is displayed
-The amount is automatically calculate 
+**Transaction Details**: Once you've set the amounts, the system will display information about your transaction:
+- **Fees**: Displayed prominently, this includes the fees charged by liquidity providers for facilitating the swap, as well as any operating costs associated with using the Archethic blockchain. These fees are integral to the transaction cost and contribute to the rewards for liquidity providers.
+- **Price Impact**: The system calculates and shows the price impact of your transaction, which is the effect your trade will have on the pool's price for the token pair. The price impact is a crucial metric for understanding how the size of your transaction relative to the pool's liquidity can alter the price of the tokens you are trading. A significant transaction in a pool with limited liquidity can lead to a higher price impact.
+:::info
+If the price impact exceeds certain thresholds (greater than 1% or 5%), the system issues a warning. This is to alert you that your transaction could significantly alter market prices, potentially leading to less favorable trade conditions.
 :::
+- **Minimum received**: This figure represents the least amount you can expect to receive as a result of your transaction, taking into account slippage and fees. It ensures that you are aware of the worst-case scenario based on the current market conditions and your specified slippage tolerance.
+- **Current TVL of the Pool**: The Total Value Locked (TVL) in the pool is provided, giving you an idea of the pool's size and liquidity. A larger TVL indicates a more significant pool, which generally leads to lower price impact from individual transactions.
+- **Current Token Ratio**: Lastly, you will see the current ratio of tokens in the pool. This ratio is vital for understanding the liquidity dynamics and potential price movements within the pool.
+
+**Swap**: Click the "Swap" button to finalize your swap. This action initiates the transaction and swap your tokens.
+
+#### Pre-transaction Validations
+
+Before swapping, the system performs a vital check to ensure:
+- **Token Availability**: Verifies that the necessary token to swap is available in your wallet.
+
+:::info
+When swapping involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with iquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
+:::
+
+### Step 2: Finalizing swap: Confirmation and Validation Steps
+
+After you submit the swap form by clicking the "Swap" button, you will be directed to a confirmation screen. This screen serves a critical role in the swap process, enabling you to:
+
+- **Minimum received**
+- **Balances Verification**: Check your account balances before and after swap to understand the impact of your transaction.
+- **Fees**
+- **Price impact**
+If the details align with your intentions and you are content with the proposed setup, proceed by clicking on the "Confirm swap" button to move forward in the process.
+
+![Swap confirm](/img/tutorial/aeSwap/aeSwap-Swap-Confirm.png)
+
+#### Wallet Validations for Swap Transaction
+
+**Transaction Confirmation**: You will need to approve 1 transaction.
+
+**Transaction Address**: Upon successful completion of this transaction, you will be provided with the address and the amount swapped. This address allows you to verify the transaction on the blockchain, ensuring transparency and security in your operation.
+
+![Swap end](/img/tutorial/aeSwap/aeSwap-Swap-End.png)
 
 
 ## Create a pool and add liquidity
@@ -178,7 +215,7 @@ Enhancing your portfolio by adding liquidity to a pool is a straightforward proc
 
 **Slippage Tolerance Configuration**: To manage the impact of price fluctuations during your transaction, click on the wheel icon next to "slippage tolerance." Slippage occurs when the price at which your transaction is executed differs from the price when you submitted it. Adjusting your slippage tolerance allows you to control the maximum price variation you're willing to accept.
 
-Transaction Details: Once you've set the amounts, the system will display critical information about your transaction:
+Transaction Details: Once you've set the amounts, the system will display information about your transaction:
 - **Minimum Token Amounts**: The least amount of each token that will be added to the pool, considering slippage and transaction timing.
 - **Estimated LP Tokens**: An estimation of how many liquidity provider (LP) tokens you'll receive in return. These tokens represent your share of the pool and your entitlement to a portion of the trading fees.
 
@@ -194,9 +231,9 @@ When adding liquidity involving UCO (the native token of the Archethic blockchai
 :::
 
 
-### Step 2: Finalizing Pool Creation: Confirmation and Validation Steps
+### Step 2: Finalizing Liquidity adding: Confirmation and Validation Steps
 
-After you submit the pool creation form by clicking the "Create a new pool" button, you will be directed to a confirmation screen. This screen serves a critical role in the pool creation process, enabling you to:
+After you submit the liquidity adding form by clicking the "Add liquidity" button, you will be directed to a confirmation screen. This screen serves a critical role in the liquidity adding process, enabling you to:
 
 - **Review Token Ratio**: Examine the initial ratio between the two tokens in your new pool to ensure it aligns with your expectations.
 - **Balance Verification**: Check your account balances before and after liquidity is added to understand the impact of your transaction.
@@ -216,5 +253,41 @@ The addition of liquidity to the pool necessitates two separate validations with
 
 ## Remove Liquidity
 
-After contributing liquidity to a pool, you have the flexibility to withdraw some or all of your deposited tokens at any time. This process involves exchanging your liquidity provider (LP) tokens, which represent your share of the pool, back into the original assets. 
+Withdrawing your liquidity from a pool is a flexible process that can be initiated at any time, allowing you to reclaim all or a portion of your deposited tokens.
+
+### Step 1: Removing Liquidity: Essential Information
+
+The process begins with the user entering the amount of LP (Liquidity Provider) tokens they wish to redeem. This action is facilitated through a user-friendly form designed to make the withdrawal process as straightforward as possible.
+
+![Remove liquidity form](/img/tutorial/aeSwap/aeSwap-LiquidityRemove-Form.png)
+
+**Entering LP Token Amounts**: The amount of LP tokens you wish to use for the withdrawal. LP tokens represent your share of the pool's total liquidity.
+
+Transaction Details: Once you've set the amount, the system will display information about your transaction:
+- **Amounts of token to get back**: This crucial piece of information tells you exactly how many of each token in the pool you will receive in return for the specified amount of LP tokens. This is calculated based on the current ratio of tokens within the pool and the total amount of liquidity you're choosing to withdraw.
+By presenting these details, the system aims to provide users with a clear understanding of the outcome of their liquidity removal transaction, allowing for precise and confident decision-making.
+
+**Remove Liquidity**: Click the "Remove liquidity" button to finalize your contribution. This action initiates the transaction, removes (or "burns") your LP tokens from circulation, and the corresponding amount of the original tokens you provided as liquidity will be returned to you. The exact amounts are calculated according to the current liquidity ratio within the pool and the total number of LP tokens you are redeeming.
+
+#### Pre-transaction Validations
+
+Before adding liquidity, the system performs a vital check to ensure:
+- **Token Availability**: Verifies that the necessary LP token are available in your wallet for the liquidity removal.
+
+### Step 2: Finalizing Liquidity removing: Confirmation and Validation Steps
+
+After you submit the liquidity removing form by clicking the "Remove liquidity" button, you will be directed to a confirmation screen. This screen serves a critical role in the liquidity removing process, enabling you to:
+
+- **Balance Verification**: Check your account balances before and after liquidity is removed to understand the impact of your transaction.
+If the details align with your intentions and you are content with the proposed setup, proceed by clicking on the "Confirm" button to move forward in the process.
+
+![Remove liquidity confirm](/img/tutorial/aeSwap/aeSwap-LiquidityRemove-Confirm.png)
+
+#### Wallet Validations for Liquidity Transactions
+
+**Transaction Confirmation**: You will need to approve 1 transaction.
+
+**Transaction Address**: Upon successful completion of this transaction, you will be provided with the address. This address allows you to verify the transaction on the blockchain, ensuring transparency and security in your operation.
+
+![Remove liquidity end](/img/tutorial/aeSwap/aeSwap-LiquidityRemove-End.png)
 
