@@ -14,6 +14,12 @@ No, the Archethic DEX application is designed exclusively for the moment for des
 ### How is the price of $UCO estimated?
 The price of $UCO is determined using an Archethic Oracle that consolidates information from various sources, including Coingecko and CoinMarketCap.
 
+### What web browsers are not supported?
+The unsupported browsers are Edge and Internet Explorer. 
+If you experience issues with other browsers, please inform our teams via social media platforms such as Discord or Telegram, or submit an issue on GitHub. 
+All relevant links can be found on the Archethic website. 
+Thank you for your assistance.
+
 ## Wallet
 
 ### I’m using the Mainnet network in the Wallet, how can I switch on the Testnet?
