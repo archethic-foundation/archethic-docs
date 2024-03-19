@@ -93,4 +93,42 @@ You have successfully created your Token!
 
 You have successfully created an NFT and can locate it in the category you selected during step 2.
 
+## Troubleshooting
+
+### The Archethic wallet won't start or opens to a black or white screen
+
+To resolve a startup issue with the Archethic wallet, here are some corrective actions:
+
+:::caution
+Please note, steps 3 and 4 require you to reimport your wallet afterward by entering your mnemonic phrase.
+:::
+
+1) Verify that the application is downloaded from an official source.
+
+For this, please visit the website https://www.archethic.net/wallet.
+For security and proper functionality, Archethic advises against using the application on jailbroken devices or in developer mode.
+
+2) Uninstall and then reinstall the application.
+
+3) If the issue persists, **for desktop versions**, please delete the wallet's local database. 
+
+To do this, manually delete at least the following files:
+- appwallet.hive
+- appwallet.lock
+- cachemanager.hive
+- cachemanager.lock
+- contacts.hive
+- contacts.lock
+- messengerdiscussion.hive
+- messengerdiscussion.lock
+- _preferencesbox.hive
+- _preferencesbox.lock
+- _vaultbox.hive
+- _vaultbox.lock
+
+In the directories according to your platform:
+- macOS: /Users/{user}/Library/Containers/{YourAppName}/Data/Documents/
+- Linux: /home/{user}/.local/share/{YourAppName}/
+- Windows: C:\Users{user}\AppData\Roaming{YourAppOrganization}\
+
 
