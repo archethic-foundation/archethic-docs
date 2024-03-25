@@ -1,18 +1,15 @@
 ---
-id: dex
-title: Archethic's DEX
+id: aeSwap Documentation
+title: Introduction
+sidebar_label: Introduction
+sidebar_position: 1
 ---
 
-:::caution Testnet's only
-The current version of Archethic's DEX is only available on the testnet.
-You can experiment and start swapping your assets on-chain by visiting [dex.testnet.archethic.net/](https://dex.testnet.archethic.net/)
-:::
+# aeSwap Documentation : Overview
 
-
-
-# aeSwap DEX Documentation
-
-## Overview
+:::caution Testnet's only 
+The current version of Archethic's DEX is only available on the testnet. You can experiment and start swapping your assets on-chain by visiting [dex.testnet.archethic.net](https://dex.testnet.archethic.net/).
+::: 
 
 Welcome to aeSwap, the decentralized exchange (DEX) platform powered by the Archethic blockchain. aeSwap utilizes an Automated Market Maker (AMM) model to facilitate seamless swapping of assets, liquidity provision, and access to yield farming opportunities for users. Designed with security, low transaction fees, and a high-quality user experience in mind, aeSwap represents a cornerstone of the Archethic decentralized finance (DeFi) ecosystem.
 
@@ -28,12 +25,4 @@ aeSwap is currently available on the Archethic testnet, allowing users to experi
 - **Compatibility**: Desktop versions of the Archethic wallet (macOS, Linux, Windows).
 
 This document aims to provide a comprehensive guide to using aeSwap, including an introduction to the necessary concepts, step-by-step guides for interacting with the platform, and technical references for deeper integration and development purposes.
-
----
-
-### Disclaimer
-:::caution Testnet's only:::  
-The current version of Archethic's DEX is only available on the testnet. You can experiment and start swapping your assets on-chain by visiting [dex.testnet.archethic.net](https://dex.testnet.archethic.net/).
-
----
 
