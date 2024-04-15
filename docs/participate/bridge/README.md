@@ -1,6 +1,6 @@
 ---
 id: bridge
-title: Archethic's bridge
+title: Archethic Bridge (aeBridge)
 ---
 
 Archethic has developed a decentralized and P2P bridge to facilitate the exchange of your UCO ERC20 tokens with other blockchains (e.g., Ethereum, Polygon, BSC) and to allow for a simple and secure exchange of assets in the most atomic way.

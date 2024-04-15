@@ -1,11 +1,12 @@
 ---
 title: Swap
+id: swap
 sidebar_label: Swap
 ---
 
 # Swapping Your Tokens
 
-The DEX process involves multiple steps:
+aeSwap involves multiple steps:
 
 1. Inputting information to initiate the swap
 2. Confirming the entered details
@@ -24,7 +25,7 @@ The DEX process involves multiple steps:
 **Slippage Tolerance Configuration**: To manage the impact of price fluctuations during your transaction, click on the wheel icon next to "slippage tolerance." Slippage occurs when the price at which your transaction is executed differs from the price when you submitted it. Adjusting your slippage tolerance allows you to control the maximum price variation you're willing to accept.
 
 **Transaction Details**: Once you've set the amounts, the system will display information about your transaction:
-- **Fees**: Displayed prominently, this includes the fees charged by liquidity providers for facilitating the swap, as well as any operating costs associated with using the Archethic blockchain. These fees are integral to the transaction cost and contribute to the rewards for liquidity providers.
+- **Fees**: Displayed prominently, this includes the fees charged by liquidity providers for facilitating the swap, as well as any operating costs associated with using the Archethic Public Blockchain. These fees are integral to the transaction cost and contribute to the rewards for liquidity providers.
 - **Price Impact**: The system calculates and shows the price impact of your transaction, which is the effect your trade will have on the pool's price for the token pair. The price impact is a crucial metric for understanding how the size of your transaction relative to the pool's liquidity can alter the price of the tokens you are trading. A significant transaction in a pool with limited liquidity can lead to a higher price impact.
 :::info
 If the price impact exceeds certain thresholds (greater than 1% or 5%), the system issues a warning. This is to alert you that your transaction could significantly alter market prices, potentially leading to less favorable trade conditions.
@@ -41,7 +42,7 @@ Before swapping, the system performs a vital check to ensure:
 - **Token Availability**: Verifies that the necessary token to swap is available in your wallet.
 
 :::info
-When swapping involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
+When swapping involving UCO (the native token of the Archethic Public Blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
 
 ## Step 2: Finalizing swap: Confirmation and Validation Steps
