@@ -1,7 +1,7 @@
 ---
-title: Liquidiy Pool
+title: Liquidity Pool
 id: liquidity_pool
-sidebar_label: Liquidiy Pool
+sidebar_label: Liquidity Pool
 ---
 
 
