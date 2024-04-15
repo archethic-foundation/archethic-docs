@@ -1,5 +1,6 @@
 ---
 title: Liquidiy Pool
+id: liquidity_pool
 sidebar_label: Liquidiy Pool
 ---
 
@@ -23,7 +24,7 @@ Before creating a liquidity pool, the system conducts several checks to ensure c
 - **Liquidity Requirements**: Confirms that your Archethic wallet holds a sufficient quantity of the tokens intended for liquidity provision.
 
 :::info
-When creating a pool involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with pool creation and liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
+When creating a pool involving UCO (the native token of the Archethic Public Blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with pool creation and liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
 
 ---
@@ -110,7 +111,7 @@ Before adding liquidity, the system performs a vital check to ensure:
 - **Token Availability**: Verifies that the necessary tokens are available in your wallet for the liquidity addition.
 
 :::info
-When adding liquidity involving UCO (the native token of the Archethic blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
+When adding liquidity involving UCO (the native token of the Archethic Public Blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
 
 ## Step 2: Finalizing Liquidity Addition: Confirmation and Validation Steps

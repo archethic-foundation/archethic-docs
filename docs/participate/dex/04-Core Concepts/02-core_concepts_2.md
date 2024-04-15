@@ -1,5 +1,6 @@
 ---
 title: Financials, Fees, APR
+id: core_concepts_2
 sidebar_label: Financials, Fees, APR
 ---
 

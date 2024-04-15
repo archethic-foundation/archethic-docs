@@ -1,6 +1,6 @@
 ---
 id: aeweb
-title: Archethic Web (AEWeb)
+title: Archethic Web (aeHosting)
 ---
 
 Archethic has developed a new solution to host websites on a decentralized network to **avoid censorship**, **increase security** and **have high-availability and resiliency**.

@@ -1,13 +1,10 @@
 ---
-title: Usage
-sidebar_label: Usage
+title: Tutorial
+id: tutorial
+sidebar_label: Tutorial
 ---
 
 # aeSwap - Tutorial
-
-:::info
-Please note that aeSwap is currently available exclusively on the testnet.
-:::
 
 :::info
 aeSwap is a web application accessible through internet browsers and is compatible only with desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
@@ -21,7 +18,10 @@ Ensure you have the appropriate desktop version of the Archethic wallet installe
 For optimal performance, use the latest version of your internet browser and keep your desktop wallet updated.
 :::
 
-**Access:** [https://dex.testnet.archethic.net](https://dex.testnet.archethic.net)  
+**Access:**
+- **Mainnet**: [https://dex.archethic.net](https://dex.archethic.net)
+- **Testnet**: If you'd like to test the application or take advantage of the latest features under development, you can safely use the application in the testnet: [https://dex.testnet.archethic.net](https://dex.testnet.archethic.net)
+
 **Source code:** [https://github.com/archethic-foundation/dex](https://github.com/archethic-foundation/dex)
 
 This Flutter-built web application enables swapping assets on-chain, adding liquidity, and accessing yield farming.
