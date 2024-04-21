@@ -36,4 +36,4 @@ aeSwap leverages the unique features of the Archethic Public Blockchain to provi
 This document aims to provide a comprehensive guide to using aeSwap, including an introduction to the necessary concepts, step-by-step guides for interacting with the platform, and technical references for deeper integration and development purposes.
 
 ## FAQ
-For further information, please refer to the [FAQ](/FAQ/bridge-2-ways).
+For further information, please refer to the [FAQ](/FAQ/dex).
