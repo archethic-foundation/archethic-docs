@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[6112],{95901:e=>{e.exports=JSON.parse('{"title":"Usage","slug":"/category/usage-1","permalink":"/category/usage-1","navigation":{"previous":{"title":"Archethic Bridge (aeBridge)","permalink":"/participate/bridge/"},"next":{"title":"aeBridge","permalink":"/participate/bridge/usage/bridge-front"}}}')}}]);
