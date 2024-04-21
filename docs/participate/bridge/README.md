@@ -36,12 +36,6 @@ Funding the Safety Module involves deducting a fee from each transfer originatin
 
 The Safety Module is represented by a multisignature wallet managed by the bridge's governance.
 
-
-## Usage
-
-TODO
-
-
 ## Specifics
 
 ### EVM to Archethic
@@ -50,7 +44,7 @@ The process begins with a secret held by a client (in this case, the bridge's dA
 
 The user deploys an HTLC smart contract on the EVM blockchain through the bridge's EVM pool.
 
- This pool ensures the capacity of the swap's initiator, fee distribution (see [see Safety Module](#safety-module)), lock time period, and the recipient's address for the assets to be bridged.
+ This pool ensures the capacity of the swap's initiator, fee distribution ([see Safety Module](#safety-module)), lock time period, and the recipient's address for the assets to be bridged.
 
 Similarly, the user must deploy a contract on Archethic under the same conditions while specifying the recipient wallet to receive the funds. 
 

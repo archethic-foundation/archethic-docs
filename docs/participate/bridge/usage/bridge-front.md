@@ -1,12 +1,12 @@
 ---
 id: bridge-front
 title: Bridge - Application Front End
-sidebar_label: Bridge Front End
+sidebar_label: aeBridge
 sidebar_position: 4
 ---
 
 
-# Bridge Front end - Tutorial
+# aeBridge - Tutorial
 
 :::info
 The Archethic Bridge application is exclusively available as a web application accessible through internet browsers.
@@ -37,7 +37,7 @@ Before proceeding, familiarize yourself with [Archethic's Bridge Key Concepts](/
 
 ## Welcome Screen
 
-Upon accessing the Archethic Bridge application, you are greeted with a welcome screen. To begin, click on the 'Bridge' button.
+Upon accessing aeBridge, you are greeted with a welcome screen. To begin, click on the 'Bridge' button.
 
 ![Welcome Screen](/img/tutorial/Bridge-2-Welcome.png)  
 ![Bridge Button](/img/tutorial/Bridge-2-Bridge.png)
@@ -88,6 +88,12 @@ Post-selection, a field appears for token selection from available options.
 
 ![Token Selection](/img/tutorial/Bridge-2-token-Selection.png)
 
+Next, enter the following information:
+- The destination address that will receive the bridged tokens (by default, the connected wallet address is filled in)
+- The amount you wish to bridge (before fees are deducted).
+
+![Amount fill](/img/tutorial/Bridge-2-Amount-fill.png)
+
 ### Step 2: Confirming Details
 
 On the confirmation screen, review:
@@ -112,6 +118,10 @@ In the Archethic wallet, confirmation prompts automatically appear when necessar
 
 ![Archethic Wallet Confirmation](/img/tutorial/Bridge-2-AEWallet-confirm.png)
 
+After some validations and a few seconds of waiting, a message will inform you that the transfer has completed successfully, and the bridged amount received in your wallet will be displayed
+
+![Archethic Wallet Confirmation](/img/tutorial/Bridge-2-Transfer-finish.png)
+
 :::caution
 The transfer process halts if a transaction is declined or due to insufficient funds. However, it can be resumed later.
 :::
@@ -130,6 +140,7 @@ View transfer history, successful or otherwise, through the application's local 
 
 :::caution
 This history is local to your device. Access is not available on other devices.
+And if you clear your browser's cache, this list will be emptied.
 :::
 
 ![History List](/img/tutorial/Bridge-2-History-list.png)
@@ -154,14 +165,21 @@ This history is local to your device. Access is not available on other devices.
 
 Retrieve your funds through the refund feature.
 
-:::note
-Manual refunding is unavailable for Archethic-blocked funds, as it is automatic.
-:::
-
 ![Refund Form](/img/tutorial/Bridge-2-Refund-Form.png)
+
+To retrieve your funds, you must wait 2 hours for the tokens to be released.
+Additionally, you must always use the address of the source blockchain.
+
+![Refund Process](/img/tutorial/Bridge-2-Refund-Wait.png)
 
 Upon wallet connection and address confirmation, refund eligibility and amount are displayed. Validate the refund to receive your funds, minus transaction fees.
 
-![Refund Process](/img/tutorial/Bridge-2-Refund-Wait.png)
+![Refund Available](/img/tutorial/Bridge-2-Refund-Available.png)
+
+Once the refund has been processed, you can find your funds in your wallet.
+
+![Refund Ok](/img/tutorial/Bridge-2-Refund-Ok.png)
+
+
 
 ---
