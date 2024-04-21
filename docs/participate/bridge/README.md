@@ -77,3 +77,13 @@ The remaining step is to reveal the secret. The user asks the Archethic's pool t
 With the secret revealed, the user can also reveal the secret on the EVM HTLC and provide the signature from Archethic's pool, unlocking the assets to the user's wallet registered within the contract.
 
 This process ensures that both counterparties receive their funds, achieving parity in the bridged assets.
+
+
+## How to access
+- **URL**: [https://bridge.archethic.net](https://bridge.archethic.net)
+- If you'd like to test the application or take advantage of the latest features under development, you can safely use the application in the testnet: [https://bridge.testnet.archethic.net](https://bridge.testnet.archethic.net) 
+
+This document aims to provide a comprehensive guide to using aeBridge, including an introduction to the necessary concepts, step-by-step guides for interacting with the platform, and technical references for deeper integration and development purposes.
+
+## FAQ
+For further information, please refer to the [FAQ](/FAQ/bridge-2-ways).

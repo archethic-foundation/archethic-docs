@@ -4,7 +4,7 @@ id: swap
 sidebar_label: Swap
 ---
 
-# Swapping Your Tokens
+## Swapping Your Tokens
 
 aeSwap involves multiple steps:
 
@@ -12,7 +12,7 @@ aeSwap involves multiple steps:
 2. Confirming the entered details
 3. Executing the swap, with progress tracking and transaction signing in the Archethic wallet
 
-## Step 1: Swap - Essential Information
+### Step 1: Swap - Essential Information
 
 ![Swap form](/img/tutorial/aeSwap/aeSwap-Swap-Form.png)
 
@@ -36,7 +36,7 @@ If the price impact exceeds certain thresholds (greater than 1% or 5%), the syst
 
 **Swap**: Click the "Swap" button to finalize your swap. This action initiates the transaction and swaps your tokens.
 
-### Pre-transaction Validations
+#### Pre-transaction Validations
 
 Before swapping, the system performs a vital check to ensure:
 - **Token Availability**: Verifies that the necessary token to swap is available in your wallet.
@@ -45,7 +45,7 @@ Before swapping, the system performs a vital check to ensure:
 When swapping involving UCO (the native token of the Archethic Public Blockchain), the system automatically calculates and reserves the necessary amount for transaction fees associated with liquidity addition. As a result, the maximum amount of UCO that can be allocated is less than your total UCO balance to accommodate these costs.
 :::
 
-## Step 2: Finalizing swap: Confirmation and Validation Steps
+### Step 2: Finalizing swap: Confirmation and Validation Steps
 
 After you submit the swap form by clicking the "Swap" button, you will be directed to a confirmation screen. This screen serves a critical role in the swap process, enabling you to:
 
@@ -57,7 +57,7 @@ If the details align with your intentions and you are content with the proposed 
 
 ![Swap confirm](/img/tutorial/aeSwap/aeSwap-Swap-Confirm.png)
 
-### Wallet Validations for Swap Transaction
+#### Wallet Validations for Swap Transaction
 
 **Transaction Confirmation**: You will need to approve 1 transaction.
 
