@@ -61,3 +61,16 @@ Parameters:
 - `hash` the hash to sign
 
 Return a signature of the given `hash`.
+
+### decrypt_with_storage_nonce/1
+
+```elixir
+ciphertext = 0x374C7527733556
+Crypto.decrypt_with_storage_nonce(ciphertext) # Clear text
+```
+
+Parameters:
+
+- `ciphertext` The encrypted data to decrypt
+
+Return the cleartext out from the decryption algorithm
