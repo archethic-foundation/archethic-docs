@@ -1,6 +1,6 @@
 ---
 id: aeweb
-title: AEWeb
+title: aeHosting
 ---
 
 ## General 

@@ -1,20 +1,26 @@
 ---
 id: bridge-2-ways
-title: Archethic Bridge 2-ways
+title: aeBridge
 ---
 
 ## General 
 
 ### What is Archethic Bridge two-ways?
-The Archethic Bridge two-ways is a decentralized, peer-to-peer bridge that enables the seamless exchange of UCO ERC20 tokens and other major cryptocurrencies like ETH, MATIC, and BNB between the Archethic blockchain and various other blockchains, including Ethereum, Polygon, and BSC. This functionality allows for the transfer of these assets into their equivalent forms on Archethic, such as aeETH, aeMATIC, and aeBNB, providing a secure and straightforward method for exchanging assets. The bridge utilizes atomic swap technology, specifically Hash Time Lock Contracts (HTLC), to facilitate secure and intermediary-free transactions. Moreover, it incorporates Archethic's unique cross-chain verification technique, enhancing the security and decentralization of these exchanges. This two-way bridge significantly expands the interoperability between Archethic and other blockchain networks, allowing for greater flexibility and integration within the broader blockchain ecosystem.
+The Archethic Bridge two-ways is a decentralized, peer-to-peer bridge that enables the seamless exchange of UCO ERC20 tokens and other major cryptocurrencies like ETH, MATIC, and BNB between the Archethic blockchain and various other blockchains, including Ethereum, Polygon, and BSC. 
+
+This functionality allows for the transfer of these assets into their equivalent forms on Archethic, such as aeETH, aeMATIC, and aeBNB, providing a secure and straightforward method for exchanging assets. The bridge utilizes atomic swap technology, specifically Hash Time Lock Contracts (HTLC), to facilitate secure and intermediary-free transactions. 
+
+Moreover, it incorporates Archethic's unique cross-chain verification technique, enhancing the security and decentralization of these exchanges.
+
+This two-way bridge significantly expands the interoperability between Archethic and other blockchain networks, allowing for greater flexibility and integration within the broader blockchain ecosystem.
 
 ### How to access the Archethic Bridge ?
-You can access the bridge at : [https://bridge.testnet.archethic.net](https://bridge.testnet.archethic.net)
+You can access the bridge at : [https://bridge.archethic.net](https://bridge.archethic.net)
 
 ### Which blockchain is better to bridge my UCOs?
 
-Using the 3 blockchains, the result will be the same, but fees are not the same between ETH/MATIC/BSC.
-MATIC has the lowest fees.
+Using the 3 blockchains, the result will be the same, but fees are not the same between Ethereum, Polygon (PoS) and BSC.
+Polygon has the lowest fees.
 
 ![bridge-blockchains](/img/faq/bridge/Blockchains.svg)
 
@@ -22,7 +28,7 @@ MATIC has the lowest fees.
 The Archethic Bridge currently supports bridging between the Archethic blockchain and various EVM (Ethereum Virtual Machine) compatible blockchains.
 
 ### Is the Archethic Bridge available on mobile devices?
-No, the Archethic Bridge application is designed exclusively for desktop use and is compatible with macOS, Linux, and Windows operating systems.
+No, the Archethic Bridge application is designed exclusively for the moment for desktop use and is compatible with macOS, Linux, and Windows operating systems.
 
 ### What is an EVM wallet?
 An EVM (Ethereum Virtual Machine) wallet is a digital wallet designed to interact with blockchains that are compatible with the Ethereum Virtual Machine. EVM wallets can store, send, and receive Ether (ETH) and other EVM-compatible tokens, execute smart contracts, and interact with decentralized applications (dApps) on EVM-compatible networks.
@@ -81,11 +87,7 @@ Chain ID: 97<br/>
 Symbol: tBNB<br/>
 Explorer URL: [https://testnet.bscscan.com/](https://testnet.bscscan.com/)<br/>
 
-Polygon Mumbai Testnet:<br/>
-URL RPC: Choose a RPC server address: [https://chainlist.org/chain/80001](https://chainlist.org/chain/80001)<br/>
-Chain ID: 80001<br/>
-Symbol: MATIC<br/>
-Explorer URL: [https://mumbai.polygonscan.com/](https://mumbai.polygonscan.com/)<br/>
+Polygon Mumbai Testnet no longer supported. Amoy will be later
 
 ### How can I buy $UCO after receiving $ETH, $MATIC, or $BNB?
 
@@ -94,13 +96,13 @@ Remember to set the slippage according to the amount's impact on liquidity.
 Here's how you can do it for each network:
 
 ETH : [https://app.uniswap.org/](https://app.uniswap.org/)<br/>
-$UCO contract address: 0x8a3d77e9d6968b780564936d15B09805827C21fa<br/>
+ERC20 UCO contract address: 0x8a3d77e9d6968b780564936d15B09805827C21fa<br/>
 
 Polygon: [https://app.uniswap.org/](https://app.uniswap.org/)<br/>
-$UCO contract address: 0x3c720206bfacb2d16fa3ac0ed87d2048dbc401fc<br/>
+ERC20 UCO contract address: 0x3c720206bfacb2d16fa3ac0ed87d2048dbc401fc<br/>
 
 BSC: [https://pancakeswap.finance/liquidity?chain=bscTestnet](https://pancakeswap.finance/liquidity?chain=bscTestnet)<br/>
-$UCO contract address: 0xb001f1e7c8bda414ac7cf7ecba5469fe8d24b6de<br/>
+ERC20 UCO contract address: 0xb001f1e7c8bda414ac7cf7ecba5469fe8d24b6de<br/>
 
 Ensure that you connect your wallet to the respective DEX platform and follow the instructions to make the swap.
 
@@ -113,9 +115,12 @@ During the delay of the acknowledgment, you should wait for the end of the durat
 You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1).
 
 ### Can I help the developers analyze the problems?
-
 You can help developers improve the application by submitting information that describes the state of the application. 
 To do this, you can copy/paste your transaction from your local history in the application.
+
+### While a bridge from Archethic to EVM Blockchain, I have an error '1405'
+First, rest assured that you will not lose your funds initiated in the bridging process.
+Note the address of the Archethic contract indicated under the error message (or available in your local history) and contact Archethic support via social media (Telegram or Discord) who will resolve the issue and help you complete your bridge.
 
 ---
 
