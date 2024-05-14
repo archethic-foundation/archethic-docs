@@ -1,6 +1,6 @@
 ---
 id: wallet
-title: Wallet
+title: aeWallet
 ---
 
 ## General 
