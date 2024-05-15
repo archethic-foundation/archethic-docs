@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[4560],{59222:e=>{e.exports=JSON.parse('{"title":"Participate","slug":"/category/participate","permalink":"/category/participate","navigation":{"previous":{"title":"Tokens","permalink":"/learn/token"},"next":{"title":"Archethic Web (aeHosting)","permalink":"/participate/aeweb/"}}}')}}]);
