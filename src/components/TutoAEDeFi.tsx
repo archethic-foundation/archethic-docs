@@ -309,7 +309,7 @@ function StepSix() {
                     <li>Click on "Bridge" to initiate the transfer</li>
                     <li><b>Note: Do not hesitate to make a first trial with a small amount.</b></li>
                 </ul>
-                <img src="/img/tutorial/Tuto-DeFi-2.png" />
+                <img src="/img/tutorial/Tuto-DeFi-4.png" />
                 <li>Once the transfer is initiated, follow the guidelines: The bridge will require several steps, several minutes, and multiple authorizations (signatures) to be completed sequentially in your self-hosted EVM Wallet and in your Archethic Wallet.</li>
                 <li>Once the bridge is completed, you will receive a success message.</li>
                 <li>If the amount of aeETH does not immediately appear in your Archethic Wallet, do not hesitate to click on the "Refresh" button</li>
