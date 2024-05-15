@@ -20,10 +20,10 @@ If you experience issues with other browsers, please inform our teams via social
 All relevant links can be found on the Archethic website. 
 Thank you for your assistance.
 
-### Why do I always end up with a dust of tokens when I create a pool, add liquidity, and then drain the pool?
-To avoid issues associated with extremely small amounts of liquidity tokens that could cause rounding and precision errors in calculations, the pool creation smart contract burns a small quantity of the first issued liquidity tokens. This means that these tokens are removed from circulation and sent to a contract address from which they cannot be retrieved.
+### Why is a small quantity of liquidity pool shares removed when the first liquidity is added to a pool on Archethic?
+During the initial creation of liquidity in a pool on Archethic, a small quantity of pool shares (exactly 10 shares on a scale of 100 million per share) is removed to prevent manipulations and rounding issues. This process involves the "burning" (destruction) of these shares by removing them from circulation. When a pool is created, we subtract 10 shares from what would normally be minted (created) for the user. 
 
-This step of burning minimal liquidity is important because it helps to normalize the values in the pool from the start and prevents manipulation of the pool with very small amounts of liquidity, which could otherwise allow malicious actors to manipulate prices with a very small amount of money.
+This prevents potential attacks where someone might try to manipulate the value of the pool shares with very small amounts of liquidity, thus making participation more secure and equitable for all future liquidity providers. This mechanism ensures that the shares remain accessible even if the value of the pool increases significantly.
 
 ## Wallet
 
