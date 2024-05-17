@@ -122,5 +122,16 @@ To do this, you can copy/paste your transaction from your local history in the a
 First, rest assured that you will not lose your funds initiated in the bridging process.
 Note the address of the Archethic contract indicated under the error message (or available in your local history) and contact Archethic support via social media (Telegram or Discord) who will resolve the issue and help you complete your bridge.
 
+### The bridge does not recognize my EVM wallet. What should I do?
+
+If your EVM wallet is not recognized by the bridge, follow these steps to resolve the issue:
+
+1) **Check your wallet version**: Make sure you are using the latest version of your EVM wallet. Update if necessary.<br/>
+2) **Open your wallet**: Ensure that your EVM wallet is open and that you have entered your password.<br/>
+3) **Wallet conflicts**: Verify that you do not have multiple EVM wallets active at the same time. Having several wallets open can cause conflicts.<br/>
+4) **Deactivate other wallets**: Deactivate all open EVM wallets except the one you want to use. This ensures that only the desired wallet is active, avoiding any conflicts.<br/>
+
+By following these steps, you should be able to resolve the issue of the bridge not recognizing your EVM wallet.
+
 ---
 
