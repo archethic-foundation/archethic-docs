@@ -31,9 +31,10 @@ The Smart Contract's chain must define a token.
 ```elixir
 @version 1
 
-condition triggered_by: transaction, on: buyToken(recipient_address), as: [
-    uco_transfers: check_amount(transaction.uco_movements)
-]
+condition triggered_by: transaction, on: buyToken(recipient_address) do
+  transfered_amount = Map.get(transaction.uco_movements, contract.address)
+  transfered_amount != nil && transfered_amount > 0
+end
 
 actions triggered_by: transaction, on: buyToken(recipient_address) do
     transfers = get_transfered_amount()
@@ -60,11 +61,6 @@ end
 
 fun get_transfered_amount() do
   Map.get(transaction.uco_transfers, contract.address)
-end
-
-fun check_amount(transfers) do
-  transfered_amount = Map.get(transfers, contract.address)
-  transfered_amount != nil && transfered_amount > 0
 end
 
 fun token_address() do
@@ -103,20 +99,18 @@ A public function is available to be able to easily query the number of votes in
 
 ```elixir
 @version 1
-condition triggered_by: transaction, on: vote(candidate), as: [
-    content: (
-      # check incoming vote
-      valid_candidate? = List.in?(["Miss Scarlett", "Colonel Mustard"], candidate)
+condition triggered_by: transaction, on: vote(candidate) do
+    # check incoming vote
+    valid_candidate? = List.in?(["Miss Scarlett", "Colonel Mustard"], candidate)
 
-      # check incoming voter
-      valid_voter? = !List.in?(
-        State.get("voters_genesis_addresses", []),
-        Chain.get_genesis_address(transaction.address)
-      )
-
-      valid_candidate? && valid_voter?
+    # check incoming voter
+    valid_voter? = !List.in?(
+      State.get("voters_genesis_addresses", []),
+      Chain.get_genesis_address(transaction.address)
     )
-]
+
+    valid_candidate? && valid_voter?
+end
 
 actions triggered_by: transaction, on: vote(candidate) do
     scarlett_votes = State.get("Miss Scarlett", 0)

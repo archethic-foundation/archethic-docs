@@ -11,7 +11,7 @@ To trigger a SC execution, the incoming transaction must add the SC address in t
 
 
 :::tip
-This allows to activate a SC without sending funds to it, or to send funds to it without activating the code execution. 
+This allows to activate a SC without sending funds to it, or to send funds to it without activating the code execution.
 
 Because the `recipients` field is a list, you can trigger multiple contracts in the same transaction :wink:
 :::
@@ -23,9 +23,9 @@ In this scenario:
 
 ```elixir
 @version 1
-condition triggered_by: transaction, as: [
+condition triggered_by: transaction do
     ...
-]
+end
 
 actions triggered_by: transaction do
     ...
@@ -44,9 +44,9 @@ In this scenario:
 
 ```elixir
 @version 1
-condition triggered_by: transaction, on: vote_for_class_president(firstname, lastname), as: [
+condition triggered_by: transaction, on: vote_for_class_president(firstname, lastname) do
     ...
-]
+end
 
 actions triggered_by: transaction, on: vote_for_class_president(firstname, lastname) do
     ...
@@ -104,9 +104,9 @@ In this scenario:
 
 ```elixir
 @version 1
-condition triggered_by: oracle, as: [
+condition triggered_by: oracle do
   # use transaction.content to make sure the oracle has the data you require
-]
+end
 actions triggered_by: oracle do
   # do something with transaction.content
 end
@@ -176,6 +176,20 @@ actions triggered_by: datetime, at:  1693519200 do
 end
 
 actions triggered_by: datetime, at:  1693605600 do
+    ...
+end
+```
+
+DON'T:
+
+```elixir
+@version 1
+
+actions triggered_by: transaction, on: lock(x, y) do
+    ...
+end
+
+actions triggered_by: transaction, on: lock(x, y) do
     ...
 end
 ```
