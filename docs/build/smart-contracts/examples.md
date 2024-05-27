@@ -100,16 +100,21 @@ A public function is available to be able to easily query the number of votes in
 ```elixir
 @version 1
 condition triggered_by: transaction, on: vote(candidate) do
-    # check incoming vote
-    valid_candidate? = List.in?(["Miss Scarlett", "Colonel Mustard"], candidate)
+    if !List.in?(["Miss Scarlett", "Colonel Mustard"], candidate) do
+      throw code: 1, message: "unknown candidate", data: candidate
+    end
 
-    # check incoming voter
-    valid_voter? = !List.in?(
-      State.get("voters_genesis_addresses", []),
-      Chain.get_genesis_address(transaction.address)
-    )
+    voters_genesis_addresses = State.get("voters_genesis_addresses", [])
+    voter_genesis_address = Chain.get_genesis_address(transaction.address)
 
-    valid_candidate? && valid_voter?
+    if List.in?(voters_genesis_addresses, voter_genesis_address) do
+      throw code: 2, message: "already voted", data: [
+        address: transaction.address,
+        genesis: voter_genesis_address
+      ]
+    end
+
+    true
 end
 
 actions triggered_by: transaction, on: vote(candidate) do

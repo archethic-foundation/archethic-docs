@@ -59,7 +59,7 @@ transaction.address == 0x000ABCD123 # no quotes!
 
 So whenever you write a hexadecimal value by hand, prefix it with `0x`.
 
-### ASCII character in string
+## ASCII character in string
 
 If you need to use some specific character in a string, you can use their hexadecimal representation by prefixing the hexadecimal with `\x`
 
@@ -243,6 +243,24 @@ The parenthesis are actually optional! `Module.function arg1, arg2` will work as
 :::
 
 To see the list of functions available in the Smart Contract Language, check the [Library page](/build/smart-contracts/language/library).
+
+## Errors
+
+We introduced in v1.5.0 the `throw` keyword. It's useful to provide insightful errors to the end users and helps the dApp developers interacting with contracts.
+
+
+```elixir
+if Crypto.hash(secret) != State.get("secret_hash") do
+  throw code: 1, message: "invalid secret", data: secret
+end
+```
+
+
+The `throw` takes a map with the following keys:
+- `code`: an integer of your choice that dApp developers may use to react on a specific error. **It should be uniquely identifiable within the contract.**
+- `message`: a string describing the error.
+- `data` _(opt)_: some context relevant to the error (can be any type).
+
 
 ## Reserved keywords
 
