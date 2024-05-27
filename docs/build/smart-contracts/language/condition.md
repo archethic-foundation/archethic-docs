@@ -48,6 +48,10 @@ condition oracle: [
 ]
 ```
 
+:::tip throw keyword
+The [`throw`](/build/smart-contracts/language/#errors) keyword is another way to reject a condition. It stops the evaluation of the condition and rejects it with a `code`, a `message` and optionaly some `data`.
+:::
+
 ## Boolean expressions
 
 It is a map where the keys are the [transaction's fields](/build/smart-contracts/language/actions#appendix-1-the-transaction-map), and the values are expressions that must return a boolean or a value.
@@ -205,6 +209,21 @@ condition triggered_by: transaction, on: withdraw(secret) do
   valid_secret = Crypto.hash(secret) == State.get("secret_hash")
   valid_time = Time.now() < State.get("lock_time")
   valid_secret && valid_time
+end
+```
+
+Same as previous but using throw:
+```elixir
+condition triggered_by: transaction, on: withdraw(secret) do
+  if Crypto.hash(secret) != State.get("secret_hash") do
+    throw code: 1, message: "invalid secret"
+  end
+
+  if Time.now() > State.get("lock_time") do
+    throw code: 2, message: "time expired"
+  end
+
+  true
 end
 ```
 
