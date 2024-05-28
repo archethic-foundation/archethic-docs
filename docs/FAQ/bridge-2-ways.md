@@ -3,12 +3,12 @@ id: bridge-2-ways
 title: aeBridge
 ---
 
-## General 
+## General
 
 ### What is Archethic Bridge two-ways?
-The Archethic Bridge two-ways is a decentralized, peer-to-peer bridge that enables the seamless exchange of UCO ERC20 tokens and other major cryptocurrencies like ETH, MATIC, and BNB between the Archethic blockchain and various other blockchains, including Ethereum, Polygon, and BSC. 
+The Archethic Bridge two-ways is a decentralized, peer-to-peer bridge that enables the seamless exchange of UCO ERC20 tokens and other major cryptocurrencies like ETH, MATIC, and BNB between the Archethic blockchain and various other blockchains, including Ethereum, Polygon, and BSC.
 
-This functionality allows for the transfer of these assets into their equivalent forms on Archethic, such as aeETH, aeMATIC, and aeBNB, providing a secure and straightforward method for exchanging assets. The bridge utilizes atomic swap technology, specifically Hash Time Lock Contracts (HTLC), to facilitate secure and intermediary-free transactions. 
+This functionality allows for the transfer of these assets into their equivalent forms on Archethic, such as aeETH, aeMATIC, and aeBNB, providing a secure and straightforward method for exchanging assets. The bridge utilizes atomic swap technology, specifically Hash Time Lock Contracts (HTLC), to facilitate secure and intermediary-free transactions.
 
 Moreover, it incorporates Archethic's unique cross-chain verification technique, enhancing the security and decentralization of these exchanges.
 
@@ -46,9 +46,6 @@ HTLC stands for Hash Time Lock Contract. In Archethic's bridge, it is a type of 
 
 ### How does Archethic's cross-chain verification work?
 Archethic's cross-chain verification enhances atomic swaps by allowing data retrieval outside of the blockchain. This makes the process fully decentralized and strengthens the security model. Archethic's nodes can verify transaction status on other chains, like EVM blockchains, establishing a strong consensus on the status of a swap.
-
-### What is the Safety Module in Archethic's bridge?
-The Safety Module in Archethic's bridge is a reserve of tokens designed to mitigate risks associated with asset bridging. It addresses potential deficiencies and disruptions in bridge operations by providing a token reserve that matches the amount in each pool at launch. This module is funded by fees from transfers and is managed by a multisignature wallet governed by the bridge's governance.
 
 ## Specifics of Bridging
 
@@ -91,8 +88,8 @@ Polygon Mumbai Testnet no longer supported. Amoy will be later
 
 ### How can I buy $UCO after receiving $ETH, $MATIC, or $BNB?
 
-You will be able to buy some $UCO with $ETH / $MATIC or $BNB using the appropriate decentralized exchange (DEX) for your network. 
-Remember to set the slippage according to the amount's impact on liquidity. 
+You will be able to buy some $UCO with $ETH / $MATIC or $BNB using the appropriate decentralized exchange (DEX) for your network.
+Remember to set the slippage according to the amount's impact on liquidity.
 Here's how you can do it for each network:
 
 ETH : [https://app.uniswap.org/](https://app.uniswap.org/)<br/>
@@ -115,7 +112,7 @@ During the delay of the acknowledgment, you should wait for the end of the durat
 You lose the tokens if the Mainnet address is not your address. Same thing if you do an error in the address (for example a 0 instead of 1).
 
 ### Can I help the developers analyze the problems?
-You can help developers improve the application by submitting information that describes the state of the application. 
+You can help developers improve the application by submitting information that describes the state of the application.
 To do this, you can copy/paste your transaction from your local history in the application.
 
 ### While a bridge from Archethic to EVM Blockchain, I have an error '1405'
@@ -134,4 +131,3 @@ If your EVM wallet is not recognized by the bridge, follow these steps to resolv
 By following these steps, you should be able to resolve the issue of the bridge not recognizing your EVM wallet.
 
 ---
-

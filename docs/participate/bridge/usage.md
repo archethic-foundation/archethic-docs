@@ -1,7 +1,7 @@
 ---
-id: bridge-front
-title: Bridge - Application Front End
-sidebar_label: aeBridge
+id: usage
+title: aeBridge - Usage
+sidebar_label: Usage
 sidebar_position: 4
 ---
 
@@ -39,7 +39,7 @@ Before proceeding, familiarize yourself with [Archethic's Bridge Key Concepts](/
 
 Upon accessing aeBridge, you are greeted with a welcome screen. To begin, click on the 'Bridge' button.
 
-![Welcome Screen](/img/tutorial/Bridge-2-Welcome.png)  
+![Welcome Screen](/img/tutorial/Bridge-2-Welcome.png)
 ![Bridge Button](/img/tutorial/Bridge-2-Bridge.png)
 
 ### Application Menu
