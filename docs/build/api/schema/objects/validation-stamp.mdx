@@ -5,12 +5,37 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 [ValidationStamp] represents the validation performs by the coordinator
@@ -21,10 +46,11 @@ It includes:
 - Signature: Coordinator signature of the stamp
 - Protocol version: Version of the transaction validation protocol
 
+
 ```graphql
 type ValidationStamp {
   ledgerOperations: LedgerOperations
-  proofOfIntegrity: Hash
+  proofOfIntegrity: VersionedHash
   proofOfWork: PublicKey
   protocolVersion: Int
   signature: Hex
@@ -33,29 +59,43 @@ type ValidationStamp {
 ```
 
 
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>ledgerOperations</b></code>](#)<Bullet />[`LedgerOperations`](/build/api/schema/objects/ledger-operations) <Badge class="secondary" text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>ledgerOperations</b></code>](#)<Bullet />[`LedgerOperations`](/build/api/schema/objects/ledger-operations) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfIntegrity</b></code>](#)<Bullet />[`Hash`](/build/api/schema/scalars/hash) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfIntegrity</b></code>](#)<Bullet />[`VersionedHash`](/build/api/schema/scalars/versioned-hash) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfWork</b></code>](#)<Bullet />[`PublicKey`](/build/api/schema/scalars/public-key) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>proofOfWork</b></code>](#)<Bullet />[`PublicKey`](/build/api/schema/scalars/public-key) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>protocolVersion</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>protocolVersion</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>signature</b></code>](#)<Bullet />[`Hex`](/build/api/schema/scalars/hex) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>signature</b></code>](#)<Bullet />[`Hex`](/build/api/schema/scalars/hex) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>ValidationStamp.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
@@ -63,7 +103,5 @@ type ValidationStamp {
 
 ### Member of
 
-[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="secondary" text="object"/>
-
-
+[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="badge badge--secondary" text="object"/>
 

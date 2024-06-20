@@ -5,36 +5,81 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 [TransactionError] represents an error.
+
 
 ```graphql
 type TransactionError {
   address: Address
   context: ErrorContext
-  reason: String
+  error: ErrorDetails
+  reason: String @deprecated
 }
 ```
 
 
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>address</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>address</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>context</b></code>](#)<Bullet />[`ErrorContext`](/build/api/schema/enums/error-context) <Badge class="secondary" text="enum"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>context</b></code>](#)<Bullet />[`ErrorContext`](/build/api/schema/enums/error-context) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>reason</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>error</b></code>](#)<Bullet />[`ErrorDetails`](/build/api/schema/objects/error-details) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionError.<b>reason</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="badge badge--deprecated badge--secondary" text="deprecated"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> :::caution DEPRECATED
+> Field error.message will replace reason
+> :::
+> 
 > 
 > 
 
@@ -42,7 +87,5 @@ type TransactionError {
 
 ### Returned by
 
-[`transactionError`](/build/api/schema/subscriptions/transaction-error)  <Badge class="secondary" text="subscription"/>
-
-
+[`transactionError`](/build/api/schema/subscriptions/transaction-error)  <Badge class="badge badge--secondary" text="subscription"/>
 

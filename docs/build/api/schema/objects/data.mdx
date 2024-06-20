@@ -5,12 +5,37 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 [TransactionData] represents the data section for every transaction.
@@ -21,8 +46,10 @@ It includes:
 - Ownership: authorization/delegations containing list of secrets and their authorized public keys to proof the ownership
 - Recipients: For non asset transfers, the list of recipients of the transaction (e.g Smart contract interactions)
 
+
 ```graphql
 type Data {
+  actionRecipients: [Recipient]
   code: String
   content: Content
   ledger: Ledger
@@ -32,25 +59,43 @@ type Data {
 ```
 
 
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>Data.<b>code</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>Data.<b>actionRecipients</b></code>](#)<Bullet />[`[Recipient]`](/build/api/schema/objects/recipient) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Data.<b>content</b></code>](#)<Bullet />[`Content`](/build/api/schema/scalars/content) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>Data.<b>code</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Data.<b>ledger</b></code>](#)<Bullet />[`Ledger`](/build/api/schema/objects/ledger) <Badge class="secondary" text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>Data.<b>content</b></code>](#)<Bullet />[`Content`](/build/api/schema/scalars/content) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Data.<b>ownerships</b></code>](#)<Bullet />[`[Ownership]`](/build/api/schema/objects/ownership) <Badge class="secondary" text="list"/> <Badge class="secondary" text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>Data.<b>ledger</b></code>](#)<Bullet />[`Ledger`](/build/api/schema/objects/ledger) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Data.<b>recipients</b></code>](#)<Bullet />[`[Address]`](/build/api/schema/scalars/address) <Badge class="secondary" text="list"/> <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>Data.<b>ownerships</b></code>](#)<Bullet />[`[Ownership]`](/build/api/schema/objects/ownership) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Data.<b>recipients</b></code>](#)<Bullet />[`[Address]`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
@@ -58,7 +103,5 @@ type Data {
 
 ### Member of
 
-[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="secondary" text="object"/>
-
-
+[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="badge badge--secondary" text="object"/>
 

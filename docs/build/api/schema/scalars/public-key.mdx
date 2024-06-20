@@ -5,17 +5,43 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 The [PublicKey] scalar type represents a public key.
 The PublicKey appears in a JSON response as Base16 formatted string. The parsed public key will
 be converted to a binary and any invalid address with an invalid algorithm or invalid size will be rejected
+
 
 ```graphql
 scalar PublicKey
@@ -24,9 +50,9 @@ scalar PublicKey
 
 
 
+
+
 ### Member of
 
-[`AuthorizedKey`](/build/api/schema/objects/authorized-key)  <Badge class="secondary" text="object"/><Bullet />[`CrossValidationStamp`](/build/api/schema/objects/cross-validation-stamp)  <Badge class="secondary" text="object"/><Bullet />[`Node`](/build/api/schema/objects/node)  <Badge class="secondary" text="object"/><Bullet />[`SharedSecrets`](/build/api/schema/objects/shared-secrets)  <Badge class="secondary" text="object"/><Bullet />[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="secondary" text="object"/><Bullet />[`ValidationStamp`](/build/api/schema/objects/validation-stamp)  <Badge class="secondary" text="object"/>
-
-
+[`AuthorizedKey`](/build/api/schema/objects/authorized-key)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CrossValidationStamp`](/build/api/schema/objects/cross-validation-stamp)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Node`](/build/api/schema/objects/node)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`SharedSecrets`](/build/api/schema/objects/shared-secrets)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ValidationStamp`](/build/api/schema/objects/validation-stamp)  <Badge class="badge badge--secondary" text="object"/>
 

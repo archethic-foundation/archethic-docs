@@ -1,6 +1,6 @@
 ---
-id: p2-p-availabilities
-title: P2pAvailabilities
+id: error-data
+title: ErrorData
 hide_table_of_contents: false
 ---
 
@@ -38,11 +38,12 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Date returned with the error.
+It could be any type (string, map, list, number or null)
 
 
 ```graphql
-scalar P2pAvailabilities
+scalar ErrorData
 ```
 
 
@@ -52,5 +53,5 @@ scalar P2pAvailabilities
 
 ### Member of
 
-[`BeaconChainSummary`](/build/api/schema/objects/beacon-chain-summary)  <Badge class="badge badge--secondary" text="object"/>
+[`ErrorDetails`](/build/api/schema/objects/error-details)  <Badge class="badge badge--secondary" text="object"/>
 

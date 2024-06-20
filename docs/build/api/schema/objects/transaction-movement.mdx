@@ -5,12 +5,37 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 [TransactionMovement] represents ledger transaction movement
@@ -20,6 +45,7 @@ It includes:
 - Type: UCO/token
 - token address: address of the token if the type is token
 - token id: It is the id for a token which is allocated when the token is minted.
+
 
 ```graphql
 type TransactionMovement {
@@ -32,25 +58,37 @@ type TransactionMovement {
 ```
 
 
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>amount</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>amount</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>to</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>to</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>tokenAddress</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>tokenAddress</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>tokenId</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>tokenId</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>type</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="secondary" text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>TransactionMovement.<b>type</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
 > 
 > 
 
@@ -58,7 +96,5 @@ type TransactionMovement {
 
 ### Member of
 
-[`LedgerOperations`](/build/api/schema/objects/ledger-operations)  <Badge class="secondary" text="object"/>
-
-
+[`LedgerOperations`](/build/api/schema/objects/ledger-operations)  <Badge class="badge badge--secondary" text="object"/>
 

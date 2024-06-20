@@ -1,6 +1,6 @@
 ---
-id: p2-p-availabilities
-title: P2pAvailabilities
+id: error-details
+title: ErrorDetails
 hide_table_of_contents: false
 ---
 
@@ -38,19 +38,43 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Details about the error
 
 
 ```graphql
-scalar P2pAvailabilities
+type ErrorDetails {
+  code: Int
+  data: ErrorData
+  message: String
+}
 ```
 
 
 
 
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ErrorDetails.<b>code</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ErrorDetails.<b>data</b></code>](#)<Bullet />[`ErrorData`](/build/api/schema/scalars/error-data) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ErrorDetails.<b>message</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
 
 
 ### Member of
 
-[`BeaconChainSummary`](/build/api/schema/objects/beacon-chain-summary)  <Badge class="badge badge--secondary" text="object"/>
+[`TransactionError`](/build/api/schema/objects/transaction-error)  <Badge class="badge badge--secondary" text="object"/>
 

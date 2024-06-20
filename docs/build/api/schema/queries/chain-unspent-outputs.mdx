@@ -1,6 +1,6 @@
 ---
-id: transaction-inputs
-title: transactionInputs
+id: chain-unspent-outputs
+title: chainUnspentOutputs
 hide_table_of_contents: false
 ---
 
@@ -38,15 +38,16 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-Query the network to list the transaction inputs from an address
+Query the network to retrieve the unspent output of a chain
+(address should be the genesis address of the chain)
 
 
 ```graphql
-transactionInputs(
+chainUnspentOutputs(
   address: Address!
   limit: PosInteger
-  pagingOffset: NonNegInteger
-): [TransactionInput]
+  pagingOffset: Sha256Hash
+): [UnspentOutput]
 ```
 
 
@@ -54,19 +55,19 @@ transactionInputs(
 
 ### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>transactionInputs.<b>address</b></code>](#)<Bullet />[`Address!`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>chainUnspentOutputs.<b>address</b></code>](#)<Bullet />[`Address!`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>transactionInputs.<b>limit</b></code>](#)<Bullet />[`PosInteger`](/build/api/schema/scalars/pos-integer) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>chainUnspentOutputs.<b>limit</b></code>](#)<Bullet />[`PosInteger`](/build/api/schema/scalars/pos-integer) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>transactionInputs.<b>pagingOffset</b></code>](#)<Bullet />[`NonNegInteger`](/build/api/schema/scalars/non-neg-integer) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>chainUnspentOutputs.<b>pagingOffset</b></code>](#)<Bullet />[`Sha256Hash`](/build/api/schema/scalars/sha-256-hash) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
@@ -74,18 +75,18 @@ transactionInputs(
 
 ### Type
 
-#### [`TransactionInput`](/build/api/schema/objects/transaction-input) <Badge class="badge badge--secondary" text="object"/> 
+#### [`UnspentOutput`](/build/api/schema/objects/unspent-output) <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
-> [TransactionInput] represents the inputs from the transaction
+> [UnspentOutput] represents the remaining unspent output of the transaction.
 > It includes:
 > - From: transaction which send the amount of assets
 > - Amount: asset amount
-> - Type: UCO/token/Call
+> - Type: UCO / token / state
 > - token address: address of the token if the type is token
-> - Spent: determines if the input has been spent
-> - Timestamp: Date time when the inputs was generated
 > - token id: It is the id for a token which is allocated when the token is minted.
+> - Timestamp: Date time when the UTXO created/manipulated
+> - State: It is the state of a smart contract
 > 
 
 

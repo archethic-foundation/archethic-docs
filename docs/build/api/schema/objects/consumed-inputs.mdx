@@ -1,0 +1,124 @@
+---
+id: consumed-inputs
+title: ConsumedInputs
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+[ConsumedInputs] represents the inputs consumed by the transaction
+It includes:
+- From: transaction which send the amount of assets
+- Amount: asset amount
+- Type: UCO / token / state / call
+- token address: address of the token if the type is token
+- token id: It is the id for a token which is allocated when the token is minted.
+- Timestamp: Date time when the UTXO created/manipulated
+- Protocol Version: Version of the UTXO data structure
+- State: It is the state of a smart contract
+
+
+```graphql
+type ConsumedInputs {
+  amount: Int
+  from: Address
+  protocolVersion: Int
+  state: State
+  timestamp: Timestamp
+  tokenAddress: Address
+  tokenId: Int
+  type: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>amount</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>from</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>protocolVersion</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>state</b></code>](#)<Bullet />[`State`](/build/api/schema/scalars/state) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>timestamp</b></code>](#)<Bullet />[`Timestamp`](/build/api/schema/scalars/timestamp) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>tokenAddress</b></code>](#)<Bullet />[`Address`](/build/api/schema/scalars/address) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>tokenId</b></code>](#)<Bullet />[`Int`](/build/api/schema/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConsumedInputs.<b>type</b></code>](#)<Bullet />[`String`](/build/api/schema/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`LedgerOperations`](/build/api/schema/objects/ledger-operations)  <Badge class="badge badge--secondary" text="object"/>
+

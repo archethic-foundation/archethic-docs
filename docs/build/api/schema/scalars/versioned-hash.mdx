@@ -1,6 +1,6 @@
 ---
-id: p2-p-availabilities
-title: P2pAvailabilities
+id: versioned-hash
+title: VersionedHash
 hide_table_of_contents: false
 ---
 
@@ -38,11 +38,14 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+The [Hash] scalar type represents a cryptographic hash used in
+the Archethic network with an identification byte to specify from which algorithm the hash was generated.
+The Hash appears in a JSON response as Base16 formatted string. The parsed hash will
+be converted to a binary and any invalid hash with an invalid algorithm or invalid size will be rejected
 
 
 ```graphql
-scalar P2pAvailabilities
+scalar VersionedHash
 ```
 
 
@@ -52,5 +55,5 @@ scalar P2pAvailabilities
 
 ### Member of
 
-[`BeaconChainSummary`](/build/api/schema/objects/beacon-chain-summary)  <Badge class="badge badge--secondary" text="object"/>
+[`ValidationStamp`](/build/api/schema/objects/validation-stamp)  <Badge class="badge badge--secondary" text="object"/>
 

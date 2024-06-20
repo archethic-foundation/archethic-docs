@@ -5,17 +5,43 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 The [Address] scalar type represents a transaction's address.
 The Address appears in a JSON response as Base16 formatted string. The parsed address will
 be converted to a binary and any invalid address with an invalid algorithm or invalid size will be rejected
+
 
 ```graphql
 scalar Address
@@ -24,13 +50,13 @@ scalar Address
 
 
 
+
+
 ### Returned by
 
-[`genesisAddress`](/build/api/schema/queries/genesis-address)  <Badge class="secondary" text="query"/>
+[`genesisAddress`](/build/api/schema/queries/genesis-address)  <Badge class="badge badge--secondary" text="query"/>
 
 ### Member of
 
-[`balance`](/build/api/schema/queries/balance)  <Badge class="secondary" text="query"/><Bullet />[`Data`](/build/api/schema/objects/data)  <Badge class="secondary" text="object"/><Bullet />[`genesisAddress`](/build/api/schema/queries/genesis-address)  <Badge class="secondary" text="query"/><Bullet />[`lastTransaction`](/build/api/schema/queries/last-transaction)  <Badge class="secondary" text="query"/><Bullet />[`Node`](/build/api/schema/objects/node)  <Badge class="secondary" text="object"/><Bullet />[`Token`](/build/api/schema/objects/token)  <Badge class="secondary" text="object"/><Bullet />[`token`](/build/api/schema/queries/token)  <Badge class="secondary" text="query"/><Bullet />[`TokenBalance`](/build/api/schema/objects/token-balance)  <Badge class="secondary" text="object"/><Bullet />[`TokenTransfer`](/build/api/schema/objects/token-transfer)  <Badge class="secondary" text="object"/><Bullet />[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="secondary" text="object"/><Bullet />[`transaction`](/build/api/schema/queries/transaction)  <Badge class="secondary" text="query"/><Bullet />[`TransactionAttestation`](/build/api/schema/objects/transaction-attestation)  <Badge class="secondary" text="object"/><Bullet />[`transactionChain`](/build/api/schema/queries/transaction-chain)  <Badge class="secondary" text="query"/><Bullet />[`transactionConfirmed`](/build/api/schema/subscriptions/transaction-confirmed)  <Badge class="secondary" text="subscription"/><Bullet />[`TransactionError`](/build/api/schema/objects/transaction-error)  <Badge class="secondary" text="object"/><Bullet />[`transactionError`](/build/api/schema/subscriptions/transaction-error)  <Badge class="secondary" text="subscription"/><Bullet />[`TransactionInput`](/build/api/schema/objects/transaction-input)  <Badge class="secondary" text="object"/><Bullet />[`transactionInputs`](/build/api/schema/queries/transaction-inputs)  <Badge class="secondary" text="query"/><Bullet />[`TransactionMovement`](/build/api/schema/objects/transaction-movement)  <Badge class="secondary" text="object"/><Bullet />[`TransactionSummary`](/build/api/schema/objects/transaction-summary)  <Badge class="secondary" text="object"/><Bullet />[`UcoTransfer`](/build/api/schema/objects/uco-transfer)  <Badge class="secondary" text="object"/><Bullet />[`UnspentOutput`](/build/api/schema/objects/unspent-output)  <Badge class="secondary" text="object"/>
-
-
+[`balance`](/build/api/schema/queries/balance)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`chainUnspentOutputs`](/build/api/schema/queries/chain-unspent-outputs)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`ConsumedInputs`](/build/api/schema/objects/consumed-inputs)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Data`](/build/api/schema/objects/data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`genesisAddress`](/build/api/schema/queries/genesis-address)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`lastTransaction`](/build/api/schema/queries/last-transaction)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`Node`](/build/api/schema/objects/node)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Token`](/build/api/schema/objects/token)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`token`](/build/api/schema/queries/token)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`TokenBalance`](/build/api/schema/objects/token-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenTransfer`](/build/api/schema/objects/token-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Transaction`](/build/api/schema/objects/transaction)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`transaction`](/build/api/schema/queries/transaction)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`TransactionAttestation`](/build/api/schema/objects/transaction-attestation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`transactionChain`](/build/api/schema/queries/transaction-chain)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`transactionConfirmed`](/build/api/schema/subscriptions/transaction-confirmed)  <Badge class="badge badge--secondary" text="subscription"/><Bullet />[`TransactionError`](/build/api/schema/objects/transaction-error)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`transactionError`](/build/api/schema/subscriptions/transaction-error)  <Badge class="badge badge--secondary" text="subscription"/><Bullet />[`TransactionInput`](/build/api/schema/objects/transaction-input)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`transactionInputs`](/build/api/schema/queries/transaction-inputs)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`TransactionMovement`](/build/api/schema/objects/transaction-movement)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TransactionSummary`](/build/api/schema/objects/transaction-summary)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`UcoTransfer`](/build/api/schema/objects/uco-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`UnspentOutput`](/build/api/schema/objects/unspent-output)  <Badge class="badge badge--secondary" text="object"/>
 

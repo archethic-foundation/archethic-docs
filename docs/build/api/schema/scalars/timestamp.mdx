@@ -5,15 +5,41 @@ hide_table_of_contents: false
 ---
 
 
-
 export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
 
 export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
 
-export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
 
 
 The [Timestamp] scalar type represents a UNIX timestamp in seconds
+
 
 ```graphql
 scalar Timestamp
@@ -22,9 +48,9 @@ scalar Timestamp
 
 
 
+
+
 ### Member of
 
-[`BeaconChainSummary`](/build/api/schema/objects/beacon-chain-summary)  <Badge class="secondary" text="object"/><Bullet />[`beaconChainSummary`](/build/api/schema/queries/beacon-chain-summary)  <Badge class="secondary" text="query"/><Bullet />[`Node`](/build/api/schema/objects/node)  <Badge class="secondary" text="object"/><Bullet />[`OracleData`](/build/api/schema/objects/oracle-data)  <Badge class="secondary" text="object"/><Bullet />[`oracleData`](/build/api/schema/queries/oracle-data)  <Badge class="secondary" text="query"/><Bullet />[`TransactionInput`](/build/api/schema/objects/transaction-input)  <Badge class="secondary" text="object"/><Bullet />[`TransactionSummary`](/build/api/schema/objects/transaction-summary)  <Badge class="secondary" text="object"/><Bullet />[`UnspentOutput`](/build/api/schema/objects/unspent-output)  <Badge class="secondary" text="object"/><Bullet />[`ValidationStamp`](/build/api/schema/objects/validation-stamp)  <Badge class="secondary" text="object"/>
-
-
+[`BeaconChainSummary`](/build/api/schema/objects/beacon-chain-summary)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`beaconChainSummary`](/build/api/schema/queries/beacon-chain-summary)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`ConsumedInputs`](/build/api/schema/objects/consumed-inputs)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Node`](/build/api/schema/objects/node)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OracleData`](/build/api/schema/objects/oracle-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`oracleData`](/build/api/schema/queries/oracle-data)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`transactionChain`](/build/api/schema/queries/transaction-chain)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`TransactionInput`](/build/api/schema/objects/transaction-input)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TransactionSummary`](/build/api/schema/objects/transaction-summary)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`UnspentOutput`](/build/api/schema/objects/unspent-output)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ValidationStamp`](/build/api/schema/objects/validation-stamp)  <Badge class="badge badge--secondary" text="object"/>
 
