@@ -4,14 +4,14 @@ title: Patents
 sidebar_position: 3
 ---
 
-## 12 patents to build a new ecosystem
+## 11 patents to build a new ecosystem
 
-Archethic is based on more than 4 years of research and 12 international patents.
-5 patents aim at removing all logins, passwords and identification cards that pollute and weaken our environment by replacing them with a universal biometric identification, unfalsifiable and guaranteeing the privacy of users.
+Archethic is based on more than 4 years of research and 11 international patents.
+Some of these patents aim at removing all logins, passwords and identification cards that pollute and weaken our environment by replacing them with a universal biometric identification, unfalsifiable and guaranteeing the privacy of users.
 
-5 other patents, concern the implementation of a real decentralized network, governed by mathematics, resilient to cyber-attacks and allowing to reduce the consumption of the current Internet.
+Other patents, concern the implementation of a real decentralized network, governed by mathematics, resilient to cyber-attacks and allowing to reduce the consumption of the current Internet.
 
-Finally, two patents aim to allow current applications to migrate or interface effortlessly to this new network. Each application will no longer need to master all the technologies to launch its service (identity management, inventory management, payments, interface with external suppliers, etc.) but will be able to rely on a universal exchange platform capable, through smart-contracts, of instantly matching all offers to each request. 
+Finally, patents aim to allow current applications to migrate or interface effortlessly to this new network. Each application will no longer need to master all the technologies to launch its service (identity management, inventory management, payments, interface with external suppliers, etc.) but will be able to rely on a universal exchange platform capable, through smart-contracts, of instantly matching all offers to each request. 
 
 ## Archethic, a Humanitarian and Community Project
 
