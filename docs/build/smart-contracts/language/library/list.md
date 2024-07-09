@@ -121,3 +121,56 @@ Parameters:
 - `separator` the separator
 
 Returns a string where all `list`'s elements have been joined with `separator` separator.
+
+### sort_by/2
+
+```elixir
+List.sort_by([[a: 1], [a: 3], [a: 2]], "a")    # [[a: 1], [a: 2], [a: 3]]
+```
+
+Parameters:
+
+- `list` the list of maps
+- `field` the field of the map to use for sorting
+
+Returns same `list` but ordered ASC by the `field` value of each items.
+
+### uniq/1
+
+```elixir
+List.uniq([1,2,1,2,3])    # [1,2,3]
+```
+
+Parameters:
+
+- `list` the list
+
+Returns same `list` but without duplicated elements.
+
+### set_at/3
+
+```elixir
+List.set_at(["index0", "index1"], 1, "value")    # ["index0", "value"]
+```
+
+Parameters:
+
+- `list` the list
+- `index` 0-based index
+- `value` the value to set at index
+
+Returns same `list` but element at index `index` is replaced by `value`.
+
+
+### delete_at/3
+
+```elixir
+List.delete_at(["index0", "index1"], 1)    # ["index0"]
+```
+
+Parameters:
+
+- `list` the list
+- `index` 0-based index
+
+Returns same `list` but element at index `index` is deleted.
