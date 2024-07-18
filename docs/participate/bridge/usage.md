@@ -19,7 +19,7 @@ The application is compatible only with the desktop versions of the Archethic wa
 The application is not compatible with Edge, Internet explorer browsers
 :::
 
-Ensure that you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet/).
+Ensure that you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet.html).
 
 :::tip
 For optimal performance, it is recommended to use the latest version of your internet browser and keep your desktop wallet updated.

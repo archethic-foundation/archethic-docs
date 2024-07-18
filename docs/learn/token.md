@@ -178,7 +178,7 @@ Here's another example for a non-fungible token creation:
 
 Now that the tokens are created, there are few ways to move them around:
 
-1. Via a wallet (such as the [Archethic Wallet](https://www.archethic.net/aewallet.html))
+1. Via a wallet (such as the [Archethic Wallet](https://www.archethic.net/wallet.html))
 2. Via the `send-transaction` API
 3. Via a Smart Contract
 

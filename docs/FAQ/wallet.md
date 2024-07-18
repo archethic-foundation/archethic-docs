@@ -24,10 +24,10 @@ Once your wallet is created,<br/>
 
 ### ** How to create a wallet on the Archethic blockchain?**
 
-Firstly, <a href="https://www.archethic.net/wallet" target="_blank">download the wallet</a> version that corresponds to the platform you want to use it on from the Archethic website or the app stores.
+Firstly, <a href="https://www.archethic.net/wallet.html" target="_blank">download the wallet</a> version that corresponds to the platform you want to use it on from the Archethic website or the app stores.
 Once installed, you can launch the application.
 
-1) The first page invites you to read and accept [https://www.archethic.net/privacy-policy-wallet/](the privacy policy).<br/>
+1) The first page invites you to read and accept [https://www.archethic.net/privacy-policy-wallet.html](the privacy policy).<br/>
 2) Once accepted, you can click on "Get started" to begin creating your wallet.<br/>
 3) First, give a name to your first account within your future decentralized keychain.<br/>
 4) A confirmation popup appears to verify that the account name is to your liking.<br/>
@@ -105,7 +105,7 @@ Please note, steps 3 and 4 require you to reimport your wallet afterward by ente
 
 1) Verify that the application is downloaded from an official source.
 
-For this, please visit the website https://www.archethic.net/wallet.
+For this, please visit the website https://www.archethic.net/wallet.html.
 For security and proper functionality, Archethic advises against using the application on jailbroken devices or in developer mode.
 
 2) Uninstall and then reinstall the application.

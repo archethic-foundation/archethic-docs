@@ -11,7 +11,7 @@ aeSwap is a web application accessible through internet browsers and is compatib
 :::
 
 :::caution
-Ensure you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. You can download the wallet from [here](https://www.archethic.net/wallet/).
+Ensure you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. You can download the wallet from [here](https://www.archethic.net/wallet.html).
 :::
 
 :::tip

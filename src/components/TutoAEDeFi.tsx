@@ -160,7 +160,7 @@ function StepTwo() {
             <h2>Creating an Archethic Wallet</h2>
             <h3>How to create a wallet on the Archethic blockchain?</h3>
             <ul>
-                <li>First, download the wallet application here depending on whether you are on Mac, Linux, or PC <u><a href="https://www.archethic.net/wallet" target="_blank" rel="noopener noreferrer">here</a></u>.</li>
+                <li>First, download the wallet application here depending on whether you are on Mac, Linux, or PC <u><a href="https://www.archethic.net/wallet.html" target="_blank" rel="noopener noreferrer">here</a></u>.</li>
                 <li>Once installed, you can launch the application.</li>
                 <ul>
                     <li>The first page invites you to read and accept the privacy policy</li>
