@@ -71,5 +71,9 @@ This process ensures that both counterparties receive their funds, achieving par
 
 This document aims to provide a comprehensive guide to using aeBridge, including an introduction to the necessary concepts, step-by-step guides for interacting with the platform, and technical references for deeper integration and development purposes.
 
+## Audit of EVM Smart Contracts
+
+Our EVM smart contracts have been audited by [Hacken](https://hacken.io), a recognized leader in blockchain security. The full audit report is available [here](/audits/Hacken_Archethic_[SCA]%20Archethic%20_%20Bridge-Contracts%20_%20June2024_P-2024-692_1_20240722%2011_07.pdf).
+
 ## FAQ
 For further information, please refer to the [FAQ](/FAQ/bridge-2-ways).
