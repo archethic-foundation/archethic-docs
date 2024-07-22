@@ -5,14 +5,14 @@ title: aeBridge
 
 ## General
 
-### What is Archethic Bridge two-ways?
-The Archethic Bridge two-ways is a decentralized, peer-to-peer bridge that enables the seamless exchange of UCO ERC20 tokens and other major cryptocurrencies like ETH, MATIC, and BNB between the Archethic blockchain and various other blockchains, including Ethereum, Polygon, and BSC.
+### What is Archethic Bridge?
+The Archethic Bridge is a decentralized, peer-to-peer bridge that enables the seamless exchange of UCO ERC20 tokens and other major cryptocurrencies like ETH, MATIC, and BNB between the Archethic blockchain and various other blockchains, including Ethereum, Polygon, and BSC.
 
 This functionality allows for the transfer of these assets into their equivalent forms on Archethic, such as aeETH, aeMATIC, and aeBNB, providing a secure and straightforward method for exchanging assets. The bridge utilizes atomic swap technology, specifically Hash Time Lock Contracts (HTLC), to facilitate secure and intermediary-free transactions.
 
 Moreover, it incorporates Archethic's unique cross-chain verification technique, enhancing the security and decentralization of these exchanges.
 
-This two-way bridge significantly expands the interoperability between Archethic and other blockchain networks, allowing for greater flexibility and integration within the broader blockchain ecosystem.
+This bridge significantly expands the interoperability between Archethic and other blockchain networks, allowing for greater flexibility and integration within the broader blockchain ecosystem.
 
 ### How to access the Archethic Bridge ?
 You can access the bridge at : [https://bridge.archethic.net](https://bridge.archethic.net)
@@ -38,6 +38,11 @@ The price of $UCO is determined using an Archethic Oracle that consolidates info
 
 ### How long is the predetermined time?
 The timelock lasts 2 hours.
+
+### Is the bridge audited?
+
+Yes, our EVM smart contracts have been audited by [Hacken](https://hacken.io), a recognized leader in blockchain security. The full audit report is available [here](/audits/Hacken_Archethic_[SCA]%20Archethic%20_%20Bridge-Contracts%20_%20June2024_P-2024-692_1_20240722%2011_07.pdf).
+
 
 ## Key Concepts
 

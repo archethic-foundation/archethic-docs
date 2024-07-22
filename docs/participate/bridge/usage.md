@@ -13,13 +13,13 @@ The Archethic Bridge application is exclusively available as a web application a
 :::
 
 :::caution
-The application is compatible only with the desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
+The application is compatible with extension chrome or with the desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
 :::
 :::caution
 The application is not compatible with Edge, Internet explorer browsers
 :::
 
-Ensure that you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet.html).
+Ensure that you have the appropriate version of the Archethic wallet installed on your system to interact with the application effectively. The Archethic wallet can be downloaded from [here](https://www.archethic.net/wallet.html).
 
 :::tip
 For optimal performance, it is recommended to use the latest version of your internet browser and keep your desktop wallet updated.
