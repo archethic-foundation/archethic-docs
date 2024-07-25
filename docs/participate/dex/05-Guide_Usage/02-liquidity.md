@@ -88,6 +88,22 @@ On aeSwap, participants have the flexibility to engage with liquidity pools thro
 
 **Remove Liquidity**: When you wish to retrieve your deposited tokens from a pool, this action allows you to do so. By returning your LP tokens, you can claim back your share of the pool, along with any accrued fees, based on the current ratio of tokens within the pool. This action is essential for managing your investments and realizing potential gains from fee accumulation.
 
+### Fees
+
+For enhancing %APR, liquidity, and volume, all fees are returned to LP suppliers: 0.3% LP provider fee, 0% protocol fee.
+
+### Specificity of the aeETH / UCO pair
+
+Archethic offers a specific aeETH/UCO pool featuring a new farming mechanism designed to reward long-term commitment. This update provides UCO holders with flexible levels and the potential for higher rewards through a tiered system, reinforcing our mission to support sustained engagement with our project. 
+
+With our new Leveling System on the aeETH/UCO pool, we’ve removed LP provider fees on this pool: 0.3% Protocol Fees, 0% LP Provider Fees on the aeETH/UCO pool.
+
+![Pool aeETH/UCO](/img/tutorial/aeSwap/aeSwap-PoolAETHUCO-Front.png)
+
+For the specific aeETH/UCO pool, the displayed information is unique:
+
+3-Year APR of the Associated Farm: Instead of showing the fees collected by the pool, we display the 3-year APR of the farm associated with the pool. A link is provided to allow users to access the farm directly.
+
 ## Add Liquidity
 
 Enhancing your portfolio by adding liquidity to a pool is a straightforward process designed for ease of use and efficiency. Here's how you can contribute to the liquidity of your chosen pool:

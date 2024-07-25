@@ -6,159 +6,146 @@ sidebar_label: Farming
 
 # Farming
 
-Explore the key functionalities of our farming platform that enable you to efficiently manage your cryptocurrency assets. Whether depositing LP tokens, withdrawing them along with accrued rewards, or simply claiming rewards, our platform offers secure and straightforward processes tailored to enhance your investment experience.
+Our new farming system is built around levels, each with a different reward distribution weight. The higher the level you choose, the longer the locking period for your liquidity pairs, but the greater the rewards you will earn.
 
-You can manage the farming from the farming menu.
+To achieve major milestones by 2026, we’ve revised our token distribution. Initially, we planned to distribute 9 million $UCO per year over 10 years, specifically allocated to staking.
 
-## Navigating Pool Information
+However, we will now distribute the tokens over 4 years to boost APR and liquidity. In the first farming phase over 2 months, we already distributed 2.5 million $UCO. Here is the planned token allocation for the coming years:
+
+- Year 1: 45 million UCO tokens
+- Year 2: 22.5 million UCO tokens
+- Year 3: 11.25 million UCO tokens
+- Year 4: 8.75 million UCO tokens
+
+You can manage the farming from the EARN menu or from pool aeETH/UCO card.
+
+## Detailed Breakdown
+
+### Deposits & Rewards
+Deposits begin on 25/07/2024, and rewards start on 01/08/2024.
+
+### Level-Based System
+The new farming mechanism involves different levels, each offering a unique reward distribution weight. Higher levels require longer locking periods for your liquidity pairs, but they provide higher rewards and a better Annual Percentage Rate (APR). This system is recalculated in real time to ensure fairness.
+
+### Locking Periods
+When depositing your LP tokens, you can choose from the following locking periods, each with specific conditions:
+
+- 0 weeks: No lock period, rewards are calculated and released on an hourly basis.
+- 1 week: 7 days lock period.
+- 1 month: 30 days lock period.
+- 3 months: 90 days lock period.
+- 6 months: 180 days lock period.
+- 1 year: 365 days lock period.
+- 2 years: 730 days lock period.
+- 3 years (default value): 1095 days lock period.
+
+### Flexibility to Level Up
+UCO holders can choose to level up at any time. When leveling up, you can select the a longer locking period than your current one. This resets the lock duration for your LP tokens to the new chosen period, but it also unlocks your current rewards. If you choose not to level up, both your LP tokens and rewards remain locked until the end of the current period.
+
+### Unlocking Rewards
+Rewards are tied to the LP tokens and will be released when the LP tokens are withdrawn at the end of the locking period. However, leveling up allows you to unlock and claim your rewards immediately while committing to a new locking period.
+
+For those who chose “Flexible”, you can claim your rewards at any time.
+
+## Dashboard
+
+![Farm Lock Dashboard](/img/tutorial/aeSwap/aeSwap-FarmLock-Dashboard.png)
+
+When you click on the EARN menu, you are directed to the dedicated farming page related to the aeETH/UCO liquidity pool. The dashboard is divided into several sections:
+
+### Liquidity pool section
+
+![Farm Lock Dashboard - Liquidity pool section](/img/tutorial/aeSwap/aeSwap-FarmLock-Dashboard-Block1.png)
+
+This section pertains to the liquidity pool linked with the farm and provides the following features:
+
+- **Token Pair Display**: Shows the pair of tokens involved in the pool.
+- **Info Button**: Allows you to view detailed information about the pool.
+- **Add Button**: Enables you to add liquidity directly to the pool.
+- **Withdraw Button**: Lets you withdraw your liquidity from the pool.
+For more detailed information on managing liquidity pools, [please refer to the liquidity pool documentation](/participate/dex/Guide_Usage/liquidity_pool).
+
+### Farm pool section
+
+![Farm Lock Dashboard - Farm section](/img/tutorial/aeSwap/aeSwap-FarmLock-Dashboard-Block2.png)
+
+This section contains information related to the farm. It describes the **reward token (UCO)** and displays the **3-year APR** (*please refer to the application for the exact percentage*). 
+
+There are three available functions:
+- **Farm Legacy Info Button**: Allows you to access the card containing information about the farm that was open between 05/17/2024 and 07/17/2024.
+- **Add Button**: Enables you to add LP tokens to the farm for a given period or on a flexible basis.
+- **Farm Lock Info Button**: Lets you view the information related to the farm.
+
+
+#### Navigating Farm Lock Information
 
 aeSwap offers a unique and engaging way to access detailed information about each farm through an interactive card. You can easily explore this card by clicking on the turn icon to "rotate" the view, revealing comprehensive details about the farms in a visually intuitive manner.
 
-### Front View: Essential Farm Details
+##### Front View: Essential Farm Details
+
+![Farm Lock Card - Front](/img/tutorial/aeSwap/aeSwap-FarmLock-Front.png)
 
 When viewing the front of the card, users are provided with a comprehensive overview designed to deliver essential information about each farm quickly and effectively:
 
-- **Token Pair and Logos**: Each farm is represented by its token pair, accompanied by their logos when available, for straightforward identification.
-- **Current APR**: The APR (Annual Percentage Rate) is prominently displayed, indicating the potential return on investment over a year, based on the farm's current performance.
+- **Token Pair and Logos**: The farm is represented by its token pair, accompanied by their logos when available, for straightforward identification.
+- **Farm Address**: Displayed prominently for easy reference. Accompanying the address, an icon for quick copying allows users to easily share or save the address. - Additionally, a separate icon links directly to the blockchain explorer, where users can delve into full details and analytics of the farm. 
+- **LP Token Address**: Displayed prominently for easy reference. Accompanying the address, an icon for quick copying allows users to easily share or save the address. - Additionally, a separate icon links directly to the blockchain explorer, where users can delve into full details and analytics of the LP Token. 
 - **Reward Token**: The specific token awarded as a reward in the farm is shown, informing users of the type of rewards they can expect.
 - **Opening Period**: Indicates the operational timeframe of the farm, letting users know when the farm is active for deposits and reward collection.
-- **User’s Deposited LP Tokens**: Shows the amount of liquidity provider tokens the user has currently deposited in the farm.
-- **Estimated Rewards**: An estimation of the rewards the user might earn, based on the current conditions and their deposited tokens.
-- **Available LP Tokens**: Displays the number of LP tokens available in the user’s wallet, ready to be deposited.
-
-### Back View: Additional Farm Insights
-
-On this side of the card, users can explore more detailed metrics about the farm's overall activity and performance:
-
-- **Available Rewards in Farm**: Lists the total amount of rewards currently available in the farm, providing a snapshot of the reward pool size.
+- **Remaining reward**: Displays the remaining rewards in the farm.
+- **Distributed Rewards**: The total number of rewards that have been distributed to all participants so far, highlighting the farm's generosity and attractiveness.
 - **Total Deposited LP Tokens**: Indicates the total amount of LP tokens that have been deposited into the farm by all users, offering a perspective on the farm's scale and user participation.
-- **Number of Deposits**: Shows how many separate deposits have been made into the farm, reflecting user engagement and trust in the farm’s potential.
-- **Rewards Distributed**: The total number of rewards that have been distributed to all participants so far, highlighting the farm's generosity and attractiveness.
+
+###### Back View: Additional Farm Insights
+
+![Farm Lock Card - Back](/img/tutorial/aeSwap/aeSwap-FarmLock-Back.png)
+
+On this side of the card, users can explore parameters by level:
+
+- **Holders**: This corresponds to the number of positions held at the level.
+- **Weight**: The weight of the level.
+- **LP Token Deposited**: The number of LP tokens deposited at the level.
+
+### Balances summary section
+
+This section provides an overview of your balances for the two tokens in the pool (aeETH and UCO), as well as your LP token balance.
+
+![Farm Lock Dashboard - Balances section](/img/tutorial/aeSwap/aeSwap-FarmLock-Dashboard-Block3.png)
+
+### Farmed Tokens Summary section
+
+This section provides a comprehensive overview of your total investment in the farm, expressed in dollars. It includes a detailed breakdown of both the invested capital and the rewards that can be earned.
+
+![Farm Lock Dashboard - Farmed Tokens Summary section](/img/tutorial/aeSwap/aeSwap-FarmLock-Dashboard-Block4.png)
+
+### Deposits table
+
+![Farm Lock Dashboard - Deposist table](/img/tutorial/aeSwap/aeSwap-FarmLock-Dashboard-Block5.png)
+
+The table displays all current deposits. The available information includes:
+
+- **Amount**: The number of LP tokens deposited.
+- **Estimated Rewards**: The current estimated rewards. This amount will increase over time until the end of the lock period (if the deposit is not flexible). **Rewards are calculated hourly**.
+- **Unlocks In**: The remaining time before the LP tokens and associated rewards are released.
+- **Level**: Your current level. If your level is not at the maximum, you have the option to relock your LP tokens at any time for a period longer than the current one. Increasing the lock duration will raise your level.
+- **APR**: The estimated Annual Percentage Rate.
+- **Level Up Button**: Allows you to increase your level by relocking your LP tokens for a period longer than the current lock duration.
+- **Withdraw Button**: This feature is available when the lock period has ended or if the deposit was made on a flexible basis. It allows you to retrieve your LP tokens and send them back to your wallet. You can choose the amount to withdraw. If the maximum amount is withdrawn, the deposit entry disappears. If the amount is not fully withdrawn, rewards will be calculated on the remaining balance. When withdrawing, all calculated rewards for that deposit are provided to the user.
+- **Claim Button**: This feature is available when the lock period has ended or if the deposit was made on a flexible basis. It allows you to claim the rewards without affecting the number of deposited LP tokens.
+
+
 
 ### Interacting with Farms: Available Actions
 
 On aeSwap, participants have the flexibility to engage with farms through a variety of actions, each designed to suit different strategies and needs. Here’s a concise overview of the options available:
 
-**Deposit LP Tokens**: Users can stake their liquidity provider (LP) tokens in a farm to earn rewards. This action contributes to the farm's overall health and rewards the user with tokens based on the farm's current APR. Depositing increases the total value locked (TVL) in the farm and entitles the user to a portion of the rewards generated.
+**Deposit LP Tokens**: Users can lock their liquidity provider (LP) tokens in a farm to earn rewards. This action contributes to the farm's overall health and rewards the user with tokens based on the farm's current APR. Depositing increases the total value locked (TVL) in the farm and entitles the user to a portion of the rewards generated. The chosen locking period determines the APR percentage, with longer periods yielding higher returns. Once locked, users must wait until the end of the period to obtain their rewards, with no interim retrieval possible unless they choose to level up. This incentivizes users to commit to longer locking periods for more substantial rewards.
 
 **Withdraw LP Tokens**: When participants decide to retrieve their staked LP tokens from a farm, this action enables them to do so. Withdrawing allows users to claim back their tokens along with any rewards earned during the staking period. This action is crucial for managing your investments and realizing potential gains from the accumulation of rewards.
 
 **Claim Rewards**: Specifically for users who want to continue staking their LP tokens but wish to collect earned rewards, this action allows for the claiming of rewards without affecting the staked LP token balance. It is a flexible option for users looking to realize immediate gains while maintaining their position in the farm.
 
+**Relock LP Tokens**: The relock feature allows users to extend the locking period of their LP tokens beyond the initial commitment, effectively resetting the lock duration to a new, longer period. This action not only unlocks and makes available any accumulated rewards up to that point but also commits the user to a new locking period, which comes with a potentially higher APR.
 
-## Deposit LP Tokens
 
-Participating in a farm by depositing LP tokens can significantly enhance your earnings through yield farming. Here’s a detailed guide on how to stake your LP tokens:
-
-### Step 1: Depositing LP Tokens: Essential Information
-
-![Deposit LP Tokens form](/img/tutorial/aeSwap/aeSwap-Farm-Deposit-Form.png)
-
-**Entering LP Token Amounts**: Start by entering the amount of LP tokens you wish to deposit into the farm.
-
-**Deposit LP Tokens**: Click the "Deposit" button to initiate your farming. This action commits your LP tokens to the farm and starts the earning period.
-
-### Pre-transaction Validations
-
-Before depositing LP tokens, the system checks your balance of LP tokens.
-
-### Step 2: Finalizing LP Token Deposit: Confirmation and Validation Steps
-
-After you input the desired amount of LP tokens and press the "Deposit" button, you will be guided to a confirmation screen. This screen is vital in the deposit process, allowing you to:
-
-- **Review Deposit Details**: Examine the amount of LP tokens being deposited.
-- **Balance Verification**: Confirm your wallet balances before and after the deposit to understand the impact on your liquidity.
-
-If you agree with all the terms and the deposit setup meets your expectations, click on the "Confirm" button to complete the transaction.
-
-![Deposit LP Tokens confirm](/img/tutorial/aeSwap/aeSwap-Farm-Deposit-Confirm.png)
-
-#### Wallet Validations for LP Token Deposits
-
-The process of depositing LP tokens into a farm includes essential wallet validations:
-
-**Transaction Confirmation**: You must approve 1 transaction that finalizes the deposit of your LP tokens.
-
-**Transaction Address**: After the transaction is executed, you will be provided with an address. This address can be used to verify the transaction on the blockchain, ensuring your deposit is secure and transparent.
-
-**Amount deposited**: The exact amount deposited is also provided
-
-![Deposit LP Tokens end](/img/tutorial/aeSwap/aeSwap-Farm-Deposit-End.png)
-
-## Withdraw LP Tokens and Claim Rewards
-
-Withdrawing LP tokens from a farm allows you to reclaim your staked tokens along with any earned rewards. Here’s how you can smoothly perform a withdrawal and claim your rewards:
-
-### Step 1: Withdrawing LP Tokens and Claiming Rewards: Essential Information
-
-![Withdraw LP Tokens and Claim Rewards form](/img/tutorial/aeSwap/aeSwap-Farm-Withdraw-Form.png)
-
-**Entering LP Token Amounts**: Begin by entering the amount of LP tokens you wish to withdraw from the farm. The interface will also display the accumulated rewards available for claiming.
-
-**Withdraw and Claim Rewards**: Click the "Withdraw" button to initiate the process. This action removes your LP tokens from the farm and claims all available rewards, effectively ending the earning period.
-
-#### Pre-transaction Validations
-
-Before withdrawing LP tokens and claiming rewards, the system checks your balance of LP tokens in the farm to ensure you have sufficient tokens to withdraw, and confirms the available reward amount.
-
-### Step 2: Finalizing LP Token Withdrawal and Reward Claim: Confirmation and Validation Steps
-
-After you input the desired amount of LP tokens and review the rewards, press the "Withdraw" button. You will be guided to a confirmation screen. This screen is crucial in the withdrawal process, allowing you to:
-
-- **Review Withdrawal and Reward Details**: Examine the amount of LP tokens being withdrawn and the rewards to be claimed.
-- **Balance Verification**: Confirm your wallet balances before and after the withdrawal to understand the impact on your liquidity and the increase from claimed rewards.
-
-If you agree with all the terms and the withdrawal setup meets your expectations, click on the "Confirm" button to complete the transaction.
-
-![Withdraw LP Tokens and Claim Rewards confirm](/img/tutorial/aeSwap/aeSwap-Farm-Withdraw-Confirm.png)
-
-#### Wallet Validations for LP Token Withdrawals and Reward Claims
-
-The process of withdrawing LP tokens and claiming rewards includes essential wallet validations:
-
-**Transaction Confirmation**: You must approve 1 transaction that finalizes the withdrawal of your LP tokens and the claim of your rewards.
-
-**Transaction Address**: After the transaction is executed, you will receive an address. This address can be used to verify the transaction on the blockchain, ensuring your withdrawal and reward claim are secure and transparent.
-
-**Amount Withdrawn**: The exact amount withdrawn and the exact amount of rewards claimed are also provided for your records.
-
-![Withdraw LP Tokens and Claim Rewards end](/img/tutorial/aeSwap/aeSwap-Farm-Withdraw-End.png)
-
-## Claim Rewards Only
-
-Claiming rewards from a farm allows you to collect your earned rewards without withdrawing your staked LP tokens. This feature is beneficial for users who wish to continue earning rewards while claiming their current gains. Here's how you can claim rewards:
-
-### Step 1: Claiming Rewards: Essential Information
-
-![Claim Rewards form](/img/tutorial/aeSwap/aeSwap-Farm-Claim-Form.png)
-
-**View Rewards Available**: The form displays the total amount of rewards you have accrued and are available to claim. No input is required from you; simply view the rewards ready for collection.
-
-**Claim Rewards**: Click the "Claim" button to initiate the process of claiming your rewards. This action collects the displayed rewards and leaves your LP tokens in the farm to continue accumulating further rewards.
-
-#### Pre-transaction Validations
-
-Before claiming rewards, the system confirms the total rewards available for claim to ensure accuracy and availability.
-
-### Step 2: Finalizing Reward Claim: Confirmation and Validation Steps
-
-After you review the available rewards, press the "Claim" button. You will be guided to a confirmation screen. This screen is essential in the reward claim process, allowing you to:
-
-- **Review Reward Details**: Confirm the total amount of rewards you are about to claim.
-- **Balance Verification**: Check your wallet balance before and after the claim to understand the impact of the transaction on your rewards.
-
-If you agree with all the terms and the claim setup meets your expectations, click on the "Confirm" button to complete the reward claim.
-
-![Claim Rewards confirm](/img/tutorial/aeSwap/aeSwap-Farm-Claim-Confirm.png)
-
-#### Wallet Validations for Reward Claims
-
-The process of claiming rewards includes essential wallet validations:
-
-**Transaction Confirmation**: You must approve 1 transaction that finalizes the claim of your rewards.
-
-**Transaction Address**: After the transaction is executed, you will receive an address. This address can be used to verify the transaction on the blockchain, ensuring your reward claim is secure and transparent.
-
-**Amount Claimed**: The exact amount of rewards claimed is also provided for your records.
-
-![Claim Rewards end](/img/tutorial/aeSwap/aeSwap-Farm-Claim-End.png)
+*Detailed information for each action will be provided very soon.*
