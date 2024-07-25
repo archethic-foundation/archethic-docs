@@ -7,15 +7,15 @@ sidebar_label: Tutorial
 # aeSwap - Tutorial
 
 :::info
-aeSwap is a web application accessible through internet browsers and is compatible only with desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
+aeSwap is a web application accessible through internet browsers and is compatible only with chrome extension or with desktop versions of the Archethic wallet, which include macOS, Linux, and Windows platforms.
 :::
 
 :::caution
-Ensure you have the appropriate desktop version of the Archethic wallet installed on your system to interact with the application effectively. You can download the wallet from [here](https://www.archethic.net/wallet.html).
+Ensure you have the appropriate version of the Archethic wallet installed on your system to interact with the application effectively. You can download the wallet from [here](https://www.archethic.net/wallet.html).
 :::
 
 :::tip
-For optimal performance, use the latest version of your internet browser and keep your desktop wallet updated.
+For optimal performance, use the latest version of your internet browser.
 :::
 
 **Access:**
