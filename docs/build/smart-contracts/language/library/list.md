@@ -122,6 +122,18 @@ Parameters:
 
 Returns a string where all `list`'s elements have been joined with `separator` separator.
 
+### sort/1
+
+```elixir
+List.sort([1,3,2])    # [1,2,3]
+```
+
+Parameters:
+
+- `list` the list of maps
+
+Returns same `list` but ordered ASC.
+
 ### sort_by/2
 
 ```elixir
@@ -146,6 +158,18 @@ Parameters:
 - `list` the list
 
 Returns same `list` but without duplicated elements.
+
+### reverse/1
+
+```elixir
+List.reverse([1,2,2,3])    # [3,2,2,1]
+```
+
+Parameters:
+
+- `list` the list
+
+Returns same `list` but reversed.
 
 ### set_at/3
 
