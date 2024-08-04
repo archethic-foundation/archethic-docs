@@ -30,7 +30,6 @@ The new farming mechanism involves different levels, each offering a unique rewa
 ### Locking Periods
 When depositing your LP tokens, you can choose from the following locking periods, each with specific conditions:
 
-- 0 weeks: No lock period, rewards are calculated and released on an hourly basis.
 - 1 week: 7 days lock period.
 - 1 month: 30 days lock period.
 - 3 months: 90 days lock period.
@@ -44,8 +43,6 @@ UCO holders can choose to level up at any time. When leveling up, you can select
 
 ### Unlocking Rewards
 Rewards are tied to the LP tokens and will be released when the LP tokens are withdrawn at the end of the locking period. However, leveling up allows you to unlock and claim your rewards immediately while committing to a new locking period.
-
-For those who chose “Flexible”, you can claim your rewards at any time.
 
 ## Dashboard
 
@@ -125,7 +122,7 @@ This section provides a comprehensive overview of your total investment in the f
 The table displays all current deposits. The available information includes:
 
 - **Amount**: The number of LP tokens deposited.
-- **Estimated Rewards**: The current estimated rewards. This amount will increase over time until the end of the lock period (if the deposit is not flexible). **Rewards are calculated hourly**.
+- **Estimated Rewards**: The current estimated rewards. This amount will increase over time until the end of the lock period. **Rewards are calculated hourly**.
 - **Unlocks In**: The remaining time before the LP tokens and associated rewards are released.
 - **Level**: Your current level. If your level is not at the maximum, you have the option to relock your LP tokens at any time for a period longer than the current one. Increasing the lock duration will raise your level.
 - **APR**: The estimated Annual Percentage Rate.
