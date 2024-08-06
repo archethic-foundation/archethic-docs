@@ -15,15 +15,14 @@ The rewards are coming from the Stacking wallet of the tokenomics.
 ## Weights
 These weights were chosen by the Archetic team to incentivize longer locks.
 
-- level 0 : 0.007
+- level 0 : 0
 - level 1 : 0.013
 - level 2 : 0.024
 - level 3 : 0.043
 - level 4 : 0.077
-- level 5 : 0.138
-- level 6 : 0.249
-- level 7 : 0.449
-
+- level 5 : 0.139
+- level 6 : 0.251
+- level 7 : 0.453
 
 ## Rewards are calculated every hours
 Every deposits' timestamp is rounded to the hour before.
@@ -65,12 +64,12 @@ To calculate the rewards of the 1st deposit:
 
 ```javascript
 rewardsToAllocateForThisHour = 45_000_000  * (3600 / 31536000) // 5136.986301369863
-levelRatio = (1000 * 0.449) / 535 // 0.8392523364485981
-depositRatioOnItsLevel = (1000 * 0.449) / (1000 * 0.449) // 1
-reward = 5136.986301369863 * 1 * 0.8392523364485981 // 4311.2277557291
+levelRatio = (1000 * 0.453) / 539 // 0.8404452690166976
+depositRatioOnItsLevel = (1000 * 0.453) / (1000 * 0.453) // 1
+reward = 5136.986301369863 * 1 * 0.8404452690166976 // 4317.355833989885
 ```
 
-Until the state change (year change/level change/deposit/withdraw/relock), the first deposit will be rewarded of 4311.22775572 UCO every hours.
+Until the state change (year change/level change/deposit/withdraw/relock), the first deposit will be rewarded of 4317.35583398 UCO every hours.
 
 ## Giveaways
 If the contract have more balance than it's supposed to, the tokens are rewarded linearly over the entire farm's duration.
