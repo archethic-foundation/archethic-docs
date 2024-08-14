@@ -108,9 +108,10 @@ Request the wallet to refresh current account info
 // no response
 ```
 
+
 ## get_accounts
 
-Gets the accounts avalaible on AEWallet.
+Gets the accounts available on AEWallet.
 
 ### Request
 
@@ -124,9 +125,9 @@ Gets the accounts avalaible on AEWallet.
 {
   "accounts": [
     {
-      "shortName": String,        // Account name
-      "serviceName": String,      // Service name
-      "genesisAddress": String,   // Genesis address
+      "shortName": String,      // Account name
+      "serviceName": String     // Service name
+      "genesisAddress": String, // Genesis address
     }
   ]
 }
@@ -157,9 +158,32 @@ Signs and sends a transaction.
 }
 ```
 
+
 ## add_service
 
 Add a service in the keychain
+
+### Request
+
+```typescript
+{
+  "name": String,                 // Name of the service
+}
+```
+
+### Success Response
+
+```typescript
+{
+  "transactionAddress": String,  // Transaction address.
+  "nbConfirmations": Number,     // Number of received confirmations.
+  "maxConfirmations": Number,    // Max number of confirmations.
+}
+```
+
+## remove_service
+
+Remove a service from the keychain
 
 ### Request
 
@@ -216,7 +240,7 @@ Derive a keypair for the given service at the index given and get the public key
   "pathSuffix": String    // Additional information to add to a service derivation path (optional - default to empty)
 }
 ```
-
+ 
 ### Success Response
 
 ```typescript
@@ -224,6 +248,7 @@ Derive a keypair for the given service at the index given and get the public key
   "publicKey": String     // Public key of the service at the index given
 }
 ```
+
 
 ## keychain_derive_address
 
@@ -238,7 +263,7 @@ Derive an address for the given service at the index given
   "pathSuffix": String    // Additional information to add to a service derivation path (optional - default to empty)
 }
 ```
-
+ 
 ### Success Response
 
 ```typescript
@@ -261,9 +286,9 @@ Gets the current account selected on AEWallet.
 
 ```typescript
 {
-  "shortName": String,       // Account name
-  "serviceName": String,     // Service name
-  "genesisAddress": String,  // Genesis address
+  "shortName": String,      // Account name
+  "serviceName": String     // Service name
+  "genesisAddress": String, // Genesis address
 }
 ```
 
@@ -277,6 +302,10 @@ Signs many transactions.
 {
   "serviceName": String,              // Service name to use to sign the tx
   "pathSuffix": String,               // Additional information to add to a service derivation path (optional)
+  "description": String {             // Readable description to explain the purpose of signing transactions (locale + description)
+    "en": "Readable description in English",
+    "fr": "Description lisible en français",
+  },
   "transactions": [
     {
       "type": String,                 // Type of transaction
@@ -297,6 +326,41 @@ Signs many transactions.
       "previousPublicKey": String,    // Previous generated public key matching the previous signature
       "previousSignature": String,    // Signature from the previous public key
       "originSignature": String       // Signature from the device which originated the transaction (used in the Proof of work)
+    }
+  ]
+}
+```
+
+## sign_payloads
+
+Signs many payloads.
+
+### Request
+
+```typescript
+{
+  "serviceName": String,              // Service name to use to sign the payload
+  "pathSuffix": String,               // Additional information to add to a service derivation path (optional)
+  "description": String {             // Readable description to explain the purpose of signing payloads (locale + description)
+    "en": "Readable description in English",
+    "fr": "Description lisible en français",
+  },
+  "payloads": [
+    {
+      "payload": String,              // Payload to sign
+      "isHexa": boolean               // Precise if the payload if in hexadecimal format
+    }
+  ]
+}
+```
+
+### Success Response
+
+```typescript
+{
+  "signedPayloads": [
+    {
+      "signedPayload": String,        // Signed payload
     }
   ]
 }
