@@ -28,7 +28,7 @@ The migration will be facilitated by a specially designed smart contract to make
 Migrating to the new ERC-20 UCO token is essential to ensure that users' tokens remain up-to-date with the latest developments in the Archethic project. This update will allow for better compatibility and security while harmonizing the token's functionality across all blockchains.
 
 ### How do I migrate my V1 tokens to V2?
-To migrate your tokens, simply go to the migration tool at [archethic.net/migrate-uco](https://archethic.net/migrate-uco). This tool allows you to securely migrate your tokens on each blockchain (Ethereum, BSC, and Polygon).
+To migrate your tokens, simply go to the migration tool at [archethic.net/migrate-uco](https://migration-uco.archethic.net). This tool allows you to securely migrate your tokens on each blockchain (Ethereum, BSC, and Polygon).
 
 ### If I have 3000 UCO in V1, how many UCO will I receive in V2?
 The migration is done at a 1:1 ratio. This means that if you migrate 3000 UCO V1, you will receive 3000 UCO in V2.
