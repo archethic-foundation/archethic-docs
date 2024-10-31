@@ -41,6 +41,13 @@ When depositing your LP tokens, you can choose from the following locking period
 ### Flexibility to Level Up
 UCO holders can choose to level up at any time. When leveling up, you can select a longer locking period than your current one. This resets the lock duration for your LP tokens to the new chosen period, but it also unlocks your current rewards. If you choose not to level up, both your LP tokens and rewards remain locked until the end of the current period.
 
+:::info
+Your level is based on the duration for which your assets are locked.<br/>
+Your level will therefore gradually decrease until it reaches Level 0 (= "available"), at which point you will be able to withdraw your LP tokens.
+
+Example: If you locked your assets for 3 years (Level 7) one year ago, your remaining lock time is now 2 years, so your holdings will automatically be adjusted to Level 6.
+::: 
+
 ### Unlocking Rewards
 Rewards are tied to the LP tokens and will be released when the LP tokens are withdrawn at the end of the locking period. However, leveling up allows you to unlock and claim your rewards immediately while committing to a new locking period.
 
