@@ -16,9 +16,10 @@ If you do not have an Archethic wallet or address yet, we invite you to refer to
 :::
 
 Once your wallet is created,<br/>
-1) select the account you wish to receive your funds or tokens on via the "Keychain" tab, which lists your accounts and services contained in your decentralized keychain.<br/>
-2) Once selected, the application will display the "Main" tab, where a "Receive" button is shown.<br/>
-3) Click on it, and you will get your address, either in the form of a QR Code or in text form by clicking on the icon corresponding to the copy action.<br/>
+
+1) select the account on which you wish to receive your funds or tokens via the "Accounts" tab by clicking on the dropdown arrow at the top of the screen to the right of the current profile. A list will appear, showing your accounts and services contained in your decentralized keychain.<br/>
+2) Once selected, you will be returned to the "Accounts" tab, where a "Receive" button will be visible.<br/>
+3) Click on it, and you will obtain your address, either in the form of a QR Code or as text by clicking on the icon corresponding to the copy action.<br/>
 
 ![wallet-address](/img/faq/wallet/wallet-FAQ-display-address.png)
 
@@ -27,7 +28,7 @@ Once your wallet is created,<br/>
 Firstly, <a href="https://www.archethic.net/wallet.html" target="_blank">download the wallet</a> version that corresponds to the platform you want to use it on from the Archethic website or the app stores.
 Once installed, you can launch the application.
 
-1) The first page invites you to read and accept [https://www.archethic.net/privacy-policy-wallet.html](the privacy policy).<br/>
+1) The first page invites you to read and accept [the privacy policy](https://www.archethic.net/privacy-policy-wallet.html).<br/>
 2) Once accepted, you can click on "Get started" to begin creating your wallet.<br/>
 3) First, give a name to your first account within your future decentralized keychain.<br/>
 4) A confirmation popup appears to verify that the account name is to your liking.<br/>
@@ -44,54 +45,6 @@ Do not share them with anyone and write them down so you can confirm them on the
 10) After a few seconds of waiting, your keychain is created with your first account.<br/>
 
 You can now enjoy the Archethic ecosystem. Enjoy!
-
-### ** How to create a fungible token on the Archethic Wallet?**
-
-1) Open your Archethic Wallet and click on tokens in the main tab.
-<img src="/img/faq/wallet/tokens1.png" width="400px"/>
-
-2) Click on create token.   
-<img src="/img/faq/wallet/tokens2.png" width="400px"/>
-
-3) Insert all the information:
-
-- Name: Name of the token, e.g., "Archethic"
-- Symbol: Symbol of the token, e.g., "UCO"
-- Initial Supply: The maximum supply of your token.
-
-And click on "Create Token".
-
-<img src="/img/faq/wallet/tokens3.png" width="400px"/>
-
-4) Confirm the transaction.
-
-You have successfully created your Token!
-<img src="/img/faq/wallet/tokens4.png" width="400px"/>
-
-### ** How to create a NFT on the Archethic Wallet?**
-
-1) Click on 'NFT' at the bottom right of the application.
-
-2) Choose a category
-
-3) Click on create a NFT
-
-<img src="/img/faq/wallet/NFT1.png" width="400px"/>
-
-4) Insert all the information:
-- Name: Name of the NFT such as "Archers"
-- Symbol: Symbol such as "UCO"
-- Description: Describe your NFT 
-  
-<img src="/img/faq/wallet/NFT2.png" width="400px"/>
-
-5) Import your NFT
-<img src="/img/faq/wallet/NFT3.png" width="400px"/>
-
-6) Go to summary and click on "Create the NFT", confirm the mint
-<img src="/img/faq/wallet/NFT4.png" width="400px"/>
-
-You have successfully created an NFT and can locate it in the category you selected during step 2.
 
 ## Troubleshooting
 
