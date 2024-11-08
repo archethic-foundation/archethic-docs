@@ -5,23 +5,6 @@ title: aeWallet
 
 ## General 
 
-### ** How to retrieve the address of my Archethic wallet?**
-
-Firstly, you should be aware that your address changes with each transaction.
-
-But don't worry. If you provide an old address to receive funds or tokens, it will still work, and you will receive what you are expecting.
-
-:::success
-If you do not have an Archethic wallet or address yet, we invite you to refer to the section<br/><a href="/FAQ/wallet#-how-to-create-a-wallet-on-the-archethic-blockchain">"How to create a wallet on the Archethic blockchain?"</a>
-:::
-
-Once your wallet is created,<br/>
-
-1) select the account on which you wish to receive your funds or tokens via the "Accounts" tab by clicking on the dropdown arrow at the top of the screen to the right of the current profile. A list will appear, showing your accounts and services contained in your decentralized keychain.<br/>
-2) Once selected, you will be returned to the "Accounts" tab, where a "Receive" button will be visible.<br/>
-3) Click on it, and you will obtain your address, either in the form of a QR Code or as text by clicking on the icon corresponding to the copy action.<br/>
-
-![wallet-address](/img/faq/wallet/wallet-FAQ-display-address.png)
 
 ### ** How to create a wallet on the Archethic blockchain?**
 
@@ -45,6 +28,24 @@ Do not share them with anyone and write them down so you can confirm them on the
 10) After a few seconds of waiting, your keychain is created with your first account.<br/>
 
 You can now enjoy the Archethic ecosystem. Enjoy!
+### ** How to retrieve the address of my Archethic wallet?**
+
+Firstly, you should be aware that your address changes with each transaction.
+
+But don't worry. If you provide an old address to receive funds or tokens, it will still work, and you will receive what you are expecting.
+
+:::success
+If you do not have an Archethic wallet or address yet, we invite you to refer to the section<br/><a href="/FAQ/wallet#-how-to-create-a-wallet-on-the-archethic-blockchain">"How to create a wallet on the Archethic blockchain?"</a>
+:::
+
+Once your wallet is created,<br/>
+
+1) select the account on which you wish to receive your funds or tokens via the "Accounts" tab by clicking on the dropdown arrow at the top of the screen to the right of the current profile. A list will appear, showing your accounts and services contained in your decentralized keychain.<br/>
+2) Once selected, you will be returned to the "Accounts" tab, where a "Receive" button will be visible.<br/>
+3) Click on it, and you will obtain your address, either in the form of a QR Code or as text by clicking on the icon corresponding to the copy action.<br/>
+
+![wallet-address](/img/faq/wallet/wallet-FAQ-display-address.png)
+
 
 ## Troubleshooting
 
