@@ -1,6 +1,6 @@
 ---
 id: archethic-wallet
-title: Archethic Wallet
+title: Archethic Wallet (aeWallet)
 ---
 
 **Archethic has developed a fully decentralized and non-custodial cryptocurrency hot wallet that enables users to safely manage assets on Layer 1 Archethic blockchain.**
@@ -13,26 +13,22 @@ Archethic Wallet has implemented the following features:
 - Main features
     - Decentralized keychain management
     - Multiple accounts' management
-    - Creation of Fungible Tokens
-    - Creation of NFTs
-    - Support for transactions (Sending and Receiving UCO Token, Fungible Tokens and NFTs)
+    - Support for transactions (Sending and Receiving UCO or Fungibles Tokens, NFTs)
+    - DeFi features: swap, liquidity management, farming with lock, bridge (soon)
     - List of recent transactions
-    - List of acquired tokens
 - Security
-    - Security access with Password, PIN, Yubicloud OTP, Face ID, Touch ID, Uniris Biometrics (2023)
+    - Security access with Password, PIN, Yubicloud OTP, Face ID, Touch ID
     - Use of 24 Words Mnemonics
 - Customization
     - Support for English and French Language
-    - Support for multiple Currencies (view only, not meant as multiple cryptocurrencies wallet)
-    - Multi themes (9 themes available)
-    - UI customization
 - Other features
-    - Local notifications
-    - Access to exchanges to buy ERC20 UCO
+    - Access to CEX and DEX to buy UCO
     - Share address with QR Code or mobile share feature
-    - Address book
-    - UCO Price chart
-    - Access latest Archethic blog articles
+    - UCO and certified tokens Price chart
+
+## How to download the app
+
+<a href="https://www.archethic.net/wallet.html" target="_blank">Download the wallet</a> version that corresponds to the platform you want to use it on from the Archethic website or the app stores.
 
 ## Framework
 
@@ -96,9 +92,11 @@ The first group of information represents the globally available user preference
 - **Lock**: Allows to know if it is necessary to authenticate at the launching of the application.
 - **Lock Timeout**: Allows to know after how long the application requires authentication at its launch if the user has left the application open to browse for another one for example.
 - **Auto Lock Date**: Contains the timestamp of the last autolock.
+- **Privacy Mask**: Hides or unhides the application when switching applications
 - **Pin Pad Shuffle**: Allows you to determine whether the PIN code keyboard should be shuffled when entering.
+- **Last Interaction Date**: Records the timestamp of the last interaction with the application to calculate the duration of inactivity.
+- **Has Shown Root Warning**: Finds out whether the user has been informed that the device has been rooted.
 - **Show Balances**: Allows you to determine if the financial information should be displayed.
-- **Show Blog**: Allows you to know which blog articles should be displayed.
 - **Show Price Chart**: Allows you to determine whether the graph and indicators of the UCO price chart should be displayed.
 - **Price Chart Scale**: Current scale of the price chart.
 - **Active Vibrations**: Allows to know if at each action, a small vibration is emitted on the mobiles.
@@ -107,6 +105,7 @@ The first group of information represents the globally available user preference
 - **Language Seed**: Allows to know if the seed phrase is composed of French or English words.
 - **Current Version**: Current version of the wallet app installed.
 - **Main Screen Current Page**: Current page selected on the main screen.
+- **Current version**: Current version of the installed application.
 
 The second group of information represents the sensitive elements related to security:
 - **Seed**: Allows to store the wallet seed needed to perform transactions on the Archethic blockchain.
@@ -137,8 +136,8 @@ This open-source SDK **"archethic_lib_dart"**, available on [GitHub](https://git
 ## Setup
 
 ### Pre-requisites
-- Flutter 3.10+
-- Dart 3.0+
+- Flutter 3.24+
+- Dart 3.5+
 
 ### Instructions
 - Download the [repo](https://github.com/archethic-foundation/archethic-wallet) into a folder
