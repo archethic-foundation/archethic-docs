@@ -9,7 +9,7 @@ title: aeSwap
 You can access to aeSwap at : [https://dex.archethic.net](https://dex.archethic.net)
 
 ### Is the Archethic DEX available on mobile devices?
-Soon!
+Yes, from version 3 of aeWallet available on iOS and Android. [https://www.archethic.net/wallet.html](https://www.archethic.net/wallet.html)
 
 ### How is the price of UCO estimated?
 The price of UCO is determined using an Archethic Oracle that consolidates information from various sources, including Coingecko and CoinMarketCap.
