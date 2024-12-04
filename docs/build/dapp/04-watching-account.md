@@ -28,33 +28,27 @@ Ensure that the **aeWallet** application is **running and unlocked** before atte
 import Archethic, { ConnectionState } from "https://esm.sh/@archethicjs/sdk";
 
 /// Creates an Archethic client.
-/// This checks aeWallet RPC available transport methods and creates 
-/// an ArchethicWalletClient accordingly.
 const archethicClient = new Archethic()
 
+
+/// Attempts to connect to aeWallet, 
+/// and setsretrieve which chain to use.
+await archethicClient.connect()
+
 /// Listen to rpc wallet connection status changes
-archethicClient.rpcWallet.onconnectionstatechange(async (state) => {
-    switch (state) {
-        case ConnectionState.Connecting:
-            console.log("Connecting  ...")
-            break
-        case ConnectionState.Closed:
-            console.log("Connection closed")
-            break
-        case ConnectionState.Closing:
-            console.log("Disconnecting ...")
-            break
-        case ConnectionState.Open:
-            const { endpointUrl } = await archethicClient.rpcWallet.getEndpoint()
-            const walletAccount = await archethicClient.rpcWallet.getCurrentAccount()
-            console.log(`Connected as ${walletAccount.shortName} to ${endpointUrl}`)
-            break
-    }
+const accountSubscription = await archethicClient.rpcWallet.onCurrentAccountChange(async (account) => {
+    console.log(account)
 })
 
-/// Connect to aeWallet to check the selected chain.
-/// That chain will then be used by `archethicClient`.
-await archethicClient.connect()
+/// Disconnect
+setTimeout(
+    async () => {
+
+        await archethicClient.rpcWallet.close()
+        archethicClient.rpcWallet.unsubscribe(accountSubscription)
+    },
+    20000,
+)
 ```
 
 </TabItem>
