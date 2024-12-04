@@ -1,12 +1,11 @@
 ---
 id: getting-started
-title: Installation/Connection
+title: Getting started
 sidebar_label: Getting started
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Installing library
 
 <Tabs groupId="sdk">
 <TabItem value="typescript" label="TypeScript" >
@@ -22,16 +21,14 @@ npm install @archethicjs/sdk
 flutter pub add archethic_wallet_client
 ```
 
+:::info
+Additional setup is required only your **DApp** targets Android or iOS.
+
+Setup is described in the **[package's documentation](https://pub.dev/packages/archethic_wallet_client#setup-deeplink)**.
+:::
+
 </TabItem>
 </Tabs>
 
-## Setup Deeplink channel
 
-:::note
-For a **mobile DApp** to communicate with **aeWallet mobile**, the only communication channel is the deeplink.
-:::
-
-:::tip
-This is required only if your **DApp** is an Android or iOS application.
-:::
 
