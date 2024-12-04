@@ -58,6 +58,16 @@ archethicClient.rpcWallet.onconnectionstatechange(async (state) => {
 /// Connect to aeWallet to check the selected chain.
 /// That chain will then be used by `archethicClient`.
 await archethicClient.connect()
+
+/// Disconnect after 2 seconds
+setTimeout(
+    async () => {
+
+        await archethicClient.rpcWallet.close()
+        archethicClient.rpcWallet.unsubscribeconnectionstatechange()
+    },
+    2000,
+)
 ```
 
 </TabItem>

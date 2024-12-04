@@ -3,8 +3,6 @@ id: introduction
 title: Howto create a DApp
 sidebar_label: Introduction
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 
 This documentation aims to guide beginner and intermediate developers in integrating with **Archethic Wallet** (**aeWallet**). It explains various communication methods and includes code snippets in **Dart (Flutter)** and **TypeScript**.
@@ -24,7 +22,7 @@ While keeping your secrets protected in **aeWallet**.
 
 Below are the supported communication methods with Archethic wallets:
 
-| **DApp platform**         | **aeWallet platform**     | **Channel**                   | **Typescript Lib**    | **Flutter Lib**          |
+| **DApp platform**         | **aeWallet platform**     | **Channel**                   | **Typescript Lib**    | **Flutter Lib**       |
 |---------------------------|---------------------------|-------------------------------|-----------------------|-----------------------|
 | Web (Desktop browser)     | Desktop                   | WebSocket                     | ✅                    | ✅                     |
 | Web (aeWallet browser)    | Mobile                    | Web Message Channel           | ⛔️ Not implemented yet| ⛔️ Not implemented yet |
