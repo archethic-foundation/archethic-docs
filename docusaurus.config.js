@@ -114,7 +114,7 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['elixir', 'json', 'dart']
+      additionalLanguages: ['elixir', 'json', 'dart', 'typescript'],
     },
     imageZoom: {
       // CSS selector to apply the plugin to, defaults to '.markdown img'

@@ -1,0 +1,373 @@
+---
+id: rpc-commands
+title: RPC Commands
+sidebar_label: RPC Commands
+---
+
+
+export function Subscription() {
+  return <img src="https://img.shields.io/badge/Subscription-05a5dc" alt="Subscription command"></img>
+}
+
+export function UserConfirmation() {
+  return <img src="https://img.shields.io/badge/User Confirmation-e66a63" alt="Requires user confirmation"></img>
+}
+
+Here is a description of all RPC commands available. 
+
+[Official SDKs](http://localhost:9000/build/dapp/introduction#tools-and-libraries) support all of these. To get more detailed info, refer to your SDK documentation.
+
+
+:::info
+Subscriptions won't be available on Deeplink channel because of technical limitations.
+:::
+
+## get_endpoint
+
+Gets the endpoint URL used on AEWallet.
+
+### Request
+
+```typescript
+// no payload in request
+```
+
+### Success Response
+
+```typescript
+{
+  endpointUrl: string // Endpoint URL
+}
+```
+
+
+## refresh_current_account
+
+Request the wallet to refresh current account info
+
+### Request
+
+```typescript
+// no payload in request
+```
+
+### Success Response
+
+```typescript
+// no response
+```
+
+
+## get_accounts
+
+Gets the accounts available on AEWallet.
+
+### Request
+
+```typescript
+// No payload
+```
+
+### Success Response
+
+```typescript
+{
+  accounts: [
+    {
+      shortName: string,      // Account name
+      serviceName: string,     // Service name
+      genesisAddress: string, // Genesis address
+    }
+  ]
+}
+```
+
+## send_transaction
+
+Signs and sends a transaction.
+
+### Request
+
+```typescript
+{
+  type: string,                     // Type of transaction
+  version: number,                  // Version of the transaction (used for backward compatiblity)
+  data: Object,                     // Transaction data zone (identity, keychain, smart contract, etc.)
+  generateEncryptedSeedSC: boolean  // (Optional) : if true, add a encrypted (by storage nonce public key) seed in the transaction's ownerships to allow nodes to manage smart contract
+}
+```
+
+### Success Response
+
+```typescript
+{
+  transactionAddress: string,  // Sent transaction address.
+  nbConfirmations: number,     // number of received confirmations.
+  maxConfirmations: number,    // Max number of confirmations.
+}
+```
+
+
+## add_service
+
+<UserConfirmation/>
+
+Add a service in the keychain
+
+### Request
+
+```typescript
+{
+  name: string,                 // Name of the service
+}
+```
+
+### Success Response
+
+```typescript
+{
+  transactionAddress: string,  // Transaction address.
+  nbConfirmations: number,     // number of received confirmations.
+  maxConfirmations: number,    // Max number of confirmations.
+}
+```
+
+## remove_service
+
+<UserConfirmation/>
+
+Remove a service from the keychain
+
+### Request
+
+```typescript
+{
+  name: string,                 // Name of the service
+}
+```
+
+### Success Response
+
+```typescript
+{
+  transactionAddress: string,  // Transaction address.
+  nbConfirmations: number,     // Number of received confirmations.
+  maxConfirmations: number,    // Max number of confirmations.
+}
+```
+
+## get_services_from_keychain
+
+Gets keychain's services from the keychain connected to AEWallet.
+
+### Request
+
+```typescript
+// No payload
+```
+
+### Success Response
+
+```typescript
+{
+  services: [
+    {
+      derivationPath: string, // Derivation path
+      curve: string,          // Curve
+      hashAlgo: string        // Hash Algo
+    }
+  ]
+}
+```
+
+## keychain_derive_keypair
+
+Derive a keypair for the given service at the index given and get the public key
+
+### Request
+
+```typescript
+{
+  serviceName: string,  // Service name to identify the derivation path to use
+  index: number,        // Chain index to derive (optional - default to 0)
+  pathSuffix: string    // Additional information to add to a service derivation path (optional - default to empty)
+}
+```
+ 
+### Success Response
+
+```typescript
+{
+  publicKey: string     // Public key of the service at the index given
+}
+```
+
+
+## keychain_derive_address
+
+Derive an address for the given service at the index given
+
+### Request
+
+```typescript
+{
+  serviceName: string,  // Service name to identify the derivation path to use
+  index: number,        // Chain index to derive (optional - default to 0)
+  pathSuffix: string    // Additional information to add to a service derivation path (optional - default to empty)
+}
+```
+ 
+### Success Response
+
+```typescript
+{
+  address: string     // Address derived
+}
+```
+
+## get_current_account
+
+Gets the current account selected on AEWallet.
+
+### Request
+
+```typescript
+// No payload
+```
+
+### Success Response
+
+```typescript
+{
+  shortName: string,      // Account name
+  serviceName: string,    // Service name
+  genesisAddress: string, // Genesis address
+}
+```
+
+## sign_transactions
+
+<UserConfirmation/>
+
+Signs many transactions.
+
+### Request
+
+```typescript
+{
+  serviceName: string,              // Service name to use to sign the tx
+  pathSuffix: string,               // Additional information to add to a service derivation path (optional)
+  description: {                    // Readable description to explain the purpose of signing transactions (locale + description)
+    en: string,
+    fr: string,
+  },
+  transactions: [
+    {
+      type: string,                 // Type of transaction
+      version: number,              // Version of the transaction (used for backward compatiblity)
+      data: Object                  // Transaction data zone (identity, keychain, smart contract, etc.)
+    }
+  ]
+}
+```
+
+### Success Response
+
+```typescript
+{
+  signedTxs: [
+    {
+      address: string,              // Address: hash of the new generated public key for the given transaction
+      previousPublicKey: string,    // Previous generated public key matching the previous signature
+      previousSignature: string,    // Signature from the previous public key
+      originSignature: string       // Signature from the device which originated the transaction (used in the Proof of work)
+    }
+  ]
+}
+```
+
+## sign_payloads
+
+<UserConfirmation/>
+
+Signs many payloads.
+
+### Request
+
+```typescript
+{
+  serviceName: string,       // Service name to use to sign the payload
+  pathSuffix: string,        // Additional information to add to a service derivation path (optional)
+  description: {             // Readable description to explain the purpose of signing payloads (locale + description)
+    en: string,
+    fr: string,
+  },
+  payloads: [
+    {
+      payload: string,       // Payload to sign
+      isHexa: boolean        // Precise if the payload if in hexadecimal format
+    }
+  ]
+}
+```
+
+### Success Response
+
+```typescript
+{
+  signedPayloads: [
+    {
+      signedPayload: string,        // Signed payload
+    }
+  ]
+}
+```
+
+## subscribe_account
+
+<Subscription/>
+
+Listens to any updates on an account.
+
+### Subscription
+
+```typescript
+{
+  name: string,              // Service name to use to sign the payload
+}
+```
+
+### Notifications
+
+```ts
+{
+  name: string,
+  genesisAddress: string,
+  lastAddress: string?,
+  balance: {
+    nativeTokenName: string,
+    nativeTokenValue: double,
+  }?,
+}
+```
+
+## subscribe_current_account
+<Subscription/>
+
+
+Listens to any updates on wallet selected account.
+
+### Subscription
+
+```typescript
+// no payload in request
+```
+
+### Notifications
+
+```ts
+{
+  name: string,
+  genesisAddress: string,
+}
+```
