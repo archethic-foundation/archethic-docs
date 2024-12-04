@@ -25,27 +25,21 @@ Below are the supported communication methods with Archethic wallets:
 | **DApp platform**         | **aeWallet platform**     | **Channel**                   | **Typescript Lib**    | **Flutter Lib**       |
 |---------------------------|---------------------------|-------------------------------|-----------------------|-----------------------|
 | Web (Desktop browser)     | Desktop                   | WebSocket                     | ✅                    | ✅                     |
-| Web (aeWallet browser)    | Mobile                    | Web Message Channel           | ⛔️ Not implemented yet| ⛔️ Not implemented yet |
+| Web (Mobile browser)      | Mobile                    | Web Message Channel           | ⛔️ Not implemented yet| ⛔️ Not implemented yet |
 | Web (Desktop browser)     | Chrome Extension          | Web Message Channel           | ✅                    | ✅                     |
 | Desktop                   | Desktop                   | WebSocket                     | ✅                    | ✅                     |
 | Mobile                    | Mobile                    | DeepLink                      | ⛔️                    | ✅                     |
 
 
 :::info
-Currently, the primary use case is **web desktop DApps** running in browsers like Chrome. In the future, a mobile wallet will support DApps through an embedded browser.
+Mobile browser are currently not supported. 
+In the future, mobile wallet will support Web DApps through an embedded browser.
 :::
-
 
 
 ## Tools and Libraries
 
-- **Flutter/Dart:** [archethic_lib_dart](https://pub.dev/packages/archethic_lib_dart)
+- **Flutter/Dart:** 
+    - [archethic_lib_dart](https://pub.dev/packages/archethic_lib_dart)
+    - [archethic_wallet_client on pub.dev](https://pub.dev/packages/archethic_wallet_client)
 - **TypeScript:** [@archethicjs/sdk](https://www.npmjs.com/package/@archethicjs/sdk)
-
-
-## Additional Resources
-
-- [archethic_wallet_client on pub.dev](https://pub.dev/packages/archethic_wallet_client)
-- [archethic_lib_dart on pub.dev](https://pub.dev/packages/archethic_lib_dart)
-- [@archethicjs/sdk on npm](https://www.npmjs.com/package/@archethicjs/sdk)
-
