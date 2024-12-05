@@ -2,10 +2,15 @@
 id: introduction
 title: Howto create a DApp
 sidebar_label: Introduction
+sidebar_position: 1
 ---
 
 
 This documentation aims to guide developers in integrating with **Archethic Wallet** (**aeWallet**). It explains various communication methods and includes code snippets in **Dart (Flutter)** and **Javacript / TypeScript**.
+
+:::note
+If you are more interested in **Archethic Wallet RPC** protocol fundamentals, [check these documents](../../participate/wallet/dapps-communication).
+:::
 
 :::caution
 Before going further, you **must have a minimal understanding** of the way Archethic blockchain works.
