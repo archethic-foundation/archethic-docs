@@ -7,7 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-This example attempts to connect to **aeWallet** and writes a log when connection status is updated.
+This example delegates a **Transaction** signature to **aeWallet**.
 
 :::tip
 Ensure that the **aeWallet** application is **running and unlocked** before attempting connection.
@@ -25,49 +25,53 @@ Ensure that the **aeWallet** application is **running and unlocked** before atte
 ```
 
 ```typescript title="main.js"
-import Archethic, { ConnectionState } from "https://esm.sh/@archethicjs/sdk";
+import Archethic from "https://esm.sh/@archethicjs/sdk";
 
-/// Creates an Archethic client.
-/// This checks aeWallet RPC available transport methods and creates 
-/// an ArchethicWalletClient accordingly.
 const archethicClient = new Archethic()
-
-/// Listen to rpc wallet connection status changes
-archethicClient.rpcWallet.onconnectionstatechange(async (state) => {
-    switch (state) {
-        case ConnectionState.Connecting:
-            console.log("Connecting  ...")
-            break
-        case ConnectionState.Closed:
-            console.log("Connection closed")
-            break
-        case ConnectionState.Closing:
-            console.log("Disconnecting ...")
-            break
-        case ConnectionState.Open:
-            const { endpointUrl } = await archethicClient.rpcWallet.getEndpoint()
-            const walletAccount = await archethicClient.rpcWallet.getCurrentAccount()
-            console.log(`Connected as ${walletAccount.shortName} to ${endpointUrl}`)
-            break
-    }
-})
-
-/// Connect to aeWallet to check the selected chain.
-/// That chain will then be used by `archethicClient`.
 await archethicClient.connect()
+
+const txBuilder = archethicClient.transaction
+    .new()
+    .setType("token")
+    .setCode("")
+    .setContent(JSON.stringify({
+        name: "NFT 001",
+        supply: 100000000,
+        type: "non-fungible",
+        symbol: "NFT1",
+        aeip: [2],
+        properties: {},
+    }));
+
+
+await archethicClient.rpcWallet
+    .signTransactions(
+        /// Replace by an account available on your wallet
+        "archethic-wallet-<AccountName>",
+        "",
+        [
+            txBuilder
+        ]
+    )
+    .then((signResult) => {
+        console.log(`Command succeed : ${signResult}`);
+    })
+    .catch((signError) => {
+        /// signError is a JSONRPCError instance.
+        console.error(`Command failed : ${JSON.stringify(signError)}`);
+    })
+
+await archethicClient.rpcWallet.close()
 ```
 
 </TabItem>
 <TabItem value="flutter" label="Flutter">
 
-By default, `ArchethicDAppClient` will check available communication channels, and choose the most appropriate one.
-
-Alternatively, you may force `ArchethicDAppClient` to use a specific communication channel using the dedicated factory (`ArchethicDAppClient.messageChannel()`, `ArchethicDAppClient.websocket()` ...).
-
-
 ```dart
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:archethic_lib_dart/archethic_lib_dart.dart';
 import 'package:archethic_wallet_client/archethic_wallet_client.dart';
 
 Future<void> main() async {
@@ -78,34 +82,76 @@ Future<void> main() async {
     replyBaseUrl: 'flutterdappexample://dapp.example',
   );
 
-  /// Do not forget to close that subscription later.
-  final connectionStateSubscription =
-      aewalletClient.connectionStateStream.listen((event) {
-    event.when(
-      connecting: () {
-        log('Connecting ...');
-      },
-      disconnected: () {
-        log('Connection closed');
-      },
-      disconnecting: () {
-        log('Disconnecting ...');
-      },
-      connected: () async {
-        final walletAccount =
-            await aewalletClient.getCurrentAccount().valueOrThrow;
-        final endpoint = await aewalletClient.getEndpoint().valueOrThrow;
-        log('Connected as ${walletAccount.shortName} to ${endpoint.endpointUrl}');
-      },
-    );
-  });
-
   await aewalletClient.connect();
 
-  await Future.delayed(Duration(seconds: 1));
+  try {
+    final response = await aewalletClient.signTransactions(
+      SignTransactionRequest(
+        /// Replace by an account available on your wallet
+        serviceName: "archethic-wallet-<AccountName>", 
+        pathSuffix: "",
+        description: {
+          "en": "This is an English description.",
+          "fr": "Ceci est une description en français."
+        },
+        transactions: [
+          SignTransactionRequestData(
+            type: "token",
+            version: 2,
+            data: Data(
+              content: """{
+                  "name": "NFT 001",
+                  "supply": 100000000,
+                  "type": "non-fungible",
+                  "symbol": "NFT1",
+                  "aeip": [2],
+                  "properties": {},
+                }""",
+              code: "",
+              ledger: Ledger(
+                token: TokenLedger(),
+                uco: UCOLedger(),
+              ),
+            ),
+          ),
+          SignTransactionRequestData(
+            type: "token",
+            version: 2,
+            data: Data(
+              content: """{
+                  "name": "NFT 002",
+                  "supply": 100000000,
+                  "type": "non-fungible",
+                  "symbol": "NFT1",
+                  "aeip": [2],
+                  "properties": {},
+                }""",
+              code: "",
+              ledger: Ledger(
+                token: TokenLedger(),
+                uco: UCOLedger(),
+              ),
+            ),
+          ),
+        ]
+      ),
+    );
+    response.when(
+      failure: (failure) {
+        log('Command failed', error: failure);
+      },
+      success: (result) {
+        log(
+          'Command succeed : ${json.encode(result)}',
+        );
+      },
+    );
+  } catch (e) {
+    log('Command failed', error: e);
+  }
+
 
   await aewalletClient.close();
-  connectionStateSubscription.cancel();
 }
 ```
 
