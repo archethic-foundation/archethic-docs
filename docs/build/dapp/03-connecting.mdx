@@ -57,8 +57,14 @@ archethicClient.rpcWallet.onconnectionstatechange(async (state) => {
     }
 })
 
-/// Connect to aeWallet to check the selected chain.
-/// That chain will then be used by `archethicClient`.
+/// Attempts to connect to `aeWallet`.
+///
+/// Then it sets `archethicClient` up to
+/// use the same chain as aeWallet.
+///
+/// This way, you can use :
+///   - `archethicClient` to interact directly with the chain
+///   - `archethicClient.rpcWallet` to interact with `aeWallet`
 await archethicClient.connect()
 
 /// Disconnect after 2 seconds

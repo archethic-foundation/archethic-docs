@@ -30,12 +30,9 @@ Ensure that the **aeWallet** application is **running and unlocked** before atte
 ```typescript title="main.js"
 import Archethic, { ConnectionState } from "https://esm.sh/@archethicjs/sdk";
 
-/// Creates an Archethic client.
 const archethicClient = new Archethic()
 
 
-/// Attempts to connect to aeWallet, 
-/// and setsretrieve which chain to use.
 await archethicClient.connect()
 
 /// Listen to rpc wallet connection status changes
@@ -43,7 +40,6 @@ const accountSubscription = await archethicClient.rpcWallet.onCurrentAccountChan
     console.log(account)
 })
 
-/// Disconnect
 setTimeout(
     async () => {
 
