@@ -10,8 +10,7 @@ Ensure that the Archethic wallet is running and listening on the correct port. Y
 
 ## Which browsers are supported?
 
-Currently, only Chrome is supported with the Archethic extension.
-
+Currently, only browsers based on chromium (Google Chrome, Brave, ...) are fully supported with the Archethic extension.
 ## Deeplink RPC limitations
 
 For a **mobile DApp** to communicate with **aeWallet mobile**, the only communication channel is the deeplink.
