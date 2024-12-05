@@ -5,7 +5,7 @@ sidebar_label: Introduction
 ---
 
 
-This documentation aims to guide developers in integrating with **Archethic Wallet** (**aeWallet**). It explains various communication methods and includes code snippets in **Dart (Flutter)** and **TypeScript**.
+This documentation aims to guide developers in integrating with **Archethic Wallet** (**aeWallet**). It explains various communication methods and includes code snippets in **Dart (Flutter)** and **Javacript / TypeScript**.
 
 :::caution
 Before going further, you **must have a minimal understanding** of the way Archethic blockchain works.
