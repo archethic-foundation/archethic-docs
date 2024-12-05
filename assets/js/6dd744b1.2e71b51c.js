@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[3177],{65799:e=>{e.exports=JSON.parse('{"title":"DApp development","slug":"/category/dapp-development","permalink":"/category/dapp-development","navigation":{"previous":{"title":"Node","permalink":"/build/core/p2p/node"},"next":{"title":"Introduction","permalink":"/build/dapp/"}}}')}}]);
