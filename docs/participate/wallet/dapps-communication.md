@@ -5,6 +5,12 @@ sidebar_label: Communication with DApps
 sidebar_position: 1
 ---
 
+:::caution
+This documentation aims to get an **in-depth understanding** of the **Archethic Wallet RPC** protocol.
+
+If you are more interested in **DApp development**, [check these documents](../../build/dapp).
+:::
+
 In the blockchain ecosystem, decentralized applications (dApps) are becoming increasingly popular. To enable reliable and secure communication between these applications and the blockchain, Archethic has developed a communication protocol with its Archethic Wallet application. This protocol allows dApps to delegate secure communication with the blockchain to the wallet and to protect private information within the wallet (seed, private keys) without exposing it to the dApps.
 
 # Point of view on usage
