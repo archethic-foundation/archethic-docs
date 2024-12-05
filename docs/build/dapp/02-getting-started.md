@@ -18,7 +18,7 @@ npm install @archethicjs/sdk
 <TabItem value="flutter" label="Flutter">
 
 ```shell 
-flutter pub add archethic_wallet_client
+flutter pub add archethic_wallet_client archethic_lib_dart
 ```
 
 :::info
