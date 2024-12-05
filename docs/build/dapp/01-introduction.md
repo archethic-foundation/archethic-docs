@@ -42,5 +42,5 @@ In the future, mobile wallet will support Web DApps through an embedded browser.
 - **Flutter/Dart:** 
     - [archethic_lib_dart](https://pub.dev/packages/archethic_lib_dart)
     - [archethic_wallet_client](https://pub.dev/packages/archethic_wallet_client)
-- **TypeScript:** [@archethicjs/sdk](https://www.npmjs.com/package/@archethicjs/sdk)
+- **Javascript/TypeScript:** [@archethicjs/sdk](https://www.npmjs.com/package/@archethicjs/sdk)
 - [AEIP 4 / Specifications](https://github.com/archethic-foundation/aeip/blob/main/AEIP-04.md)
