@@ -32,7 +32,7 @@ Below are the supported communication methods with Archethic wallets:
 
 
 :::info
-Mobile browser are currently not supported. 
+Mobile browsers are currently not supported. 
 In the future, mobile wallet will support Web DApps through an embedded browser.
 :::
 
