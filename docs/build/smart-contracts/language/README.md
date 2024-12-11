@@ -1,7 +1,7 @@
 ---
 id: language
-title: Smart Contracts - Language
-sidebar_label: Language
+title: Interpreter Language
+sidebar_label: Interpreter (Deprecated)
 sidebar_position: 2
 ---
 
