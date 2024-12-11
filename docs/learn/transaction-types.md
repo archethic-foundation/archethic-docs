@@ -74,4 +74,4 @@ This transaction contains either a `content` or at least one `ownership`.
 
 ## contract
 
-This transaction contains a contract in the `code` field.
+This transaction contains a contract in the `code` or `contract` field.
