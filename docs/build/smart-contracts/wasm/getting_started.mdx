@@ -1,0 +1,234 @@
+---
+id: getting-started
+title: Getting Started
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+In this guide, we will create our first smart contract to deployed on testnet.
+
+## Setup
+
+We have to setup our development environment to create smart contract using WebAssembly.
+
+<Tabs>
+<TabItem value="assemblyscript" label="AssemblyScript SDK" default>
+
+  You need to have NodeJS & npm installed
+
+  ### Create new project
+
+  ```bash
+  npm create @archethicjs/create-ae-contract-as my_contract
+  ```
+
+  This will create a new project on the folder my_contract with the following structure
+
+  ```
+  my_contract/
+  ├── assembly/
+  │   ├── index.ts         # Main contract code
+  │   ├── tsconfig.json    # Typescript config for AssemblyScript
+  ├── tests
+      ├── index.test.ts    # Main test file
+  ├── asconfig.json        # AssemblyScript configuration
+  ├── package.json         # Dependencies and project scripts
+  ├── README.md            # Documentation for the project
+  └── tsconfig.json        # TypeScript configuration
+  ```
+
+  ### Install SDK
+
+  ```bash
+  cd my_contract
+  npm install
+  ```
+
+</TabItem>
+</Tabs>
+
+## Our first contract
+
+<Tabs>
+<TabItem value="assemblyscript" label="AssemblyScript SDK" default>
+
+```typescript title="/assembly/index.ts"
+import {
+    ActionResult,
+    Context,
+    ContextWithParams,
+    TriggerType,
+} from "@archethicjs/ae-contract-as/assembly";
+
+// Define the state our contract
+class State {
+    counter: i32 = 0;
+}
+
+// Executed during the contract creation (aka constructor)
+export function onInit(context: Context<State>): State {
+    return new State();
+}
+
+class IncArgs {
+    value!: u32;
+}
+
+// This is out trigger with its action's logic
+@action(TriggerType.Transaction)
+// This function expect an argument defined in `IncArgs`
+export function inc(context: ContextWithParams<State, IncArgs>): ActionResult<State> {
+    const state = context.state;
+
+    // You can assert or throw statements
+    if (context.arguments.value == 0)
+        throw new Error("increment value must be greater than 0")
+
+    // You can update the upcoming state
+    state.counter += context.arguments.value;
+
+    // Return the new result
+    return new ActionResult<State>().setState(state)
+}
+```
+
+We can see in the contract, we exposed a function called `inc` which expect an argument, and which will increment the state of the contract for each incoming transaction.
+
+</TabItem>
+</Tabs>
+
+## Test & Simulation
+
+Contract tests are agnostic to the implementation of the WASM module, loading the compiled contract as *.wasm file and simulating end to end execution as the Blockchain runtime will do it.
+
+You can create some tests in the folder `tests` to simulate use case & interations and also mock some I/O host functions (to get blockchain data or off-chain data, etc.)
+
+```typescript title="/tests/index.test.ts"
+import { describe, it, expect } from 'vitest'
+import { readFileSync } from "fs";
+import { getContract } from "@archethicjs/ae-contract-test";
+
+describe("inc", () => {
+    it("should increment the state", async () => {
+        const wasmBuffer = readFileSync("./dist/contract.wasm");
+        const contract = await getContract(wasmBuffer);
+
+        // Increment from an undefined state
+        let result = contract.inc({ value: 1 });
+        expect(result?.state.counter).toBe(1);
+
+        // Increment from a computed state
+        result = contract.inc({ value: 1 });
+        expect(result?.state.counter).toBe(2);
+
+        // Increment simulating a state in a specific shape
+        result = contract.inc({ value: 1 }, { state: { counter: 2 } });
+        expect(result?.state.counter).toBe(3);
+    });
+});
+```
+
+## Deployment
+
+To publish smart contracts throught the SDK, we have to create a file to configure the environment of the deployment
+
+```typescript title="/archethic.config.js"
+export default {
+  endpoint: process.env["ENDPOINT"] || "https://testnet.archethic.net"
+  seed: process.env["SEED"], // Omit it, if you are using the Archethc wallet
+}
+```
+
+Then, we need to create a script to implement the deployment and execute the transactions
+
+```javascript title="/scripts/deploy.js"
+import { getContext } from "@archethicjs/ae-contract-test"
+import { Utils } from "@archethicjs/sdk"
+
+async function main() {
+  const ctx = await getContext()
+  const fundingAccount = await ctx.getAccount()
+
+  // Request the testnet faucet
+  await fundingAccount.requestFaucet()
+
+  const contractAccount = ctx.getRandomAccount()
+
+  // Funding the contract's chain to execute the first transaction
+  const fundingTx = ctx.archethicClient.transaction.new()
+  .setType("transfer")
+  .addUCOTransfer(contractAccount.address, Utils.parseBigInt("1"))
+
+  console.log("Funding contract...")
+  await fundingAccount.sendTransaction(fundingTx)
+
+  console.log("Deploying contract...")
+  const transactionAddress = await ctx.deployContract(contractAccount)
+
+  console.log(`Contract deployed at: ${transactionAddress}`)
+  process.exit(0)
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1)
+});
+```
+
+We can finally execute them
+
+```bash
+node scripts/deploy.js
+```
+
+:::success 
+Congratulations, your first Archethic WASM contract have been published
+:::
+
+## Upgrade
+
+To support upgrades, we have to update the configuration file in the first deployment to allow an address to upgrade contracts
+
+```typescript title="/archethic.config.js"
+export default {
+  endpoint: process.env["ENDPOINT"] || "https://testnet.archethic.net"
+  seed: process.env["SEED"], // Omit it, if you are using the Archethc wallet
+  upgradeAddress: "0000..." // Address which is authorized to the upgrade
+}
+```
+
+We can create the following script to publish the upgrade:
+
+```javascript title="/scripts/upgrade.js"
+import { getContext, getUpgradeContractTx } from "@archethicjs/ae-contract-test"
+
+async function main() {
+  const ctx = await getContext()
+
+  if (process.env["CONTRACT"] === undefined) {
+    throw new Error("CONTRACT env var is required")
+  }
+
+  const fundingAccount = await ctx.getAccount()
+  const contractAddress = process.env["CONTRACT"]
+
+  console.log(`Upgrading contract ${contractAddress}`)
+
+  await ctx.updateContract(fundingAccount, contractAddress)
+
+  console.log("Contract upgraded")
+  process.exit(0)
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1)
+});
+```
+
+Then we can execute the script
+
+```bash
+CONTRACT=ADDRESS_OF_THE_DEPLOYED_CONTRACT node scripts/upgrade.js
+```

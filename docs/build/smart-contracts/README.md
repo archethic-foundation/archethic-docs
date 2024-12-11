@@ -11,14 +11,14 @@ They introduce new features to this domain:
 
 - Completly autonomous and can be triggered from internal states (date, transactions) or real life (OracleChain updates).
 - Entirely modifiable: TransactionChains make update seamless
-- Interpreted: Code is interpreted and atomically verified by the miners
+- Secured: Sandboxed code execution using [WebAssembly](/build/smart-contracts/wasm/runtime)
 - Without external reality: They are entirely based on the UTXO model and do not depend on the state of an internal database but only the transactions validated
 
-Archethic Smart Contract is defined by: `triggers`, `conditions` and `actions`
+Archethic Smart Contract is defined by: `triggers`, `actions`, `functions`
 
 - Triggers: events will automatically launch the execution of a contract.
-- Conditions: define the rules to accept new transactions (chain or UTXO)
 - Actions: operations to perform from a trigger's calls
+- Functions: compute and retrieve readonly data 
 
 ## Autonomous
 
@@ -42,7 +42,7 @@ This verification is done during the transaction validation and the ARCH consens
 This way, users can delegate the chain's private key to the nodes with the guarantee of a good usage of the chain's identity and signature capability.
 :::
 
-## Modifiable:
+## Modifiable
 
 Archethic relies on TransactionChain which means that a smart contract can have its own transaction chain.
 
@@ -62,28 +62,24 @@ So if we send a transaction to `@Contract#`, the code executed will be at `@Cont
 Because we are not relying on internal state and database, and only with the UTXO, we don't need to provide migrations of data or funds, and neither implement cross shard synchronization
 :::
 
-## Interpreted
+## Secured
 
-Archethic smart contracts are interpreted instead of compiled, here are the reasons:
+Archethic smart contracts are executed by WebAssembly runtime, here are the reasons:
 
-- Interpreted code is understandable by the human, and compiled code are only understandable by the computer.
+- Safe: execution is memory-safe and sandboxed environment.
+- Fast: Near of the native speed of execution and efficient in terms of size and loading time
+- Portable: Many languages can compile into it. No need to reinvent the wheel in terms of language and developer tooling
+- Standardized: Part of the W3C Community Group
 
-- Intepreted code makes the transparency and audit of smart contracts easier as we do need to provide the source of the contracts
-
-- Interpreted code makes verification and safety checks better, instead to execute a code in blindness, miners can step by step verify the instructions and avoid any security issues
-
-## Stateless
+## State management
 
 Archethic Smart Contracts does not depend on internal state or databases, only the UTXO is used as inputs and the source of truth relies on the transactions.
 
 For example, in an e-commerce smart contract, the smart-contract issued by a merchant will be able to define stocks, prices and interactions with its customers using a view which is continuously updated by the transactions validated to that same smart-contract.
 
-The contract doesn't hold a given state but allows it to be calculated. In the example above, can verify the proven status of orders through validated transactions.
+Smart Contract's state is persisted as an UTXO (unspent output) of the resulting transaction. Because of this, any state modification will result in a new transaction on the Smart Contract's transaction chain.
 
-Hence, each state is irrefutable and unambiguous.
-
-However, if required, we could easily make a snapshot data during time to have faster reads for archived data, by creating a new transaction on the chain.
-This operation would serialize the "state" of a contract and be able to be queried by applications.
+The contract can hold a UTXO state but . Hence, each state is irrefutable, unambiguous and can be re-computed for verification.
 
 :::caution Be careful
 Any data processed within the contract which is not stored in the next transaction or send somewhere will be lost
