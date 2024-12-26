@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1984],{62596:t=>{t.exports=JSON.parse('{"title":"WASM","slug":"/category/wasm","permalink":"/category/wasm","navigation":{"previous":{"title":"Smart Contracts","permalink":"/build/smart-contracts/"},"next":{"title":"Runtime","permalink":"/build/smart-contracts/wasm/runtime"}}}')}}]);
