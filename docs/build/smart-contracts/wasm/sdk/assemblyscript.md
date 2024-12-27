@@ -24,7 +24,7 @@ AssemblyScript SDK designed for developing smart contracts on the Archethic Publ
 Generate a new project by using the following commands
 
 ```bash
-npm create @archethicjs/create-ae-contract-as my-smart-contract
+npm create @archethicjs/ae-contract-as my-smart-contract
 cd my-smart-contract
 npm install
 ```

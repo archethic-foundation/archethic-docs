@@ -27,7 +27,7 @@ Before creating a smart contract, set up your development environment to use Web
   Run the following command to create a new project:
 
   ```bash
-  npm create @archethicjs/create-ae-contract-as my_contract
+  npm create @archethicjs/ae-contract-as my_contract
   ```
 
   This creates a new project in the my_contract folder with the following structure:
