@@ -323,6 +323,76 @@ Signs many payloads.
 }
 ```
 
+
+## encrypt_payloads
+
+Encrypt many payloads with account public key.
+
+### Request
+
+```typescript
+{
+  serviceName: String,              // Service name to use to encrypt the payload
+  pathSuffix: String,               // Additional information to add to a service derivation path (optional)
+  payloads: [
+    {
+      payload: String,              // Payload to encrypt
+      isHexa: boolean               // Precise if the payload if in hexadecimal format
+    }
+  ]
+}
+```
+
+### Success Response
+
+```typescript
+{
+  encryptedPayloads: [
+    {
+      encryptedPayload: String,        // Encrypted payload
+    }
+  ]
+}
+```
+
+
+## decrypt_payloads
+
+<UserConfirmation/>
+
+Decrypt many payloads with account private key.
+
+### Request
+
+```typescript
+{
+  serviceName: String,              // Service name to use to decrypt the payload
+  pathSuffix: String,               // Additional information to add to a service derivation path (optional)
+    description: String {             // Readable description to explain the purpose of decrypting payloads (locale + description)
+    en: String,
+    fr: String,
+  },
+  payloads: [
+    {
+      payload: String,              // Payload to decrypt
+      isHexa: boolean               // Precise if the payload if in hexadecimal format
+    }
+  ]
+}
+```
+
+### Success Response
+
+```typescript
+{
+  decryptedPayloads: [
+    {
+      decryptedPayload: String,        // Decrypted payload
+    }
+  ]
+}
+```
+
 ## subscribe_account
 
 <Subscription/>
