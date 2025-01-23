@@ -9,7 +9,7 @@ This gives us faster computation and data retrieval to asserts balances and UTXO
 
 ## UCO
 
-A memory table is defined to list of the UCO available for a given address
+A memory table is defined to list the UCO available for a given address
 
 Few functions are provided to be able to query this table in order to:
 - get the UCO balance 
@@ -18,9 +18,9 @@ Few functions are provided to be able to query this table in order to:
 - spend all the UTXOs
 - add new UCO UTXO
 
-### Ledger 
+### Ledger
 
-Each entry is indexed by a tuple recipient/sender  to identify uniquely an UTXO
+Each entry is indexed by a tuple recipient/sender to identify uniquely an UTXO
 
 | Recipient, Sender | Amount | Spent ? | Date |
 |-|-|-|-|
@@ -35,7 +35,7 @@ An index table is provided to be able to retrieve all the sender UTXOs for a giv
 
 ## Token
 
-A memory table is defined to list al the token available for a given address
+A memory table is defined to list all the tokens available for a given address
 
 Few functions are provided to be able to query this table in order to:
 - get the token balance s
@@ -44,9 +44,9 @@ Few functions are provided to be able to query this table in order to:
 - spend all the UTXOs
 - add new token UTXO
 
-### Ledger 
+### Ledger
 
-Each entry is indexed by a tuple recipient/sender/token address  to identify uniquely an UTXO
+Each entry is indexed by a tuple recipient/sender/token address to identify uniquely an UTXO
 
 | Recipient, Sender, Token | Amount | Spent ? | Date |
 |-|-|-|-|
@@ -60,6 +60,6 @@ An index table is provided to be able to retrieve all the sender UTXOs for a giv
 
 ## Loading
 
-When a transaction replicated, the storage nodes in charge of storing the new transaction (chain replicas or recipient replicas) will load the transaction in those tables to index the UTXO and build in memory view.
+When a transaction is replicated, the storage nodes in charge of storing the new transaction (chain replicas or recipient replicas) will load the transaction in those tables to index the UTXO and build in memory view.
 
-The same goes when a node is bootstraping, a process will load all the transactions from the database to load them  into those tables.
+The same goes when a node is bootstraping, a process will load all the transactions from the database to load them into those tables.
