@@ -12,11 +12,11 @@ To be able to manage it, few modules and functions are needed to make this possi
 ## Subsets
 
 The BeaconChain is divided into a set of subsets (shards of the BeaconChain) based on hexadecimal splits.
-Currently the BeaconChain supports 256 subsets, from 0 to F (hex)
+Currently the BeaconChain supports 256 subsets, from 00 to FF (hex)
 
 Each subset is maintained by its own [process](https://github.com/archethic-foundation/archethic-node/blob/master/lib/archethic/beacon_chain/subset.ex)
 
-This process is responsible of:
+This process is responsible of :
 - Add transaction replication confirmation to the current slot
 - Check [P2P availability](/build/core/beacon-chain/p2p-sampling) of the nodes where their public key starts by the subset hexadecimal identifier 
 - Create beacon transaction and notify BeaconChain summary nodes (for the current epoch)
@@ -25,7 +25,7 @@ This process is responsible of:
 
 ## Timers and schedulers
 
-Because each BeaconChain subsets change over time, we need a may to determine what are the current nodes for those subsets and so on. So we have two kind of timers and schedulers:
+Because each BeaconChain subsets change over time, we need a way to determine what are the current nodes for those subsets and so on. So we have two kind of timers and schedulers:
 - Slot timer: Manage the interval for the beacon slot creations
 - Summary timer: Manage the interval for the beacon summary creations
 
