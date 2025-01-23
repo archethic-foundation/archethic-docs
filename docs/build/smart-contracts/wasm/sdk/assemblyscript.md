@@ -292,7 +292,7 @@ Sometimes we want to return meaningfull error messages for incorrect values, in 
 
 ```typescript title="Example with assert"
 @action(TriggerType.Transaction)
-export function inc(context: Context<UserState, IncArgs>): TransactionResult<UserState> {
+export function inc(context: ContextWithParams<UserState, IncArgs>): ActionResult<UserState> {
   const state = context.state;
   assert(state.counter >= 0, "Counter state must not be negative");
 
@@ -302,7 +302,7 @@ export function inc(context: Context<UserState, IncArgs>): TransactionResult<Use
 
 ```typescript title="Example with throw"
 @action(TriggerType.Transaction)
-export function inc(context: Context<UserState, IncArgs>): TransactionResult<UserState> {
+export function inc(context: ContextWithParams<UserState, IncArgs>): ActionResult<UserState> {
   const state = context.state;
   if (state.counter < 0) {
     throw new Error("Counter state must not be negative")

@@ -3,11 +3,9 @@ id: cryptography
 title: Cryptography
 ---
 
-Node cryptography is maintains through keystores
-
 ## Node Keystore
 
-Node cryptography is maintain through keystore which stores the transaction index and reference to the public keys.
+Node cryptography is maintained through keystore which stores the transaction index and reference to the public keys.
 
 A behavior is defined to be able swap and test easily implementations.
 

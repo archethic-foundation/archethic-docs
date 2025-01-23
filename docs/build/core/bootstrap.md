@@ -3,11 +3,11 @@ id: bootstrap
 title: Bootstrap
 ---
 
-When the Archethic node, a task is launched to  perform the node bootstrapping to join the network.
+When the Archethic node starts, a task is launched to perform the node bootstrapping to join the network.
 
 To be able to bootstrap a node, we gather connectivity information (IP, Port, Transport, Reward address, Bootstrapping seeds) and also last synchronization date.
 
-But a flow is determine to define what is the state of the bootstrap: network initialization, first bootstrap, next bootstrap
+The following flow determines actions to perform according to the node state : network initialization, first bootstrap, next bootstrap
 
 ```mermaid
 graph TD
