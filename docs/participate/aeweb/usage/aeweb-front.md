@@ -6,7 +6,7 @@ sidebar_position: 4
 ---
 
 
-# AEWeb Front end
+# aeWeb/aeHosting Front end
 
 Access: https://aeweb.archethic.net<br/>
 Source code: https://github.com/archethic-foundation/aeweb
@@ -14,14 +14,14 @@ Source code: https://github.com/archethic-foundation/aeweb
 This web application, built with Flutter, can be used to deploy and manage static sites to the Archethic Blockchain.
 
 :::success
-Before reading the following tutorials, understand <a href="/participate/aeweb/how-it-works" target="_blank">how AEWeb works</a>. 
+Before reading the following tutorials, understand <a href="/participate/aeweb/how-it-works" target="_blank">how aeWeb works</a>. 
 :::
 
 ## Tutorials
 
 ### Deploy for the first time my static site
 
-When you want to deploy a new static website on the Archethic blockchain, simply click on "New static site" in the main menu or the "+" icon in the section reserved for the list of your already deployed sites.
+When you want to deploy a new static website on the Archethic blockchain, simply click on "Add a website" button in the main screen.
 
 A form will then appear, providing you with the necessary information for deploying your site:
 - The name of the website. This name will be used to declare the site in your <a href="/learn/decentralized-id/keychain" target="_blank">decentralized keychain</a>. (mandatory)
@@ -31,7 +31,7 @@ A form will then appear, providing you with the necessary information for deploy
 
 Once the required information is provided and the publication rules are accepted, you can initiate the deployment of your site.
 
-AEWeb will then prompt you, via your Archethic wallet, to:
+aeWeb will then prompt you, via your Archethic wallet, to:
 - Confirm the creation of the site in your keychain.
 - Sign the transaction(s) that contain the content of your site.
 - Sign the reference transaction of your site in the blockchain.
@@ -42,10 +42,6 @@ The associated fees for the creation will be provided, and once accepted, your s
 :::info
 In the beta version currently being deployed, a limit of 3 MB for a site has been set.
 :::
-<br/>
-<video controls width="90%">
-  <source src="/video/AEWeb-howto-Create static site.mp4"/>
-</video>
 
 ### Update my static site
 
@@ -61,10 +57,6 @@ The application will then prompt you to:
 
 The associated fees for the update will be provided, and once accepted, a new version of your site will be published on the blockchain.
 
-<video controls width="90%">
-  <source src="/video/AEWeb-howto-Update static site.mp4"/>
-</video>
-
 ### Update the SSL certificate
 
 You can add and update the SSL certificate associated with your site. 
@@ -75,10 +67,6 @@ After selecting the public certificate for your domain and the private key assoc
 - Then sign the transaction that allows transferring funds from your current account to the transaction chain of your site to update the reference transaction.
 
 The associated fees for the update will be provided, and once accepted, the certificate will be published in the content of the reference transaction, and the private key will be stored in a transaction secret.
-
-<video controls width="90%">
-  <source src="/video/AEWeb-howto-Update certificate.mp4"/>
-</video>
 
 ### Unpublish my static site
 
@@ -91,10 +79,6 @@ After confirming your intention to unpublish your site, the application will pro
 
 The associated fees for unpublishing will be provided, and once accepted, the site will be unpublished.
 
-<video controls width="90%">
-  <source src="/video/AEWeb-howto-Unpublished site.mp4"/>
-</video>
-
 ### See my static site's informations
 
 For each online version and for each previous version of your website, you can access the following information by clicking on the three dots at the end of each line:
@@ -104,20 +88,6 @@ For each online version and for each previous version of your website, you can a
 Regarding the SSL certificate content, you can view it by clicking on the shield icon if you have deployed one. If the icon is red, it means that no certificate is available.
 
 
-<video controls width="90%">
-  <source src="/video/AEWeb-howto-Infos site.mp4"/>
-</video>
+### Disconnect aeWeb
 
-### Disconnect AEWeb
-
-When you want to disconnect the AEWeb application from your Archethic Wallet, simply click on the red disconnect button in the section describing the connected account and environment, and then confirm to return to the home screen.
-
-<video controls width="90%">
-  <source src="/video/AEWeb-howto-Disconnect.mp4"/>
-</video>
-
-
-## Roadmap
-
-- [ ] Add session management to the wallet to avoid entering the user's authentication for each transaction signature.
-- [ ] Enable direct management of the site's content from AEWeb instead of uploading an archive with all the contents.
+When you want to disconnect the aeWeb application from your Archethic Wallet, simply click on the red disconnect button in the section describing the connected account and environment, and then confirm to return to the home screen.
