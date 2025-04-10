@@ -200,7 +200,7 @@ Configure your deployment environment by creating the following file:
 
 ```typescript title="/archethic.config.js"
 export default {
-  endpoint: process.env["ENDPOINT"] || "https://testnet.archethic.net"
+  endpoint: process.env["ENDPOINT"] || "https://testnet.archethic.net",
   seed: process.env["SEED"], // Optional if using the Archethic wallet
 }
 ```
@@ -257,7 +257,7 @@ To allow upgrades, specify an authorized address in the configuration:
 
 ```typescript title="/archethic.config.js"
 export default {
-  endpoint: process.env["ENDPOINT"] || "https://testnet.archethic.net"
+  endpoint: process.env["ENDPOINT"] || "https://testnet.archethic.net",
   seed: process.env["SEED"],
   upgradeAddress: "0000..." // Address authorized for upgrades
 }
